@@ -9,3 +9,6 @@ nayeonry@usc.edu
 
 Ankita Reddy
 ankitare@usc.edu
+
+Sophia Pelaez
+spelaez@usc.edu
