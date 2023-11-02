@@ -6,3 +6,6 @@ cclough@usc.edu
 
 Nayeon Ryu
 nayeonry@usc.edu
+
+Name
+usc email
