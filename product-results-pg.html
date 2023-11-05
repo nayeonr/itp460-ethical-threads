@@ -3,12 +3,12 @@
     <head>
         <meta charset="utf-8" />
     <title>Product Result</title>
-    <!-- <link href="style.css" rel="stylesheet" /> -->
+    <link href="style.css" rel="stylesheet" />
     </head>
 
     <body>
         <header>
-            <h4>Search Results For</h4>
+            <h4 id="search-results"><strong>Search Results For</strong></h4>
             <h1>Vests</h1>
         </header>
 
@@ -16,62 +16,109 @@
         </nav>
 
         <main>
-            <h5>Related:</h5>
+            <p>Related:</p>
             <ul>
-                <li>Black Crop Vests</li>
-                <li>Cute Knitted Vests</li>
-                <li>Summer Crop Vests</li>
-                <li>Metallic Crop Vests</li>
-                <li>Leather Crop Vests</li>
+                <li class="related-items">Black Crop Vests</li>
+                <li class="related-items">Cute Knitted Vests</li>
+                <li class="related-items">Summer Crop Vests</li>
+                
+                <!-- <li class="related-items">Metallic Crop Vests</li> -->
+               
             </ul>
-
             <div>
-                <h4>Sort By Featured</h4>
+
+            <div id="sortnfilter">
+                <h3 id="filter">Filter By:</h3>
+                <h4 id="sort">Sort By Featured</h4>
             </div>
 
-            <section>
-                <h3>Filter By:</h3>
-                <h4>Minority-owned</h4>
+            <div id="grid">
+
+            <!-- <div id="sort-div">
+                <h4 id="sort">Sort By Featured</h4>
+            </div> -->
+
+            <section id="filter-section">
+                <!-- <div id="filter-div">
+                    <h3 id="filter">Filter By:</h3>
+                </div> -->
+                
+                <h4 class="filter-class">Minority-owned &#8595;</h4>
+                <!-- <p class="arrow down"><i></i></p> -->
+                <!-- &#8595;  -->
+
+                <div>
+                    <input type="checkbox" id="women-owned" name="women-owned"/>
+                    <label for="women-owned">Women-owned</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="black-owned" name="black-owned" checked/>
+                    <label for="black-owned">Black-owned</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="latinx-owned" name="latinx-owned"/>
+                    <label for="latinx-owned">Latinx-owned</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="AAPI-owned" name="AAPI-owned"/>
+                    <label for="AAPI-owned">AAPI-owned</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="lgbtq+-owned" name="lgbtq+-owned"/>
+                    <label for="lgbtq+-owned">LGBTQ+-owned</label>
+                </div>
+
+
                 <h4>Size
                 </h4>
                 <h4>Fabric</h4>
                 <h4>Color</h4>
                 <h4>Style</h4>
                 <h4>Price</h4>
-                <h4>Women's</h4>
-                <h4>Men's</h4>
-                <h4>Jewelry & Accessories</h4>
+                
             </section>
 
-            <section>
-                <article>
+            <!-- <section id="vest-section"> -->
+                <!-- <article id="vest-article"> -->
+                    <div class="draft2-nested-grid">
                     <figure>
-                        <img  />
-                        <figcaption>Happy Sad Knitted Vest</figcaption>
+                        <img src="img-folder/happy-sad-knit-vest.png" alt="A picture of a model wearing a black and white knitted vest with smiley and frowney faces on it." />
+                        <figcaption>Happy Sad Knitted Vest $10</figcaption>
+                        
                     </figure>
+                    <!-- <p>$10</p> -->
 
                     <figure>
-                        <img  />
-                        <figcaption>Fever Dream Vest</figcaption>
+                        <img src="img-folder/black-tier-vest.png" alt="A picture of a black knitted vest with white trim that says Tier in white letters." />
+                        <figcaption>Tier Knitted Vest $35</figcaption>     
                     </figure>
+                    <!-- <p>$35</p> -->
+
+
+
+                    <!-- <div class="draft-nested-grid" id="last-two-items"> -->
+                    <figure id="lemon-vest">
+                        <img src="img-folder/lemon-chain-vest.png" alt="A model wearing a lemon-yellow vest with chains going across."/>
+                        <figcaption>Lemon Chain Vest $25</figcaption>
+                    </figure>
+                    <!-- <p>$25</p> -->
 
                     <figure>
-                        <img  />
-                        <figcaption>Lemon Chain Vest</figcaption>
+                        <img src="img-folder/fever-dream-vest.png" alt="A model wearing a colourful vest with a yellow elephant in front of a yard with a white picket fence and green grass." />
+                        <figcaption>Fever Dream Vest $15</figcaption>          
                     </figure>
+                    <!-- </div> -->
+                    <!-- <p>$15</p> -->
+                    </div>
+                <!-- </article> -->
 
-                    <figure>
-                        <img  />
-                        <figcaption>A New Day Vest</figcaption>
-                    </figure>
-                    
-                </article>
-
-            </section>
+            <!-- </section> -->
+            </div>
+            </div>
 
         </main>
 
-        <footer>Ethical Threads</footer>
+        <footer>Ethical Threads. Sign up for our Newsletter</footer>
 
 
 

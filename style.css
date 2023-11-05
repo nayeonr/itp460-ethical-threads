@@ -1,0 +1,136 @@
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap');
+
+#search-results {
+    font-family: "Quicksand", "Arial", sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
+
+h1{
+    font-family: "Quicksand", "Arial", sans-serif;
+    font-size: 35px;
+    text-align: center;
+}
+
+body {
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 20px;
+  background-color: #F6F5F0;
+  color: #433F42;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline;
+}
+
+.related-items {
+    margin-right: 30px;
+    background-color: #EBEBEB;
+    border-radius: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+/* #sort, #filter {
+    display:inline;
+}
+
+#sort-div {
+    text-align: right;
+    display:block;
+}
+
+#filter-div {
+    text-align: left;
+    display: inline-block;
+} */
+
+#sort {
+    display: inline-block;
+    margin-left: 700px;
+    font-family: "Quicksand", "Arial", sans-serif;
+    font-weight: lighter;
+}
+
+#filter {
+    display: inline-block;
+    font-family: "Quicksand", "Arial", sans-serif;
+    font-weight: 600;
+}
+
+h4 {
+    font-weight: lighter;
+}
+
+.arrow {
+     border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+    transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.filter-class {
+    display:inline
+}
+
+#filter-section {
+    display:inline-block;
+    grid-column: 1/ span 1;
+    margin-right: 50px;
+    width: 200px;
+}
+
+figure {
+    display: inline;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr;
+    justify-content: space-evenly;
+    align-content: center;
+
+}
+
+/* .draft-nested-grid {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr)
+
+} */
+
+.draft2-nested-grid {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr)
+}
+
+
+/* #vest-article {
+    display: grid;
+} */
+
+/* #last-two-items {
+    grid-column: 3/ span 1;
+
+} */
+
+/* #lemon-vest {
+    grid-area: 2/ 1 / span 1 / span 1;
+} */
+
