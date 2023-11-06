@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Popup</title>
+    <link href="style.css" rel="stylesheet"/>
+    
+    <style>
+		@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap');
+
+		#everything {
+			width: 470px;
+			height: 640px;
+		}
+
+		#login {
+			padding: 15px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="everything">
+		<a href=""><img src="exit.png" alt="exit"></a>
+		
+		<div id="login">
+			<h2>Join Us</h2>
+			<hr>
+			<p>It costs nothing to set up an
+			<br>Ethical Threads account!</p>
+			<div class="responses">
+				<div id="name-header" class="response-headers">Name</div>
+				<p><input
+					type="text"
+               		name="fullname"
+                	id="fullname"
+                	class="inputs"
+            	/></p>
+
+				<div id="email-header" class="response-headers">Email</div>
+				<p><input
+					type="text"
+               		name="email"
+                	id="email"
+                	class="inputs"
+            	/></p>
+
+            	<div id="password-header" class="response-headers">Password</div>
+				<p><input
+					type="text"
+               		name="password"
+                	id="password"
+                	class="inputs"
+            	/></p>
+
+            	<div id="password2-header" class="response-headers">Confirm Password</div>
+				<p><input
+					type="text"
+               		name="password2"
+                	id="password2"
+                	class="inputs"
+            	/></p>
+            </div> <!-- .responses -->
+
+            <div id="keep-login">
+            	<input
+                    type="checkbox"
+                    name="keep"
+                    id="keep"
+                  />
+                  Keep me logged in
+            </div> <!-- #keep-login -->
+
+            <div id="next-btn">
+            	<button id="next" type="submit"><a href="" id="next-text">
+            		Next
+            	</a></button>
+            </div> <!-- #next-btn -->
+		</div> <!-- #login -->
+
+		<p>By creating an account, you agree to the Ethical Threads
+		<br>terms of use and privacy policy.</p>
+		
+	</div> <!-- #everything -->
+</body>
+
+</html>

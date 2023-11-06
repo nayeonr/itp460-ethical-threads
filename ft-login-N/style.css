@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap');
+
+		* {
+			align-items: center;
+			color: #F7F6F2;
+			text-align: center;
+			margin: 0px auto;
+		}
+
+		#everything {
+			background-color: #BE8F69;
+			font-family: "Open Sans", "Arial", sans-serif;
+			border-radius: 15px;
+			padding: 15px;
+		}
+
+		p {
+			padding: 15px;
+			font-size: 0.8em;
+		}
+
+		h2 {
+			padding: 10px;
+			font-family: "Quicksand", "Arial", sans-serif;
+		}
+		
+		hr {
+			width: 300px;
+		}
+
+		.response-headers {
+			text-align: left;
+			margin-left: 35px;
+			font-family: "Quicksand", "Arial", sans-serif;
+		}
+
+		#keep-login {
+			text-align: left;
+			margin-left: 35px;
+			font-size: 0.8em;
+		}
+
+		#keep {
+			width: 17px;
+		}
+
+		.inputs {
+			width: 350px;
+			height: 35px;
+  			background-color: #BE8F69;
+  			border: 1px solid #F7F6F2;
+  			border-radius: 15px;
+		}
+
+		button {
+			margin-top: 15px;
+			width: 350px;
+			height: 35px;
+  			border: 1px solid #F7F6F2;
+  			border-radius: 15px;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		#next-text {
+			color: #BE8F69;
+		}
+
+		img {
+			width: 20px;
+			float: right;
+			margin-top: 5px;
+			margin-right: 10px;
+		}

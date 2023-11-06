@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Popup</title>
+    <link href="style.css" rel="stylesheet" />
+    
+    <style>
+		@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap');
+
+		#everything {
+			width: 460px;
+			height: 620px;
+		}
+
+		#login {
+			padding: 15px;
+		}
+
+		#signup {
+			padding: 15px;
+		}
+
+		#joinus {
+			background-color: #BE8F69;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="everything">
+		<a href=""><img src="exit.png" alt="exit"></a>
+		<div id="login">
+			<h2>Login</h2>
+			<hr>
+			<p>Login to save brands and items to your favorites
+			<br>so that you never lose them!</p>
+			<div class="responses">
+				<div id="email-header" class="response-headers">Email</div>
+				<p><input
+					type="text"
+               		name="email"
+                	id="email"
+                	class="inputs"
+            	/></p>
+
+            	<div id="password-header" class="response-headers">Password</div>
+				<p><input
+					type="text"
+               		name="password"
+                	id="password"
+                	class="inputs"
+            	/></p>
+            </div> <!-- .responses -->
+
+            <div id="keep-login">
+            	<input
+                    type="checkbox"
+                    name="keep"
+                    id="keep"
+                  />
+                  Keep me logged in
+            </div> <!-- #keep-login -->
+
+            <div id="next-btn">
+            	<button id="next" type="submit"><a href="" id="next-text">
+            		Next
+            	</a></button>
+            </div> <!-- #next-btn -->
+		</div> <!-- #login -->
+		
+		<div id="signup">
+			<hr>
+			<h2>Sign Up</h2>
+			<p>It costs nothing to set up an
+			<br>Ethical Threads account!</p>
+
+			<div id="signup-btn">
+            	<button id="joinus" type="submit"><a href="" id="joinus-text">
+            		Join Us
+            	</a></button>
+            </div> <!-- #signup-btn -->
+
+		</div> <!-- #signup -->
+	</div> <!-- #everything -->
+</body>
+
+</html>
