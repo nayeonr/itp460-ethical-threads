@@ -9,11 +9,52 @@
 
 <style>
 	.block {
-		color: greenyellow;
+		border: solid;
+		border-color: black;
+		display: flex;
 	}
 
-	body {
-		color: hotpink;
+	.item-preview {
+		border: solid;
+		border-color: black;
+		margin: 120px;
+		padding: 2%;
+		width: 450px;
+		height: 450px;
+	}
+
+	.item-text{
+		border: solid;
+		border-color: black;
+		margin-right: 120px;
+		margin-top: 120px;
+		margin-bottom: 120px;
+		margin-left: 50px;
+		padding: 2%;
+		width: 450px;
+		height: 450px;
+	}
+
+	.discover-item{
+		border: solid;
+		border-color: black;
+		padding: 2%;
+		margin-left: 120px;
+		margin-top: 2%;
+		margin-bottom: 2%;
+		width: 147px;
+		height: 147px;
+	}
+
+	#discover-heading {
+		margin-left: 120px;
+	}
+
+	button {
+		height: 20px;
+		width: 100px;
+		padding: 2%;
+		margin-right: 2%;
 	}
 </style>
 
@@ -25,8 +66,40 @@
 	</div>
 
 	<div class="item-text">
+		<h1> hello world </h1>
+
+		<h2 id="seller-name"> <img src="" id=""> seller name </h2>
+
+		<p id="price"> $10.00</p>
+
+		<p id="description"> Fun fun fun </p>
+
+		<div class="tag">
+			<button> </button> <button> </button> <button> </button>
+
+		</div>
 	</div>
 </div>
+
+<h1 id="discover-heading"> more by [seller name] </h1>
+<div class="block">
+	<div class="discover-item">
+		<p> hello world </p>
+	</div>
+
+	<div class="discover-item">
+		<p> hello world </p>
+	</div>
+	
+	<div class="discover-item">
+		<p> hello world </p>
+	</div>
+
+	<div class="discover-item">
+		<p> hello world </p>
+	</div>
+</div>
+	
 
 </body>
 </html>
