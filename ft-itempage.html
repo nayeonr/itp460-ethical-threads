@@ -8,95 +8,187 @@
 	</title>
 
 <style>
-	.block {
-		border: solid;
-		border-color: black;
+	body{
+		background: #F7F6F2;
+		margin-left: 50px;
+	}
+
+	h1 {
+		font-family: sans-serif;
+		color: #433F42;
+	}
+
+	h2 {
+		font-family: sans-serif;
+		color: #433F42;
+	}
+
+	p {
+		font-family: sans-serif;
+		color: #433F42;
+	}
+
+	.block-1 {
+	/*	border: solid;
+		border-color: black;*/
 		display: flex;
 	}
 
+	.block-2 {
+	/*	border: solid;
+		border-color: black;*/
+		display: flex;
+		padding-left: 120px;
+	}
+
 	.item-preview {
-		border: solid;
-		border-color: black;
-		margin: 120px;
-		padding: 2%;
-		width: 450px;
-		height: 450px;
+		/*border: solid;
+		border-color: black;*/
+		margin-right: 70px;
+		margin-top: 120px;
+		margin-left: 120px;
+		margin-bottom: 50px;
+		width: 500px;
+		height: 500px;
+		border-radius: 2px;
+	}
+
+	.item-preview img{
+		width: 500px;
+		height: 500px;
+		border-radius: 2px;
 	}
 
 	.item-text{
-		border: solid;
-		border-color: black;
+		/*border: solid;
+		border-color: black;*/
 		margin-right: 120px;
-		margin-top: 120px;
-		margin-bottom: 120px;
-		margin-left: 50px;
+		margin-top: 80px;
+		margin-bottom: 50px;
 		padding: 2%;
 		width: 450px;
 		height: 450px;
+		border-radius: 2px;
 	}
 
 	.discover-item{
-		border: solid;
-		border-color: black;
-		padding: 2%;
-		margin-left: 120px;
+/*		border: solid;
+		border-color: black;*/
+		padding-right: 2%;
 		margin-top: 2%;
 		margin-bottom: 2%;
-		width: 147px;
-		height: 147px;
+		margin-right: 2.2%;
+		width: 220px;
+		height: 220px;
+		border-radius: 5px;
 	}
 
 	#discover-heading {
 		margin-left: 120px;
 	}
 
+	.discover-item img {
+		width: 220px;
+		height: 220px;
+		border-radius: 5px;
+	}
+
 	button {
-		height: 20px;
-		width: 100px;
 		padding: 2%;
 		margin-right: 2%;
+		background: #82A7A6;
+		box-shadow: none;
+		border: none;
+		border-radius: 5px;
+		text-align: center;
+		text-size: 18px;
+		font-family: sans-serif;
+		color: #F7F6F2;
+	}
+
+	#logo {
+		width: 25px;
+		height: 25px;
+		border-radius: 20px;
+		margin-top: 3%;
+		margin-bottom: -1%;
+	}
+
+	#item-name {
+		font-size: 48px;
+		margin-top: 0px;
+		margin-bottom: 2%;
+	}
+
+	#seller-name{
+		font-size: 24px;
+	}
+
+	#price {
+		font-size: 24px;
+	}
+
+	#description {
+		font-size: 18px;
+		font-weight: lighter;
+	}
+
+	a {
+		color: #433F42;
+	}
+
+	#discover-item-name{
+		font-size: 18px;
+		font-weight: bold;
+		padding-top: 2%;
+		margin-top: 2%;
 	}
 </style>
 
 </head>
 <body>
 
-<div class="block">
+<div class="block-1">
 	<div class="item-preview">
+		<img src="happy-sad-vest.png" id="clothing-img">
 	</div>
 
 	<div class="item-text">
-		<h1> hello world </h1>
+		<h1 id="item-name"> Happy Sad Knitted Vest </h1>
 
-		<h2 id="seller-name"> <img src="" id=""> seller name </h2>
+		<h2 id="seller-name"> <img src="silly-oaf-logo.png" id="logo"> Silly Oaf </h2>
 
 		<p id="price"> $10.00</p>
 
-		<p id="description"> Fun fun fun </p>
+		<p id="description"> Our fitted acrylic knit vest features an intarsia all over happy sad design. It has a slightly cropped fit with ribbed hem, neck and armholes. This lightweight knit can be worn alone or layered, making it ideal for all seasons.</p>
 
 		<div class="tag">
-			<button> </button> <button> </button> <button> </button>
+			<button> Upcycled </button> <button> Black Owned </button> <button> LGBTQ+ Owned </button>
 
 		</div>
 	</div>
 </div>
 
-<h1 id="discover-heading"> more by [seller name] </h1>
-<div class="block">
+<h1 id="discover-heading"> More by <a href="" >Silly Oaf</a></h1>
+<div class="block-2">
 	<div class="discover-item">
-		<p> hello world </p>
+		<img src="happy-sad-lace-up-ballet-sneaker.png" />
+		<p id="discover-item-name"> Happy Sad Lace Up Ballet Sneaker </p>
 	</div>
 
 	<div class="discover-item">
-		<p> hello world </p>
+		<img src="pretty-ugly-fitted-tee.png" />
+		<p id="discover-item-name"> Pretty Ugly Fitted Tee </p>
 	</div>
 	
 	<div class="discover-item">
-		<p> hello world </p>
+		<img src="sad-face-wide-leg-jean.png" />
+		<p id="discover-item-name"> Sad Face Wide Leg Jean </p>
 	</div>
 
 	<div class="discover-item">
-		<p> hello world </p>
+		<img src="flower-power-quilt-shoulder-bag.png">
+		<p id="discover-item-name"> Flower Power Quilt Shoulder Bag </p>
 	</div>
 </div>
 	
