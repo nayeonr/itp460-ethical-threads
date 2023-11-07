@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
     <title>Product Result</title>
     <link href="style.css" rel="stylesheet" />
     </head>
@@ -27,13 +29,13 @@
 
         
         <main>
-            <p>Related:</p>
+            <div id="main-div">
+            <p class="not-center">Related:</p>
             <ul>
                 <li class="related-items">Black Crop Vests</li>
                 <li class="related-items">Cute Knitted Vests</li>
                 <li class="related-items">Summer Crop Vests</li>
-
-                <!-- <li class="related-items">Metallic Crop Vests</li> -->
+                <li class="related-items">Metallic Crop Vests</li>
 
             </ul>
             <div>
@@ -42,7 +44,7 @@
             
                 <div id="feature-div">
                     <h4 id="sort">Sort By Featured</h4>
-                    <img src="img-folder/down-arrow-2.png" alt="Image of a drop down arrow icon."/>
+                    <img id="sort-arrow" src="img-folder/down-arrow-2.png" alt="Image of a drop down arrow icon."/>
                 </div>
                 
             </div>
@@ -64,23 +66,23 @@
                 <!-- <p class="arrow down"><i></i></p> -->
                 <!-- &#8595;  -->
 
-                <div>
+                <div class="div-checkbox">
                     <input type="checkbox" id="women-owned" name="women-owned"/>
                     <label for="women-owned">Women-owned</label>
                 </div>
-                <div>
+                <div class="div-checkbox">
                     <input type="checkbox" id="black-owned" name="black-owned" checked/>
                     <label for="black-owned">Black-owned</label>
                 </div>
-                <div>
+                <div class="div-checkbox">
                     <input type="checkbox" id="latinx-owned" name="latinx-owned"/>
                     <label for="latinx-owned">Latinx-owned</label>
                 </div>
-                <div>
+                <div class="div-checkbox">
                     <input type="checkbox" id="AAPI-owned" name="AAPI-owned"/>
                     <label for="AAPI-owned">AAPI-owned</label>
                 </div>
-                <div>
+                <div class="div-checkbox">
                     <input type="checkbox" id="lgbtq+-owned" name="lgbtq+-owned"/>
                     <label for="lgbtq+-owned">LGBTQ+-owned</label>
                 </div>
@@ -116,15 +118,18 @@
                 <!-- <article id="vest-article"> -->
                     <div class="draft2-nested-grid">
                     <figure>
-                        <img src="img-folder/happy-sad-knit-vest.png" alt="A picture of a model wearing a black and white knitted vest with smiley and frowney faces on it." />
-                        <figcaption>Happy Sad Knitted Vest $10</figcaption>
+                        <img class="products" src="img-folder/happy-sad-knit-vest.png" alt="A picture of a model wearing a black and white knitted vest with smiley and frowney faces on it." />
+                        <figcaption><a href="product-results-pg.html">Happy Sad Knitted Vest<br>$10</a></figcaption>     
 
                     </figure>
+                     <!-- <p class="price">$10</p> -->
+                        
                     <!-- <p>$10</p> -->
 
                     <figure>
-                        <img src="img-folder/black-tier-vest.png" alt="A picture of a black knitted vest with white trim that says Tier in white letters." />
-                        <figcaption>Tier Knitted Vest $35</figcaption>
+                        <img class="products" src="img-folder/black-tier-vest.png" alt="A picture of a black knitted vest with white trim that says Tier in white letters." />
+                        <figcaption><a href="product-results-pg.html">Tier Knitted Vest<br>$35</a></figcaption>
+                        
                     </figure>
                     <!-- <p>$35</p> -->
 
@@ -132,14 +137,17 @@
 
                     <!-- <div class="draft-nested-grid" id="last-two-items"> -->
                     <figure id="lemon-vest">
-                        <img src="img-folder/lemon-chain-vest.png" alt="A model wearing a lemon-yellow vest with chains going across."/>
-                        <figcaption>Lemon Chain Vest $25</figcaption>
+                        <img class="products" src="img-folder/lemon-chain-vest.png" alt="A model wearing a lemon-yellow vest with chains going across."/>
+                        <figcaption><a href="product-results-pg.html">Lemon Chain Vest<br>$25</a></figcaption> 
+                        
                     </figure>
                     <!-- <p>$25</p> -->
 
                     <figure>
-                        <img src="img-folder/fever-dream-vest.png" alt="A model wearing a colourful vest with a yellow elephant in front of a yard with a white picket fence and green grass." />
-                        <figcaption>Fever Dream Vest $15</figcaption>
+                        <img class="products" src="img-folder/fever-dream-vest.png" alt="A model wearing a colourful vest with a yellow elephant in front of a yard with a white picket fence and green grass." />
+                         <figcaption><a href="product-results-pg.html">Fever Dream Vest<br>$15</a></figcaption>
+                        
+                        <!-- <figcaption>Fever Dream Vest $15</figcaption> -->
                     </figure>
                     <!-- </div> -->
                     <!-- <p>$15</p> -->
@@ -149,7 +157,7 @@
             <!-- </section> -->
             </div>
             </div>
-
+            </div>
         </main>
 
         <footer>Ethical Threads. Sign up for our Newsletter</footer>

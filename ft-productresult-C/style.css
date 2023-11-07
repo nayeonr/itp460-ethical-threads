@@ -19,7 +19,20 @@ body {
   color: #433F42;
   margin-left: auto;
   margin-right: auto;
+  /* max-width: 960px; */
 }
+
+#main-div {
+    text-align: center;
+}
+
+/* .not-center {
+    text-align: left;
+} */
+/* 
+main {
+    text-align: center;
+} */
 
 ul {
     list-style: none;
@@ -27,6 +40,7 @@ ul {
 
 li {
     display: inline;
+    font-size: 16px;
 }
 
 .related-items {
@@ -90,6 +104,10 @@ h4 {
     float: right;
 }
 
+#sort-arrow {
+    width: 15px;
+}
+
 .div-filters {
     margin-top: 20px;
 }
@@ -100,6 +118,7 @@ h4 {
   display: inline-block;
   padding: 3px;
 }
+
 
 .down {
     transform: rotate(45deg);
@@ -113,7 +132,8 @@ h4 {
 #filter-section {
     display:inline-block;
     grid-column: 1/ span 1;
-    margin-right: 50px;
+    margin-left: 180%;
+    /* margin-right: 50px; */
     width: 180px;
 }
 
@@ -121,10 +141,15 @@ input {
     vertical-align: right;
 }
 
+.div-checkbox {
+    margin-top: 10px;
+}
+
 label {
     font-size: 16px;
     margin-bottom: 10px;
 }
+
 
 figure {
     display: inline;
@@ -149,8 +174,19 @@ figure {
 .draft2-nested-grid {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(2, 1fr)
+    grid-template-columns: repeat(2, 1fr);
+    padding-left: 60%;
 }
+
+.products {
+    width: 250px;
+}
+
+figcaption {
+    font-weight: bold;
+    font-size: 18px;
+}
+
 
 
 /* #vest-article {
