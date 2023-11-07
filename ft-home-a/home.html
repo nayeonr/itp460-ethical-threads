@@ -10,8 +10,48 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pixelify+Sans:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
     body {
+        margin: 0px;
+        padding: 0px;
+        align-items: center;
         background-color: #F6F5F0;
     }
+		
+    #nav {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        background-color: #BE8F69;
+    }
+
+    #logo {
+        height: 40px;
+        width: auto;
+        margin-left: 10px;
+    }
+
+    #search {
+        height: 20px;
+    }
+
+    .nav-menu {
+        display: flex;
+        margin-left: auto;
+        font-family: "Quicksand", "Arial", sans-serif;
+        margin-top: 15px;
+    }
+
+    .nav-menu li {
+        list-style: none;
+        padding: 25px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #F7F6F2;
+    }
+    /* body {
+        background-color: #F6F5F0;
+    } */
     .banner {
         background-image: url('img/mainhero.jpg');
         /* background-repeat: no-repeat; */
@@ -96,6 +136,17 @@
 </style>
 </head>
     <body>
+        <nav>
+            <div id="nav">
+                <a href="../ft-home-a/home.html"><img src="../ft-navbar-N/logo.png" alt="Ethical Threads Logo" id="logo"></a>
+                <ul class="nav-menu">
+                    <li><a href="../ft-discover-N/discover.html">Discover</a></li>
+                    <li><a href="../ft-about-pg-b/about-page.html">About</a></li>
+                    <li><a href="../ft-login-N/login.html">Login</a></li>
+                    <li><a href=""><img src="../ft-navbar-N/magnify.png" alt="Search" id="search"></a></li>
+                </ul> <!-- .nav-menu -->
+            </div> <!-- #nav -->
+        </nav>
         <div class="banner">
             <div class="row">
                 <div class="col-10">
