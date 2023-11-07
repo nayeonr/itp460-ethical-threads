@@ -2,60 +2,91 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Result</title>
-    <!-- <link href="style.css" rel="stylesheet" /> -->
+    <link href="style.css" rel="stylesheet" />
     </head>
 
     <body>
+
+        <nav>
+		<div id="nav">
+			<a href=""><img src="img-folder/et-logo.png" alt="Ethical Threads Logo" id="logo"></a>
+			<ul class="nav-menu">
+				<li><a href="">Discover</a></li>
+				<li><a href="">About</a></li>
+				<li><a href="">Login</a></li>
+				<li><a href=""><img src="img-folder/search-button.png" alt="Search" id="search"></a></li>
+			</ul> <!-- .nav-menu -->
+		</div> <!-- #nav -->
+	    </nav>
+
         <header>
-            <h5>Search By: Brand</h5>
+            <p>Search By: <strong>Brand</strong></p>
             <input type="text" placeholder="Search brands you love">
         </header>
 
-        <nav>
-
-        </nav>
 
         <main>
             <section>
                 <article>
-                    <h6>Filters:</h6>
+                    <div id="div-filters">
+                    <h6 id="filters">Filters:</h6>
                     <ul>
                         <li>Black Owned</li>
-                        <li>Women Owned</li>
+                        <li class="selected-filter">Women Owned</li>
                         <li>
                             Eco Friendly
                         </li>
                         <li>
                             Mission Oriented
                         </li>
-                        <li>Local</li>
+                        <li class="selected-filter">Local</li>
                     </ul>
+                    <img class="down-arrow" src="img-folder/down-arrow-2.png" alt="Image of a down arrow icon."/>
+                    </div>
                 </article>
 
                 <article>
-                    <h6>Sort By Featured</h6>
+                    <div id="div-featured">
+                    <h6 id="featured">Sort By Featured</h6>
+                    <img class="down-arrow" src="img-folder/down-arrow-2.png" alt="Image of a down arrow icon."/>
+                    </div>
                 </article>
             </section>
 
-            <section>
-                <article>
+            <!-- <section> -->
+                    <div class="brand-container">
+                    <img class="brand-banner" src="img-folder/hiptipico-bg-img.png" alt="Background image of the brand Hiptipico." />
+                    <div class="brand-name">
                     <h3>Hiptipico</h3>
+                    </div>
+                    </div>
+            
+
+                <article>
+                    <div class="brand-container">
+                     <img class="brand-banner" src="img-folder/flaca-bg-img.png" alt="Background image of the brand Flaca Creations." />
+                     <div class="brand-name">
+                        <h3>Flaca Creations</h3>
+                     </div>
+                    </div>
                 </article>
 
                 <article>
-                    <h3>Flaca Creations</h3>
-                </article>
-
-                <article>
+                    <div class="brand-container">
+                    <img class="brand-banner" src="img-folder/hiptipico-bg-img.png" alt="Background image of the brand Hiptipico." />
+                    <div class="brand-name">
                     <h3>Hiptipico</h3>
+                    </div>
+                    </div>
                 </article>
-            </section>
+            <!-- </section> -->
 
         </main>
 
         <footer>
-            <p>Ethical Threads</p>
+            <!-- <p>Ethical Threads</p> -->
         </footer>
 
 
