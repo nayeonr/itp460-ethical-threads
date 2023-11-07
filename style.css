@@ -146,3 +146,44 @@ figure {
     grid-area: 2/ 1 / span 1 / span 1;
 } */
 
+
+/* nav bar css */
+/* * {
+			margin: 0px;
+			padding: 0px;
+			align-items: center;
+		
+		} */
+		
+		#nav {
+			display: flex;
+			align-items: center;
+			height: 50px;
+			background-color: #BE8F69;
+		}
+
+		#logo {
+			height: 40px;
+			width: auto;
+			margin-left: 10px;
+		}
+
+		#search {
+			height: 20px;
+		}
+
+		.nav-menu {
+			display: flex;
+			margin-left: auto;
+			font-family: "Quicksand", "Arial", sans-serif;
+		}
+
+		.nav-menu li 
+		{
+			list-style: none;
+			padding: 25px;
+		}
+
+		a {
+			text-decoration: none;
+		}
