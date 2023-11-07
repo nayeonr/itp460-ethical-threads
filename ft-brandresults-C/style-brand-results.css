@@ -44,6 +44,42 @@
 			text-decoration: none;
 		}
 
+
+/* footer */
+   .footer {
+      background-color: #BE8F69;
+      padding: 2%;
+      margin-left: -1%;
+      margin-right: -1%;
+    }
+
+    #space{
+      color: #BE8F69;
+    }
+
+    #copyright {
+    font-family: sans-serif;
+    color: #F7F6F2;
+    font-size: 18px;
+   }
+
+    #newsletter {
+    font-family: sans-serif;
+    color: #F7F6F2;
+    padding-left: 825px;
+    font-size: 18px;
+   }
+
+    #newsletter-input{
+    border: none;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-size: 18px;
+    margin-left: 10px;
+  }
+
+
+
 /* brand search bar */
 input {
     font-family: "Open Sans", "Arial", sans-serif;
