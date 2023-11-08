@@ -1,16 +1,25 @@
  @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap');
 
- body {
+  body {
   font-family: "Open Sans", "Arial", sans-serif;
   font-size: 20px;
   background-color: #F6F5F0;
   color: #433F42;
-  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* navbar css */
+
+/* responsive design */
+
+    /* navbar css */
+
+body {
+			margin: 0px;
+			padding: 0px;
+			align-items: center;
+		}
+
 #nav {
 			display: flex;
 			align-items: center;
@@ -40,56 +49,51 @@
 			padding: 25px;
 		}
 
-		a {
+		#nav a {
 			text-decoration: none;
+            color: #F7F6F2;
 		}
 
-
-/* footer */
-   .footer {
-      background-color: #BE8F69;
-      padding: 2%;
-      margin-left: -1%;
-      margin-right: -1%;
+.search {
+        margin: 100px; 
     }
 
-    #space{
-      color: #BE8F69;
-    }
 
-    #copyright {
-    font-family: sans-serif;
-    color: #F7F6F2;
-    font-size: 18px;
-   }
-
-    #newsletter {
-    font-family: sans-serif;
-    color: #F7F6F2;
-    padding-left: 825px;
-    font-size: 18px;
-   }
-
-    #newsletter-input{
-    border: none;
-    border-radius: 5px;
-    font-family: sans-serif;
-    font-size: 18px;
-    margin-left: 10px;
-  }
-
-
-
-/* brand search bar */
-input {
-    font-family: "Open Sans", "Arial", sans-serif;
-    font-size: 15px;
-    width: 900px;
+/* .searchbut {
+    background: #82A7A6; 
     border-radius: 15px;
-    padding: 8px 8px;
-    padding-left: 20px;
-    border-width: 1.5px;
+        /* border: 2px solid #82A7A6; */
+    /* font-size: 15px;
+    font-family: "Quicksand";
+    color: #F7F6F2;
+    } */ 
+
+
+#button {
+    background-color: #82A7A6;
+    border-radius: 15px;
+    font-size: 15px;
+    font-family: "Quicksand";
+    color: #F7F6F2; 
+} 
+
+.down-arrow {
+    width: 15px;
+    margin-bottom: 10px;
 }
+
+ #round {
+        border-radius: 15px;
+        font-size: 15px;
+        font-family: "Quicksand";
+ }
+
+p{
+        font-family: "Quicksand";
+        font-size: 25px;
+    }
+
+
 
 ul {
     list-style: none;
@@ -102,13 +106,9 @@ li {
     margin-right: 15px;
 }
 
-#div-filters {
-    margin-top: 20px;
-}
-
 #filters {
     display: inline;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .selected-filter {
@@ -120,61 +120,78 @@ li {
     padding-bottom: 5px;
 }
 
-.down-arrow {
-    width: 15px;
+.filter-div {
+    margin-top: 20px;
 }
 
 #featured {
+    font-family: "Open Sans", "Arial", sans-serif;
     text-align: right;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: lighter;
     display: inline;
 }
 
 #div-featured {
     text-align: right;
-    margin-top: 10px;
-}
-
-.brand-banner {
-    max-width: 960px;
-    margin-top: 20px;
+    /* margin-top: 10px; */
+ 
 }
 
 .brand-container {
-     position: relative;
-     text-align: center;
+    margin: 100px;
 }
 
-.brand-name {
-    position: absolute;
-     bottom: 8px;
-    left: 16px;
-    color:#F6F5F0;
-}
-
-.bottom-right {
-    position: absolute;
-    bottom: 8px;
-    right: 16px;
-    background-color: #F6F5F0;
-    border-radius: 5px;
-    padding-right: 5px;
-    padding-left: 5px;
-    margin-bottom: 8px;
-}
-
-.bottom-right h4 {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: 15px;
-    display: inline;
-    padding-right: 8px;
-    padding-left: 8px;
-}
-
-h3 {
+/* h3 {
     font-family: "Quicksand", "Arial", sans-serif;
-    font-size: 30px;
+    font-size: 50px;
     display: inline;
+    color:#F6F5F0;
+} */
+
+.card-title {
+    font-family: "Quicksand", "Arial", sans-serif;
+    font-size: 40px;
+    display: inline;
+    color:#F6F5F0;
+    font-weight: bold;
 }
+
+/* footer */
+  .footer {
+      background-color: #BE8F69;
+      padding: 2%;
+      margin-left: -1%;
+      margin-right: -1%;
+      height: 50px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    #space{
+      color: #BE8F69;
+    }
+
+    #copyright {
+    font-family: sans-serif;
+    color: #F7F6F2;
+    font-size: 18px;
+    font-family: "Quicksand", "Arial", sans-serif;
+   }
+
+    #newsletter {
+    font-family: sans-serif;
+    color: #F7F6F2;
+    padding-left: 825px;
+    font-size: 18px;
+    font-family: "Quicksand", "Arial", sans-serif
+   }
+
+    #newsletter-input{
+    border: none;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-size: 18px;
+    margin-left: 10px;
+    font-family: "Quicksand", "Arial", sans-serif
+  }
