@@ -17,27 +17,8 @@
         background-color: #F6F5F0;
         margin: 0;
         padding: 0;
+        align-items: center;
     }
-    /* .hero-section
-    {
-        background-image: url("threads.webp");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        height: 300px;
-        opacity: 50%;
-    }
-    #hero-text
-    {
-        color: #F6F5F0;
-        text-shadow: 5px 4px 3px rgba(67,63,66,0.46);
-        font-size: 60px;
-        font-weight: 700;
-        font-family: Open Sans;
-        position: absolute;
-        top: 5%;
-        left: 40%;
-    } */
     .container-lg
     {
         /* border: solid 1px red; */
@@ -411,6 +392,60 @@
         top: 140px;
         cursor: pointer;
     }
+
+    /* navbar css temp */
+    #nav {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        background-color: #BE8F69;
+    }
+    #logo {
+        height: 40px;
+        width: auto;
+        margin-left: 10px;
+    }
+    #search {
+        height: 20px;
+    }
+    .nav-menu {
+        display: flex;
+        margin-left: auto;
+        font-family: "Quicksand", "Arial", sans-serif;
+        margin-top: 15px;
+    }
+    .nav-menu li
+    {
+        list-style: none;
+        padding: 25px;
+    }
+    a {
+        text-decoration: none;
+        color: #F7F6F2;
+    }
+
+    /* footer css temp */
+    #copyright
+    {
+        margin-left: 10px;
+    }
+    .footer {
+        background-color: #BE8F69;
+        display: flex;
+        color: #F7F6F2;
+        font-family: "Quicksand", "Arial", sans-serif;
+        height: 50px;
+        line-height: 50px;
+        justify-content: space-between;
+    }
+    #newsletter-input{
+        border: none;
+        border-radius: 5px;
+        font-family: sans-serif;
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 30px;
+    }  
 </style>
 <body>
     <section class="px-5 py-6 hcf-bp-center hcf-bs-cover hcf-overlay hcf-transform" style="background-image: url('about-pg-imgs/color-threads.jpg'); height: 300px;">
@@ -432,5 +467,9 @@
             </p>
         </div> -->
     </div>
+    <div class="footer">
+        <div id="copyright">© Ethical Threads</div>
+        <div id="newsletter">Sign Up For Our Newsletter<input type="text" id="newsletter-input"></div>
+    </div> <!-- .footer -->
 </body>
 </html>
