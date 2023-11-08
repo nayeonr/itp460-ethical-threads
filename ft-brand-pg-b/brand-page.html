@@ -411,8 +411,60 @@
         top: 140px;
         cursor: pointer;
     }
+
+    /* navbar css temp */
+    body {
+			margin: 0px;
+			padding: 0px;
+			align-items: center;
+		}
+		
+		#nav {
+			display: flex;
+			align-items: center;
+			height: 50px;
+			background-color: #BE8F69;
+		}
+
+		#logo {
+			height: 40px;
+			width: auto;
+			margin-left: 10px;
+		}
+
+		#search {
+			height: 20px;
+		}
+
+		.nav-menu {
+			display: flex;
+			margin-left: auto;
+			font-family: "Quicksand", "Arial", sans-serif;
+		}
+
+		.nav-menu li
+		{
+			list-style: none;
+			padding: 25px;
+		}
+
+		a {
+			text-decoration: none;
+			color: #F7F6F2;
+		}
 </style>
 <body>
+    <nav>
+		<div id="nav">
+			<a href="../ft-home-a/home.html"><img src="../ft-navbar-N/logo.png" alt="Ethical Threads Logo" id="logo"></a>
+			<ul class="nav-menu">
+				<li><a href="../ft-discover-N/discover.html">Discover</a></li>
+				<li><a href="../ft-about-pg-b/about-page.html">About</a></li>
+				<li><a href="../ft-login-N/login.html">Login</a></li>
+				<li><a href=""><img src="../ft-navbar-N/magnify.png" alt="Search" id="search"></a></li>
+			</ul> <!-- .nav-menu -->
+		</div> <!-- #nav -->
+	</nav>
     <section class="px-5 py-6 hcf-bp-center hcf-bs-cover hcf-overlay hcf-transform" style="background-image: url('brand-pg-imgs/threads.webp'); height: 300px;">
         <div class="px-4 py-0 my-3 text-center">
             <div id="hero-section-title" class="display-5">HIPTIPICO</div>
