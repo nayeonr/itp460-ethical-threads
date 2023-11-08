@@ -74,12 +74,12 @@
     margin-bottom: 10px;
 }
 
-
-    .round {
+ #round {
         border-radius: 15px;
         font-size: 15px;
         font-family: "Quicksand";
-    }
+ }
+
 p{
         font-family: "Quicksand";
         font-size: 25px;
