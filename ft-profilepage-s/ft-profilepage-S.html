@@ -10,6 +10,40 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pixelify+Sans:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+   
+    #nav {
+      display: flex;
+      align-items: center;
+      height: 50px;
+      background-color: #BE8F69;
+    }
+
+    #logo {
+      height: 40px;
+      width: auto;
+      margin-left: 10px;
+    }
+
+    #search {
+      height: 20px;
+    }
+
+    .nav-menu {
+      display: flex;
+      margin-left: auto;
+      font-family: "Quicksand", "Arial", sans-serif;
+    }
+
+    .nav-menu li
+    {
+      list-style: none;
+      padding: 25px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #F7F6F2;
+    }
 
     body {
      background: #F7F6F2
@@ -149,8 +183,19 @@
 
   </style>
   <body>
+    <div id="nav">
+                <a href="../ft-home-a/home.html"><img src="../ft-navbar-N/logo.png" alt="Ethical Threads Logo" id="logo"></a>
+                <ul class="nav-menu">
+                    <li><a href="../ft-discover-N/discover.html">Discover</a></li>
+                    <li><a href="../ft-about-pg-b/about-page.html">About</a></li>
+                    <li><a href="../ft-login-N/login.html">Login</a></li>
+                    <li><a href=""><img src="../ft-navbar-N/magnify.png" alt="Search" id="search"></a></li>
+                </ul> <!-- .nav-menu -->
+            </div> 
+
+
     <div class="profile">
-      <h1> <img src="hello-kitty-pfp.jpeg" id="pfp"> @Ethicalthreadsuser32 </h1>
+      <h1> <img src="img/hello-kitty-pfp.jpeg" id="pfp"> @Ethicalthreadsuser32 </h1>
       <p id="bio"> I love fun fashion! </p>
       <p id="est"> Member since Nov. 2023 </p>
 
@@ -165,32 +210,32 @@
         <div class="section">
 
           <div class="item-saved">
-            <img src="pretty-ugly-fitted-tee.png">
+            <img src="img/pretty-ugly-fitted-tee.png">
             <p id="description"> Pretty Ugly Fitted Tee </p>
             <p id="seller"> Silly Oaf </p>
           </div>
 
           <div class="item-saved">
-            <img src="bad-apple-knit-top.png">
+            <img src="img/bad-apple-knit-top.png">
             <p id="description"> Bad Apple Knit Top </p>
             <p id="seller"> Silly Oaf </p>
           </div>
 
           <div class="item-saved">
-            <img src="chrom-sun-crop-top.png">
+            <img src="img/chrom-sun-crop-top.png">
             <p id="description"> Chrom Sun Crop Top </p>
             <p id="seller"> Abakada </p>
           </div>
 
           <div class="item-saved">
-            <img src="grapiko-aspin-tee.png">
+            <img src="img/grapiko-aspin-tee.png">
             <p id="description"> Grapiko Aspin Tee </p>
             <p id="seller"> Abakada </p>
           </div>
 
           
           <div class="item-saved">
-            <img src="missing-you-tshirt.png">
+            <img src="img/missing-you-tshirt.png">
             <p id="description"> Missing You T-Shirt </p>
             <p id="seller"> Silly Oaf </p>
           </div>
@@ -201,19 +246,19 @@
         <div class="section">
 
           <div class="item-saved">
-            <img src="frog-argyle-sweatshirt.png">
+            <img src="img/frog-argyle-sweatshirt.png">
             <p id="description"> Frog Arygle Sweatshirt</p>
             <p id="seller"> Silly Oaf </p>
           </div>
 
           <div class="item-saved">
-            <img src="thanks-a-bunch-button-up-smock.png">
+            <img src="img/thanks-a-bunch-button-up-smock.png">
             <p id="description"> Thanks a Bunch Smock </p>
             <p id="seller"> Silly Oaf </p>
           </div>
 
           <div class="item-saved">
-            <img src="no-regrats-roll-neck-knitted-jumper.png">
+            <img src="img/no-regrats-roll-neck-knitted-jumper.png">
             <p id="description"> No Regrats Roll Neck Knitted Jumper </p>
             <p id="seller"> Silly Oaf </p>
           </div>
