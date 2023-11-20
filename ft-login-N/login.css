@@ -7,11 +7,13 @@
 			margin: 0px auto;
 		}
 
-		#everything {
+		#login-everything {
 			background-color: #BE8F69;
 			font-family: "Open Sans", "Arial", sans-serif;
 			border-radius: 15px;
 			padding: 15px;
+			width: 460px;
+			height: 620px;
 		}
 
 		p {
@@ -73,4 +75,8 @@
 			float: right;
 			margin-top: 5px;
 			margin-right: 10px;
+		}
+
+		#joinus {
+			background-color: #BE8F69;
 		}
