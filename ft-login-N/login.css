@@ -15,6 +15,14 @@
 			width: 460px;
 			height: 620px;
 		}
+		
+		#login {
+			padding: 15px;
+		}
+
+		#signup {
+			padding: 15px;
+		}
 
 		p {
 			padding: 15px;
