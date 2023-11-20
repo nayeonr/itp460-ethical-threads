@@ -59,11 +59,18 @@
 			<ul class="nav-menu">
 				<li><a href="../ft-discover-N/discover.html">Discover</a></li>
 				<li><a href="../ft-about-pg-b/about-page.html">About</a></li>
-				<li><a href="../ft-login-N/login.html">Login</a></li>
+				<li><a href="../ft-login-N/login.html" id="login-popup">Login</a></li>
 				<li><a href=""><img src="../ft-navbar-N/magnify.png" alt="Search" id="search"></a></li>
 			</ul> <!-- .nav-menu -->
 		</div> <!-- #nav -->
 	</nav>
+
+		<script>
+    	document.querySelector('#login-popup').onclick = function(event) {
+        	event.preventDefault();
+        	document.querySelector('#login-popup').style.color = 'blue';
+    	};
+	</script>
 </body>
 
 </html>
