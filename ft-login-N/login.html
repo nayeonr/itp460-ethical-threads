@@ -11,30 +11,32 @@
 </head>
 
 <body>
+		<!-- POPUPS -->
+	<div id="overlay1" class="overlay">
 	<div id="login-everything">
-		<a href="../ft-home-a/home.html"><img src="../ft-login-N/exit.png" alt="exit"></a>
+		<img src="../ft-login-N/exit.png" alt="exit" id="close-login">
 
 		<div id="login">
-			<h2>Login</h2>
+			<h2 class="login-headers">Login</h2>
 			<hr>
 			<p>Login to save brands and items to your favorites
 			<br>so that you never lose them!</p>
 			<div class="responses">
 				<div id="email-header" class="response-headers">Email</div>
-				<p><input
+				<input
 					type="text"
                		name="email"
                 	id="email"
                 	class="inputs"
-            	/></p>
+            	/>
 
             	<div id="password-header" class="response-headers">Password</div>
-				<p><input
+				<input
 					type="text"
                		name="password"
                 	id="password"
                 	class="inputs"
-            	/></p>
+            	/>
             </div> <!-- .responses -->
 
             <div id="keep-login">
@@ -47,7 +49,7 @@
             </div> <!-- #keep-login -->
 
             <div id="next-btn">
-            	<button id="next" type="submit"><a href="../ft-profilepage-s/ft-profilepage-S.html" id="next-text">
+            	<button class="next-profile" type="submit"><a href="../ft-profilepage-s/ft-profilepage-S.html" id="next-text">
             		Next
             	</a></button>
             </div> <!-- #next-btn -->
@@ -55,18 +57,19 @@
 		
 		<div id="signup">
 			<hr>
-			<h2>Sign Up</h2>
+			<h2 class="login-headers">Don't have an account?</h2>
 			<p>It costs nothing to set up an
 			<br>Ethical Threads account!</p>
 
 			<div id="signup-btn">
-            	<button id="joinus" type="submit"><a href="../ft-login-N/signup.html" id="joinus-text">
-            		Join Us
+            	<button id="joinus" type="submit"><a href="../ft-navbar-N/navbar.html#overlay2" id="joinus-text">
+            		Sign Up
             	</a></button>
             </div> <!-- #signup-btn -->
 
 		</div> <!-- #signup -->
 	</div> <!-- #login-everything -->
+	</div> <!-- .overlay -->
 </body>
 
 </html>
