@@ -3,35 +3,34 @@
 		* {
 			align-items: center;
 			color: #F7F6F2;
-			text-align: center;
-			margin: 0px auto;
 		}
 
 		#login-everything {
+			margin: 0px auto;
 			background-color: #BE8F69;
+			text-align: center;
 			font-family: "Open Sans", "Arial", sans-serif;
 			border-radius: 15px;
-			padding: 15px;
-			width: 460px;
-			height: 620px;
-		}
-		
-		#login {
+			width: 450px;
+			height: 580px;
 			padding: 15px;
 		}
 
-		#signup {
-			padding: 15px;
+		#login {
+			padding-top: 17px;
 		}
 
 		p {
-			padding: 15px;
+			margin: 0;
+			padding: 0;
 			font-size: 0.8em;
 		}
 
 		h2 {
 			padding: 10px;
 			font-family: "Quicksand", "Arial", sans-serif;
+			padding: 0;
+			margin: 0;
 		}
 		
 		hr {
@@ -39,14 +38,13 @@
 		}
 
 		.response-headers {
-			text-align: left;
-			margin-left: 35px;
+			width: 350px;
 			font-family: "Quicksand", "Arial", sans-serif;
 		}
 
 		#keep-login {
 			text-align: left;
-			margin-left: 35px;
+			width: 350px;
 			font-size: 0.8em;
 		}
 
@@ -60,10 +58,10 @@
   			background-color: #BE8F69;
   			border: 1px solid #F7F6F2;
   			border-radius: 15px;
+  			margin-bottom: 15px;
 		}
 
 		button {
-			margin-top: 15px;
 			width: 350px;
 			height: 35px;
   			border: 1px solid #F7F6F2;
@@ -83,6 +81,7 @@
 			float: right;
 			margin-top: 5px;
 			margin-right: 10px;
+			margin: 0px auto;
 		}
 
 		#joinus {
