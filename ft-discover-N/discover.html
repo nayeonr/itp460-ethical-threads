@@ -6,14 +6,16 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover Page</title>
-    <link href="../ft-login-N/login.css" rel="stylesheet" />
+
+    <link href="../ft-login-N/login.css" rel="stylesheet"/>
+    <link href="../ft-login-N/signup.css" rel="stylesheet"/>
 
     <style>
 		@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap');
 
 		body {
-			margin: 0px;
-			padding: 0px;
+			margin: 0;
+			padding: 0;
 			align-items: center;
 			color: #433F42;
 			background-color:#F6F5F0;
@@ -42,7 +44,7 @@
 			font-family: "Quicksand", "Arial", sans-serif;
 		}
 
-		.nav-menu li 
+		.nav-menu li
 		{
 			list-style: none;
 			padding: 25px;
@@ -53,37 +55,38 @@
 			color: #F7F6F2;
 		}
 
-		#everything {
-			width: 460px;
-			height: 620px;
-		}
+		.overlay {
+			display: none;
+			position: fixed;
+     		top: 0;
+      		left: 0;
+      		width: 100%;
+      		height: 100%;
+     		background:rgba(67, 63, 66, 0.5);
+			margin: 0px auto;
+     	}
 
-		#login {
-			padding: 15px;
-		}
+     	#login-everything {
+     		box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
+     	}
 
-		#signup {
-			padding: 15px;
-		}
+     	#signup-everything {
+     		box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
+     	}
 
-		#joinus {
-			background-color: #BE8F69;
-		}
+
 
 		#discover {
 			margin: 0px auto;
-			width: 1100px;
+			width: 1500px;
 		}
 
-		h1 {
+		.discover-headers {
 			margin-left: 35px;
+			padding-bottom: 0;
+			margin-bottom: 0;
 			font-family: "Quicksand", "Arial", sans-serif;
-		}
-
-		h2 {
-			margin-left: 35px;
-			padding-bottom: 0px;
-			font-family: "Quicksand", "Arial", sans-serif;
+			color: #433F42;
 		}
 
 		.row {
@@ -93,21 +96,24 @@
 		}
 
 		#discover img {
-			width: 200px;
+			width: 300px;
 			margin: 0px auto;
 		}
 
 		img:hover
 		{
-			transform: scale(0.9);
+			transform: scale(1.05);
+			border-radius: 15px;
+			box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
 		}
 
 		.captions {
-			display: flex;
-			width: 200px;
-			align-items: center;
-			margin: 0px auto;
 			font-family: "Open Sans", "Arial", sans-serif;
+			color: #433F42;
+			display: flex;
+			width: 300px;
+			margin: 0px auto;
+			margin-left: 35px;
 		}
 
 		.captions > a {
@@ -134,42 +140,45 @@
 </head>
 
 <body>
+	<!-- NAV w/ LOGIN/SIGNUP POP UP -->
 	<nav>
 		<div id="nav">
 			<a href="../ft-home-a/home.html"><img src="../ft-navbar-N/logo.png" alt="Ethical Threads Logo" id="logo"></a>
 			<ul class="nav-menu">
 				<li><a href="../ft-discover-N/discover.html">Discover</a></li>
 				<li><a href="../ft-about-pg-b/about-page.html">About</a></li>
-				<li><a href="../ft-login-N/login.html" id="login-popup">Login</a></li>
+				<li><a href="../ft-login-N/login.html" id="open-login">Login</a></li>
 				<li><a href=""><img src="../ft-navbar-N/magnify.png" alt="Search" id="search"></a></li>
 			</ul> <!-- .nav-menu -->
 		</div> <!-- #nav -->
 	</nav>
 
+		<!-- POPUPS -->
+	<div id="overlay1" class="overlay">
 	<div id="login-everything">
-		<a href="../ft-home-a/home.html"><img src="../ft-login-N/exit.png" alt="exit"></a>
+		<img src="../ft-login-N/exit.png" alt="exit" id="close-login">
 
 		<div id="login">
-			<h2>Login</h2>
+			<h2 class="login-headers">Login</h2>
 			<hr>
 			<p>Login to save brands and items to your favorites
 			<br>so that you never lose them!</p>
 			<div class="responses">
 				<div id="email-header" class="response-headers">Email</div>
-				<p><input
+				<input
 					type="text"
                		name="email"
                 	id="email"
                 	class="inputs"
-            	/></p>
+            	/>
 
             	<div id="password-header" class="response-headers">Password</div>
-				<p><input
+				<input
 					type="text"
                		name="password"
                 	id="password"
                 	class="inputs"
-            	/></p>
+            	/>
             </div> <!-- .responses -->
 
             <div id="keep-login">
@@ -182,7 +191,7 @@
             </div> <!-- #keep-login -->
 
             <div id="next-btn">
-            	<button id="next" type="submit"><a href="../ft-profilepage-s/ft-profilepage-S.html" id="next-text">
+            	<button class="next-profile" type="submit"><a href="../ft-profilepage-s/ft-profilepage-S.html" id="next-text">
             		Next
             	</a></button>
             </div> <!-- #next-btn -->
@@ -190,25 +199,91 @@
 		
 		<div id="signup">
 			<hr>
-			<h2>Sign Up</h2>
+			<h2 class="login-headers">Don't have an account?</h2>
 			<p>It costs nothing to set up an
 			<br>Ethical Threads account!</p>
 
 			<div id="signup-btn">
-            	<button id="joinus" type="submit"><a href="../ft-login-N/signup.html" id="joinus-text">
-            		Join Us
+            	<button id="joinus" type="submit"><a href="../ft-navbar-N/navbar.html#overlay2" id="joinus-text">
+            		Sign Up
             	</a></button>
             </div> <!-- #signup-btn -->
 
 		</div> <!-- #signup -->
 	</div> <!-- #login-everything -->
+	</div> <!-- .overlay -->
 
+	<div id="overlay2" class="overlay">
+	<div id="signup-everything">
+		<a href="../ft-home-a/home.html"><img src="../ft-login-N/exit.png" alt="exit" id="close-signup"></a>
+		
+		<div id="signup">
+			<h2 class="login-headers">Sign Up</h2>
+			<hr>
+			<p>It costs nothing to set up an
+			<br>Ethical Threads account!</p>
+			<div class="responses">
+				<div id="name-header" class="response-headers">Name</div>
+				<input
+					type="text"
+               		name="fullname"
+                	id="fullname"
+                	class="inputs"
+            	/>
 
+				<div id="email-header" class="response-headers">Email</div>
+				<input
+					type="text"
+               		name="email"
+                	id="email"
+                	class="inputs"
+            	/>
+
+            	<div id="password-header" class="response-headers">Password</div>
+				<input
+					type="text"
+               		name="password"
+                	id="password"
+                	class="inputs"
+            	/>
+
+            	<div id="password2-header" class="response-headers">Confirm Password</div>
+				<input
+					type="text"
+               		name="password2"
+                	id="password2"
+                	class="inputs"
+            	/>
+            </div> <!-- .responses -->
+
+            <div id="keep-login">
+            	<input
+                    type="checkbox"
+                    name="keep"
+                    id="keep"
+                  />
+                  Keep me logged in
+            </div> <!-- #keep-login -->
+
+            <div id="next-btn">
+            	<button class="next-profile" type="submit"><a href="../ft-profilepage-s/ft-profilepage-S.html" id="next-text">
+            		Next
+            	</a></button>
+            </div> <!-- #next-btn -->
+		</div> <!-- #signup -->
+
+		<p>By creating an account, you agree to the Ethical Threads
+		<br>terms of use and privacy policy.</p>
+		
+	</div> <!-- #signup-everything -->
+	</div> <!-- .overlay -->
+
+	<!-- DISCOVER -->
 	<div id="discover">
+		<h1 class="discover-headers">Discover more brands to love</h1>
 
-		<h1>Discover more brands to love</h1>
-
-		<h2>Ethical Threads of the Week</h2>
+		<h2 class="discover-headers">Ethical Threads of the Week</h2>
+		
 		<div id="row1" class="row">
 			<img src="../ft-discover-N/img/village-thrive.png" alt="Village Thrive">
 			<img src="../ft-discover-N/img/daria-day.png" alt="Daria Day">
@@ -234,7 +309,7 @@
 			</div> <!-- #caption4 -->
 		</div> <!-- #captions1 -->
 
-		<h2>Women-Owned of the Week</h2>
+		<h2 class="discover-headers">Women-Owned of the Week</h2>
 		<div id="row2" class="row">
 			<img src="../ft-discover-N/img/mien.png" alt="Mien">
 			<img src="../ft-discover-N/img/logan-hollowell.png" alt="Logan Hollowell">
@@ -266,6 +341,32 @@
     	<div id="copyright">© Ethical Threads</div>
     	<div id="newsletter">Sign Up For Our Newsletter<input type="text" id="newsletter-input"></div>
     </div> <!-- .footer -->
+
+    <script>
+			/* LOGIN POPUP */
+		document.querySelector('#open-login').onclick = function(event) {
+			event.preventDefault();
+			document.querySelector('.overlay').style.display = 'flex';
+		};
+
+		document.querySelector('#close-login').onclick = function(event) {
+			event.preventDefault();
+			document.querySelector('.overlay').style.display = 'none';
+		};
+
+			/* SIGNUP POPUP */
+		document.querySelector('#joinus').onclick = function(event) {
+			event.preventDefault();
+			document.querySelector('#overlay1').style.display = 'none';
+			document.querySelector('#overlay2').style.display = 'flex';
+		}
+
+		document.querySelector('#close-signup').onclick = function(event) {
+			event.preventDefault();
+			document.querySelector('#overlay2').style.display = 'none';
+			document.querySelector('.overlay').style.display = 'none';
+		};
+	</script>
 </body>
 
 </html>

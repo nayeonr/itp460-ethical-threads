@@ -26,7 +26,7 @@
 			font-size: 0.8em;
 		}
 
-		h2 {
+		.login-headers {
 			padding: 10px;
 			font-family: "Quicksand", "Arial", sans-serif;
 			padding: 0;

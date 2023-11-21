@@ -59,21 +59,22 @@
       		left: 0;
       		width: 100%;
       		height: 100%;
-     		background:rgba(0, 0, 0, 0.5);
+     		background:rgba(67, 63, 66, 0.5);
 			margin: 0px auto;
      	}
 
      	#login-everything {
-     		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+     		box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
      	}
 
      	#signup-everything {
-     		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+     		box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
      	}
 	</style>
 </head>
 
 <body>
+	<!-- NAV w/ LOGIN/SIGNUP POP UP -->
 	<nav>
 		<div id="nav">
 			<a href="../ft-home-a/home.html"><img src="../ft-navbar-N/logo.png" alt="Ethical Threads Logo" id="logo"></a>
@@ -86,12 +87,13 @@
 		</div> <!-- #nav -->
 	</nav>
 
+		<!-- POPUPS -->
 	<div id="overlay1" class="overlay">
 	<div id="login-everything">
 		<img src="../ft-login-N/exit.png" alt="exit" id="close-login">
 
 		<div id="login">
-			<h2>Login</h2>
+			<h2 class="login-headers">Login</h2>
 			<hr>
 			<p>Login to save brands and items to your favorites
 			<br>so that you never lose them!</p>
@@ -131,7 +133,7 @@
 		
 		<div id="signup">
 			<hr>
-			<h2>Don't have an account?</h2>
+			<h2 class="login-headers">Don't have an account?</h2>
 			<p>It costs nothing to set up an
 			<br>Ethical Threads account!</p>
 
@@ -150,7 +152,7 @@
 		<a href="../ft-home-a/home.html"><img src="../ft-login-N/exit.png" alt="exit" id="close-signup"></a>
 		
 		<div id="signup">
-			<h2>Sign Up</h2>
+			<h2 class="login-headers">Sign Up</h2>
 			<hr>
 			<p>It costs nothing to set up an
 			<br>Ethical Threads account!</p>
