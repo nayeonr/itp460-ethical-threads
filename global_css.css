@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap');
+
+body {
+margin: 0;
+padding: 0;
+color: #433F42;
+background-color: #F6F5F0;
+font-family: "Open Sans", "Arial", sans-serif;
+align-items: center;
+}
+
+h1 {
+	font-family: "Quicksand", "Arial", sans-serif;
+  		color: #433F42;
+		font-size: ???
+		margin: ???
+		padding: ???
+		text-align: ???
+}
+
+p {
+	font-family: "Quicksand", "Arial", sans-serif;
+  		color: #433F42;
+		font-size: ???
+		margin: ???
+		padding: ???
+}
+
+a {
+        text-decoration: none;
+        color: #F7F6F2;
+}
+
+.footer {
+      background-color: #BE8F69;
+      display: flex;
+      color: #F7F6F2;
+      font-family: "Quicksand", "Arial", sans-serif;
+      height: 50px;
+      line-height: 50px;
+      justify-content: space-between;
+}
+
+#copyright {
+    color: #F7F6F2;
+    font-family: "Quicksand", "Arial", sans-serif;
+    margin-left: 10px;
+}
