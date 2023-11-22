@@ -138,7 +138,7 @@
             </div> <!-- #keep-login -->
 
             <div id="next-btn">
-            	<button id="next-text" class="next-profile" type="submit">Next</button>
+            	<button id="next-text" class="login-buttons" type="submit">Next</button>
             </div> <!-- #next-btn -->
 		</div> <!-- #login -->
 
@@ -151,7 +151,7 @@
 			<br>Ethical Threads account!</p>
 
 			<div id="signup-btn">
-            	<button id="joinus" type="submit"><a href="../ft-navbar-N/navbar.html#overlay2" id="joinus-text">
+            	<button id="joinus" class="login-buttons" type="submit"><a href="../ft-navbar-N/navbar.html#overlay2" id="joinus-text">
             		Sign Up
             	</a></button>
             </div> <!-- #signup-btn -->

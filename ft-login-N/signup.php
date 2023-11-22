@@ -171,7 +171,7 @@
             <?php endif; ?> -->
 
             <div id="next-btn">
-            	<button id="next-text" class="next-profile" type="submit">Next</button>
+            	<button id="next-text" class="login-buttons" type="submit">Next</button>
             </div> <!-- #next-btn -->
 		</div> <!-- #signup -->
 

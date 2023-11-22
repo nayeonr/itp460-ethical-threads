@@ -203,7 +203,8 @@
 		a {
 			text-decoration: none;
 			color: #F7F6F2;
-		}
+		} 
+		/* moved everything from here and up to the global_css.css */
 
 		.overlay {
 			display: none;
