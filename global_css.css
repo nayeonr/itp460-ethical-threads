@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap');
+
+body {
+margin: 0;
+padding: 0;
+color: #433F42;
+background-color: #F6F5F0;
+font-family: "Open Sans", "Arial", sans-serif;
+align-items: center;
+}
+
+#nav {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    background-color: #BE8F69;
+}
+
+#logo {
+    height: 40px;
+    width: auto;
+    margin-left: 10px;
+}
+
+#search {
+    height: 20px;
+}
+
+.nav-menu {
+    display: flex;
+    margin-left: auto;
+    font-family: "Quicksand", "Arial", sans-serif;
+}
+
+.nav-menu li {
+    list-style: none;
+    padding: 25px;
+}
+
+h1 {
+    font-family: "Quicksand", "Arial", sans-serif;
+        color: #433F42;
+        font-size: 35px;
+}
+
+h2 {
+    font-family: "Quicksand", "Arial", sans-serif;
+    font-size: 24px;
+}
+
+p {
+    font-family: "Quicksand", "Arial", sans-serif;
+        color: #433F42;
+}
+
+a {
+        text-decoration: none;
+        color: #F7F6F2;
+}
+
+img {
+    border-radius: 15px;
+}
+
+button {
+    border-radius: 15px;
+background: #82A7A6;
+    font-size: 15px;
+font-family: "Quicksand", "Arial", sans-serif;
+        color: #F7F6F2; 
+    text-align: center;
+    box-shadow: none;
+    border: none;
+    <! – cursor: pointer !→
+}
+
+.footer {
+      background-color: #BE8F69;
+      display: flex;
+      color: #F7F6F2;
+      font-family: "Quicksand", "Arial", sans-serif;
+      height: 50px;
+      line-height: 50px;
+      justify-content: space-between;
+}
+
+#copyright {
+    color: #F7F6F2;
+    font-family: "Quicksand", "Arial", sans-serif;
+    margin-left: 10px;
+}
