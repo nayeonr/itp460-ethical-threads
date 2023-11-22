@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap');
+
+		* {
+			align-items: center;
+			color: #F7F6F2;
+		}
+
+		#login-everything {
+			margin: 0px auto;
+			background-color: #BE8F69;
+			text-align: center;
+			font-family: "Open Sans", "Arial", sans-serif;
+			border-radius: 15px;
+			width: 450px;
+			height: 580px;
+			padding: 15px;
+		}
+
+		#login {
+			padding-top: 17px;
+		}
+
+		p {
+			margin: 0;
+			padding: 0;
+			font-size: 0.8em;
+		}
+
+		.login-headers {
+			padding: 10px;
+			font-family: "Quicksand", "Arial", sans-serif;
+			padding: 0;
+			margin: 0;
+		}
+		
+		hr {
+			width: 300px;
+		}
+
+		.response-headers {
+			width: 350px;
+			font-family: "Quicksand", "Arial", sans-serif;
+		}
+
+		#keep-login {
+			text-align: left;
+			width: 350px;
+			font-size: 0.8em;
+		}
+
+		#keep {
+			width: 17px;
+		}
+
+		.inputs {
+			width: 350px;
+			height: 35px;
+  			background-color: #BE8F69;
+  			border: 1px solid #F7F6F2;
+  			border-radius: 15px;
+  			margin-bottom: 15px;
+		}
+
+		button {
+			width: 350px;
+			height: 35px;
+  			border: 1px solid #F7F6F2;
+  			border-radius: 15px;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		#next-text {
+			color: #BE8F69;
+		}
+
+		img {
+			width: 20px;
+			float: right;
+			margin-top: 5px;
+			margin-right: 10px;
+			margin: 0px auto;
+		}
+
+		#joinus {
+			background-color: #BE8F69;
+		}

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title of Your Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pixelify+Sans:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+    body {
+        margin: 0px;
+        padding: 0px;
+        align-items: center;
+        background-color: #F6F5F0;
+    }
+		
+    #nav {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        background-color: #BE8F69;
+    }
+
+    #logo {
+        height: 40px;
+        width: auto;
+        margin-left: 10px;
+    }
+
+    #search {
+        height: 20px;
+    }
+
+    .nav-menu {
+        display: flex;
+        margin-left: auto;
+        font-family: "Quicksand", "Arial", sans-serif;
+        margin-top: 15px;
+    }
+
+    .nav-menu li {
+        list-style: none;
+        padding: 25px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #F7F6F2;
+    }
+
+    /* body {
+        background-color: #F6F5F0;
+    } */
+
+    .banner {
+        background-image: url('img/mainhero.jpg');
+        /* background-repeat: no-repeat; */
+        width:100%;
+        /* height: 100%; */
+        /* background: #664c8f; */
+        height: auto;
+        padding: 100px 100px;
+    }
+    .title {
+        color: #F7F6F2;
+        font-size: 80px;
+        font-family: Quicksand;
+        font-weight: 700;
+        word-wrap: break-word;
+        padding-top: 50px;
+        text-shadow: 2px 2px 8px #000000;
+    }
+    .bannerdesc {
+        color: #F7F6F2;
+        font-family: Quicksand;
+        font-weight: 500;
+        text-shadow: 2px 2px 5px #000000;
+    }
+    .learn {
+        /* width: 171px; 
+        height: 54px;  */
+        background: #82A7A6; 
+        border-radius: 15px;
+        /* border: 2px solid #82A7A6; */
+        font-size: 15px;
+        font-family: Quicksand;
+        color: #F7F6F2;
+        margin-top: 150px;
+        margin-left: 75px;
+    }
+    .search {
+        margin: 100px; 
+    }
+    .searchbut {
+        background: #82A7A6; 
+        border-radius: 15px;
+        /* border: 2px solid #82A7A6; */
+        font-size: 15px;
+        font-family: Quicksand;
+        color: #F7F6F2;
+    }
+    .round {
+        border-radius: 15px;
+        font-size: 15px;
+        font-family: Quicksand;
+    }
+    .discoverlocal {
+        background-color: #DDBA9F;
+        padding: 25px;
+        margin-top: 25px;
+    }
+    .sectionheader {
+        color: black;
+        font-family: Quicksand;
+        font-weight: 500;
+        margin-bottom: 25px;
+    }
+    .discoverlocal1 {
+        background-color: #DDBA9F;
+        margin-top: 50px;
+        padding: 25px;
+    }
+    .card {
+        background-color: #DDBA9F;
+        border-color: #DDBA9F;
+    }
+    .card-title {
+        font-family: Quicksand;
+        text-align: left;
+        margin-left: 10px;
+    }
+    p {
+        font-family: Quicksand;
+    }
+
+   .footer {
+      background-color: #BE8F69;
+      padding: 2%;
+      margin-left: -1%;
+      margin-right: -1%;
+      height: 50px;
+    }
+
+    #space{
+      color: #BE8F69;
+    }
+
+    #copyright {
+    font-family: sans-serif;
+    color: #F7F6F2;
+    font-size: 18px;
+    font-family: "Quicksand", "Arial", sans-serif;
+   }
+
+    #newsletter {
+    font-family: sans-serif;
+    color: #F7F6F2;
+    padding-left: 825px;
+    font-size: 18px;
+    font-family: "Quicksand", "Arial", sans-serif
+   }
+
+    #newsletter-input{
+    border: none;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-size: 18px;
+    margin-left: 10px;
+    font-family: "Quicksand", "Arial", sans-serif
+  }
+
+</style>
+</head>
+    <body>
+        <nav>
+            <div id="nav">
+                <a href="../ft-home-a/home.html"><img src="../ft-navbar-N/logo.png" alt="Ethical Threads Logo" id="logo"></a>
+                <ul class="nav-menu">
+                    <li><a href="../ft-discover-N/discover.html">Discover</a></li>
+                    <li><a href="../ft-about-pg-b/about-page.html">About</a></li>
+                    <li><a href="../ft-login-N/login.html">Login</a></li>
+                    <li><a href=""><img src="../ft-navbar-N/magnify.png" alt="Search" id="search"></a></li>
+                </ul> <!-- .nav-menu -->
+            </div> <!-- #nav -->
+        </nav>
+        <div class="banner">
+            <div class="row">
+                <div class="col-10">
+                    <h1 class="title">Ethical Threads</h1>
+                    <h4 class="bannerdesc">Empowering communities, one conscious choice at a time</h5>
+                </div>
+                <div class="col-2">
+                    <button type="button" class="btn learn"><a href="../ft-about-pg-b/about-page.html">Learn More</a></button>
+                </div>
+            </div>   
+        </div>
+
+        <div class="search">
+            <div class="row">
+                <p> Search By: Brand</p>
+            </div>
+            <div class="row">
+                <div class="col"> 
+                    <form class="d-flex">
+                        <input class="form-control me-2 round" type="search" placeholder="Search Brands You Love">
+                        <button class="btn searchbut" type="submit"><a href="../ft-brandresults-C/brand-results-pg.html">Search</a></button>
+                    </form>
+                </div>
+            </div>
+        </div> 
+
+        <div class="discoverlocal">
+            <h4 class="sectionheader">Browse Local Businesses</h4>
+            <div class="row justify-content-center">
+                <div class="col-3 text-center">
+                  <img src="img/brand1.png">
+                </div>
+                <div class="col-3 text-center">
+                  <img src="img/brand2.png">
+                </div>
+                <div class="col-3 text-center">
+                  <img src="img/brand3.png">
+                </div>
+                <div class="col-3 text-center">
+                    <img src="img/brand4.png">
+                  </div>
+            </div>
+        </div>
+
+        <div class="discoverlocal1">
+            <div class="row justify-content-center">
+                <div class="col-6 text-center">
+                    <div class="card">
+                        <img class="card-img" src="img/discover1.png" alt="discover">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">Shop Sustainable Basics</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 text-center">
+                    <div class="card">
+                        <img class="card-img" src="img/discover2.png" alt="discover">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">Shop Sustainable Fall Basics</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+      <span id="copyright"> © Ethical Threads </span> <span id="space"></span><span id="newsletter"> Sign Up For Our Newsletter <input type="text" id="newsletter-input">
+    </div>
+
+    </body>
+</html>

@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap');
+
+		* {
+			align-items: center;
+			color: #F7F6F2;
+		}
+
+		#signup-everything {
+			margin: 0px auto;
+			background-color: #BE8F69;
+			text-align: center;
+			font-family: "Open Sans", "Arial", sans-serif;
+			border-radius: 15px;
+			width: 450px;
+			height: 590px;
+			padding: 15px;
+		}
+
+		#signup {
+			padding: 15px;
+		}
+
+		p {
+			padding: 15px;
+			font-size: 0.8em;
+		}
+
+		.login-headers {
+			padding: 10px;
+			font-family: "Quicksand", "Arial", sans-serif;
+			padding: 5px;
+			margin: 0;
+		}
+
+		h2 {
+			text-size: 1em;
+		}
+		
+		hr {
+			width: 300px;
+		}
+
+		.response-headers {
+			margin: 0px auto;
+			text-align: left;
+			font-family: "Quicksand", "Arial", sans-serif;
+		}
+
+		#keep-login {
+			margin: 0px auto;
+			width: 350px;
+			text-align: left;
+			font-size: 0.8em;
+		}
+
+		#keep-id {
+			width: 17px;
+		}
+
+		.inputs {
+			width: 350px;
+			height: 35px;
+  			background-color: #BE8F69;
+  			border: 1px solid #F7F6F2;
+  			border-radius: 15px;
+		}
+
+		button {
+			margin-top: 15px;
+			width: 350px;
+			height: 35px;
+  			border: 1px solid #F7F6F2;
+  			border-radius: 15px;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		#next-text {
+			color: #BE8F69;
+		}
+
+		img {
+			width: 20px;
+			float: right;
+			margin-top: 5px;
+			margin-right: 10px;
+			margin: 0px auto;
+		}
