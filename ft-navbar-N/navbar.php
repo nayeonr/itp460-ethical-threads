@@ -1,3 +1,156 @@
+<?php
+
+	require '../ft-login-N/config.php';
+
+	// LOGIN PHP
+	// check if user has already logged in
+	if ( isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true )
+	{
+		// logged in
+		// redirect to profile page
+		header('Location: ../ft-profilepage-S/ft-profilepage-S.html');
+		exit();
+	} 
+	else
+	{
+		// not logged in
+
+		// if there was form submission
+		if ( isset($_POST['Lemail']) && isset($_POST['Lpassword']) )
+		{
+			session_start();
+	
+			$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+			// check for errors
+			if ( $mysqli->connect_errno ) {
+				echo $mysqli->connect_error;
+				exit();
+			}
+
+			$Lemail = $_POST['Lemail'];
+			$Lemail = $mysqli->escape_string($Lemail);
+
+			$Lpassword = $_POST['Lpassword'];
+					// 	hash(ALG, input)
+			$Lpassword = hash('sha256', $Lpassword);
+
+			$sql_users = "SELECT *
+						FROM users
+						WHERE email = '$Lemail'
+								AND password = '$Lpassword';
+						";
+
+			$results_users = $mysqli->query($sql_users);
+
+			// check for errors
+			if ( !$results_users ) {
+				echo $mysqli->error();
+				$mysqli->close();
+				exit();
+			}
+
+			$mysqli->close();
+
+			if ( trim($_POST['Lemail']) == "" || trim($_POST['Lpassword']) == "" )
+			{
+				// no/missing credentials
+				$error = "please enter both email and password.";
+			}
+			else if ( $results_users->num_rows > 0 )
+			{
+				// valid credentials
+
+				// set session variables
+				$_SESSION['logged_in'] = true;
+
+				// redirect to profile page
+				header('Location: ../ft-profilepage-S/ft-profilepage-S.html');
+			}
+			else
+			{
+				// wrong credentials
+				$error = "try again. email and/or password is invalid.";
+			}
+		} 
+	}
+
+	// SIGNUP PHP
+	// check for empty field
+	if ( !isset($_POST['fullname']) || trim($_POST['fullname'] == '') ||
+		 !isset($_POST['Semail']) || trim($_POST['Semail'] == '') ||
+		 !isset($_POST['Spassword']) || trim($_POST['Spassword'] == '') ||
+		 !isset($_POST['Spassword2']) || trim($_POST['Spassword2'] == '') )
+	{
+		
+	}
+	else
+	{
+		// all fields are filled out
+
+		$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+		// check for errors
+		if ( $mysqli->connect_errno ) {
+			echo $mysqli->connect_error;
+			exit();
+		}
+
+		$name = $_POST['fullname'];
+		$name = $mysqli->escape_string($name);
+
+		$Semail = $_POST['Semail'];
+		$Semail = $mysqli->escape_string($Semail);
+
+		$Spassword = $_POST['Spassword'];
+		$Spassword2 = $_POST['Spassword2'];
+
+		$sql_users = "SELECT *
+					FROM users
+					WHERE email = '$Semail';
+					";
+
+		$results_users = $mysqli->query($sql_users);
+
+		// check for errors
+		if ( !$results_users ) {
+			echo $mysqli->error;
+			$mysqli->close();
+			exit();
+		}
+
+		if ( $results_users->num_rows > 0 ) {
+			// email is taken
+			$error = "be more original. email is already registered.";
+		}
+		else {
+			// valid email
+			if ( $Spassword != $Spassword2 ) {
+				// passwords do not match
+				$error = "passwords do not match.";
+			} else {
+				// passwords match
+
+				// 	hash(ALG, INPUT)
+				$Spassword = hash('sha256', $Spassword);
+				
+				$sql = "INSERT INTO users (name, email, password)
+						VALUES ('$name', '$Semail', '$Spassword');";
+
+				$results = $mysqli->query($sql);
+
+				if ( !$results ) {
+					echo $mysqli->error;
+					$mysqli->close();
+					exit();
+				}
+			}
+		}
+
+		$mysqli->close();
+	}
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -81,7 +234,7 @@
 			<ul class="nav-menu">
 				<li><a href="../ft-discover-N/discover.html">Discover</a></li>
 				<li><a href="../ft-about-pg-b/about-page.html">About</a></li>
-				<li><a href="../ft-login-N/login.html" id="open-login">Login</a></li>
+				<li><a href="../ft-login-N/login.php" id="open-login">Login</a></li>
 				<li><a href=""><img src="../ft-navbar-N/magnify.png" alt="Search" id="search"></a></li>
 			</ul> <!-- .nav-menu -->
 		</div> <!-- #nav -->
@@ -89,6 +242,17 @@
 
 		<!-- POPUPS -->
 	<div id="overlay1" class="overlay">
+	
+	<form action="login.php" method="POST">
+	
+	<div>
+		<?php
+			if ( isset($error) ) { 
+				echo $error;
+			}
+		?>
+	</div>
+
 	<div id="login-everything">
 		<img src="../ft-login-N/exit.png" alt="exit" id="close-login">
 
@@ -101,16 +265,16 @@
 				<div id="email-header" class="response-headers">Email</div>
 				<input
 					type="text"
-               		name="email"
-                	id="email"
+               		name="Lemail"
+                	id="Lemail-id"
                 	class="inputs"
             	/>
 
             	<div id="password-header" class="response-headers">Password</div>
 				<input
 					type="text"
-               		name="password"
-                	id="password"
+               		name="Lpassword"
+                	id="Lpassword-id"
                 	class="inputs"
             	/>
             </div> <!-- .responses -->
@@ -119,17 +283,17 @@
             	<input
                     type="checkbox"
                     name="keep"
-                    id="keep"
+                    class="keep-id"
                   />
                   Keep me logged in
             </div> <!-- #keep-login -->
 
-            <div id="next-btn">
-            	<button class="next-profile" type="submit"><a href="../ft-profilepage-s/ft-profilepage-S.html" id="next-text">
-            		Next
-            	</a></button>
-            </div> <!-- #next-btn -->
+            <div class="next-btn">
+            	<button id="next-text" class="next-profile" type="submit">Next</button>
+            </div> <!-- .next-btn -->
 		</div> <!-- #login -->
+
+		</form>
 		
 		<div id="signup">
 			<hr>
@@ -147,7 +311,16 @@
 	</div> <!-- #login-everything -->
 	</div> <!-- .overlay -->
 
+
 	<div id="overlay2" class="overlay">
+
+	<form action="signup.php" method="POST">
+		<?php if ( isset($error) && trim($error) != '' ) : ?>
+			<?php echo $error; ?>
+		<?php else : ?>
+			<?php echo $name; ?> was succesfully registered!
+		<?php endif; ?>
+
 	<div id="signup-everything">
 		<a href="../ft-home-a/home.html"><img src="../ft-login-N/exit.png" alt="exit" id="close-signup"></a>
 		
@@ -161,31 +334,31 @@
 				<input
 					type="text"
                		name="fullname"
-                	id="fullname"
+                	id="fullname-id"
                 	class="inputs"
             	/>
 
 				<div id="email-header" class="response-headers">Email</div>
 				<input
 					type="text"
-               		name="email"
-                	id="email"
+               		name="Semail"
+                	id="Semail-id"
                 	class="inputs"
             	/>
 
             	<div id="password-header" class="response-headers">Password</div>
 				<input
 					type="text"
-               		name="password"
-                	id="password"
+               		name="Spassword"
+                	id="Spassword-id"
                 	class="inputs"
             	/>
 
             	<div id="password2-header" class="response-headers">Confirm Password</div>
 				<input
 					type="text"
-               		name="password2"
-                	id="password2"
+               		name="Spassword2"
+                	id="Spassword2-id"
                 	class="inputs"
             	/>
             </div> <!-- .responses -->
@@ -194,17 +367,18 @@
             	<input
                     type="checkbox"
                     name="keep"
-                    id="keep"
+                    class="keep-id"
+                    value="yes"
                   />
-                  Keep me logged in
+                 <label for="keep-id"> Keep me logged in</label>
             </div> <!-- #keep-login -->
 
-            <div id="next-btn">
-            	<button class="next-profile" type="submit"><a href="../ft-profilepage-s/ft-profilepage-S.html" id="next-text">
-            		Next
-            	</a></button>
-            </div> <!-- #next-btn -->
+            <div class="next-btn">
+            	<button id="next-text" class="next-profile" type="submit">Next</button>
+            </div> <!-- .next-btn -->
 		</div> <!-- #signup -->
+
+		</form>
 
 		<p>By creating an account, you agree to the Ethical Threads
 		<br>terms of use and privacy policy.</p>
@@ -236,6 +410,20 @@
 			document.querySelector('#overlay2').style.display = 'none';
 			document.querySelector('.overlay').style.display = 'none';
 		};
+
+		document.querySelector('.next-btn').onclick = function() {
+			var user_name = document.getElementById('fullname-id').value;
+			var user_Lemail = document.getElementById('Lemail-id').value;
+			var user_Semail = document.getElementById('Semail-id').value;
+			var user_Lpassword = document.getElementById('Lpassword-id').value;
+			var user_Spassword = document.getElementById('Spassword-id').value;
+			var user_Spassword2 = document.getElementById('Spassword2-id').value;
+
+			if ( user_name === '' || user_Lemail === '' || user_Semail === '' || user_Lpassword === '' || user_Spassword === '' || user_Spassword2 === '' ) {
+				alert('Please fill out all required fields.');
+				return false;
+			}
+		}
 	</script>
 </body>
 
