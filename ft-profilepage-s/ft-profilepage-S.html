@@ -3,60 +3,26 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
+    <title>Title of Your Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </head>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pixelify+Sans:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
-   
-    #nav {
-      display: flex;
-      align-items: center;
-      height: 50px;
-      background-color: #BE8F69;
-    }
-
-    #logo {
-      height: 40px;
-      width: auto;
-      margin-left: 10px;
-    }
-
-    #search {
-      height: 20px;
-    }
-
-    .nav-menu {
-      display: flex;
-      margin-left: auto;
-      font-family: "Quicksand", "Arial", sans-serif;
-    }
-
-    .nav-menu li
-    {
-      list-style: none;
-      padding: 25px;
-    }
-
-    a {
-      text-decoration: none;
-      color: #F7F6F2;
-    }
 
     body {
      background: #F7F6F2
     }
 
     h1 {
-      font-family: "Quicksand", "Arial", sans-serif;
+      font-family: sans-serif;
       color: #433F42;
       font-size: 24px;
     }
 
     h2 {
-      font-family: "Quicksand", "Arial", sans-serif;
+      font-family: sans-serif;
       color: #433F42;
       font-size: 24px;
     }
@@ -144,55 +110,30 @@
       width: 200px;
     }
 
-     .footer {
+    .footer {
       background-color: #BE8F69;
-      padding: 2%;
-      margin-left: -1%;
-      margin-right: -1%;
+      display: flex;
+      color: #F7F6F2;
+      font-family: "Quicksand", "Arial", sans-serif;
       height: 50px;
-    }
-
-    #space{
-      color: #BE8F69;
+      line-height: 50px;
+      justify-content: space-between;
     }
 
     #copyright {
-    color: #F7F6F2;
-    font-size: 18px;
-    font-family: "Quicksand", "Arial", sans-serif;
+      font-family: sans-serif;
+      color: #F7F6F2;
+      font-size: 18px;
+      font-family: "Quicksand", "Arial", sans-serif;
+      margin-left: 10px;
    }
 
-    #newsletter {
-    color: #F7F6F2;
-    padding-left: 825px;
-    font-size: 18px;
-    font-family: "Quicksand", "Arial", sans-serif
-   }
-
-    #newsletter-input{
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    margin-left: 10px;
-    font-family: "Quicksand", "Arial", sans-serif
-  }
 
 
   </style>
   <body>
-    <div id="nav">
-                <a href="../ft-home-a/home.html"><img src="../ft-navbar-N/logo.png" alt="Ethical Threads Logo" id="logo"></a>
-                <ul class="nav-menu">
-                    <li><a href="../ft-discover-N/discover.html">Discover</a></li>
-                    <li><a href="../ft-about-pg-b/about-page.html">About</a></li>
-                    <li><a href="../ft-login-N/login.html">Login</a></li>
-                    <li><a href=""><img src="../ft-navbar-N/magnify.png" alt="Search" id="search"></a></li>
-                </ul> <!-- .nav-menu -->
-            </div> 
-
-
     <div class="profile">
-      <h1> <img src="img/hello-kitty-pfp.jpeg" id="pfp"> @Ethicalthreadsuser32 </h1>
+      <h1> <img src="hello-kitty-pfp.jpeg" id="pfp"> @Ethicalthreadsuser32 </h1>
       <p id="bio"> I love fun fashion! </p>
       <p id="est"> Member since Nov. 2023 </p>
 
@@ -207,32 +148,32 @@
         <div class="section">
 
           <div class="item-saved">
-            <img src="img/pretty-ugly-fitted-tee.png">
+            <img src="pretty-ugly-fitted-tee.png">
             <p id="description"> Pretty Ugly Fitted Tee </p>
             <p id="seller"> Silly Oaf </p>
           </div>
 
           <div class="item-saved">
-            <img src="img/bad-apple-knit-top.png">
+            <img src="bad-apple-knit-top.png">
             <p id="description"> Bad Apple Knit Top </p>
             <p id="seller"> Silly Oaf </p>
           </div>
 
           <div class="item-saved">
-            <img src="img/chrom-sun-crop-top.png">
+            <img src="chrom-sun-crop-top.png">
             <p id="description"> Chrom Sun Crop Top </p>
             <p id="seller"> Abakada </p>
           </div>
 
           <div class="item-saved">
-            <img src="img/grapiko-aspin-tee.png">
+            <img src="grapiko-aspin-tee.png">
             <p id="description"> Grapiko Aspin Tee </p>
             <p id="seller"> Abakada </p>
           </div>
 
           
           <div class="item-saved">
-            <img src="img/missing-you-tshirt.png">
+            <img src="missing-you-tshirt.png">
             <p id="description"> Missing You T-Shirt </p>
             <p id="seller"> Silly Oaf </p>
           </div>
@@ -243,19 +184,19 @@
         <div class="section">
 
           <div class="item-saved">
-            <img src="img/frog-argyle-sweatshirt.png">
+            <img src="frog-argyle-sweatshirt.png">
             <p id="description"> Frog Arygle Sweatshirt</p>
             <p id="seller"> Silly Oaf </p>
           </div>
 
           <div class="item-saved">
-            <img src="img/thanks-a-bunch-button-up-smock.png">
+            <img src="thanks-a-bunch-button-up-smock.png">
             <p id="description"> Thanks a Bunch Smock </p>
             <p id="seller"> Silly Oaf </p>
           </div>
 
           <div class="item-saved">
-            <img src="img/no-regrats-roll-neck-knitted-jumper.png">
+            <img src="no-regrats-roll-neck-knitted-jumper.png">
             <p id="description"> No Regrats Roll Neck Knitted Jumper </p>
             <p id="seller"> Silly Oaf </p>
           </div>
@@ -266,7 +207,7 @@
     </div>
 
      <div class="footer">
-      <span id="copyright"> © Ethical Threads </span> <span id="space"></span><span id="newsletter"> Sign Up For Our Newsletter <input type="text" id="newsletter-input">
+      <span id="copyright"> © Ethical Threads </span>
     </div>
   </body>
   </html>
