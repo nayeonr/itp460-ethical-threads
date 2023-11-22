@@ -9,26 +9,69 @@ font-family: "Open Sans", "Arial", sans-serif;
 align-items: center;
 }
 
+#nav {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    background-color: #BE8F69;
+}
+
+#logo {
+    height: 40px;
+    width: auto;
+    margin-left: 10px;
+}
+
+#search {
+    height: 20px;
+}
+
+.nav-menu {
+    display: flex;
+    margin-left: auto;
+    font-family: "Quicksand", "Arial", sans-serif;
+}
+
+.nav-menu li {
+    list-style: none;
+    padding: 25px;
+}
+
 h1 {
-	font-family: "Quicksand", "Arial", sans-serif;
-  		color: #433F42;
-		font-size: ???
-		margin: ???
-		padding: ???
-		text-align: ???
+    font-family: "Quicksand", "Arial", sans-serif;
+        color: #433F42;
+        font-size: 35px;
+}
+
+h2 {
+    font-family: "Quicksand", "Arial", sans-serif;
+    font-size: 24px;
 }
 
 p {
-	font-family: "Quicksand", "Arial", sans-serif;
-  		color: #433F42;
-		font-size: ???
-		margin: ???
-		padding: ???
+    font-family: "Quicksand", "Arial", sans-serif;
+        color: #433F42;
 }
 
 a {
         text-decoration: none;
         color: #F7F6F2;
+}
+
+img {
+    border-radius: 15px;
+}
+
+button {
+    border-radius: 15px;
+background: #82A7A6;
+    font-size: 15px;
+font-family: "Quicksand", "Arial", sans-serif;
+        color: #F7F6F2; 
+    text-align: center;
+    box-shadow: none;
+    border: none;
+    <! – cursor: pointer !→
 }
 
 .footer {
