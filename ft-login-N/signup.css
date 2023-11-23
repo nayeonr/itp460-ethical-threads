@@ -65,12 +65,13 @@
   			border-radius: 15px;
 		}
 
-		button {
+		.login-buttons {
 			margin-top: 15px;
 			width: 350px;
 			height: 35px;
   			border: 1px solid #F7F6F2;
   			border-radius: 15px;
+  			background-color: #F7F6F2;
 		}
 
 		a {
@@ -81,7 +82,7 @@
 			color: #BE8F69;
 		}
 
-		img {
+		#close-signup {
 			width: 20px;
 			float: right;
 			margin-top: 5px;
