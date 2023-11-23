@@ -42,13 +42,13 @@
 			font-family: "Quicksand", "Arial", sans-serif;
 		}
 
-		#keep-login {
+		.keep-login {
 			text-align: left;
 			width: 350px;
 			font-size: 0.8em;
 		}
 
-		#keep {
+		#keep-id {
 			width: 17px;
 		}
 

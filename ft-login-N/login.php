@@ -1,6 +1,6 @@
 <?php
 	
-	require '../ft-login-N/config.php';
+	//require '../ft-login-N/config.php';
 
 	// check if user has already logged in
 	if ( isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true )
@@ -15,9 +15,9 @@
 		// not logged in
 
 		// if there was form submission
-		if ( isset($_POST['email']) && isset($_POST['password']) )
+		if ( isset($_POST['Lemail']) && isset($_POST['Lpassword']) )
 		{
-			session_start();
+			//session_start();
 	
 			$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -27,23 +27,23 @@
 				exit();
 			}
 
-			$email = $_POST['email'];
-			$email = $mysqli->escape_string($email);
+			$Lemail = $_POST['Lemail'];
+			$Lemail = $mysqli->escape_string($Lemail);
 
-			$password = $_POST['password'];
+			$Lpassword = $_POST['Lpassword'];
 					// 	hash(ALG, input)
-			$password = hash('sha256', $password);
+			$Lpassword = hash('sha256', $Lpassword);
 
-			$sql_users = "SELECT *
+			$sql_Lusers = "SELECT *
 						FROM users
-						WHERE email = '$email'
-								AND password = '$password';
+						WHERE email = '$Lemail'
+								AND password = '$Lpassword';
 						";
 
-			$results_users = $mysqli->query($sql_users);
+			$results_Lusers = $mysqli->query($sql_Lusers);
 
 			// check for errors
-			if ( !$results_users ) {
+			if ( !$results_Lusers ) {
 				echo $mysqli->error();
 				$mysqli->close();
 				exit();
@@ -51,12 +51,12 @@
 
 			$mysqli->close();
 
-			if ( trim($_POST['email']) == "" || trim($_POST['password']) == "" )
+			if ( trim($_POST['Lemail']) == "" || trim($_POST['Lpassword']) == "" )
 			{
 				// no/missing credentials
-				$error = "Please enter both email and password.";
+				$Lerror = "Please enter both email and password.";
 			}
-			else if ( $results_users->num_rows > 0 )
+			else if ( $results_Lusers->num_rows > 0 )
 			{
 				// valid credentials
 
@@ -69,7 +69,7 @@
 			else
 			{
 				// wrong credentials
-				$error = "Invalid credentials.";
+				$Lerror = "Invalid credentials.";
 			}
 		} 
 	}
@@ -93,15 +93,7 @@
 		<!-- POPUPS -->
 	<div id="overlay1" class="overlay">
 
-	<form action="login.php" method="POST">
-	
-	<div>
-		<?php
-			if ( isset($error) && trim($error) != '' ) { 
-				echo "<script>alert('$error');</script>";
-			}
-		?>
-	</div>
+	<form action="navbar.php" method="POST"> 
 
 	<div id="login-everything">
 		<img src="../ft-login-N/exit.png" alt="exit" id="close-login">
@@ -112,33 +104,34 @@
 			<p>Login to save brands and items to your favorites
 			<br>so that you never lose them!</p>
 			<div class="responses">
-				<div id="email-header" class="response-headers">Email</div>
+				<div id="Lemail-header" class="response-headers">Email</div>
 				<input
 					type="text"
-               		name="email"
-                	id="email-id"
+               		name="Lemail"
+                	id="Lemail-id"
                 	class="inputs"
             	/>
 
-            	<div id="password-header" class="response-headers">Password</div>
+            	<div id="Lpassword-header" class="response-headers">Password</div>
 				<input
 					type="text"
-               		name="password"
-                	id="password-id"
+               		name="Lpassword"
+                	id="Lpassword-id"
                 	class="inputs"
             	/>
             </div> <!-- .responses -->
 
-            <div id="keep-login">
+            <div class="keep-login">
             	<input
                     type="checkbox"
                     name="keep"
                     id="keep-id"
+                    class="keep-class"
                   />
                   Keep me logged in
-            </div> <!-- #keep-login -->
+            </div> <!-- .keep-login -->
 
-            <div class="next-btn">
+            <div id="Lnext-btn" class="next-btn">
             	<button id="next-text1" class="login-buttons" type="submit">Next</button>
             </div> <!-- #next-btn -->
 		</div> <!-- #login -->
@@ -161,12 +154,20 @@
 	</div> <!-- #login-everything -->
 	</div> <!-- .overlay -->
 
-	<script>
-		document.querySelector('.next-btn').onclick = function() {
-			var user_email = document.getElementById('email-id').value;
-			var user_password = document.getElementById('password-id').value;
+	<div>
+		<?php
+			if ( isset($Lerror) && trim($Lerror) != '' ) { 
+				echo "<script>alert('$Lerror');</script>";
+			}
+		?>
+	</div>
 
-			if ( user_email === '' || user_password === '' ) {
+	<script>
+		document.querySelector('#Lnext-btn').onclick = function() {
+			var user_Lemail = document.getElementById('Lemail-id').value;
+			var user_Lpassword = document.getElementById('Lpassword-id').value;
+
+			if ( user_Lemail === '' || user_Lpassword === '' ) {
 				alert('Please enter both email and password.');
 				return false;
 			}

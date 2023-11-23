@@ -1,13 +1,13 @@
 <?php
 	
-	require '../ft-login-N/config.php';
-	session_start();
+	//require '../ft-login-N/config.php';
+	//session_start();
 
 	// all fields are filled out
 	if ( !isset($_POST['fullname']) || trim($_POST['fullname'] == '') ||
-		 !isset($_POST['email']) || trim($_POST['email'] == '') ||
-		 !isset($_POST['password']) || trim($_POST['password'] == '') ||
-		 !isset($_POST['password2']) || trim($_POST['password2'] == '') )
+		 !isset($_POST['Semail']) || trim($_POST['Semail'] == '') ||
+		 !isset($_POST['Spassword']) || trim($_POST['Spassword'] == '') ||
+		 !isset($_POST['Spassword2']) || trim($_POST['Spassword2'] == '') )
 	{
 		
 	}
@@ -25,43 +25,43 @@
 			$name = $_POST['fullname'];
 			$name = $mysqli->escape_string($name);
 
-			$email = $_POST['email'];
-			$email = $mysqli->escape_string($email);
+			$Semail = $_POST['Semail'];
+			$Semail = $mysqli->escape_string($Semail);
 
-			$password = $_POST['password'];
-			$password2 = $_POST['password2'];
+			$Spassword = $_POST['Spassword'];
+			$Spassword2 = $_POST['Spassword2'];
 
-			$sql_users = "SELECT *
+			$sql_Susers = "SELECT *
 						FROM users
-						WHERE email = '$email';
+						WHERE email = '$Semail';
 						";
 
-			$results_users = $mysqli->query($sql_users);
+			$results_Susers = $mysqli->query($sql_Susers);
 
 			// check for errors
-			if ( !$results_users ) {
+			if ( !$results_Susers ) {
 				echo $mysqli->error;
 				$mysqli->close();
 				exit();
 			}
 
-			if ( $results_users->num_rows > 0 ) {
+			if ( $results_Susers->num_rows > 0 ) {
 				// email is taken
-				$error = "Be more original. Email is already registered.";
+				$Serror = "Be more original. Email is already registered.";
 			}
 			else {
 				// valid email
-				if ( $password != $password2 ) {
+				if ( $Spassword != $Spassword2 ) {
 					// passwords do not match
-					$error = "Passwords do not match.";
+					$Serror = "Passwords do not match.";
 				} else {
 					// passwords match
 
 					// 	hash(ALG, INPUT)
-					$password = hash('sha256', $password);
+					$Spassword = hash('sha256', $Spassword);
 					
 					$sql = "INSERT INTO users (name, email, password)
-							VALUES ('$name', '$email', '$password');";
+							VALUES ('$name', '$Semail', '$Spassword');";
 
 					$results = $mysqli->query($sql);
 
@@ -71,7 +71,7 @@
 						exit();
 					}
 
-					$error = "$name was succesfully registered!";
+					$Serror = "$name was successfully registered!";
 				}
 			}
 
@@ -96,7 +96,7 @@
 <body>
 	<div id="overlay2" class="overlay">
 
-	<form action="signup.php" method="POST" id="signup-form">
+	<form action="navbar.php" method="POST" id="signup-form">
 
 	<div id="signup-everything">
 		<a href="../ft-home-a/home.html"><img src="../ft-login-N/exit.png" alt="exit" id="close-signup"></a>
@@ -118,56 +118,49 @@
                 	class="inputs"
             	/>
 
-            	<label for="email-id">
-					<div id="email-header" class="response-headers">Email<span class="text-danger">*</span></div>
+            	<label for="Semail-id">
+					<div id="Semail-header" class="response-headers">Email<span class="text-danger">*</span></div>
 				</label>
 				<input
 					type="text"
-               		name="email"
-                	id="email-id"
+               		name="Semail"
+                	id="Semail-id"
                 	class="inputs"
             	/>
 
-            	<label for="password-id">
-            		<div id="password-header" class="response-headers">Password<span class="text-danger">*</span></div>
+            	<label for="Spassword-id">
+            		<div id="Spassword-header" class="response-headers">Password<span class="text-danger">*</span></div>
            		</label>
 				<input
 					type="text"
-               		name="password"
-                	id="password-id"
+               		name="Spassword"
+                	id="Spassword-id"
                 	class="inputs"
             	/>
 
-            	<label for="password2-id">
-            		<div id="password2-header" class="response-headers">Confirm Password<span class="text-danger">*</span></div>
+            	<label for="Spassword2-id">
+            		<div id="Spassword2-header" class="response-headers">Confirm Password<span class="text-danger">*</span></div>
             	</label>
 				<input
 					type="text"
-               		name="password2"
-                	id="password2-id"
+               		name="Spassword2"
+                	id="Spassword2-id"
                 	class="inputs"
             	/>
             </div> <!-- .responses -->
 
-            <div id="keep-login">
+            <div class="keep-login">
             	<input
                     type="checkbox"
                     name="keep"
                     id="keep-id"
+                    class="keep-class"
                     value="yes"
                   />
                   <label for="keep-id">Keep me logged in</label>
             </div> <!-- #keep-login -->
 
-            <!-- <?php if ( isset($error) && trim($error) != '' ) : ?>
-            	<div class="text-danger">
-            		<?php echo $error; ?>
-            	</div>
-            <?php else : ?>
-            	Welcome to Ethical Threads!
-            <?php endif; ?> -->
-
-            <div class="next-btn">
+            <div id="Snext-btn" class="next-btn">
             	<button id="next-text2" class="login-buttons" type="submit">Next</button>
             </div> <!-- #next-btn -->
 		</div> <!-- #signup -->
@@ -181,28 +174,22 @@
 	</div> <!-- .overlay -->
 
 	<div>
-			<?php
-				if ( isset($error) && trim($error) != '' ) { 
-					echo "<script>alert('$error');</script>";
-				}
-			?>
-		</div>
+		<?php
+			if ( isset($Serror) && trim($Serror) != '' ) { 
+				echo "<script>alert('$Serror');</script>";
+			}
+		?>
+	</div>
 
 	<script>
 
-		/* <?php if (isset($error) && trim($error) !== '') : ?>
-            alert('<?php echo $error; ?>');
-        <?php elseif (isset($name)) : ?>
-            alert('<?php echo $name; ?> was successfully registered!');
-        <?php endif; ?> */
-
-		document.getElementById('signup-form').onsubmit = function() {
+		document.querySelector('#Snext-btn').onclick = function() {
 			var user_name = document.getElementById('fullname-id').value;
-			var user_email = document.getElementById('email-id').value;
-			var user_password = document.getElementById('password-id').value;
-			var user_password2 = document.getElementById('password2-id').value;
+			var user_Semail = document.getElementById('Semail-id').value;
+			var user_Spassword = document.getElementById('Spassword-id').value;
+			var user_Spassword2 = document.getElementById('Spassword2-id').value;
 
-			if ( user_name === '' || user_email === '' || user_password === '' || user_password2 === '' ) {
+			if ( user_name === '' || user_Semail === '' || user_Spassword === '' || user_Spassword2 === '' ) {
 				alert('Please fill out all required fields.');
 				return false;
 			}
