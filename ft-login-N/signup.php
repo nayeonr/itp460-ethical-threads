@@ -1,78 +1,79 @@
 <?php
-
-	session_start();
+	
 	require '../ft-login-N/config.php';
+	session_start();
 
-	// check for empty field
+	// all fields are filled out
 	if ( !isset($_POST['fullname']) || trim($_POST['fullname'] == '') ||
 		 !isset($_POST['email']) || trim($_POST['email'] == '') ||
 		 !isset($_POST['password']) || trim($_POST['password'] == '') ||
 		 !isset($_POST['password2']) || trim($_POST['password2'] == '') )
 	{
-		$error = "please fill out all required fields.";
+		
 	}
 	else
 	{
 		// all fields are filled out
-
 		$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-		// check for errors
-		if ( $mysqli->connect_errno ) {
-			echo $mysqli->connect_error;
-			exit();
-		}
+			// check for errors
+			if ( $mysqli->connect_errno ) {
+				echo $mysqli->connect_error;
+				exit();
+			}
 
-		$name = $_POST['fullname'];
-		$name = $mysqli->escape_string($name);
+			$name = $_POST['fullname'];
+			$name = $mysqli->escape_string($name);
 
-		$email = $_POST['email'];
-		$email = $mysqli->escape_string($email);
+			$email = $_POST['email'];
+			$email = $mysqli->escape_string($email);
 
-		$password = $_POST['password'];
-		$password2 = $_POST['password2'];
+			$password = $_POST['password'];
+			$password2 = $_POST['password2'];
 
-		$sql_users = "SELECT *
-					FROM users
-					WHERE email = '$email';
-					";
+			$sql_users = "SELECT *
+						FROM users
+						WHERE email = '$email';
+						";
 
-		$results_users = $mysqli->query($sql_users);
+			$results_users = $mysqli->query($sql_users);
 
-		// check for errors
-		if ( !$results_users ) {
-			echo $mysqli->error;
-			$mysqli->close();
-			exit();
-		}
+			// check for errors
+			if ( !$results_users ) {
+				echo $mysqli->error;
+				$mysqli->close();
+				exit();
+			}
 
-		if ( $results_users->num_rows > 0 ) {
-			// email is taken
-			$error = "be more original. email is already registered.";
-		}
-		else {
-			// valid email
-			if ( $password != $password2 ) {
-				// passwords do not match
-				$error = "passwords do not match.";
-			} else {
-				// passwords match
+			if ( $results_users->num_rows > 0 ) {
+				// email is taken
+				$error = "Be more original. Email is already registered.";
+			}
+			else {
+				// valid email
+				if ( $password != $password2 ) {
+					// passwords do not match
+					$error = "Passwords do not match.";
+				} else {
+					// passwords match
 
-				// 	hash(ALG, INPUT)
-				$password = hash('sha256', $password);
-				
-				$sql = "INSERT INTO users (name, email, password)
-						VALUES ('$name', '$email', '$password');";
+					// 	hash(ALG, INPUT)
+					$password = hash('sha256', $password);
+					
+					$sql = "INSERT INTO users (name, email, password)
+							VALUES ('$name', '$email', '$password');";
 
-				$results = $mysqli->query($sql);
+					$results = $mysqli->query($sql);
 
-				if ( !$results ) {
-					echo $mysqli->error;
-					$mysqli->close();
-					exit();
+					if ( !$results ) {
+						echo $mysqli->error;
+						$mysqli->close();
+						exit();
+					}
+
+					$error = "$name was succesfully registered!";
 				}
 			}
-		}
 
 		$mysqli->close();
 	}
@@ -95,12 +96,7 @@
 <body>
 	<div id="overlay2" class="overlay">
 
-	<form action="signup.php" method="POST">
-		<?php if ( isset($error) && trim($error) != '' ) : ?>
-			<?php echo $error; ?>
-		<?php else : ?>
-			<?php echo $name; ?> was succesfully registered!
-		<?php endif; ?>
+	<form action="signup.php" method="POST" id="signup-form">
 
 	<div id="signup-everything">
 		<a href="../ft-home-a/home.html"><img src="../ft-login-N/exit.png" alt="exit" id="close-signup"></a>
@@ -171,8 +167,8 @@
             	Welcome to Ethical Threads!
             <?php endif; ?> -->
 
-            <div id="next-btn">
-            	<button id="next-text" class="login-buttons" type="submit">Next</button>
+            <div class="next-btn">
+            	<button id="next-text2" class="login-buttons" type="submit">Next</button>
             </div> <!-- #next-btn -->
 		</div> <!-- #signup -->
 
@@ -184,8 +180,23 @@
 	</div> <!-- #signup-everything -->
 	</div> <!-- .overlay -->
 
+	<div>
+			<?php
+				if ( isset($error) && trim($error) != '' ) { 
+					echo "<script>alert('$error');</script>";
+				}
+			?>
+		</div>
+
 	<script>
-		document.querySelector('form').onsubmit = function() {
+
+		/* <?php if (isset($error) && trim($error) !== '') : ?>
+            alert('<?php echo $error; ?>');
+        <?php elseif (isset($name)) : ?>
+            alert('<?php echo $name; ?> was successfully registered!');
+        <?php endif; ?> */
+
+		document.getElementById('signup-form').onsubmit = function() {
 			var user_name = document.getElementById('fullname-id').value;
 			var user_email = document.getElementById('email-id').value;
 			var user_password = document.getElementById('password-id').value;
