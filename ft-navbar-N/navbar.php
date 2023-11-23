@@ -160,6 +160,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nav Bar</title>
 
+    <link href="../global_css.css" rel="stylesheet"/>
     <link href="../ft-login-N/login.css" rel="stylesheet"/>
     <link href="../ft-login-N/signup.css" rel="stylesheet"/>
     
@@ -289,9 +290,9 @@
                   Keep me logged in
             </div> <!-- #keep-login -->
 
-            <div class="next-btn">
-            	<button id="next-text" class="next-profile" type="submit">Next</button>
-            </div> <!-- .next-btn -->
+            <div id="next-btn">
+            	<button id="next-text" class="login-buttons" type="submit">Next</button>
+            </div> <!-- #next-btn -->
 		</div> <!-- #login -->
 
 		</form>
