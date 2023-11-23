@@ -54,7 +54,7 @@
 			if ( trim($_POST['email']) == "" || trim($_POST['password']) == "" )
 			{
 				// no/missing credentials
-				$error = "please enter both email and password.";
+				$error = "Please enter both email and password.";
 			}
 			else if ( $results_users->num_rows > 0 )
 			{
@@ -69,7 +69,7 @@
 			else
 			{
 				// wrong credentials
-				$error = "try again. email and/or password is invalid.";
+				$error = "Invalid credentials.";
 			}
 		} 
 	}
@@ -97,8 +97,8 @@
 	
 	<div>
 		<?php
-			if ( isset($error) ) { 
-				echo $error;
+			if ( isset($error) && trim($error) != '' ) { 
+				echo "<script>alert('$error');</script>";
 			}
 		?>
 	</div>
@@ -138,8 +138,8 @@
                   Keep me logged in
             </div> <!-- #keep-login -->
 
-            <div id="next-btn">
-            	<button id="next-text" class="login-buttons" type="submit">Next</button>
+            <div class="next-btn">
+            	<button id="next-text1" class="login-buttons" type="submit">Next</button>
             </div> <!-- #next-btn -->
 		</div> <!-- #login -->
 
@@ -162,12 +162,12 @@
 	</div> <!-- .overlay -->
 
 	<script>
-		document.querySelector('#next-btn').onclick = function() {
+		document.querySelector('.next-btn').onclick = function() {
 			var user_email = document.getElementById('email-id').value;
 			var user_password = document.getElementById('password-id').value;
 
 			if ( user_email === '' || user_password === '' ) {
-				alert('Please fill out all required fields.');
+				alert('Please enter both email and password.');
 				return false;
 			}
 		}
