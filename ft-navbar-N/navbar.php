@@ -167,46 +167,6 @@
     <style>
 		@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap');
 
-		body {
-			margin: 0;
-			padding: 0;
-		}
-		
-		#nav {
-			display: flex;
-			align-items: center;
-			height: 50px;
-			background-color: #BE8F69;
-		}
-
-		#logo {
-			height: 40px;
-			width: auto;
-			margin-left: 10px;
-		}
-
-		#search {
-			height: 20px;
-		}
-
-		.nav-menu {
-			display: flex;
-			margin-left: auto;
-			font-family: "Quicksand", "Arial", sans-serif;
-		}
-
-		.nav-menu li
-		{
-			list-style: none;
-			padding: 25px;
-		}
-
-		a {
-			text-decoration: none;
-			color: #F7F6F2;
-		} 
-		/* moved everything from here and up to the global_css.css */
-
 		.overlay {
 			display: none;
 			position: fixed;
@@ -376,7 +336,7 @@
             </div> <!-- #keep-login -->
 
             <div class="next-btn">
-            	<button id="next-text" class="next-profile" type="submit">Next</button>
+            	<button id="next-text" class="login-buttons" type="submit">Next</button>
             </div> <!-- .next-btn -->
 		</div> <!-- #signup -->
 

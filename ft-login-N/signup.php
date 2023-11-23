@@ -87,6 +87,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Popup</title>
     
+    <link href="../global_css.css" rel="stylesheet"/>
     <link href="../ft-login-N/login.css" rel="stylesheet"/>
     <link href="../ft-login-N/signup.css" rel="stylesheet"/>
 </head>

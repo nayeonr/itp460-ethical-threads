@@ -64,14 +64,14 @@ img {
 
 button {
     border-radius: 15px;
-background: #82A7A6;
+    background: #82A7A6;
     font-size: 15px;
-font-family: "Quicksand", "Arial", sans-serif;
-        color: #F7F6F2; 
+    font-family: "Quicksand", "Arial", sans-serif;
+    color: #F7F6F2; 
     text-align: center;
     box-shadow: none;
     border: none;
-    <! – cursor: pointer !→
+    cursor: pointer →
 }
 
 .footer {
