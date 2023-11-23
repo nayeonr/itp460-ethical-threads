@@ -16,6 +16,10 @@ body {
     background-color: #BE8F69;
 }
 
+img {
+    border-radius: 15px;
+}
+
 #logo {
     height: 40px;
     width: auto;
@@ -24,6 +28,7 @@ body {
 
 #search {
     height: 20px;
+    border-radius: 0;
 }
 
 .nav-menu {
@@ -56,10 +61,6 @@ p {
 a {
         text-decoration: none;
         color: #F7F6F2;
-}
-
-img {
-    border-radius: 15px;
 }
 
 button {
