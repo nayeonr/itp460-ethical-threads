@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap');
 
 body {
-margin: 0;
-padding: 0;
-color: #433F42;
-background-color: #F6F5F0;
-font-family: "Open Sans", "Arial", sans-serif;
-align-items: center;
+    margin: 0;
+    padding: 0;
+    color: #433F42;
+    background-color: #F6F5F0;
+    font-family: "Open Sans", "Arial", sans-serif;
+    align-items: center;
 }
 
 #nav {
@@ -14,6 +14,10 @@ align-items: center;
     align-items: center;
     height: 50px;
     background-color: #BE8F69;
+}
+
+img {
+    border-radius: 15px;
 }
 
 #logo {
@@ -24,6 +28,7 @@ align-items: center;
 
 #search {
     height: 20px;
+    border-radius: 0;
 }
 
 .nav-menu {
@@ -58,20 +63,16 @@ a {
         color: #F7F6F2;
 }
 
-img {
-    border-radius: 15px;
-}
-
 button {
     border-radius: 15px;
-background: #82A7A6;
+    background: #82A7A6;
     font-size: 15px;
-font-family: "Quicksand", "Arial", sans-serif;
-        color: #F7F6F2; 
+    font-family: "Quicksand", "Arial", sans-serif;
+    color: #F7F6F2; 
     text-align: center;
     box-shadow: none;
     border: none;
-    <! – cursor: pointer !→
+    cursor: pointer →
 }
 
 .footer {
