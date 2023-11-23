@@ -6,6 +6,8 @@
 	$_SESSION['logged_in'] = false;
 	require '../ft-login-N/login.php';
 	require '../ft-login-N/signup.php';
+
+	//$base_url = rtrim(dirname($_SERVER['PHP_SELF']));
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +65,7 @@
 		<!-- POPUPS -->
 	<div id="overlay1" class="overlay">
 
-	<!-- <form action="navbar.php#overlay1" method="POST"> -->
+	<form method="POST" id="login-form">
 
 	<div id="login-everything">
 		<img src="../ft-login-N/exit.png" alt="exit" id="close-login">
@@ -106,7 +108,7 @@
             </div> <!-- #next-btn -->
 		</div> <!-- #login -->
 
-		<!-- </form> -->
+		</form>
 		
 		<div id="signup">
 			<hr>
@@ -127,7 +129,7 @@
 
 	<div id="overlay2" class="overlay">
 
-	<!-- <form action="navbar.php#overlay2" method="POST" id="signup-form"> -->
+	<form method="POST" id="signup-form">
 
 	<div id="signup-everything">
 		<a href="../ft-home-a/home.html"><img src="../ft-login-N/exit.png" alt="exit" id="close-signup"></a>
@@ -196,7 +198,7 @@
             </div> <!-- #next-btn -->
 		</div> <!-- #signup -->
 
-		<!-- </form> -->
+		</form>
 
 		<p>By creating an account, you agree to the Ethical Threads
 		<br>terms of use and privacy policy.</p>
@@ -233,6 +235,8 @@
 			/* LOGIN ERROR */
 		document.querySelector('#Lnext-btn').onclick = function() {
 
+			document.querySelector('#login-form').action = window.location.href;
+
 			var user_Lemail = document.getElementById('Lemail-id').value;
 			var user_Lpassword = document.getElementById('Lpassword-id').value;
 
@@ -244,6 +248,8 @@
 
 			/* SIGNUP ERROR */
 		document.querySelector('#Snext-btn').onclick = function() {
+
+			document.querySelector('#signup-form').action = window.location.href;
 
 			var user_name = document.getElementById('fullname-id').value;
 			var user_Semail = document.getElementById('Semail-id').value;

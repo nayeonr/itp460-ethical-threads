@@ -93,7 +93,7 @@
 		<!-- POPUPS -->
 	<div id="overlay1" class="overlay">
 
-	<form action="navbar.php" method="POST"> 
+	<!-- <form action="../ft-navbar-N/navbar.php" method="POST"> -->
 
 	<div id="login-everything">
 		<img src="../ft-login-N/exit.png" alt="exit" id="close-login">
@@ -136,7 +136,7 @@
             </div> <!-- #next-btn -->
 		</div> <!-- #login -->
 
-		</form>
+		<!-- </form> -->
 		
 		<div id="signup">
 			<hr>
