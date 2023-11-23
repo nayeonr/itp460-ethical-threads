@@ -87,6 +87,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Popup</title>
     
+    <link href="../global_css.css" rel="stylesheet"/>
     <link href="../ft-login-N/login.css" rel="stylesheet"/>
     <link href="../ft-login-N/signup.css" rel="stylesheet"/>
 </head>
@@ -96,9 +97,9 @@
 
 	<form action="signup.php" method="POST">
 		<?php if ( isset($error) && trim($error) != '' ) : ?>
-			<div class="font-italic text-danger"><?php echo $error; ?></div>
+			<?php echo $error; ?>
 		<?php else : ?>
-			<div class="font-italic text-success"><?php echo $name; ?> was succesfully registered!</div>
+			<?php echo $name; ?> was succesfully registered!
 		<?php endif; ?>
 
 	<div id="signup-everything">
@@ -171,9 +172,7 @@
             <?php endif; ?> -->
 
             <div id="next-btn">
-            	<button class="next-profile" type="submit"><a id="next-text">
-            		Next
-            	</a></button>
+            	<button id="next-text" class="login-buttons" type="submit">Next</button>
             </div> <!-- #next-btn -->
 		</div> <!-- #signup -->
 
