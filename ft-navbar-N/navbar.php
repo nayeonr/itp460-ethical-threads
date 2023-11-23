@@ -204,7 +204,7 @@
 
 		<!-- POPUPS -->
 	<div id="overlay1" class="overlay">
-	
+
 	<form action="login.php" method="POST">
 	
 	<div>
@@ -227,16 +227,16 @@
 				<div id="email-header" class="response-headers">Email</div>
 				<input
 					type="text"
-               		name="Lemail"
-                	id="Lemail-id"
+               		name="email"
+                	id="email-id"
                 	class="inputs"
             	/>
 
             	<div id="password-header" class="response-headers">Password</div>
 				<input
 					type="text"
-               		name="Lpassword"
-                	id="Lpassword-id"
+               		name="password"
+                	id="password-id"
                 	class="inputs"
             	/>
             </div> <!-- .responses -->
@@ -245,7 +245,7 @@
             	<input
                     type="checkbox"
                     name="keep"
-                    class="keep-id"
+                    id="keep-id"
                   />
                   Keep me logged in
             </div> <!-- #keep-login -->
@@ -264,7 +264,7 @@
 			<br>Ethical Threads account!</p>
 
 			<div id="signup-btn">
-            	<button id="joinus" type="submit"><a href="../ft-navbar-N/navbar.html#overlay2" id="joinus-text">
+            	<button id="joinus" class="login-buttons" type="submit"><a href="../ft-navbar-N/navbar.html#overlay2" id="joinus-text">
             		Sign Up
             	</a></button>
             </div> <!-- #signup-btn -->
@@ -287,12 +287,15 @@
 		<a href="../ft-home-a/home.html"><img src="../ft-login-N/exit.png" alt="exit" id="close-signup"></a>
 		
 		<div id="signup">
+
 			<h2 class="login-headers">Sign Up</h2>
 			<hr>
 			<p>It costs nothing to set up an
 			<br>Ethical Threads account!</p>
 			<div class="responses">
-				<div id="name-header" class="response-headers">Name</div>
+				<label for="fullname-id">
+					<div id="name-header" class="response-headers">Name<span class="text-danger">*</span></div>
+				</label>
 				<input
 					type="text"
                		name="fullname"
@@ -300,27 +303,33 @@
                 	class="inputs"
             	/>
 
-				<div id="email-header" class="response-headers">Email</div>
+            	<label for="email-id">
+					<div id="email-header" class="response-headers">Email<span class="text-danger">*</span></div>
+				</label>
 				<input
 					type="text"
-               		name="Semail"
-                	id="Semail-id"
+               		name="email"
+                	id="email-id"
                 	class="inputs"
             	/>
 
-            	<div id="password-header" class="response-headers">Password</div>
+            	<label for="password-id">
+            		<div id="password-header" class="response-headers">Password<span class="text-danger">*</span></div>
+           		</label>
 				<input
 					type="text"
-               		name="Spassword"
-                	id="Spassword-id"
+               		name="password"
+                	id="password-id"
                 	class="inputs"
             	/>
 
-            	<div id="password2-header" class="response-headers">Confirm Password</div>
+            	<label for="password2-id">
+            		<div id="password2-header" class="response-headers">Confirm Password<span class="text-danger">*</span></div>
+            	</label>
 				<input
 					type="text"
-               		name="Spassword2"
-                	id="Spassword2-id"
+               		name="password2"
+                	id="password2-id"
                 	class="inputs"
             	/>
             </div> <!-- .responses -->
@@ -329,15 +338,23 @@
             	<input
                     type="checkbox"
                     name="keep"
-                    class="keep-id"
+                    id="keep-id"
                     value="yes"
                   />
-                 <label for="keep-id"> Keep me logged in</label>
+                  <label for="keep-id">Keep me logged in</label>
             </div> <!-- #keep-login -->
 
-            <div class="next-btn">
+            <!-- <?php if ( isset($error) && trim($error) != '' ) : ?>
+            	<div class="text-danger">
+            		<?php echo $error; ?>
+            	</div>
+            <?php else : ?>
+            	Welcome to Ethical Threads!
+            <?php endif; ?> -->
+
+            <div id="next-btn">
             	<button id="next-text" class="login-buttons" type="submit">Next</button>
-            </div> <!-- .next-btn -->
+            </div> <!-- #next-btn -->
 		</div> <!-- #signup -->
 
 		</form>
