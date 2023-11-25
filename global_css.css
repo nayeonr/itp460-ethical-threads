@@ -16,6 +16,10 @@ body {
     background-color: #BE8F69;
 }
 
+img {
+    border-radius: 15px;
+}
+
 #logo {
     height: 40px;
     width: auto;
@@ -24,6 +28,7 @@ body {
 
 #search {
     height: 20px;
+    border-radius: 0;
 }
 
 .nav-menu {
@@ -39,8 +44,8 @@ body {
 
 h1 {
     font-family: "Quicksand", "Arial", sans-serif;
-        color: #433F42;
-        font-size: 35px;
+    color: #433F42;
+    font-size: 35px;
 }
 
 h2 {
@@ -54,34 +59,30 @@ p {
 }
 
 a {
-        text-decoration: none;
-        color: #F7F6F2;
-}
-
-img {
-    border-radius: 15px;
+    text-decoration: none;
+    color: #F7F6F2;
 }
 
 button {
     border-radius: 15px;
-background: #82A7A6;
+    background: #82A7A6;
     font-size: 15px;
-font-family: "Quicksand", "Arial", sans-serif;
-        color: #F7F6F2; 
+    font-family: "Quicksand", "Arial", sans-serif;
+    color: #F7F6F2; 
     text-align: center;
     box-shadow: none;
     border: none;
-    <! – cursor: pointer !→
+    cursor: pointer →
 }
 
 .footer {
-      background-color: #BE8F69;
-      display: flex;
-      color: #F7F6F2;
-      font-family: "Quicksand", "Arial", sans-serif;
-      height: 50px;
-      line-height: 50px;
-      justify-content: space-between;
+    background-color: #BE8F69;
+    display: flex;
+    color: #F7F6F2;
+    font-family: "Quicksand", "Arial", sans-serif;
+    height: 50px;
+    line-height: 50px;
+    justify-content: space-between;
 }
 
 #copyright {

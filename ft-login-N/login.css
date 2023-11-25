@@ -42,13 +42,13 @@
 			font-family: "Quicksand", "Arial", sans-serif;
 		}
 
-		#keep-login {
+		.keep-login {
 			text-align: left;
 			width: 350px;
 			font-size: 0.8em;
 		}
 
-		#keep {
+		#keep-id {
 			width: 17px;
 		}
 
@@ -66,14 +66,14 @@
 			height: 35px;
   			border: 1px solid #F7F6F2;
   			border-radius: 15px;
-  			background-color: pink;
+  			background-color: #F7F6F2;
 		}
 
 		a {
 			text-decoration: none;
 		}
 
-		#next-text {
+		#next-text1 {
 			color: #BE8F69;
 		}
 

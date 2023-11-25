@@ -1,154 +1,13 @@
 <?php
+	session_start();
 
 	require '../ft-login-N/config.php';
 
-	// LOGIN PHP
-	// check if user has already logged in
-	if ( isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true )
-	{
-		// logged in
-		// redirect to profile page
-		header('Location: ../ft-profilepage-S/ft-profilepage-S.html');
-		exit();
-	} 
-	else
-	{
-		// not logged in
+	$_SESSION['logged_in'] = false;
+	require '../ft-login-N/login.php';
+	require '../ft-login-N/signup.php';
 
-		// if there was form submission
-		if ( isset($_POST['Lemail']) && isset($_POST['Lpassword']) )
-		{
-			session_start();
-	
-			$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
-			// check for errors
-			if ( $mysqli->connect_errno ) {
-				echo $mysqli->connect_error;
-				exit();
-			}
-
-			$Lemail = $_POST['Lemail'];
-			$Lemail = $mysqli->escape_string($Lemail);
-
-			$Lpassword = $_POST['Lpassword'];
-					// 	hash(ALG, input)
-			$Lpassword = hash('sha256', $Lpassword);
-
-			$sql_users = "SELECT *
-						FROM users
-						WHERE email = '$Lemail'
-								AND password = '$Lpassword';
-						";
-
-			$results_users = $mysqli->query($sql_users);
-
-			// check for errors
-			if ( !$results_users ) {
-				echo $mysqli->error();
-				$mysqli->close();
-				exit();
-			}
-
-			$mysqli->close();
-
-			if ( trim($_POST['Lemail']) == "" || trim($_POST['Lpassword']) == "" )
-			{
-				// no/missing credentials
-				$error = "please enter both email and password.";
-			}
-			else if ( $results_users->num_rows > 0 )
-			{
-				// valid credentials
-
-				// set session variables
-				$_SESSION['logged_in'] = true;
-
-				// redirect to profile page
-				header('Location: ../ft-profilepage-S/ft-profilepage-S.html');
-			}
-			else
-			{
-				// wrong credentials
-				$error = "try again. email and/or password is invalid.";
-			}
-		} 
-	}
-
-	// SIGNUP PHP
-	// check for empty field
-	if ( !isset($_POST['fullname']) || trim($_POST['fullname'] == '') ||
-		 !isset($_POST['Semail']) || trim($_POST['Semail'] == '') ||
-		 !isset($_POST['Spassword']) || trim($_POST['Spassword'] == '') ||
-		 !isset($_POST['Spassword2']) || trim($_POST['Spassword2'] == '') )
-	{
-		
-	}
-	else
-	{
-		// all fields are filled out
-
-		$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
-		// check for errors
-		if ( $mysqli->connect_errno ) {
-			echo $mysqli->connect_error;
-			exit();
-		}
-
-		$name = $_POST['fullname'];
-		$name = $mysqli->escape_string($name);
-
-		$Semail = $_POST['Semail'];
-		$Semail = $mysqli->escape_string($Semail);
-
-		$Spassword = $_POST['Spassword'];
-		$Spassword2 = $_POST['Spassword2'];
-
-		$sql_users = "SELECT *
-					FROM users
-					WHERE email = '$Semail';
-					";
-
-		$results_users = $mysqli->query($sql_users);
-
-		// check for errors
-		if ( !$results_users ) {
-			echo $mysqli->error;
-			$mysqli->close();
-			exit();
-		}
-
-		if ( $results_users->num_rows > 0 ) {
-			// email is taken
-			$error = "be more original. email is already registered.";
-		}
-		else {
-			// valid email
-			if ( $Spassword != $Spassword2 ) {
-				// passwords do not match
-				$error = "passwords do not match.";
-			} else {
-				// passwords match
-
-				// 	hash(ALG, INPUT)
-				$Spassword = hash('sha256', $Spassword);
-				
-				$sql = "INSERT INTO users (name, email, password)
-						VALUES ('$name', '$Semail', '$Spassword');";
-
-				$results = $mysqli->query($sql);
-
-				if ( !$results ) {
-					echo $mysqli->error;
-					$mysqli->close();
-					exit();
-				}
-			}
-		}
-
-		$mysqli->close();
-	}
+	//$base_url = rtrim(dirname($_SERVER['PHP_SELF']));
 ?>
 
 <!DOCTYPE html>
@@ -160,52 +19,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nav Bar</title>
 
+    <link href="../global_css.css" rel="stylesheet"/>
     <link href="../ft-login-N/login.css" rel="stylesheet"/>
     <link href="../ft-login-N/signup.css" rel="stylesheet"/>
     
     <style>
-		@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap');
-
-		body {
-			margin: 0;
-			padding: 0;
-		}
-		
-		#nav {
-			display: flex;
-			align-items: center;
-			height: 50px;
-			background-color: #BE8F69;
-		}
-
-		#logo {
-			height: 40px;
-			width: auto;
-			margin-left: 10px;
-		}
-
-		#search {
-			height: 20px;
-		}
-
-		.nav-menu {
-			display: flex;
-			margin-left: auto;
-			font-family: "Quicksand", "Arial", sans-serif;
-		}
-
-		.nav-menu li
-		{
-			list-style: none;
-			padding: 25px;
-		}
-
-		a {
-			text-decoration: none;
-			color: #F7F6F2;
-		} 
-		/* moved everything from here and up to the global_css.css */
-
 		.overlay {
 			display: none;
 			position: fixed;
@@ -214,6 +32,9 @@
       		width: 100%;
       		height: 100%;
      		background:rgba(67, 63, 66, 0.5);
+
+     		align-items: center;
+     		justify-content: center;
 			margin: 0px auto;
      	}
 
@@ -243,16 +64,8 @@
 
 		<!-- POPUPS -->
 	<div id="overlay1" class="overlay">
-	
-	<form action="login.php" method="POST">
-	
-	<div>
-		<?php
-			if ( isset($error) ) { 
-				echo $error;
-			}
-		?>
-	</div>
+
+	<form method="POST" id="login-form">
 
 	<div id="login-everything">
 		<img src="../ft-login-N/exit.png" alt="exit" id="close-login">
@@ -263,7 +76,7 @@
 			<p>Login to save brands and items to your favorites
 			<br>so that you never lose them!</p>
 			<div class="responses">
-				<div id="email-header" class="response-headers">Email</div>
+				<div id="Lemail-header" class="response-headers">Email</div>
 				<input
 					type="text"
                		name="Lemail"
@@ -271,7 +84,7 @@
                 	class="inputs"
             	/>
 
-            	<div id="password-header" class="response-headers">Password</div>
+            	<div id="Lpassword-header" class="response-headers">Password</div>
 				<input
 					type="text"
                		name="Lpassword"
@@ -280,18 +93,19 @@
             	/>
             </div> <!-- .responses -->
 
-            <div id="keep-login">
+            <div class="keep-login">
             	<input
                     type="checkbox"
-                    name="keep"
-                    class="keep-id"
+                    name="Lkeep"
+                    id="Lkeep-id"
+                    class="keep-class"
                   />
                   Keep me logged in
             </div> <!-- #keep-login -->
 
-            <div class="next-btn">
-            	<button id="next-text" class="next-profile" type="submit">Next</button>
-            </div> <!-- .next-btn -->
+            <div id="Lnext-btn" class="next-btn">
+            	<button id="next-text1" class="login-buttons" type="submit">Next</button>
+            </div> <!-- #next-btn -->
 		</div> <!-- #login -->
 
 		</form>
@@ -303,35 +117,33 @@
 			<br>Ethical Threads account!</p>
 
 			<div id="signup-btn">
-            	<button id="joinus" type="submit"><a href="../ft-navbar-N/navbar.html#overlay2" id="joinus-text">
+            	<button id="joinus" class="login-buttons" type="submit"><a href="../ft-navbar-N/navbar.html#overlay2" id="joinus-text">
             		Sign Up
             	</a></button>
             </div> <!-- #signup-btn -->
 
 		</div> <!-- #signup -->
 	</div> <!-- #login-everything -->
-	</div> <!-- .overlay -->
+	</div> <!-- #overlay1 .overlay -->
 
 
 	<div id="overlay2" class="overlay">
 
-	<form action="signup.php" method="POST">
-		<?php if ( isset($error) && trim($error) != '' ) : ?>
-			<?php echo $error; ?>
-		<?php else : ?>
-			<?php echo $name; ?> was succesfully registered!
-		<?php endif; ?>
+	<form method="POST" id="signup-form">
 
 	<div id="signup-everything">
 		<a href="../ft-home-a/home.html"><img src="../ft-login-N/exit.png" alt="exit" id="close-signup"></a>
 		
 		<div id="signup">
+
 			<h2 class="login-headers">Sign Up</h2>
 			<hr>
 			<p>It costs nothing to set up an
 			<br>Ethical Threads account!</p>
 			<div class="responses">
-				<div id="name-header" class="response-headers">Name</div>
+				<label for="fullname-id">
+					<div id="name-header" class="response-headers">Name<span class="text-danger">*</span></div>
+				</label>
 				<input
 					type="text"
                		name="fullname"
@@ -339,7 +151,9 @@
                 	class="inputs"
             	/>
 
-				<div id="email-header" class="response-headers">Email</div>
+            	<label for="Semail-id">
+					<div id="Semail-header" class="response-headers">Email<span class="text-danger">*</span></div>
+				</label>
 				<input
 					type="text"
                		name="Semail"
@@ -347,7 +161,9 @@
                 	class="inputs"
             	/>
 
-            	<div id="password-header" class="response-headers">Password</div>
+            	<label for="Spassword-id">
+            		<div id="Spassword-header" class="response-headers">Password<span class="text-danger">*</span></div>
+           		</label>
 				<input
 					type="text"
                		name="Spassword"
@@ -355,7 +171,9 @@
                 	class="inputs"
             	/>
 
-            	<div id="password2-header" class="response-headers">Confirm Password</div>
+            	<label for="Spassword2-id">
+            		<div id="Spassword2-header" class="response-headers">Confirm Password<span class="text-danger">*</span></div>
+            	</label>
 				<input
 					type="text"
                		name="Spassword2"
@@ -364,19 +182,20 @@
             	/>
             </div> <!-- .responses -->
 
-            <div id="keep-login">
+            <div class="keep-login">
             	<input
                     type="checkbox"
-                    name="keep"
-                    class="keep-id"
+                    name="Skeep"
+                    id="Skeep-id"
+                    class="keep-class"
                     value="yes"
                   />
-                 <label for="keep-id"> Keep me logged in</label>
+                  <label for="keep-id">Keep me logged in</label>
             </div> <!-- #keep-login -->
 
-            <div class="next-btn">
-            	<button id="next-text" class="next-profile" type="submit">Next</button>
-            </div> <!-- .next-btn -->
+            <div id="Snext-btn" class="next-btn">
+            	<button id="next-text2" class="login-buttons" type="submit">Next</button>
+            </div> <!-- #next-btn -->
 		</div> <!-- #signup -->
 
 		</form>
@@ -388,6 +207,7 @@
 	</div> <!-- .overlay -->
 
 	<script>
+
 			/* LOGIN POPUP */
 		document.querySelector('#open-login').onclick = function(event) {
 			event.preventDefault();
@@ -412,15 +232,31 @@
 			document.querySelector('.overlay').style.display = 'none';
 		};
 
-		document.querySelector('.next-btn').onclick = function() {
-			var user_name = document.getElementById('fullname-id').value;
+			/* LOGIN ERROR */
+		document.querySelector('#Lnext-btn').onclick = function() {
+
+			document.querySelector('#login-form').action = window.location.href;
+
 			var user_Lemail = document.getElementById('Lemail-id').value;
-			var user_Semail = document.getElementById('Semail-id').value;
 			var user_Lpassword = document.getElementById('Lpassword-id').value;
+
+			if ( user_Lemail === '' || user_Lpassword === '' ) {
+				alert('Please enter both email and password.');
+				return false;
+			}
+		}
+
+			/* SIGNUP ERROR */
+		document.querySelector('#Snext-btn').onclick = function() {
+
+			document.querySelector('#signup-form').action = window.location.href;
+
+			var user_name = document.getElementById('fullname-id').value;
+			var user_Semail = document.getElementById('Semail-id').value;
 			var user_Spassword = document.getElementById('Spassword-id').value;
 			var user_Spassword2 = document.getElementById('Spassword2-id').value;
 
-			if ( user_name === '' || user_Lemail === '' || user_Semail === '' || user_Lpassword === '' || user_Spassword === '' || user_Spassword2 === '' ) {
+			if ( user_name === '' || user_Semail === '' || user_Spassword === '' || user_Spassword2 === '' ) {
 				alert('Please fill out all required fields.');
 				return false;
 			}

@@ -1,3 +1,14 @@
+<?php
+	/*session_start();
+
+	require '../ft-login-N/config.php';
+
+	$_SESSION['logged_in'] = false;
+	require '../ft-login-N/login.php';
+	require '../ft-login-N/signup.php'; */
+	require '../ft-navbar-N/navbar.php';
+?>
+
 <!DOCTYPE html>
 
 <html>
@@ -7,54 +18,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover Page</title>
 
+    <link href="../global_css.css" rel="stylesheet"/>
     <link href="../ft-login-N/login.css" rel="stylesheet"/>
     <link href="../ft-login-N/signup.css" rel="stylesheet"/>
 
     <style>
-		@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap');
-
-		body {
-			margin: 0;
-			padding: 0;
-			align-items: center;
-			color: #433F42;
-			background-color:#F6F5F0;
-		}
-		
-		#nav {
-			display: flex;
-			align-items: center;
-			height: 50px;
-			background-color: #BE8F69;
-		}
-
-		#logo {
-			height: 40px;
-			width: auto;
-			margin-left: 10px;
-		}
-
-		#search {
-			height: 20px;
-		}
-
-		.nav-menu {
-			display: flex;
-			margin-left: auto;
-			font-family: "Quicksand", "Arial", sans-serif;
-		}
-
-		.nav-menu li
-		{
-			list-style: none;
-			padding: 25px;
-		}
-
-		a {
-			text-decoration: none;
-			color: #F7F6F2;
-		}
-
 		.overlay {
 			display: none;
 			position: fixed;
@@ -132,144 +100,6 @@
 </head>
 
 <body>
-	<!-- NAV w/ LOGIN/SIGNUP POP UP -->
-	<nav>
-		<div id="nav">
-			<a href="../ft-home-a/home.html"><img src="../ft-navbar-N/logo.png" alt="Ethical Threads Logo" id="logo"></a>
-			<ul class="nav-menu">
-				<li><a href="../ft-discover-N/discover.html">Discover</a></li>
-				<li><a href="../ft-about-pg-b/about-page.html">About</a></li>
-				<li><a href="../ft-login-N/login.html" id="open-login">Login</a></li>
-				<li><a href=""><img src="../ft-navbar-N/magnify.png" alt="Search" id="search"></a></li>
-			</ul> <!-- .nav-menu -->
-		</div> <!-- #nav -->
-	</nav>
-
-		<!-- POPUPS -->
-	<div id="overlay1" class="overlay">
-	<div id="login-everything">
-		<img src="../ft-login-N/exit.png" alt="exit" id="close-login">
-
-		<div id="login">
-			<h2 class="login-headers">Login</h2>
-			<hr>
-			<p>Login to save brands and items to your favorites
-			<br>so that you never lose them!</p>
-			<div class="responses">
-				<div id="email-header" class="response-headers">Email</div>
-				<input
-					type="text"
-               		name="email"
-                	id="email"
-                	class="inputs"
-            	/>
-
-            	<div id="password-header" class="response-headers">Password</div>
-				<input
-					type="text"
-               		name="password"
-                	id="password"
-                	class="inputs"
-            	/>
-            </div> <!-- .responses -->
-
-            <div id="keep-login">
-            	<input
-                    type="checkbox"
-                    name="keep"
-                    id="keep"
-                  />
-                  Keep me logged in
-            </div> <!-- #keep-login -->
-
-            <div id="next-btn">
-            	<button class="next-profile" type="submit"><a href="../ft-profilepage-s/ft-profilepage-S.html" id="next-text">
-            		Next
-            	</a></button>
-            </div> <!-- #next-btn -->
-		</div> <!-- #login -->
-		
-		<div id="signup">
-			<hr>
-			<h2 class="login-headers">Don't have an account?</h2>
-			<p>It costs nothing to set up an
-			<br>Ethical Threads account!</p>
-
-			<div id="signup-btn">
-            	<button id="joinus" type="submit"><a href="../ft-navbar-N/navbar.html#overlay2" id="joinus-text">
-            		Sign Up
-            	</a></button>
-            </div> <!-- #signup-btn -->
-
-		</div> <!-- #signup -->
-	</div> <!-- #login-everything -->
-	</div> <!-- .overlay -->
-
-	<div id="overlay2" class="overlay">
-	<div id="signup-everything">
-		<a href="../ft-home-a/home.html"><img src="../ft-login-N/exit.png" alt="exit" id="close-signup"></a>
-		
-		<div id="signup">
-			<h2 class="login-headers">Sign Up</h2>
-			<hr>
-			<p>It costs nothing to set up an
-			<br>Ethical Threads account!</p>
-			<div class="responses">
-				<div id="name-header" class="response-headers">Name</div>
-				<input
-					type="text"
-               		name="fullname"
-                	id="fullname"
-                	class="inputs"
-            	/>
-
-				<div id="email-header" class="response-headers">Email</div>
-				<input
-					type="text"
-               		name="email"
-                	id="email"
-                	class="inputs"
-            	/>
-
-            	<div id="password-header" class="response-headers">Password</div>
-				<input
-					type="text"
-               		name="password"
-                	id="password"
-                	class="inputs"
-            	/>
-
-            	<div id="password2-header" class="response-headers">Confirm Password</div>
-				<input
-					type="text"
-               		name="password2"
-                	id="password2"
-                	class="inputs"
-            	/>
-            </div> <!-- .responses -->
-
-            <div id="keep-login">
-            	<input
-                    type="checkbox"
-                    name="keep"
-                    id="keep"
-                  />
-                  Keep me logged in
-            </div> <!-- #keep-login -->
-
-            <div id="next-btn">
-            	<button class="next-profile" type="submit"><a href="../ft-profilepage-s/ft-profilepage-S.html" id="next-text">
-            		Next
-            	</a></button>
-            </div> <!-- #next-btn -->
-		</div> <!-- #signup -->
-
-		<p>By creating an account, you agree to the Ethical Threads
-		<br>terms of use and privacy policy.</p>
-		
-	</div> <!-- #signup-everything -->
-	</div> <!-- .overlay -->
-
 	<!-- DISCOVER -->
 	<div id="discover">
 		<h1 class="discover-headers">Discover more brands to love</h1>
