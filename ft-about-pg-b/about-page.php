@@ -25,7 +25,6 @@
     body {
       font-family: Open Sans;
       color: #433f42;
-      font-size: 18px;
       background-color: #f6f5f0;
       margin: 0;
       padding: 0;
