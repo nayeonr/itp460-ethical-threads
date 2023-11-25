@@ -54,7 +54,7 @@
 		<div id="nav">
 			<a href="../ft-home-a/home.html"><img src="../ft-navbar-N/logo.png" alt="Ethical Threads Logo" id="logo"></a>
 			<ul class="nav-menu">
-				<li><a href="../ft-discover-N/discover.html">Discover</a></li>
+				<li><a href="../ft-discover-N/discover.php">Discover</a></li>
 				<li><a href="../ft-about-pg-b/about-page.php">About</a></li>
 				<li><a href="../ft-login-N/login.php" id="open-login">Login</a></li>
 				<li><a href=""><img src="../ft-navbar-N/magnify.png" alt="Search" id="search"></a></li>
