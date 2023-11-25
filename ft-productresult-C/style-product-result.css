@@ -259,6 +259,9 @@ div {
     width: 150px;
 }
 
+#price-span {
+    padding-right: 125px;
+}
 
 figure {
     margin-right: 0px;
