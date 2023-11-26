@@ -1,13 +1,12 @@
 <?php
 	
-	//require '../ft-login-N/config.php';
-
+	$_SESSION['logged_in'] = false;
 	// check if user has already logged in
 	if ( isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true )
 	{
 		// logged in
 		// redirect to profile page
-		header('Location: ../ft-profilepage-S/ft-profilepage-S.html');
+		//header('Location: ../ft-profilepage-S/ft-profilepage-S.php');
 		exit();
 	} 
 	else
@@ -64,7 +63,7 @@
 				$_SESSION['logged_in'] = true;
 
 				// redirect to profile page
-				header('Location: ../ft-profilepage-S/ft-profilepage-S.html');
+				header('Location: ../ft-profilepage-S/ft-profilepage-S.php');
 			}
 			else
 			{
@@ -86,7 +85,7 @@
     
     <link href="../global_css.css" rel="stylesheet"/>
     <link href="../ft-login-N/login.css" rel="stylesheet"/>
-    <link href="../ft-login-N/signup.css" rel="stylesheet"/>
+   <!-- <link href="../ft-login-N/signup.css" rel="stylesheet"/> -->
 
     <style>
     	#overlay1 {
@@ -116,7 +115,7 @@
 
 		<div id="login">
 			<h2 class="login-headers">Login</h2>
-			<hr>
+			<hr class="login-hr1">
 			<p class="login-p">Login to save brands and items to your favorites
 			<br>so that you never lose them!</p>
 			<div class="responses">
@@ -137,7 +136,7 @@
             	/>
             </div> <!-- .responses -->
 
-            <div class="keep-login">
+            <!-- <div class="keep-login">
             	<input
                     type="checkbox"
                     name="keep"
@@ -145,7 +144,7 @@
                     class="keep-class"
                   />
                   Keep me logged in
-            </div> <!-- .keep-login -->
+            </div> .keep-login -->
 
             <div id="Lnext-btn" class="next-btn">
             	<button id="next-text1" class="login-buttons" type="submit">Next</button>
@@ -155,13 +154,13 @@
 		</form>
 		
 		<div id="signup">
-			<hr>
+			<hr class="login-hr">
 			<h2 class="login-headers">Don't have an account?</h2>
 			<p class="login-p">It costs nothing to set up an
 			<br>Ethical Threads account!</p>
 
 			<div id="signup-btn">
-            	<button id="joinus" class="login-buttons" type="submit"><a href="../ft-navbar-N/navbar.html#overlay2" id="joinus-text">
+            	<button id="joinus" class="login-buttons" type="submit"><a href="../ft-navbar-N/navbar.php#overlay2" id="joinus-text">
             		Sign Up
             	</a></button>
             </div> <!-- #signup-btn -->
