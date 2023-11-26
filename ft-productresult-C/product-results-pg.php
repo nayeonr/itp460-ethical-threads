@@ -1,27 +1,28 @@
 <?php
-   require '../ft-navbar-N/navbar.php';
+
+  require '../ft-navbar-N/navbar.php';
 // $host = "http://304.itpwebdev.com/cpanel";
 // $user = "ethreads_cclough";
 // $pass = "Coding00!";
-// <!-- $user = "ethreads";
-// $pass = "460uscitp"; -->
+// $user = "ethreads";
+// $pass = "460uscitp";
 // $db = "ethreads_brands_db";
 
-// <!-- establish my sql connection -->
-// $mysqli = new mysqli($host, $user, $pass, $db);
+
+//  <!-- establish my sql connection -->
+ // $mysqli = new mysqli($host, $user, $pass, $db); -->
 
 // <!-- check for connection errors  -->
-// if ($mysqli->connect_erno){
+ // if ($mysqli->connect_erno){
 //   echo $mysqli->connect_error;
 //   exit();
-// }
+// } -->
 
-// <!-- submit sql statement  -->
+//  <!-- submit sql statement  -->
 
 // <!-- close db connection -->
-// $mysqli->close();
+// $mysqli->close(); --> 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
