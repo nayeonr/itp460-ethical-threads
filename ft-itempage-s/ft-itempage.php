@@ -1,6 +1,7 @@
 <!-- item page -->
-<?php	
-		//itp 304 lecture 6, php mysqli
+<?php
+	require '../ft-navbar-N/navbar.php';
+
 		echo "<pre>";
 		var_dump($_GET);
 		echo "</pre>";
@@ -20,7 +21,24 @@
 	$sql = "SELECT *
 		FROM items
     LEFT JOIN brands
-   		ON items.brand_id = brands.brand_id;"
+   		ON items.brand_id = brands.brand_id
+   	LEFT JOIN filtered_brands
+    	ON brands.brand_id = filtered_brands.brand_id
+    LEFT JOIN filters
+    	ON filtered_brands.filter_id = filters.filter_id
+    WHERE items.item_id = 2;";
+
+ 	$sql = $sql . ";";
+
+	echo "<hr>$sql<hr>";
+
+	$results = $mysqli->query($sql);
+
+	if (!$results) {
+		echo $mysqli->error;
+		$mysqli->close();
+		exit();
+	}
 
 	$mysqli->close();
 
@@ -34,7 +52,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="
 		sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="../global_css.css">
+		<link rel="stylesheet" href="../global_css.css">
     <link rel="stylesheet" href="../ft-login-N/login.css">
     <link rel="stylesheet" href="../ft-login-N/signup.css">
   </head>
@@ -147,17 +165,6 @@
 </head>
 <body>
 
-  <div id="nav">
-                <a href="../ft-home-a/home.html"><img src="../ft-navbar-N/logo.png" alt="Ethical Threads Logo" id="logo"></a>
-                <ul class="nav-menu">
-                    <li><a href="../ft-discover-N/discover.html">Discover</a></li>
-                    <li><a href="../ft-about-pg-b/about-page.html">About</a></li>
-                    <li><a href="../ft-login-N/login.html">Login</a></li>
-                    <li><a href=""><img src="../ft-navbar-N/magnify.png" alt="Search" id="search"></a></li>
-                </ul> <!-- .nav-menu -->
-            </div> 
-
-
 <div class="block-1">
 	<?php while ($row = $results->fetch_assoc()) : ?>
 		<div class="item-preview">
@@ -174,14 +181,14 @@
 				<p id="description"> <?php echo $row['item_description']; ?> </p>
 
 				<div class="tag">
-					<p> <?php echo $row['brand_filter']; ?> </p>
+					<p> <?php echo $row['filter_name']; ?> </p>
 				</div>
 		<?php endwhile; ?>
 
 		</div>
 </div>
 
-<h1 id="discover-heading"> More by </h1>
+<h1 id="discover-heading"> More by <?php echo $row['brand_name']; ?></h1>
 <div class="block-2">
 	<div class="discover-item">
 		<img src= />
@@ -208,35 +215,6 @@
 <div class="footer">
       <span id="copyright"> © Ethical Threads </span>
 </div>
-
-<script>
-
-		// /* LOGIN POPUP */
-		// document.querySelector('#open-login').onclick = function(event) {
-		// 	event.preventDefault();
-		// 	document.querySelector('.overlay').style.display = 'flex';
-		// };
-
-		// document.querySelector('#close-login').onclick = function(event) {
-		// 	event.preventDefault();
-		// 	document.querySelector('.overlay').style.display = 'none';
-		// };
-
-		// 	/* SIGNUP POPUP */
-		// document.querySelector('#joinus').onclick = function(event) {
-		// 	event.preventDefault();
-		// 	document.querySelector('#overlay1').style.display = 'none';
-		// 	document.querySelector('#overlay2').style.display = 'flex';
-		// }
-
-		// document.querySelector('#close-signup').onclick = function(event) {
-		// 	event.preventDefault();
-		// 	document.querySelector('#overlay2').style.display = 'none';
-		// 	document.querySelector('.overlay').style.display = 'none';
-		// };
-
-
-</script>
 
 </body>
 </html>
