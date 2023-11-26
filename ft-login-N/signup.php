@@ -163,12 +163,12 @@
             <div id="Snext-btn" class="next-btn">
             	<button id="next-text2" class="login-buttons" type="submit">Next</button>
             </div> <!-- #next-btn -->
+
+            <p class="signup-p">By creating an account, you agree to the Ethical Threads
+			<br>terms of use and privacy policy.</p>
 		</div> <!-- #signup -->
 
 		</form>
-
-		<p class="signup-p">By creating an account, you agree to the Ethical Threads
-		<br>terms of use and privacy policy.</p>
 		
 	</div> <!-- #signup-everything -->
 	</div> <!-- .overlay -->

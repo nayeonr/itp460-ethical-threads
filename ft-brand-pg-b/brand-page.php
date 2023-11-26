@@ -18,12 +18,12 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <link href="../global_css.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../global_css.css" />
     <link rel="stylesheet" href="../ft-login-N/signup.css">
     <link rel="stylesheet" href="../ft-login-N/login.css">
   </head>
   <style>
-    /* @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pixelify+Sans:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pixelify+Sans:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
     body {
       font-family: Open Sans;
       color: #433f42;
@@ -31,15 +31,7 @@
       margin: 0;
       padding: 0;
       align-items: center;
-    }
-    .hero-section {
-      background-image: url("threads.webp");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      height: 300px;
-      opacity: 50%;
-    }
+    } 
     .container-lg {
       margin-top: 20px;
     }
@@ -104,7 +96,7 @@
         getting background img + overlay in place - https://htmlcssfreebies.com/bootstrap-5-hero-section-component/
         getting overall template/arrangment of elements - https://getbootstrap.com/docs/5.3/examples/heroes/
     */
-    /* .mb-6 {
+    .mb-6 {
       margin-bottom: 4.5rem !important;
     }
     .mb-7 {
@@ -330,7 +322,7 @@
         padding-bottom: 10.5rem !important;
       }
     }
-    .hcf-overlay {
+    /* .hcf-overlay {
       --hcf-overlay-opacity: 0.5;
       --hcf-overlay-bg-color: var(--bs-black-rgb);
       position: relative;
@@ -357,18 +349,18 @@
       transform: scale3d(1, 1, 1);
       transform-style: preserve-3d;
       transition: all 0.5s;
-    }
+    } */
     /* end external hero section css code */
 
     #sm-icon {
       position: absolute;
-      right: 0px;
-      top: 140px;
+      right: 5px;
+      top: 280px;
       cursor: pointer;
     }
     .nav-menu{
       margin-top: 15px;
-    } */
+    }
   </style>
   <body>
     <section
@@ -453,8 +445,6 @@
             </div>
           </div>
         </div>
-        <!-- <br>
-            <button id="shop-more-b">Shop More From This Brand</button> -->
       </div>
       <div class="container">
         <div class="content-box-header">About the Brand</div>

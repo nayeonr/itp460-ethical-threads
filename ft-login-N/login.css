@@ -22,9 +22,9 @@
 		}
 
 		.login-p {
-			margin: 0;
-			padding: 0;
+			padding: 15px;
 			font-size: 0.8em;
+			margin: 0;
 		}
 
 		.login-headers {
@@ -36,6 +36,8 @@
 		
 		.login-hr {
 			width: 300px;
+			padding-bottom: 15px;
+			margin: 0px auto;
 		}
 
 		.response-headers {
@@ -68,10 +70,6 @@
 			height: 35px;
   			border: 1px solid #F7F6F2;
   			border-radius: 15px;
-  			background-color: #F7F6F2;
-		}
-
-		button:hover {
   			background-color: #F7F6F2;
 		}
 
