@@ -183,7 +183,6 @@
 				<div class="tag">
 					<p> <?php echo $row['filter_name']; ?> </p>
 				</div>
-		<?php endwhile; ?>
 
 		</div>
 </div>
@@ -210,7 +209,7 @@
 		<p id="discover-item-name"> </p>
 	</div>
 </div>
-
+<?php endwhile; ?>
 
 <div class="footer">
       <span id="copyright"> © Ethical Threads </span>
