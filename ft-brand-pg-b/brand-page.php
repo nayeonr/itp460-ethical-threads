@@ -1,6 +1,4 @@
 <?php
-  // require "config/config.php";
-  // if including navbar php file, then take out config file since nayeon's navbar already has config file in it
 	require '../ft-navbar-N/navbar.php';
 ?>
 <!DOCTYPE html>
@@ -9,7 +7,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About the Brand</title>
-    <link href="../global_css.css" rel="stylesheet" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -21,9 +18,12 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <link href="../global_css.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../ft-login-N/signup.css">
+    <link rel="stylesheet" href="../ft-login-N/login.css">
   </head>
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pixelify+Sans:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
+    /* @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pixelify+Sans:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
     body {
       font-family: Open Sans;
       color: #433f42;
@@ -41,21 +41,18 @@
       opacity: 50%;
     }
     .container-lg {
-      /* border: solid 1px red; */
       margin-top: 20px;
     }
     .container {
       margin-bottom: 40px;
     }
     .content-box-header {
-      /* border: solid 1px purple; */
       font-size: 32px;
       font-family: Quicksand;
       padding-bottom: 15px;
       font-weight: 500;
     }
     .content-p {
-      /* border: solid blue 1px; */
       margin-left: 18px;
       font-weight: 500;
     }
@@ -64,16 +61,13 @@
       border-radius: 15px;
     }
     .row {
-      /* border: solid orange 1px; */
       margin-left: 20px;
       align-items: top;
     }
     .col {
-      /* border: solid fuchsia 1px; */
       margin-left: 2px;
     }
     .item-box {
-      /* border: solid green 1px; */
       width: 65%;
     }
     .item-name {
@@ -98,20 +92,9 @@
       padding-right: 15px;
       padding-left: 15px;
     }
-    #shop-more-b:hover,
     #hero-section-b:hover {
       background-color: darkcyan;
       cursor: pointer;
-    }
-    .tag {
-      font-family: Quicksand;
-      font-size: 14px;
-      width: 150px;
-      background-color: rgba(113, 111, 111, 0.25);
-      color: #433f42;
-      border-radius: 3px;
-      padding: 6px;
-      margin-right: 5px;
     }
     .icon-img {
       width: 150px;
@@ -121,7 +104,7 @@
         getting background img + overlay in place - https://htmlcssfreebies.com/bootstrap-5-hero-section-component/
         getting overall template/arrangment of elements - https://getbootstrap.com/docs/5.3/examples/heroes/
     */
-    .mb-6 {
+    /* .mb-6 {
       margin-bottom: 4.5rem !important;
     }
     .mb-7 {
@@ -383,62 +366,8 @@
       top: 140px;
       cursor: pointer;
     }
-
-    /* navbar css temp */
-    /* body {
-      margin: 0px;
-      padding: 0px;
-      align-items: center;
-    }
-    #nav {
-      display: flex;
-      align-items: center;
-      height: 50px;
-      background-color: #be8f69;
-    }
-    #logo {
-      height: 40px;
-      width: auto;
-      margin-left: 10px;
-    }
-    #search {
-      height: 20px;
-    }
-    .nav-menu {
-      display: flex;
-      margin-left: auto;
-      font-family: "Quicksand", "Arial", sans-serif;
+    .nav-menu{
       margin-top: 15px;
-    }
-    .nav-menu li {
-      list-style: none;
-      padding: 25px;
-    }
-    a {
-      text-decoration: none;
-      color: #f7f6f2;
-    } */
-
-    /* footer css temp */
-    /* #copyright {
-      margin-left: 10px;
-    }
-    .footer {
-      background-color: #be8f69;
-      display: flex;
-      color: #f7f6f2;
-      font-family: "Quicksand", "Arial", sans-serif;
-      height: 50px;
-      line-height: 50px;
-      justify-content: space-between;
-    }
-    #newsletter-input {
-      border: none;
-      border-radius: 5px;
-      font-family: sans-serif;
-      margin-left: 10px;
-      margin-right: 10px;
-      height: 30px;
     } */
   </style>
   <body>
@@ -545,45 +474,6 @@
         </p>
       </div>
       <br />
-      <!-- <div class="container">
-        <div class="content-box-header">Brand Values</div>
-        <br />
-        <div class="row gx-5 gy-4 text-center justify-content-center">
-          <div class="col">
-            <div class="item-box">
-              <img
-                class="icon-img"
-                src="brand-pg-imgs/recycle.png"
-                alt="Recycling icon"
-              />
-              <br />
-              <div class="item-name">Recycling</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="item-box">
-              <img
-                class="icon-img"
-                src="brand-pg-imgs/earth-leaf.png"
-                alt="Earth with leaf icon"
-              />
-              <br />
-              <div class="item-name">Sustainablility</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="item-box">
-              <img
-                class="icon-img"
-                src="brand-pg-imgs/heart-hand.png"
-                alt="Hand with heart above it icon"
-              />
-              <br />
-              <div class="item-name">Giving Back</div>
-            </div>
-          </div>
-        </div>
-      </div> -->
     </div>
     <div class="footer">
       <span id="copyright"> © Ethical Threads </span>

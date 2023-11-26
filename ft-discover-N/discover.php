@@ -19,11 +19,9 @@
     <title>Discover Page</title>
 
     <link href="../global_css.css" rel="stylesheet"/>
-    <link href="../ft-login-N/login.css" rel="stylesheet"/>
-    <link href="../ft-login-N/signup.css" rel="stylesheet"/>
 
     <style>
-		.overlay {
+		/*.overlay {
 			display: none;
 			position: fixed;
      		top: 0;
@@ -40,7 +38,7 @@
 
      	#signup-everything {
      		box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
-     	}
+     	} */
 
 
 

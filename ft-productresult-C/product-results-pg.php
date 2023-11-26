@@ -32,6 +32,8 @@
     <title>Product Result</title>
     
     <link href="../global_css.css" rel="stylesheet" />
+    <link href="../ft-login-N/signup.php" rel="stylesheet" />
+    <link href="../ft-login-N/signup.php" rel="stylesheet" />
     <link href="../ft-productresult-C/style-product-result.css" rel="stylesheet" />
 
     <body>

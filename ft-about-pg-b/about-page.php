@@ -7,7 +7,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us</title>
-    <link href="../global_css.css" rel="stylesheet"/>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -19,6 +18,7 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <link href="../global_css.css" rel="stylesheet"/>
   </head>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pixelify+Sans:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
@@ -34,14 +34,12 @@
       margin-bottom: 40px;
     }
     .content-box-header {
-      /* border: solid 1px purple; */
       font-size: 34px;
       font-family: Quicksand;
       padding-bottom: 15px;
       font-weight: 500;
     }
     .content-p {
-      /* border: solid blue 1px; */
       margin-left: 28px;
       font-size: 18px;
     }
@@ -50,15 +48,12 @@
       border-radius: 20px;
     }
     .row {
-      /* border: solid orange 1px; */
       margin-left: 20px;
     }
     .col {
-      /* border: solid fuchsia 1px; */
       margin-left: 2px;
     }
     .item-box {
-      /* border: solid darkgoldenrod 1px; */
       width: 90%;
     }
     .item-name {
