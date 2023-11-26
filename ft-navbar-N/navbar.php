@@ -7,7 +7,6 @@
 	require '../ft-login-N/login.php';
 	require '../ft-login-N/signup.php';
 
-	//$base_url = rtrim(dirname($_SERVER['PHP_SELF']));
 ?>
 
 <!DOCTYPE html>
@@ -17,11 +16,12 @@
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nav Bar</title>
 
     <link href="../global_css.css" rel="stylesheet"/>
     <link href="../ft-login-N/login.css" rel="stylesheet"/>
     <link href="../ft-login-N/signup.css" rel="stylesheet"/>
+
+    <title>Nav Bar</title>
     
     <style>
 		.overlay {
