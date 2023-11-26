@@ -224,8 +224,8 @@
                             <li>Black Owned</li>
                             <li class="selected-filter">Women Owned</li>
                             <li> Eco Friendly </li>
-                            <li> Mission Oriented </li>
-                            <li class="selected-filter">Local</li>
+                            <li class="selected-filter"> Mission Oriented </li>
+                            <li>Local</li>
                         </ul>
                     </div>
                 </div>
