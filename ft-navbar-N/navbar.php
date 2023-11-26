@@ -45,6 +45,106 @@
      	#signup-everything {
      		box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
      	}
+
+     	.search {
+        margin: 100px; 
+    }
+    .searchbut {
+        background: #82A7A6; 
+        border-radius: 15px;
+        /* border: 2px solid #82A7A6; */
+        font-size: 15px;
+        font-family: Quicksand;
+        color: #F7F6F2;
+    }
+    .round {
+        border-radius: 15px;
+        font-size: 15px;
+        font-family: Quicksand;
+    }
+    .clickedsearchbut {
+        border-radius: 0px 15px 0px 0px;
+        margin-left: -10px;
+    }
+    .clickedround {
+        border-radius: 15px 0px 0px 0px;
+    }
+    .searchline{
+        margin-top:10px;
+    }
+    #popdown{
+        display: none;
+        background-color: #DDBA9F; 
+        border-radius: 0px 0px 15px 15px;
+        font-size: 15px;
+        font-family: Quicksand;
+        color: #433F42;
+    }
+    li {
+        display: inline;
+        /* font-size: 18px; */
+        margin-right: 15px;
+        color: #433F42;
+    }
+    h6 {
+        margin-left: 15px;
+        color: #433F42;
+    }
+    #filters {
+        display: inline;
+        /* font-size: 20px; */
+        margin-left: 15px;
+        color: #433F42;
+    }
+    .selected-filter {
+        background-color: #92BCC5;
+        border-radius: 20px;
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        color: #F7F6F2;
+    }
+    .filter-div {
+        margin-top: 20px;
+    }
+    .discoverlocal {
+        background-color: #DDBA9F;
+        padding: 25px;
+        margin-top: 25px;
+    }
+    .sectionheader {
+        color: black;
+        font-family: Quicksand;
+        font-weight: 500;
+        margin-bottom: 25px;
+    }
+    .discoverlocal1 {
+        background-color: #DDBA9F;
+        margin-top: 50px;
+        padding: 25px;
+    }
+    .card {
+        background-color: #DDBA9F;
+        border-color: #DDBA9F;
+    }
+    .card-title {
+        font-family: Quicksand;
+        text-align: left;
+        margin-left: 10px;
+    }
+    .homepic{
+        color: #433F42;
+    }
+    .homepic:hover{
+        color: #82A7A6;
+    }
+    .toggle{
+        margin-bottom: 10px;
+    }
+    .popular{
+        padding-bottom: 25px;
+    }
 	</style>
 </head>
 
@@ -57,7 +157,7 @@
 				<li><a href="../ft-discover-N/discover.php">Discover</a></li>
 				<li><a href="../ft-about-pg-b/about-page.php">About</a></li>
 				<li><a href="../ft-login-N/login.php" id="open-login">Login</a></li>
-				<li><a href=""><img src="../ft-navbar-N/magnify.png" alt="Search" id="search"></a></li>
+				<li><a><img src="../ft-navbar-N/magnify.png" alt="Search" id="searchfromnav"></a></li>
 			</ul> <!-- .nav-menu -->
 		</div> <!-- #nav -->
 	</nav>
