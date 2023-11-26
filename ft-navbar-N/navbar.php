@@ -52,7 +52,7 @@
 	<!-- NAV w/ LOGIN/SIGNUP POP UP -->
 	<nav>
 		<div id="nav">
-			<a href="../ft-home-a/home.html"><img src="../ft-navbar-N/logo.png" alt="Ethical Threads Logo" id="logo"></a>
+			<a href="../ft-home-a/home.php"><img src="../ft-navbar-N/logo.png" alt="Ethical Threads Logo" id="logo"></a>
 			<ul class="nav-menu">
 				<li><a href="../ft-discover-N/discover.php">Discover</a></li>
 				<li><a href="../ft-about-pg-b/about-page.php">About</a></li>
