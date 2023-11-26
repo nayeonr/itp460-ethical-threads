@@ -22,9 +22,9 @@
 		}
 
 		.signup-p {
-			margin: 0;
 			padding: 15px;
 			font-size: 0.8em;
+			margin: 0;
 		}
 
 		.login-headers {
@@ -35,6 +35,7 @@
 		
 		.signup-hr {
 			width: 300px;
+			margin: 0px auto;
 		}
 
 		.response-headers {

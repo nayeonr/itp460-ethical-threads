@@ -22,9 +22,9 @@
 		}
 
 		.login-p {
-			margin: 0;
 			padding: 15px;
 			font-size: 0.8em;
+			margin: 0;
 		}
 
 		.login-headers {
@@ -37,6 +37,7 @@
 		.login-hr {
 			width: 300px;
 			padding-bottom: 15px;
+			margin: 0px auto;
 		}
 
 		.response-headers {
