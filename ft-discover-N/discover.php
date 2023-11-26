@@ -99,6 +99,8 @@
     <title>Discover Page</title>
 
     <link href="../global_css.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../ft-login-N/signup.css">
+    <link rel="stylesheet" href="../ft-login-N/login.css">
 
     <style>
     	.discover-headers {
