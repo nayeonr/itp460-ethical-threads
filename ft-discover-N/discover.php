@@ -190,29 +190,7 @@
     </div> <!-- .footer -->
 
     <script>
-			/* LOGIN POPUP */
-		document.querySelector('#open-login').onclick = function(event) {
-			event.preventDefault();
-			document.querySelector('.overlay').style.display = 'flex';
-		};
-
-		document.querySelector('#close-login').onclick = function(event) {
-			event.preventDefault();
-			document.querySelector('.overlay').style.display = 'none';
-		};
-
-			/* SIGNUP POPUP */
-		document.querySelector('#joinus').onclick = function(event) {
-			event.preventDefault();
-			document.querySelector('#overlay1').style.display = 'none';
-			document.querySelector('#overlay2').style.display = 'flex';
-		}
-
-		document.querySelector('#close-signup').onclick = function(event) {
-			event.preventDefault();
-			document.querySelector('#overlay2').style.display = 'none';
-			document.querySelector('.overlay').style.display = 'none';
-		};
+		
 	</script>
 </body>
 
