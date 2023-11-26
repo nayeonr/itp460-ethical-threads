@@ -1,5 +1,80 @@
 <!-- item page -->
 <?php
+	<?php
+	
+	//require '../ft-login-N/config.php';
+
+	// check if user has already logged in
+	if ( isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true )
+	{
+		// logged in
+		// redirect to profile page
+		header('Location: ../ft-profilepage-S/ft-profilepage-S.html');
+		exit();
+	} 
+	else
+	{
+		// not logged in
+
+		// if there was form submission
+		if ( isset($_POST['Lemail']) && isset($_POST['Lpassword']) )
+		{
+			//session_start();
+	
+			$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+			// check for errors
+			if ( $mysqli->connect_errno ) {
+				echo $mysqli->connect_error;
+				exit();
+			}
+
+			$Lemail = $_POST['Lemail'];
+			$Lemail = $mysqli->escape_string($Lemail);
+
+			$Lpassword = $_POST['Lpassword'];
+					// 	hash(ALG, input)
+			$Lpassword = hash('sha256', $Lpassword);
+
+			$sql_Lusers = "SELECT *
+						FROM users
+						WHERE email = '$Lemail'
+								AND password = '$Lpassword';
+						";
+
+			$results_Lusers = $mysqli->query($sql_Lusers);
+
+			// check for errors
+			if ( !$results_Lusers ) {
+				echo $mysqli->error();
+				$mysqli->close();
+				exit();
+			}
+
+			$mysqli->close();
+
+			if ( trim($_POST['Lemail']) == "" || trim($_POST['Lpassword']) == "" )
+			{
+				// no/missing credentials
+				$Lerror = "Please enter both email and password.";
+			}
+			else if ( $results_Lusers->num_rows > 0 )
+			{
+				// valid credentials
+
+				// set session variables
+				$_SESSION['logged_in'] = true;
+
+				// redirect to profile page
+				header('Location: ../ft-profilepage-S/ft-profilepage-S.html');
+			}
+			else
+			{
+				// wrong credentials
+				$Lerror = "Invalid credentials.";
+			}
+		} 
+	}
 	
 	//itp 304 lecture 6, php mysqli
 	echo "<pre>";
@@ -236,9 +311,7 @@
 		// 	document.querySelector('.overlay').style.display = 'none';
 		// };
 
-		document.querySelector("#discover-item").onclick = function () {
-			location.href = "https://www.webkinz.com/";
-		}
+
 </script>
 
 </body>
