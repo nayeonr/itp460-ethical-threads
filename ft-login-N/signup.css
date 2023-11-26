@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap');
 
-		* {
+		/* {
 			align-items: center;
 			color: #F7F6F2;
-		}
+		}*/
 
 		#signup-everything {
 			margin: 0px auto;
@@ -20,7 +20,7 @@
 			padding: 15px;
 		}
 
-		p {
+		.signup-p {
 			padding: 15px;
 			font-size: 0.8em;
 		}

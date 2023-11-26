@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap');
 
-		* {
+		/* {
 			align-items: center;
 			color: #F7F6F2;
-		}
+		} */
 
 		#login-everything {
 			margin: 0px auto;
@@ -20,7 +20,7 @@
 			padding-top: 17px;
 		}
 
-		p {
+		.login-p {
 			margin: 0;
 			padding: 0;
 			font-size: 0.8em;

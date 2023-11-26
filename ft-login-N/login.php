@@ -117,7 +117,7 @@
 		<div id="login">
 			<h2 class="login-headers">Login</h2>
 			<hr>
-			<p>Login to save brands and items to your favorites
+			<p class="login-p">Login to save brands and items to your favorites
 			<br>so that you never lose them!</p>
 			<div class="responses">
 				<div id="Lemail-header" class="response-headers">Email</div>
@@ -157,7 +157,7 @@
 		<div id="signup">
 			<hr>
 			<h2 class="login-headers">Don't have an account?</h2>
-			<p>It costs nothing to set up an
+			<p class="login-p">It costs nothing to set up an
 			<br>Ethical Threads account!</p>
 
 			<div id="signup-btn">
