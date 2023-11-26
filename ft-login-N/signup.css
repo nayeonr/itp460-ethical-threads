@@ -33,11 +33,11 @@
 			margin: 0;
 		}
 
-		h2 {
+		/*h2 {
 			text-size: 1em;
-		}
+		}*/
 		
-		hr {
+		.signup-hr {
 			width: 300px;
 		}
 
@@ -58,7 +58,7 @@
 			width: 17px;
 		}
 
-		.inputs {
+		.signup-inputs {
 			width: 350px;
 			height: 35px;
   			background-color: #BE8F69;

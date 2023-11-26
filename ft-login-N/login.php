@@ -116,7 +116,7 @@
 
 		<div id="login">
 			<h2 class="login-headers">Login</h2>
-			<hr>
+			<hr class="login-hr1">
 			<p class="login-p">Login to save brands and items to your favorites
 			<br>so that you never lose them!</p>
 			<div class="responses">
@@ -125,7 +125,7 @@
 					type="text"
                		name="Lemail"
                 	id="Lemail-id"
-                	class="inputs"
+                	class="login-inputs"
             	/>
 
             	<div id="Lpassword-header" class="response-headers">Password</div>
@@ -133,7 +133,7 @@
 					type="text"
                		name="Lpassword"
                 	id="Lpassword-id"
-                	class="inputs"
+                	class="login-inputs"
             	/>
             </div> <!-- .responses -->
 
@@ -155,7 +155,7 @@
 		</form>
 		
 		<div id="signup">
-			<hr>
+			<hr class="login-hr">
 			<h2 class="login-headers">Don't have an account?</h2>
 			<p class="login-p">It costs nothing to set up an
 			<br>Ethical Threads account!</p>

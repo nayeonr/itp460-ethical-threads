@@ -104,7 +104,7 @@
 		<div id="signup">
 
 			<h2 class="login-headers">Sign Up</h2>
-			<hr>
+			<hr class="signup-hr">
 			<p class="signup-p">It costs nothing to set up an
 			<br>Ethical Threads account!</p>
 			<div class="responses">
@@ -115,7 +115,7 @@
 					type="text"
                		name="fullname"
                 	id="fullname-id"
-                	class="inputs"
+                	class="signup-nputs"
             	/>
 
             	<label for="Semail-id">
@@ -125,7 +125,7 @@
 					type="text"
                		name="Semail"
                 	id="Semail-id"
-                	class="inputs"
+                	class="signup-inputs"
             	/>
 
             	<label for="Spassword-id">
@@ -135,7 +135,7 @@
 					type="text"
                		name="Spassword"
                 	id="Spassword-id"
-                	class="inputs"
+                	class="signup-inputs"
             	/>
 
             	<label for="Spassword2-id">
@@ -145,7 +145,7 @@
 					type="text"
                		name="Spassword2"
                 	id="Spassword2-id"
-                	class="inputs"
+                	class="signup-inputs"
             	/>
             </div> <!-- .responses -->
 
