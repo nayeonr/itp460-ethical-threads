@@ -125,7 +125,7 @@
 					type="text"
                		name="Lemail"
                 	id="Lemail-id"
-                	class="login-inputs"
+                	class="inputs"
             	/>
 
             	<div id="Lpassword-header" class="response-headers">Password</div>
@@ -133,7 +133,7 @@
 					type="text"
                		name="Lpassword"
                 	id="Lpassword-id"
-                	class="login-inputs"
+                	class="inputs"
             	/>
             </div> <!-- .responses -->
 

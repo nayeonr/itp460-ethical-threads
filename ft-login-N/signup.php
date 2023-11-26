@@ -115,7 +115,7 @@
 					type="text"
                		name="fullname"
                 	id="fullname-id"
-                	class="signup-nputs"
+                	class="inputs"
             	/>
 
             	<label for="Semail-id">
@@ -125,7 +125,7 @@
 					type="text"
                		name="Semail"
                 	id="Semail-id"
-                	class="signup-inputs"
+                	class="inputs"
             	/>
 
             	<label for="Spassword-id">
@@ -135,7 +135,7 @@
 					type="text"
                		name="Spassword"
                 	id="Spassword-id"
-                	class="signup-inputs"
+                	class="inputs"
             	/>
 
             	<label for="Spassword2-id">
@@ -145,7 +145,7 @@
 					type="text"
                		name="Spassword2"
                 	id="Spassword2-id"
-                	class="signup-inputs"
+                	class="inputs"
             	/>
             </div> <!-- .responses -->
 
