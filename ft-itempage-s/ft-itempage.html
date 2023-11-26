@@ -176,7 +176,7 @@
 				<div class="tag">
 					<p> <?php echo $row['brand_filter']; ?> </p>
 				</div>
-			<?php endwhile; ?>
+		<?php endwhile; ?>
 
 		</div>
 </div>
