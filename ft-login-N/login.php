@@ -85,7 +85,7 @@
     
     <link href="../global_css.css" rel="stylesheet"/>
     <link href="../ft-login-N/login.css" rel="stylesheet"/>
-    <link href="../ft-login-N/signup.css" rel="stylesheet"/>
+   <!-- <link href="../ft-login-N/signup.css" rel="stylesheet"/> -->
 
     <style>
     	#overlay1 {
@@ -136,7 +136,7 @@
             	/>
             </div> <!-- .responses -->
 
-            <div class="keep-login">
+            <!-- <div class="keep-login">
             	<input
                     type="checkbox"
                     name="keep"
@@ -144,7 +144,7 @@
                     class="keep-class"
                   />
                   Keep me logged in
-            </div> <!-- .keep-login -->
+            </div> .keep-login -->
 
             <div id="Lnext-btn" class="next-btn">
             	<button id="next-text1" class="login-buttons" type="submit">Next</button>

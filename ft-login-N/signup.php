@@ -89,7 +89,7 @@
     <title>Sign Up Popup</title>
     
     <link href="../global_css.css" rel="stylesheet"/>
-    <link href="../ft-login-N/login.css" rel="stylesheet"/>
+    <!-- <link href="../ft-login-N/login.css" rel="stylesheet"/> -->
     <link href="../ft-login-N/signup.css" rel="stylesheet"/>
 </head>
 
@@ -149,7 +149,7 @@
             	/>
             </div> <!-- .responses -->
 
-            <div class="keep-login">
+            <!-- <div class="keep-login">
             	<input
                     type="checkbox"
                     name="keep"
@@ -158,7 +158,7 @@
                     value="yes"
                   />
                   <label for="keep-id">Keep me logged in</label>
-            </div> <!-- #keep-login -->
+            </div> #keep-login -->
 
             <div id="Snext-btn" class="next-btn">
             	<button id="next-text2" class="login-buttons" type="submit">Next</button>
