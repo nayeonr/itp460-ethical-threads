@@ -7,6 +7,7 @@
 
 		#login-everything {
 			margin: 0px auto;
+			align-items: center;
 			background-color: #BE8F69;
 			text-align: center;
 			font-family: "Open Sans", "Arial", sans-serif;
@@ -35,6 +36,9 @@
 		
 		hr {
 			width: 300px;
+			text-align: center;
+			align-items: center;
+			margin: 0px auto;
 		}
 
 		.response-headers {
