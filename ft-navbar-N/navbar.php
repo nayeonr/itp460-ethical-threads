@@ -3,7 +3,7 @@
 
 	require '../ft-login-N/config.php';
 
-	$_SESSION['logged_in'] = false;
+	//$_SESSION['logged_in'] = false;
 	require '../ft-login-N/login.php';
 	require '../ft-login-N/signup.php';
 
@@ -45,6 +45,7 @@
      	#signup-everything {
      		box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
      	}
+
 	</style>
 </head>
 
@@ -52,12 +53,20 @@
 	<!-- NAV w/ LOGIN/SIGNUP POP UP -->
 	<nav>
 		<div id="nav">
-			<a href="../ft-home-a/home.html"><img src="../ft-navbar-N/logo.png" alt="Ethical Threads Logo" id="logo"></a>
+			<a href="../ft-home-a/home.php"><img src="../ft-navbar-N/logo.png" alt="Ethical Threads Logo" id="logo"></a>
 			<ul class="nav-menu">
 				<li><a href="../ft-discover-N/discover.php">Discover</a></li>
 				<li><a href="../ft-about-pg-b/about-page.php">About</a></li>
-				<li><a href="../ft-login-N/login.php" id="open-login">Login</a></li>
-				<li><a href=""><img src="../ft-navbar-N/magnify.png" alt="Search" id="search"></a></li>
+				<!-- if logged in, show Profile button -->
+					<?php if ( isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true ) : ?>
+						<li>
+							<a href="../ft-login-N/login.php" id="open-login">Profile<?php echo $row['name']; ?></a>
+						</li>
+					<?php else : ?>
+						<li><a href="../ft-login-N/login.php" id="open-login">Login</a></li>
+					<?php endif; ?>
+				<!--<li><a href="../ft-login-N/login.php" id="open-login">Login</a></li> -->
+				<li><a><img src="../ft-navbar-N/magnify.png" alt="Search" id="search"></a></li>
 			</ul> <!-- .nav-menu -->
 		</div> <!-- #nav -->
 	</nav>
@@ -117,7 +126,7 @@
 			<br>Ethical Threads account!</p>
 
 			<div id="signup-btn">
-            	<button id="joinus" class="login-buttons" type="submit"><a href="../ft-navbar-N/navbar.html#overlay2" id="joinus-text">
+            	<button id="joinus" class="login-buttons" type="submit"><a href="../ft-navbar-N/navbar.php#overlay2" id="joinus-text">
             		Sign Up
             	</a></button>
             </div> <!-- #signup-btn -->
@@ -132,7 +141,7 @@
 	<form method="POST" id="signup-form">
 
 	<div id="signup-everything">
-		<a href="../ft-home-a/home.html"><img src="../ft-login-N/exit.png" alt="exit" id="close-signup"></a>
+		<a href="../ft-home-a/home.php"><img src="../ft-login-N/exit.png" alt="exit" id="close-signup"></a>
 		
 		<div id="signup">
 

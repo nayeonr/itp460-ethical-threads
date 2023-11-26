@@ -22,6 +22,7 @@
 		}
 
 		.signup-p {
+			margin: 0;
 			padding: 15px;
 			font-size: 0.8em;
 		}
@@ -29,15 +30,10 @@
 		.login-headers {
 			padding: 10px;
 			font-family: "Quicksand", "Arial", sans-serif;
-			padding: 5px;
 			margin: 0;
 		}
-
-		h2 {
-			text-size: 1em;
-		}
 		
-		hr {
+		.signup-hr {
 			width: 300px;
 		}
 
@@ -47,7 +43,7 @@
 			font-family: "Quicksand", "Arial", sans-serif;
 		}
 
-		.keep-login {
+		/* .keep-login {
 			margin: 0px auto;
 			width: 350px;
 			text-align: left;
@@ -56,7 +52,7 @@
 
 		#keep-id {
 			width: 17px;
-		}
+		} */
 
 		.inputs {
 			width: 350px;
@@ -64,6 +60,7 @@
   			background-color: #BE8F69;
   			border: 1px solid #F7F6F2;
   			border-radius: 15px;
+  			margin-bottom: 15px;
 		}
 
 		.login-buttons {
@@ -73,10 +70,6 @@
   			border: 1px solid #F7F6F2;
   			border-radius: 15px;
   			background-color: #F7F6F2;
-		}
-
-		a {
-			text-decoration: none;
 		}
 
 		#next-text2 {

@@ -23,30 +23,29 @@
 
 		.login-p {
 			margin: 0;
-			padding: 0;
+			padding: 15px;
 			font-size: 0.8em;
 		}
 
 		.login-headers {
 			padding: 10px;
 			font-family: "Quicksand", "Arial", sans-serif;
-			padding: 0;
 			margin: 0;
+			color: #F7F6F2;
 		}
 		
-		hr {
+		.login-hr {
 			width: 300px;
-			text-align: center;
-			align-items: center;
-			margin: 0px auto;
+			padding-bottom: 15px;
 		}
 
 		.response-headers {
 			width: 350px;
 			font-family: "Quicksand", "Arial", sans-serif;
+			color: #F7F6F2;
 		}
 
-		.keep-login {
+		/* .keep-login {
 			text-align: left;
 			width: 350px;
 			font-size: 0.8em;
@@ -54,7 +53,7 @@
 
 		#keep-id {
 			width: 17px;
-		}
+		} */
 
 		.inputs {
 			width: 350px;
@@ -71,10 +70,6 @@
   			border: 1px solid #F7F6F2;
   			border-radius: 15px;
   			background-color: #F7F6F2;
-		}
-
-		a {
-			text-decoration: none;
 		}
 
 		#next-text1 {

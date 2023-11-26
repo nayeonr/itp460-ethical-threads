@@ -1,5 +1,32 @@
 <?php
-   require '../ft-navbar-N/navbar.php';
+    require '../ft-navbar-N/navbar.php';
+//post to bria's page (brand information if a user clicks an image) post id to bria's page through on click
+//bria would get information from home page regarding brand to input into about the brand
+    define('DB_HOSTHome', '304.itpwebdev.com');
+    define('DB_USERHome', 'ethreads');
+    define('DB_PASSHome', '460uscitp');
+    define('DB_NAMEHome', 'ethreads_brands_db');
+    $mysqli = new mysqli(DB_HOSTHome, DB_USERHome, DB_PASSHome, DB_NAMEHome);
+    
+    $sql_filter = "SELECT * FROM filters";
+    // filters.filter_name AS filters
+	// FROM brands
+    // LEFT JOIN filtered_brands
+    // 	ON brands.brand_id = filtered_brands.brand_id
+    // LEFT JOIN filters
+    // 	ON filtered_brands.filter_id = filters.filter_id;
+
+    $results_filters = $mysqli->query( $sql_filter );
+
+    // Check for SQL Errors.
+    if ( !$results_filters ) {
+    echo $mysqli->error;
+    $mysqli->close();
+    exit();
+    }
+
+    $mysqli->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +39,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../global_css.css">
     <link rel="stylesheet" href="../ft-login-N/signup.css">
-    <link rel="stylesheet" href="../ft-login-N/login.css">
+    <link rel="stylesheet" href="../ft-login-N/login.css"> 
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pixelify+Sans:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
@@ -210,41 +237,106 @@
             </div>
             <div class="row searchline">
                 <div class="col"> 
-                    <form class="d-flex">
+                    <form>
+                        <div class="d-flex">
                         <input class="form-control me-2 round" id="searchPlaceholder" type="search" placeholder="Search Brands You Love" onClick="searchDropdown()">
-                        <button class="btn searchbut" id="shape" type="submit"><a href="../ft-brandresults-C/brand-results-pg.html">Search</a></button>
+                        <button class="btn searchbut" id="shape" type="submit">Search</button>
+                        </div>
+                        <div class="col flex-column" id="popdown">
+                        <div class="row filters">
+                            <div class="col filter-div">
+                                <h6 id="filters">Filters</h6>
+                                <!-- <ul>
+                                    <li>Black Owned</li>
+                                    <li class="selected-filter">Women Owned</li>
+                                    <li> Eco Friendly </li>
+                                    <li class="selected-filter"> Mission Oriented </li>
+                                    <li>Local</li>
+                                </ul> -->
+                                <select name="filter_id" id="filter-id" class="form-control">
+                                    <option value="" selected>-- All --</option>
+
+                                    <?php while ( $row = $results_filters->fetch_assoc() ) : ?>
+                                    <option value="<?php echo $row['filter_id']; ?>">
+                                        <?php echo $row['filter_name']; ?>
+                                    </option>
+                                    <?php endwhile; ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h6> Popular Brands </h6>
+                        </div>
+                        <div class="row justify-content-center popular">
+                            <div class="col-4 text-center">
+                                <img src="../ft-home-a/img/brand1.png">
+                            </div>
+                            <div class="col-4 text-center">
+                                <img src="../ft-home-a/img/brand2.png">
+                            </div>
+                            <div class="col-4 text-center">
+                                <img src="../ft-home-a/img/brand3.png">
+                            </div>
+                        </div>
+                    </div>
+                    
                     </form>
                 </div>
             </div>
-            <div class="col flex-column" id="popdown">
-                <div class="row filters">
-                    <div class="col filter-div">
-                        <h6 id="filters">Filters</h6>
-                        <ul>
-                            <li>Black Owned</li>
-                            <li class="selected-filter">Women Owned</li>
-                            <li> Eco Friendly </li>
-                            <li class="selected-filter"> Mission Oriented </li>
-                            <li>Local</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row">
-                    <h6> Popular Brands </h6>
-                </div>
-                <div class="row justify-content-center popular">
-                    <div class="col-4 text-center">
-                        <img src="../ft-home-a/img/brand1.png">
-                    </div>
-                    <div class="col-4 text-center">
-                        <img src="../ft-home-a/img/brand2.png">
-                    </div>
-                    <div class="col-4 text-center">
-                        <img src="../ft-home-a/img/brand3.png">
-                    </div>
+        </div>   
+
+        <!-- <div class="search">
+            <div class="row">
+                <div class="col">
+                    <label for="searchby">Search By:</label>
+                    <select name="searchtype" id="searchtype" onChange="toggleSearchBar()">
+                        <option value="brand">Brand</option>
+                        <option value="product">Product</option>
+                    </select>
                 </div>
             </div>
-        </div>   
+            <div class="row searchline">
+                <div class="col"> 
+                    <form>
+                        <div class="d-flex">
+                        <input class="form-control me-2 round" id="searchPlaceholder" type="search" placeholder="Search Brands You Love" onClick="searchDropdown()">
+                        <button class="btn searchbut" id="shape" type="submit">Search</button>
+                        </div>
+                        <div class="col flex-column" id="popdown">
+                        <div class="row filters">
+                            <div class="col filter-div">
+                                <h6 id="filters">Filters</h6> -->
+                                <!-- <ul>
+                                    <li>Black Owned</li>
+                                    <li class="selected-filter">Women Owned</li>
+                                    <li> Eco Friendly </li>
+                                    <li class="selected-filter"> Mission Oriented </li>
+                                    <li>Local</li>
+                                </ul> -->
+                                <!-- <select name="filter_id" id="filter-id" class="form-control">
+                                    <option value="" selected>-- All --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h6> Popular Brands </h6>
+                        </div>
+                        <div class="row justify-content-center popular">
+                            <div class="col-4 text-center">
+                                <img src="../ft-home-a/img/brand1.png">
+                            </div>
+                            <div class="col-4 text-center">
+                                <img src="../ft-home-a/img/brand2.png">
+                            </div>
+                            <div class="col-4 text-center">
+                                <img src="../ft-home-a/img/brand3.png">
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div> -->
+        <!-- </div>    -->
 
         <div class="discoverlocal">
             <h4 class="sectionheader">Browse Local Businesses</h4>

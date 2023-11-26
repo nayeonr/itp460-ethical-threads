@@ -89,7 +89,7 @@
     <title>Sign Up Popup</title>
     
     <link href="../global_css.css" rel="stylesheet"/>
-    <link href="../ft-login-N/login.css" rel="stylesheet"/>
+    <!-- <link href="../ft-login-N/login.css" rel="stylesheet"/> -->
     <link href="../ft-login-N/signup.css" rel="stylesheet"/>
 </head>
 
@@ -99,12 +99,12 @@
 	<form method="POST" action="<?=$_SERVER['PHP_SELF'];?>">
 
 	<div id="signup-everything">
-		<a href="../ft-home-a/home.html"><img src="../ft-login-N/exit.png" alt="exit" id="close-signup"></a>
+		<a href="../ft-home-a/home.php"><img src="../ft-login-N/exit.png" alt="exit" id="close-signup"></a>
 		
 		<div id="signup">
 
 			<h2 class="login-headers">Sign Up</h2>
-			<hr>
+			<hr class="signup-hr">
 			<p class="signup-p">It costs nothing to set up an
 			<br>Ethical Threads account!</p>
 			<div class="responses">
@@ -149,7 +149,7 @@
             	/>
             </div> <!-- .responses -->
 
-            <div class="keep-login">
+            <!-- <div class="keep-login">
             	<input
                     type="checkbox"
                     name="keep"
@@ -158,17 +158,17 @@
                     value="yes"
                   />
                   <label for="keep-id">Keep me logged in</label>
-            </div> <!-- #keep-login -->
+            </div> #keep-login -->
 
             <div id="Snext-btn" class="next-btn">
             	<button id="next-text2" class="login-buttons" type="submit">Next</button>
             </div> <!-- #next-btn -->
+
+            <p class="signup-p">By creating an account, you agree to the Ethical Threads
+			<br>terms of use and privacy policy.</p>
 		</div> <!-- #signup -->
 
 		</form>
-
-		<p class="signup-p">By creating an account, you agree to the Ethical Threads
-		<br>terms of use and privacy policy.</p>
 		
 	</div> <!-- #signup-everything -->
 	</div> <!-- .overlay -->
