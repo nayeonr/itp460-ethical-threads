@@ -1,13 +1,13 @@
 <?php
-	require "config/config.php";
-	require 'navbar.html';
+  require '../ft-navbar-N/navbar.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About the Brand</title>
+    <title>About Us</title>
+    <link href="../global_css.css" rel="stylesheet"/>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -25,33 +25,10 @@
     body {
       font-family: Open Sans;
       color: #433f42;
-      font-size: 18px;
       background-color: #f6f5f0;
       margin: 0;
       padding: 0;
       align-items: center;
-    }
-    .hero-section {
-      background-image: url("threads.webp");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      height: 300px;
-      opacity: 50%;
-    }
-    #hero-text {
-      color: #f6f5f0;
-      text-shadow: 5px 4px 3px rgba(67, 63, 66, 0.46);
-      font-size: 60px;
-      font-weight: 700;
-      font-family: Open Sans;
-      position: absolute;
-      top: 5%;
-      left: 40%;
-    }
-    .container-lg {
-      /* border: solid 1px red; */
-      margin-top: 20px;
     }
     .container {
       margin-bottom: 40px;
@@ -66,6 +43,7 @@
     .content-p {
       /* border: solid blue 1px; */
       margin-left: 28px;
+      font-size: 18px;
     }
     .product-img {
       width: 230px;
@@ -87,17 +65,6 @@
       margin-top: 10px;
       font-weight: 500;
     }
-    #shop-more-b {
-      font-family: Quicksand;
-      background-color: #82a7a6;
-      color: #f6f5f0;
-      border: none;
-      border-radius: 8px;
-      padding: 6px;
-      margin-left: 28px;
-      padding-right: 15px;
-      padding-left: 15px;
-    }
     #hero-section-title {
       color: #f6f5f0;
       font-family: Open Sans;
@@ -115,26 +82,9 @@
       padding-right: 15px;
       padding-left: 15px;
     }
-    #shop-more-b:hover,
     #hero-section-b:hover {
       background-color: darkcyan;
       cursor: pointer;
-    }
-    .tag-b {
-      font-family: Quicksand;
-      font-size: 14px;
-      width: 150px;
-      background-color: #82a7a6;
-      color: #f6f5f0;
-      border: none;
-      border-radius: 5px;
-      padding: 2px;
-      margin-top: 10px;
-      margin-right: 5px;
-    }
-    .tag-b:hover {
-      background-color: darkcyan;
-      cursor: auto;
     }
     .icon-img {
       width: 150px;
@@ -408,12 +358,6 @@
     }
 
     /* navbar css temp */
-    /* navbar css temp */
-    body {
-      margin: 0px;
-      padding: 0px;
-      align-items: center;
-    }
     #nav {
       display: flex;
       align-items: center;
@@ -466,186 +410,53 @@
     }
   </style>
   <body>
-    <nav>
-      <div id="nav">
-        <a href="../ft-home-a/home.html"
-          ><img
-            src="../ft-navbar-N/logo.png"
-            alt="Ethical Threads Logo"
-            id="logo"
-        /></a>
-        <ul class="nav-menu">
-          <li><a href="../ft-discover-N/discover.html">Discover</a></li>
-          <li><a href="../ft-about-pg-b/about-page.html">About</a></li>
-          <li><a href="../ft-login-N/login.html">Login</a></li>
-          <li>
-            <a href=""
-              ><img src="../ft-navbar-N/magnify.png" alt="Search" id="search"
-            /></a>
-          </li>
-        </ul>
-        <!-- .nav-menu -->
-      </div>
-      <!-- #nav -->
-    </nav>
     <section
       class="px-5 py-6 hcf-bp-center hcf-bs-cover hcf-overlay hcf-transform"
-      style="background-image: url('brand-pg-imgs/threads.webp'); height: 300px"
+      style="
+        background-image: url('about-pg-imgs/color-threads.jpg');
+        height: 300px;
+      "
     >
       <div class="px-4 py-0 my-3 text-center">
-        <div id="hero-section-title" class="display-5">HIPTIPICO</div>
-        <div class="col-lg-6 mx-auto">
-          <a
-            href="https://www.hiptipico.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><button type="button" id="hero-section-b" class="btn">
-              Visit Brand Website
-            </button></a
-          >
-        </div>
-        <a
-          href="https://www.instagram.com/hiptipico/"
-          target="_blank"
-          rel="noopener noreferrer"
-          ><img
-            class="d-block mx-auto mb-4"
-            id="sm-icon"
-            src="brand-pg-imgs/insta-icon.png"
-            alt="Instagram icon"
-        /></a>
+        <div id="hero-section-title" class="display-5">About Us</div>
       </div>
     </section>
     <div class="container-lg">
       <div class="container">
-        <div class="content-box-header">At a Glance</div>
+        <div class="content-box-header">Our Mission</div>
         <p class="content-p">
-          Overall rating: <span style="color: #82a7a6">♥︎♥♥♥♥</span>
-          <br />
+          The goal of Ethical threads is to a resource for individuals to find
+          brands that are places to shop ethical, sustainable, or in general
+          have a good impact in our world. This website addresses the issue of
+          finding these brands being challenging due to lack of brand awareness,
+          accessibility, and affordability by making it easy to find affordable,
+          ethical alternatives to mainstream brands without compromising style
+          or budget.
         </p>
         <p class="content-p">
-          Cost range:
-          <span style="color: #82a7a6; font-weight: 600"> $$ - $$$ </span>
-          <br />
+          To achieve this goal, we allow users to search for these type of
+          brands by generally searching products they are looking for like
+          sweaters or t-shirts or by searching by brands that are similar to the
+          ones they already know. From there, users are able to further filter
+          out what type of products or brands they are looking for via different
+          categories.
         </p>
         <p class="content-p">
-          Has products with the following tags:
-          <br />
-          <button class="tag-b">Ethical</button>
-          <button class="tag-b">Handmade</button>
-          <button class="tag-b">Sustainable</button>
-        </p>
-      </div>
-      <div class="container">
-        <div class="content-box-header">Top Sellers</div>
-        <div class="row gx-2 gy-4">
-          <div class="col">
-            <div class="item-box">
-              <img
-                class="product-img"
-                src="brand-pg-imgs/nueva-luna-strap.webp"
-                alt="La Nueva Luna Strap"
-              />
-              <br />
-              <div class="item-name">La Nueva Luna Strap</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="item-box">
-              <img
-                class="product-img"
-                src="brand-pg-imgs/tocoyal-hair.png"
-                alt="Tocoyal Fringe Hair Wrap (Turquoise)"
-              />
-              <br />
-              <div class="item-name">Tocoyal Fringe Hair Wrap (Turquoise)</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="item-box">
-              <img
-                class="product-img"
-                src="brand-pg-imgs/vegan-vintage-floral-strap.png"
-                alt="Vegan Vintage Floral Strap"
-              />
-              <br />
-              <div class="item-name">Vegan Vintage Floral Strap</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="item-box">
-              <img
-                class="product-img"
-                src="brand-pg-imgs/violeta-bag.png"
-                alt="Violeta Woven Sling Bag"
-              />
-              <br />
-              <div class="item-name">Violeta Woven Sling Bag</div>
-            </div>
-          </div>
-        </div>
-        <!-- <br>
-            <button id="shop-more-b">Shop More From This Brand</button> -->
-      </div>
-      <div class="container">
-        <div class="content-box-header">About the Brand</div>
-        <p class="content-p">
-          Hiptipico is an ethical fashion brand based in Panajachel, Guatemala
-          showcasing indigenous Maya artisans and their handmade creations.
-          Every Hiptipico item is thoughtfully handcrafted by local artists,
-          using high-quality sustainable materials.
-        </p>
-        <p class="content-p">
-          The name Hiptipico came from the local saying, “tipico,” which
-          describes the traditional clothing worn by the indigenous people here
-          in Guatemala. Incorporating this local context into our name and using
-          it as the basis of our brand reflects our dedication to preserving
-          indigenous culture and creating dignified job opportunities through
-          the promotion of this traditional art form.
+          Our website also purposely does not sell products directly. We choose
+          to simply be a resource of information for brands and products in
+          order to shine the spotlight on the brand owners and their businesses.
         </p>
       </div>
-      <div class="container">
-        <div class="content-box-header">Brand Values</div>
-        <br />
-        <div class="row gx-5 gy-4 text-center justify-content-center">
-          <div class="col">
-            <div class="item-box">
-              <img
-                class="icon-img"
-                src="brand-pg-imgs/recycle.png"
-                alt="Recycling icon"
-              />
-              <br />
-              <div class="item-name">Recycling</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="item-box">
-              <img
-                class="icon-img"
-                src="brand-pg-imgs/earth-leaf.png"
-                alt="Earth with leaf icon"
-              />
-              <br />
-              <div class="item-name">Sustainablility</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="item-box">
-              <img
-                class="icon-img"
-                src="brand-pg-imgs/heart-hand.png"
-                alt="Hand with heart above it icon"
-              />
-              <br />
-              <div class="item-name">Giving Back</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- <div class="container">
+            <div class="content-box-header">Meet the Team</div>
+            <p class="content-p">
+                
+            </p>
+        </div> -->
     </div>
     <div class="footer">
       <span id="copyright"> © Ethical Threads </span>
+    </div>
     </div>
     <!-- .footer -->
   </body>

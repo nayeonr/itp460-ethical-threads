@@ -1,69 +1,55 @@
 <!-- item page -->
+<?php
+	
+	//itp 304 lecture 6, php mysqli
+	echo "<pre>";
+	var_dump($_GET);
+	echo "</pre>";
+
+	$host = "304.itpwebdev.com";
+	$user = "ethreads";
+	$pass = "460uscitp";
+	$db = "ethreads_brands_db";
+
+	// 1. Establish MySQL Connection
+	$mysqli = new mysqli($host, $user, $pass, $db);
+
+	if ($mysqli->connect_errno) {
+		echo $mysqli->connect_error;
+		exit();
+	}
+
+	// 2. Submit SQL Query.
+
+	// set variable for item?
+
+	// 3. Close MySQL Connection
+	$mysqli->close();
+
+?>
+
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Item Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="
+		sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="../global_css.css">
+    <link rel="stylesheet" href="../ft-login-N/login.css">
+    <link rel="stylesheet" href="../ft-login-N/signup.css">
   </head>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pixelify+Sans:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
-    
-	#nav {
-      display: flex;
-      align-items: center;
-      height: 50px;
-      background-color: #BE8F69;
-    }
 
-    #logo {
-    	width: 40px;
-    	height: auto;
-      margin-left: 10px;
-    }
-
-
-
-    #search {
-      height: 20px;
-    }
-
-    .nav-menu {
-      display: flex;
-      margin-left: auto;
-      font-family: "Quicksand", "Arial", sans-serif;
-    }
-
-    .nav-menu li
-    {
-      list-style: none;
-      padding: 25px;
-    }
-
-    a {
-      text-decoration: none;
-      color: #F7F6F2;
-    }
-
-	body{
-		background: #F7F6F2;
-	}
-
-	h1 {
-		font-family: "Quicksand", "Arial", sans-serif;
-		color: #433F42;
-	}
+  
 
 	h2 {
-		font-family: "Quicksand", "Arial", sans-serif;
-		color: #433F42;
-	}
-
-	p {
-		font-family: "Quicksand", "Arial", sans-serif;
-		color: #433F42;
+	    font-family: "Quicksand", "Arial", sans-serif;
+	    color: #433F42;
+	    font-size: 24px;
 	}
 
 	.block-1 {
@@ -93,7 +79,7 @@
 		border-radius: 2px;
 	}
 
-	.item-preview img{
+	.item-preview img {
 		width: 500px;
 		height: 500px;
 		border-radius: 2px;
@@ -112,8 +98,7 @@
 	}
 
 	.discover-item{
-/*		border: solid;
-		border-color: black;*/
+
 		padding-right: 2%;
 		margin-top: 2%;
 		margin-bottom: 2%;
@@ -131,19 +116,6 @@
 		width: 220px;
 		height: 220px;
 		border-radius: 5px;
-	}
-
-	button {
-		padding: 2%;
-		margin-right: 2%;
-		background: #82A7A6;
-		box-shadow: none;
-		border: none;
-		border-radius: 5px;
-		text-align: center;
-		text-size: 18px;
-		font-family: "Quicksand", "Arial", sans-serif;
-		color: #F7F6F2;
 	}
 
 	#brand-logo {
@@ -180,24 +152,6 @@
 		margin-top: 2%;
 	}
 
-	 .footer {
-      background-color: #BE8F69;
-      display: flex;
-      color: #F7F6F2;
-      font-family: "Quicksand", "Arial", sans-serif;
-      height: 50px;
-      line-height: 50px;
-      justify-content: space-between;
-    }
-
-    #copyright {
-      font-family: sans-serif;
-      color: #F7F6F2;
-      font-size: 18px;
-      font-family: "Quicksand", "Arial", sans-serif;
-      margin-left: 10px;
-   }
-
 </style>
 
 </head>
@@ -219,12 +173,15 @@
 		<img src="img/happy-sad-vest.png" id="clothing-img">
 	</div>
 
-	<div class="item-text">
-		<h1 id="item-name"> Happy Sad Knitted Vest </h1>
+	<div class="item-text">	
+			<?php while ($row = $results->fetch_assoc()) : ?>
+				<h1 id="item-name"> <?php echo $row['brand']; ?></h1>
+				<!-- display php row here -->
+			<?php endwhile; ?>
 
 		<h2 id="seller-name"> <img src="img/silly-oaf-logo.png" id="brand-logo"> Silly Oaf </h2>
 
-		<p id="price"> $10.00</p>
+		<p id="price"> $10.00 </p>
 
 		<p id="description"> Our fitted acrylic knit vest features an intarsia all over happy sad design. It has a slightly cropped fit with ribbed hem, neck and armholes. This lightweight knit can be worn alone or layered, making it ideal for all seasons.</p>
 
@@ -235,7 +192,7 @@
 	</div>
 </div>
 
-<h1 id="discover-heading"> More by Silly Oaf </h1>
+<h1 id="discover-heading"> More by </h1>
 <div class="block-2">
 	<div class="discover-item">
 		<img src="img/happy-sad-lace-up-ballet-sneaker.png" />
