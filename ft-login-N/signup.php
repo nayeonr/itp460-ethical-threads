@@ -105,7 +105,7 @@
 
 			<h2 class="login-headers">Sign Up</h2>
 			<hr>
-			<p>It costs nothing to set up an
+			<p class="signup-p">It costs nothing to set up an
 			<br>Ethical Threads account!</p>
 			<div class="responses">
 				<label for="fullname-id">
@@ -167,7 +167,7 @@
 
 		</form>
 
-		<p>By creating an account, you agree to the Ethical Threads
+		<p class="signup-p">By creating an account, you agree to the Ethical Threads
 		<br>terms of use and privacy policy.</p>
 		
 	</div> <!-- #signup-everything -->
