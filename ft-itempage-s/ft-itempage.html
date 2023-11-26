@@ -11,7 +11,6 @@
 	$pass = "460uscitp";
 	$db = "ethreads_brands_db";
 
-	// 1. Establish MySQL Connection
 	$mysqli = new mysqli($host, $user, $pass, $db);
 
 	if ($mysqli->connect_errno) {
@@ -19,11 +18,11 @@
 		exit();
 	}
 
-	// 2. Submit SQL Query.
+	$sql = "SELECT *
+		FROM items
+    LEFT JOIN brands
+   		ON items.brand_id = brands.brand_id;"
 
-	// set variable for item?
-
-	// 3. Close MySQL Connection
 	$mysqli->close();
 
 ?>
@@ -53,23 +52,17 @@
 	}
 
 	.block-1 {
-	/*	border: solid;
-		border-color: black;*/
 		display: flex;
 		padding-left: 125px;
 	}
 
 	.block-2 {
-	/*	border: solid;
-		border-color: black;*/
 		display: flex;
 		padding-left: 225px;
 		margin-bottom: 5%;
 	}
 
 	.item-preview {
-		/*border: solid;
-		border-color: black;*/
 		margin-right: 70px;
 		margin-top: 120px;
 		margin-left: 100px;
@@ -86,8 +79,6 @@
 	}
 
 	.item-text{
-		/*border: solid;
-		border-color: black;*/
 		margin-right: 120px;
 		margin-top: 80px;
 		margin-bottom: 50px;
@@ -132,7 +123,7 @@
 		margin-bottom: 2%;
 	}
 
-	#seller-name{
+	#seller-name {
 		font-size: 24px;
 	}
 
@@ -169,55 +160,86 @@
 
 
 <div class="block-1">
-	<div class="item-preview">
-		<img src="img/happy-sad-vest.png" id="clothing-img">
-	</div>
+	<?php while ($row = $results->fetch_assoc()) : ?>
+		<div class="item-preview">
+			<img src= <?php echo $row['item_image']; ?> id="clothing-img">
+		</div>
 
-	<div class="item-text">	
-			<?php while ($row = $results->fetch_assoc()) : ?>
-				<h1 id="item-name"> <?php echo $row['brand']; ?></h1>
-				<!-- display php row here -->
+		<div class="item-text">	
+				<h1 id="item-name"> <?php echo $row['item_name']; ?></h1>
+				
+				<h2 id="seller-name"> <?php echo $row['brand_name']; ?></h2>
+
+				<p id="price"> <?php echo $row['item_price']; ?> </p>
+
+				<p id="description"> <?php echo $row['item_description']; ?> </p>
+
+				<div class="tag">
+					<p> <?php echo $row['brand_filter']; ?> </p>
+				</div>
 			<?php endwhile; ?>
 
-		<h2 id="seller-name"> <img src="img/silly-oaf-logo.png" id="brand-logo"> Silly Oaf </h2>
-
-		<p id="price"> $10.00 </p>
-
-		<p id="description"> Our fitted acrylic knit vest features an intarsia all over happy sad design. It has a slightly cropped fit with ribbed hem, neck and armholes. This lightweight knit can be worn alone or layered, making it ideal for all seasons.</p>
-
-		<div class="tag">
-			<button> Upcycled </button> <button> Black Owned </button> <button> LGBTQ+ Owned </button>
-
 		</div>
-	</div>
 </div>
 
 <h1 id="discover-heading"> More by </h1>
 <div class="block-2">
 	<div class="discover-item">
-		<img src="img/happy-sad-lace-up-ballet-sneaker.png" />
-		<p id="discover-item-name"> Happy Sad Lace Up Ballet Sneaker </p>
+		<img src= />
+		<p id="discover-item-name"> </p>
 	</div>
 
 	<div class="discover-item">
-		<img src="img/pretty-ugly-fitted-tee.png" />
-		<p id="discover-item-name"> Pretty Ugly Fitted Tee </p>
-	</div>
-	
-	<div class="discover-item">
-		<img src="img/sad-face-wide-leg-jean.png" />
-		<p id="discover-item-name"> Sad Face Wide Leg Jean </p>
+		<img src= />
+		<p id="discover-item-name"> </p>
 	</div>
 
 	<div class="discover-item">
-		<img src="img/flower-power-quilt-shoulder-bag.png">
-		<p id="discover-item-name"> Flower Power Quilt Shoulder Bag </p>
+		<img src= />
+		<p id="discover-item-name"> </p>
+	</div>
+
+	<div class="discover-item">
+		<img src= />
+		<p id="discover-item-name"> </p>
 	</div>
 </div>
-	
+
+
 <div class="footer">
       <span id="copyright"> © Ethical Threads </span>
 </div>
+
+<script>
+
+		// /* LOGIN POPUP */
+		// document.querySelector('#open-login').onclick = function(event) {
+		// 	event.preventDefault();
+		// 	document.querySelector('.overlay').style.display = 'flex';
+		// };
+
+		// document.querySelector('#close-login').onclick = function(event) {
+		// 	event.preventDefault();
+		// 	document.querySelector('.overlay').style.display = 'none';
+		// };
+
+		// 	/* SIGNUP POPUP */
+		// document.querySelector('#joinus').onclick = function(event) {
+		// 	event.preventDefault();
+		// 	document.querySelector('#overlay1').style.display = 'none';
+		// 	document.querySelector('#overlay2').style.display = 'flex';
+		// }
+
+		// document.querySelector('#close-signup').onclick = function(event) {
+		// 	event.preventDefault();
+		// 	document.querySelector('#overlay2').style.display = 'none';
+		// 	document.querySelector('.overlay').style.display = 'none';
+		// };
+
+		document.querySelector("#discover-item").onclick = function () {
+			location.href = "https://www.webkinz.com/";
+		}
+</script>
 
 </body>
 </html>
