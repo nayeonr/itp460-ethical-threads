@@ -57,12 +57,13 @@ li {
 
 .related-items {
     margin-right: 30px;
-    /* background-color: #EBEBEB; */
-    /* border-radius: 20px; */
+    /* background-color: #EBEBEB;  */
+    border-radius: 15px;
     padding-right: 20px;
     padding-left: 20px;
     padding-top: 8px;
     padding-bottom: 8px;
+   
 }
 
 
@@ -106,6 +107,15 @@ div {
 
 .products {
     width: 250px;
+    height: 286.79px;
+    /* width: auto;
+    height: auto; */
+
+}
+
+.hovered {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
 }
 
 

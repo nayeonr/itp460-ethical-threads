@@ -5,8 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <title>Product Result</title>
+    <link href="../global_css.css" rel="stylesheet" />
+    
     <link href="style-product-result.css" rel="stylesheet" />
-
 
     <body>
         <nav>
@@ -24,7 +25,7 @@
 
         <header>
             <h4 id="search-results"><strong>Search Results For</strong></h4>
-            <h1>Vests</h1>
+            <h1>Clothing By Latiné Brands</h1>
         </header>
 
 
@@ -80,37 +81,47 @@
 
 
     <figure>
-    <img class="products" src="img-folder/happy-sad-knit-vest.png" alt="happy sad knitted vest" />
-    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Happy Sad Knitted Vest<br>$10</a></figcaption>
+    <img id="myElement" class="products" src="https://hijadetumadre.com/cdn/shop/products/LATINA-ENOUGH_0001_IMG_3018.jpg?v=1666018017" alt="Latina Enough Hoodie" />
+    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Latina Enough Hoodie<br>$65</a></figcaption>
+    <!-- <div class="content">
+                <h2>Karan Singh</br>
+                <span>Graphic Designer</span></h2>
+            </div> -->
+    <!-- https://hijadetumadre.com/collections/tops-bottomd/products/latina-enough-hoodie -->
     </figure>
 
 
     <figure>
-    <img class="products" src="img-folder/happy-sad-knit-vest.png" alt="happy sad knitted vest" />
-    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Happy Sad Knitted Vest<br>$10</a></figcaption>
+    <img class="products hover-class" src="https://shopjzd.com/cdn/shop/products/LatinaMagicSweatshirt_800x.jpg?v=1622761940" alt="Latina Magic Sweatshirt" />
+    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Latina Magic Sweatshirt<br>$58</a></figcaption>
+    <!-- https://shopjzd.com/collections/sweatshirts/products/latina-magic-sweatshirt-pre-order -->
     </figure>
 
 
     <figure>
-    <img class="products" src="img-folder/happy-sad-knit-vest.png" alt="happy sad knitted vest" />
-    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Happy Sad Knitted Vest<br>$10</a></figcaption>
+    <img class="products hover-class" src="https://www.poplinen.co/cdn/shop/products/NinLinenPant02_1200x.png?v=1661222611" alt="Nin Linen Pant - Ivory" />
+    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Nin Linen Pant - Ivory<br>$88</a></figcaption>
+    <!-- https://www.poplinen.co/products/nin-linen-pant -->
     </figure>
 
 
     <figure>
-    <img class="products" src="img-folder/happy-sad-knit-vest.png" alt="happy sad knitted vest" />
-    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Happy Sad Knitted Vest<br>$10</a></figcaption>
+    <img class="products hover-class" src="https://hijadetumadre.com/cdn/shop/products/make-jefa-moves-2.jpg?v=1580419832" alt="Make Jefa Moves T-shirt" />
+    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Make Jefa Moves T-shirt<br>$42</a></figcaption>
+    <!-- https://hijadetumadre.com/collections/tops-bottomd/products/make-jefa-moves-t-shirt -->
     </figure>
    
    <figure>
-    <img class="products" src="img-folder/happy-sad-knit-vest.png" alt="happy sad knitted vest" />
-    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Happy Sad Knitted Vest<br>$10</a></figcaption>
+    <img class="products hover-class" src="https://www.poplinen.co/cdn/shop/products/KannikaLineShirt06_1c237685-7bad-46f7-a7df-c9ee5572e39c_1200x.png?v=1663065753" alt="Kannika Shirt - Olive" />
+    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Kannika Shirt - Olive<br>$50</a></figcaption>
+    <!-- https://www.poplinen.co/products/kannika-shirt-olive?_pos=1&_sid=c556a6c8d&_ss=r -->
     </figure>
 
 
     <figure>
-    <img class="products" src="img-folder/happy-sad-knit-vest.png" alt="happy sad knitted vest" />
-    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Happy Sad Knitted Vest<br>$10</a></figcaption>
+    <img class="products hover-class" src="https://shopjzd.com/cdn/shop/files/KarenLoza_SeptiembreSept-21_800x.heic?v=1697045073" alt="Latina Power Baby Tees" />
+    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Latina Power Baby Tees<br>$38</a></figcaption>
+    <!-- https://shopjzd.com/products/pre-order-latina-power-baby-tees?_pos=3&_sid=2f917d6ab&_ss=r -->
     </figure>
 
 </div>
@@ -190,6 +201,65 @@
              // Set the checked property to false to keep the checkbox unchecked
             document.getElementById("wom").checked = false;
         }
+
+    //hover functioning - 1st item 
+     // Access the element using document.querySelector
+        var element = document.querySelector('#myElement');
+
+        // Add event listener for mouseenter
+        element.addEventListener('mouseenter', function() {
+            // Add a class to apply the hover effect
+            element.classList.add('hovered');
+        });
+
+        // Add event listener for mouseleave
+        element.addEventListener('mouseleave', function() {
+            // Remove the class to revert the styling changes
+            element.classList.remove('hovered');
+        });
+
+        //to repeat for all other images 
+        var images = document.querySelectorAll('.hover-class');
+
+        // Add event listeners for each image
+        images.forEach(function(image) {
+            // Add event listener for mouseenter
+            image.addEventListener('mouseenter', function() {
+                // Add a class to apply the hover effect
+                image.classList.add('hovered');
+            });
+
+            // Add event listener for mouseleave
+            image.addEventListener('mouseleave', function() {
+                // Remove the class to revert the styling changes
+                image.classList.remove('hovered');
+            });
+        });
+
+
+
+
+    // Function to change the CSS of the image
+        // document.querySelector(".products").onmouseenter = function changeImageStyle() {
+        //     // Access the image element
+        //     var image = document.getElementById('myImage');
+
+    
+        //     image.style.width = '500px';  // Set a new width
+        //     image.style.border = '2px solid red';  // Change the border color
+           
+        //    //this workeddd 
+        // }
+
+
+
+
+    // document.querySelector(".products").onmouseenter = function(){
+    //     // alert("testing");
+    //     var image = ocument.getElementById('myImage');
+    //      image.style.width = '500px';
+
+    // };
 
     </script>
     </body>

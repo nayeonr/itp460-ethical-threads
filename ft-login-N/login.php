@@ -87,13 +87,29 @@
     <link href="../global_css.css" rel="stylesheet"/>
     <link href="../ft-login-N/login.css" rel="stylesheet"/>
     <link href="../ft-login-N/signup.css" rel="stylesheet"/>
+
+    <style>
+    	#overlay1 {
+			display: none;
+			position: fixed;
+     		top: 0;
+      		left: 0;
+      		width: 100%;
+      		height: 100%;
+     		background:rgba(67, 63, 66, 0.5);
+
+     		align-items: center;
+     		justify-content: center;
+			margin: 0px auto;
+     	}
+    </style>
 </head>
 
 <body>
 		<!-- POPUPS -->
 	<div id="overlay1" class="overlay">
 
-	<!-- <form action="../ft-navbar-N/navbar.php" method="POST"> -->
+	<form method="POST" action="<?=$_SERVER['PHP_SELF'];?>">
 
 	<div id="login-everything">
 		<img src="../ft-login-N/exit.png" alt="exit" id="close-login">
@@ -136,7 +152,7 @@
             </div> <!-- #next-btn -->
 		</div> <!-- #login -->
 
-		<!-- </form> -->
+		</form>
 		
 		<div id="signup">
 			<hr>
@@ -163,7 +179,7 @@
 	</div>
 
 	<script>
-		document.querySelector('#Lnext-btn').onclick = function() {
+		document.querySelector('#Lnext-btn').onclick = function(event) {
 			var user_Lemail = document.getElementById('Lemail-id').value;
 			var user_Lpassword = document.getElementById('Lpassword-id').value;
 
