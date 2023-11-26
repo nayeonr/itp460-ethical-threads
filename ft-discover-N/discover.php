@@ -1,12 +1,92 @@
 <?php
-	/*session_start();
-
-	require '../ft-login-N/config.php';
-
-	$_SESSION['logged_in'] = false;
-	require '../ft-login-N/login.php';
-	require '../ft-login-N/signup.php'; */
+	
 	require '../ft-navbar-N/navbar.php';
+	require '../db_config.php';
+
+	$mysqli = new mysqli(HOST_DB, USER_DB, PASS_DB, NAME_DB);
+
+	// check for errors
+		if ( $mysqli->connect_errno ) {
+			echo $mysqli->connect_error;
+			exit();
+		}
+
+	$mysqli->set_charset('utf8');
+
+	// retrieve results for Sustainable brands from brands DB
+	$sql_sustainable = "SELECT brands.brand_id, brands.brand_name, brands.header_image
+                    	FROM brands
+                    	LEFT JOIN filtered_brands
+                    		ON brands.brand_id = filtered_brands.brand_id
+                  		LEFT JOIN filters
+                  			ON filtered_brands.filter_id = filters.filter_id
+                    	WHERE filters.filter_id = 7
+                    	AND brands.header_image != '';";
+
+	$results_sustainable = $mysqli->query($sql_sustainable);
+
+		// check for errors
+	if (!$results_sustainable) {
+        echo $mysqli->error;
+        $mysqli->close();
+        exit();
+    }
+
+    $discover_sustainable = array();
+    while ($row = $results_sustainable->fetch_assoc()) {
+        $discover_sustainable[] = $row;
+    }
+
+	// retrieve results for Black-owned brands from brands DB
+	$sql_black = "SELECT brands.brand_id, brands.brand_name, brands.header_image
+                    FROM brands
+                    LEFT JOIN filtered_brands
+                    	ON brands.brand_id = filtered_brands.brand_id
+                    LEFT JOIN filters
+                    	ON filtered_brands.filter_id = filters.filter_id
+                    WHERE filters.filter_id = 2
+                    AND brands.header_image != '';";
+
+	$results_black = $mysqli->query($sql_black);
+	
+		// check for errors
+	if (!$results_black) {
+	    echo $mysqli->error;
+	    $mysqli->close();
+	    exit();
+	}
+
+	$discover_black = array();
+	while ($row = $results_black->fetch_assoc()) {
+	    $discover_black[] = $row;
+	}
+
+	// retrieve results for Latiné-owned brands from brands DB
+	$sql_latine = "SELECT brands.brand_id, brands.brand_name, brands.header_image
+                    FROM brands
+                    LEFT JOIN filtered_brands
+                    	ON brands.brand_id = filtered_brands.brand_id
+                    LEFT JOIN filters
+                    	ON filtered_brands.filter_id = filters.filter_id
+                    WHERE filters.filter_id = 3
+                    AND brands.header_image != '';";
+
+	$results_latine = $mysqli->query($sql_latine);
+	
+		// check for errors
+	if (!$results_latine) {
+	    echo $mysqli->error;
+	    $mysqli->close();
+	    exit();
+	}
+
+	$discover_latine = array();
+	while ($row = $results_latine->fetch_assoc()) {
+	    $discover_latine[] = $row;
+	}
+
+	$mysqli->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -21,80 +101,48 @@
     <link href="../global_css.css" rel="stylesheet"/>
 
     <style>
-		/*.overlay {
-			display: none;
-			position: fixed;
-     		top: 0;
-      		left: 0;
-      		width: 100%;
-      		height: 100%;
-     		background:rgba(67, 63, 66, 0.5);
-			margin: 0px auto;
-     	}
-
-     	#login-everything {
-     		box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
-     	}
-
-     	#signup-everything {
-     		box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
-     	} */
-
-
-
-		.discover-headers {
+    	.discover-headers {
 			padding-left: 35px;
 			padding-bottom: 0;
 			margin-bottom: 0;
-			font-family: "Quicksand", "Arial", sans-serif;
-			color: #433F42;
+			align-items: left;
 		}
 
-		.row {
-			display: flex;
-			align-items: center;
-			margin: 0px auto;
+		.image-container {
+		    display: inline-block;
+		    margin: 35px;
+		    margin-top: 0;
+		    margin-bottom: 0;
+		    padding: 15px;
+		    padding-bottom: 0;
+		    width: 300px;
+		    overflow: hidden;
+		    border-radius: 15px;
 		}
 
-		#discover img {
-			width: 300px;
-			margin: 0px auto;
+		.image-wrapper {
+			height: 300px;
 		}
 
-		img:hover
+		.image-wrapper:hover
 		{
 			transform: scale(1.05);
-			border-radius: 15px;
 			box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
+			border-radius: 15px;
+		}
+
+		.image-wrapper img {
+		    width: 100%;
+		    height: 300px;
+		    object-fit: cover;
+		    object-position: center;
+		    border-radius: 15px;
 		}
 
 		.captions {
-			font-family: "Open Sans", "Arial", sans-serif;
-			color: #433F42;
-			display: flex;
-			width: 300px;
-			margin: 0px auto;
+		    display: flex;
 		}
-
-		.captions > a {
-			color: #433F42;
-		}
-
-		.footer {
-    		background-color: #BE8F69;
-    		display: flex;
-    		color: #F7F6F2;
-    		font-family: "Quicksand", "Arial", sans-serif;
-    		height: 50px;
-    		line-height: 50px;
-    		justify-content: space-between;
-    	}
-    	#copyright {
-      		color: #F7F6F2;
-      		font-family: "Quicksand", "Arial", sans-serif;
-      		margin-left: 10px;
-  		}
-	</style>
+    </style>
 </head>
 
 <body>
@@ -102,84 +150,41 @@
 	<div id="discover">
 		<h1 class="discover-headers">Discover more brands to love</h1>
 
-		<h2 class="discover-headers">Sustainable Threads of the Week</h2>
-		
-		<div id="row1" class="row">
-			<img src="../ft-discover-N/img/village-thrive.png" alt="Village Thrive">
-			<img src="../ft-discover-N/img/daria-day.png" alt="Daria Day">
-			<img src="../ft-discover-N/img/ethletic.png" alt="ethletic">
-			<img src="../ft-discover-N/img/mary-young.png" alt="MARY YOUNG">
-		</div> <!-- #row1 -->
+        <h2 class="discover-headers">Sustainable Threads of the Week</h2>
+        <div id="row1" class="rows">
+            <?php foreach (array_slice($discover_sustainable, 1, 5) as $brand) { ?>
+                <div class="image-container">
+                	<div class="image-wrapper">
+                    	<a href="../ft-brand-pg-b/brand-page.php?brand_id=<?php echo $brand['brand_id']; ?>"><img src="<?php echo $brand['header_image']; ?>" alt="<?php echo htmlspecialchars($brand['brand_name']); ?>"></a>
+                    </div>
+		            <div class="captions"><?php echo htmlspecialchars($brand['brand_name']); ?></div>
+                </div>
+            <?php } ?>
+        </div>
 
-		<div id="captions1" class="row">
-			<div id="caption1" class="captions">
-				rat boi
-			</div> <!-- #caption1 -->
-			
-			<div id="caption2" class="captions">
-				Daria Day
-			</div> <!-- #caption2 -->
-			
-			<div id="caption3" class="captions">
-				Allbirds
-			</div> <!-- #caption3 -->
-
-			<div id="caption4" class="captions">
-				MARY YOUNG
-			</div> <!-- #caption4 -->
-		</div> <!-- #captions1 -->
-
-		<h2 class="discover-headers">Black-Owned of the Week</h2>
-		<div id="row2" class="row">
-			<img src="../ft-discover-N/img/mien.png" alt="Mien">
-			<img src="../ft-discover-N/img/logan-hollowell.png" alt="Logan Hollowell">
-			<img src="../ft-discover-N/img/hiptipico.png" alt="Hiptipico" href="../ft-brand-pg-b/brand-page.html">
-			<img src="../ft-discover-N/img/mien.png" alt="Mien">
-		</div> <!-- #row2 -->
-
-		<div id="caption5" class="row">
-			<div id="caption5" class="captions">
-				Nubian Skin
-			</div> <!-- #caption5 -->
-			
-			<div id="caption6" class="captions">
-				CISE
-			</div> <!-- #caption6 -->
-			
-			<div id="caption7" class="captions">
-				Jolie Noir
-			</div> <!-- #caption7 -->
-
-			<div id="caption8" class="captions">
-				Cherry Blossom Intimates
-			</div> <!-- #caption8 -->
-		</div> <!-- #captions2 -->
+        <h2 class="discover-headers">Black-Owned of the Week</h2>
+		<div id="row2" class="rows">
+		    <?php foreach (array_slice($discover_black, 0, 4) as $brand) { ?>
+		        <div class="image-container">
+		        	<div class="image-wrapper">
+		            	<a href="../ft-brand-pg-b/brand-page.php?brand_id=<?php echo $brand['brand_id']; ?>"><img src="<?php echo $brand['header_image']; ?>" alt="<?php echo htmlspecialchars($brand['brand_name']); ?>"></a>
+		            </div>
+		            <div class="captions"><?php echo htmlspecialchars($brand['brand_name']); ?></div>
+		        </div>
+		    <?php } ?>
+		</div>
 
 		<h2 class="discover-headers">Latiné-Owned of the Week</h2>
-		<div id="row3" class="row">
-			<img src="../ft-discover-N/img/mien.png" alt="Mien">
-			<img src="../ft-discover-N/img/valani.png" alt="Valani">
-			<img src="../ft-discover-N/img/hiptipico.png" alt="Hiptipico" href="../ft-brand-pg-b/brand-page.html">
-			<img src="../ft-discover-N/img/valani.png" alt="Valani">
-		</div> <!-- #row2 -->
-
-		<div id="captions3" class="row">
-			<div id="caption9" class="captions">
-				JZD
-			</div> <!-- #caption9 -->
-			
-			<div id="caption10" class="captions">
-				Flaca Creations
-			</div> <!-- #caption10 -->
-
-			<div id="caption11" class="captions">
-				<a href="../ft-brand-pg-b/brand-page.html">Hiptipico</a>
-			</div> <!-- #caption11 -->
-
-			<div id="caption12" class="captions">
-				Poplinen
-			</div> <!-- #caption12 -->
-		</div> <!-- #captions3 -->
+		<div id="row3" class="rows">
+		    <?php foreach (array_slice($discover_latine, 0, 5) as $brand) { ?>
+		        <div class="image-container">
+		        	<div class="image-wrapper">
+		            	<a href="../ft-brand-pg-b/brand-page.php?brand_id=<?php echo $brand['brand_id']; ?>"><img src="<?php echo $brand['header_image']; ?>" alt="<?php echo htmlspecialchars($brand['brand_name']); ?>"></a>
+		        	</div>
+		            <div class="captions"><?php echo htmlspecialchars($brand['brand_name']); ?></div>
+		        </div>
+		    <?php } ?>
+		</div>
 
 	</div> <!-- #discover -->
 
