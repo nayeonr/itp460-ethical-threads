@@ -26,7 +26,7 @@
     	ON brands.brand_id = filtered_brands.brand_id
     LEFT JOIN filters
     	ON filtered_brands.filter_id = filters.filter_id
-    WHERE items.item_id = 2;";
+    WHERE 1 = 1;";
 
  	$sql = $sql . ";";
 
