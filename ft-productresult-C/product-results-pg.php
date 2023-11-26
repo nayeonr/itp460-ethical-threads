@@ -1,3 +1,28 @@
+<?php
+   require '../ft-navbar-N/navbar.php';
+// $host = "http://304.itpwebdev.com/cpanel";
+// $user = "ethreads_cclough";
+// $pass = "Coding00!";
+// <!-- $user = "ethreads";
+// $pass = "460uscitp"; -->
+// $db = "ethreads_brands_db";
+
+// <!-- establish my sql connection -->
+// $mysqli = new mysqli($host, $user, $pass, $db);
+
+// <!-- check for connection errors  -->
+// if ($mysqli->connect_erno){
+//   echo $mysqli->connect_error;
+//   exit();
+// }
+
+// <!-- submit sql statement  -->
+
+// <!-- close db connection -->
+// $mysqli->close();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,22 +31,9 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <title>Product Result</title>
     <link href="../global_css.css" rel="stylesheet" />
-    
     <link href="style-product-result.css" rel="stylesheet" />
 
     <body>
-        <nav>
-        <div id="nav">
-            <a href="../ft-home-a/home.html"><img src="../ft-navbar-N/logo.png" alt="Ethical Threads Logo" id="logo"></a>
-            <ul class="nav-menu">
-                <li><a href="../ft-discover-N/discover.php">Discover</a></li>
-                <li><a href="../ft-about-pg-b/about-page.html">About</a></li>
-                <li><a href="../ft-login-N/login.php">Login</a></li>
-                <li><a href=""><img src="../ft-navbar-N/magnify.png" alt="Search" id="search"></a></li>
-            </ul> <!-- .nav-menu -->
-        </div> <!-- #nav -->
-    </nav>
-
 
         <header>
             <h4 id="search-results"><strong>Search Results For</strong></h4>
@@ -38,14 +50,8 @@
                 <li class="related-items">Cute Knitted Vests</li>
                 <li class="related-items">Summer Crop Vests</li>
                 <li class="related-items">Metallic Crop Vests</li>
-
-
             </ul>
             </div>
-
-
-       
-
 
 <h3 class="filter-heading">Filter By:</h3>
 <div class="container">   <!--for filters and products -->
@@ -262,5 +268,6 @@
     // };
 
     </script>
+
     </body>
 </html>
