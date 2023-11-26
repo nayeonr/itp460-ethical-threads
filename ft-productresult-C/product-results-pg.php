@@ -1,5 +1,13 @@
 <?php
+
   require '../ft-navbar-N/navbar.php';
+// $host = "http://304.itpwebdev.com/cpanel";
+// $user = "ethreads_cclough";
+// $pass = "Coding00!";
+// $user = "ethreads";
+// $pass = "460uscitp";
+// $db = "ethreads_brands_db";
+
 
 //  <!-- establish my sql connection -->
  // $mysqli = new mysqli($host, $user, $pass, $db); -->
