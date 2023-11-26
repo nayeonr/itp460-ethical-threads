@@ -33,11 +33,11 @@
 			margin: 0;
 		}
 
-		h2 {
+		/*h2 {
 			text-size: 1em;
-		}
+		}*/
 		
-		hr {
+		.signup-hr {
 			width: 300px;
 		}
 
@@ -73,10 +73,6 @@
   			border: 1px solid #F7F6F2;
   			border-radius: 15px;
   			background-color: #F7F6F2;
-		}
-
-		a {
-			text-decoration: none;
 		}
 
 		#next-text2 {

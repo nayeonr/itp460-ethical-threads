@@ -104,7 +104,7 @@
 		<div id="signup">
 
 			<h2 class="login-headers">Sign Up</h2>
-			<hr>
+			<hr class="signup-hr">
 			<p class="signup-p">It costs nothing to set up an
 			<br>Ethical Threads account!</p>
 			<div class="responses">
