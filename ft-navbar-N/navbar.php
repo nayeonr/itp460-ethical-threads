@@ -3,7 +3,7 @@
 
 	require '../ft-login-N/config.php';
 
-	$_SESSION['logged_in'] = false;
+	//$_SESSION['logged_in'] = false;
 	require '../ft-login-N/login.php';
 	require '../ft-login-N/signup.php';
 
@@ -46,105 +46,6 @@
      		box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
      	}
 
-     	.search {
-        margin: 100px; 
-    }
-    .searchbut {
-        background: #82A7A6; 
-        border-radius: 15px;
-        /* border: 2px solid #82A7A6; */
-        font-size: 15px;
-        font-family: Quicksand;
-        color: #F7F6F2;
-    }
-    .round {
-        border-radius: 15px;
-        font-size: 15px;
-        font-family: Quicksand;
-    }
-    .clickedsearchbut {
-        border-radius: 0px 15px 0px 0px;
-        margin-left: -10px;
-    }
-    .clickedround {
-        border-radius: 15px 0px 0px 0px;
-    }
-    .searchline{
-        margin-top:10px;
-    }
-    #popdown{
-        display: none;
-        background-color: #DDBA9F; 
-        border-radius: 0px 0px 15px 15px;
-        font-size: 15px;
-        font-family: Quicksand;
-        color: #433F42;
-    }
-    li {
-        display: inline;
-        /* font-size: 18px; */
-        margin-right: 15px;
-        color: #433F42;
-    }
-    h6 {
-        margin-left: 15px;
-        color: #433F42;
-    }
-    #filters {
-        display: inline;
-        /* font-size: 20px; */
-        margin-left: 15px;
-        color: #433F42;
-    }
-    .selected-filter {
-        background-color: #92BCC5;
-        border-radius: 20px;
-        padding-right: 15px;
-        padding-left: 15px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        color: #F7F6F2;
-    }
-    .filter-div {
-        margin-top: 20px;
-    }
-    .discoverlocal {
-        background-color: #DDBA9F;
-        padding: 25px;
-        margin-top: 25px;
-    }
-    .sectionheader {
-        color: black;
-        font-family: Quicksand;
-        font-weight: 500;
-        margin-bottom: 25px;
-    }
-    .discoverlocal1 {
-        background-color: #DDBA9F;
-        margin-top: 50px;
-        padding: 25px;
-    }
-    .card {
-        background-color: #DDBA9F;
-        border-color: #DDBA9F;
-    }
-    .card-title {
-        font-family: Quicksand;
-        text-align: left;
-        margin-left: 10px;
-    }
-    .homepic{
-        color: #433F42;
-    }
-    .homepic:hover{
-        color: #82A7A6;
-    }
-    .toggle{
-        margin-bottom: 10px;
-    }
-    .popular{
-        padding-bottom: 25px;
-    }
 	</style>
 </head>
 
@@ -152,12 +53,20 @@
 	<!-- NAV w/ LOGIN/SIGNUP POP UP -->
 	<nav>
 		<div id="nav">
-			<a href="../ft-home-a/home.html"><img src="../ft-navbar-N/logo.png" alt="Ethical Threads Logo" id="logo"></a>
+			<a href="../ft-home-a/home.php"><img src="../ft-navbar-N/logo.png" alt="Ethical Threads Logo" id="logo"></a>
 			<ul class="nav-menu">
 				<li><a href="../ft-discover-N/discover.php">Discover</a></li>
 				<li><a href="../ft-about-pg-b/about-page.php">About</a></li>
-				<li><a href="../ft-login-N/login.php" id="open-login">Login</a></li>
-				<li><a><img src="../ft-navbar-N/magnify.png" alt="Search" id="searchfromnav"></a></li>
+				<!-- if logged in, show Profile button -->
+					<?php if ( isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true ) : ?>
+						<li>
+							<a href="../ft-login-N/login.php" id="open-login">Profile<?php echo $row['name']; ?></a>
+						</li>
+					<?php else : ?>
+						<li><a href="../ft-login-N/login.php" id="open-login">Login</a></li>
+					<?php endif; ?>
+				<!--<li><a href="../ft-login-N/login.php" id="open-login">Login</a></li> -->
+				<li><a><img src="../ft-navbar-N/magnify.png" alt="Search" id="search"></a></li>
 			</ul> <!-- .nav-menu -->
 		</div> <!-- #nav -->
 	</nav>
@@ -217,7 +126,7 @@
 			<br>Ethical Threads account!</p>
 
 			<div id="signup-btn">
-            	<button id="joinus" class="login-buttons" type="submit"><a href="../ft-navbar-N/navbar.html#overlay2" id="joinus-text">
+            	<button id="joinus" class="login-buttons" type="submit"><a href="../ft-navbar-N/navbar.php#overlay2" id="joinus-text">
             		Sign Up
             	</a></button>
             </div> <!-- #signup-btn -->
@@ -232,7 +141,7 @@
 	<form method="POST" id="signup-form">
 
 	<div id="signup-everything">
-		<a href="../ft-home-a/home.html"><img src="../ft-login-N/exit.png" alt="exit" id="close-signup"></a>
+		<a href="../ft-home-a/home.php"><img src="../ft-login-N/exit.png" alt="exit" id="close-signup"></a>
 		
 		<div id="signup">
 

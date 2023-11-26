@@ -11,35 +11,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
     <link href="../global_css.css" rel="stylesheet"/>
-    <link href="../ft-login-N/login.css" rel="stylesheet"/>
-    <link href="../ft-login-N/signup.css" rel="stylesheet"/>
 
     <title>Profile Page</title>
 
   </head>
 
   <style>
-    body {
-     background: #F7F6F2
-    }
-
-    h1 {
-      font-family: sans-serif;
-      color: #433F42;
-      font-size: 24px;
-    }
-
-    h2 {
-      font-family: sans-serif;
-      color: #433F42;
-      font-size: 24px;
-    }
-
-    p {
-      font-family: sans-serif;
-      color: #433F42;
-      margin-bottom: 2px;
-
+    .nav-menu {
+        margin-top: 15px;
     }
 
     .profile {

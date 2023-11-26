@@ -99,7 +99,7 @@
 	<form method="POST" action="<?=$_SERVER['PHP_SELF'];?>">
 
 	<div id="signup-everything">
-		<a href="../ft-home-a/home.html"><img src="../ft-login-N/exit.png" alt="exit" id="close-signup"></a>
+		<a href="../ft-home-a/home.php"><img src="../ft-login-N/exit.png" alt="exit" id="close-signup"></a>
 		
 		<div id="signup">
 

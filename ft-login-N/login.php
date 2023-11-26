@@ -1,13 +1,12 @@
 <?php
 	
-	//require '../ft-login-N/config.php';
-
+	$_SESSION['logged_in'] = false;
 	// check if user has already logged in
 	if ( isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true )
 	{
 		// logged in
 		// redirect to profile page
-		header('Location: ../ft-profilepage-S/ft-profilepage-S.html');
+		//header('Location: ../ft-profilepage-S/ft-profilepage-S.php');
 		exit();
 	} 
 	else
@@ -64,7 +63,7 @@
 				$_SESSION['logged_in'] = true;
 
 				// redirect to profile page
-				header('Location: ../ft-profilepage-S/ft-profilepage-S.html');
+				header('Location: ../ft-profilepage-S/ft-profilepage-S.php');
 			}
 			else
 			{
@@ -161,7 +160,7 @@
 			<br>Ethical Threads account!</p>
 
 			<div id="signup-btn">
-            	<button id="joinus" class="login-buttons" type="submit"><a href="../ft-navbar-N/navbar.html#overlay2" id="joinus-text">
+            	<button id="joinus" class="login-buttons" type="submit"><a href="../ft-navbar-N/navbar.php#overlay2" id="joinus-text">
             		Sign Up
             	</a></button>
             </div> <!-- #signup-btn -->
