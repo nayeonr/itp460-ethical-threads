@@ -19,9 +19,11 @@
       crossorigin="anonymous"
     ></script>
     <link href="../global_css.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../ft-login-N/signup.css">
+    <link rel="stylesheet" href="../ft-login-N/login.css">
   </head>
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pixelify+Sans:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
+    /* @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pixelify+Sans:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
     body {
       font-family: Open Sans;
       color: #433f42;
@@ -102,7 +104,7 @@
         getting background img + overlay in place - https://htmlcssfreebies.com/bootstrap-5-hero-section-component/
         getting overall template/arrangment of elements - https://getbootstrap.com/docs/5.3/examples/heroes/
     */
-    .mb-6 {
+    /* .mb-6 {
       margin-bottom: 4.5rem !important;
     }
     .mb-7 {
@@ -364,6 +366,9 @@
       top: 140px;
       cursor: pointer;
     }
+    .nav-menu{
+      margin-top: 15px;
+    } */
   </style>
   <body>
     <section
@@ -469,45 +474,6 @@
         </p>
       </div>
       <br />
-      <!-- <div class="container">
-        <div class="content-box-header">Brand Values</div>
-        <br />
-        <div class="row gx-5 gy-4 text-center justify-content-center">
-          <div class="col">
-            <div class="item-box">
-              <img
-                class="icon-img"
-                src="brand-pg-imgs/recycle.png"
-                alt="Recycling icon"
-              />
-              <br />
-              <div class="item-name">Recycling</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="item-box">
-              <img
-                class="icon-img"
-                src="brand-pg-imgs/earth-leaf.png"
-                alt="Earth with leaf icon"
-              />
-              <br />
-              <div class="item-name">Sustainablility</div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="item-box">
-              <img
-                class="icon-img"
-                src="brand-pg-imgs/heart-hand.png"
-                alt="Hand with heart above it icon"
-              />
-              <br />
-              <div class="item-name">Giving Back</div>
-            </div>
-          </div>
-        </div>
-      </div> -->
     </div>
     <div class="footer">
       <span id="copyright"> © Ethical Threads </span>
