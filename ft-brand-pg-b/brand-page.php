@@ -1,6 +1,7 @@
 <?php
-	require "config/config.php";
-	require 'navbar.html';
+  // require "config/config.php";
+  // if including navbar php file, then take out config file since nayeon's navbar already has config file in it
+	require '../ft-navbar-N/navbar.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +9,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About the Brand</title>
+    <link href="../global_css.css" rel="stylesheet" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -25,7 +27,6 @@
     body {
       font-family: Open Sans;
       color: #433f42;
-      font-size: 18px;
       background-color: #f6f5f0;
       margin: 0;
       padding: 0;
@@ -39,16 +40,6 @@
       height: 300px;
       opacity: 50%;
     }
-    #hero-text {
-      color: #f6f5f0;
-      text-shadow: 5px 4px 3px rgba(67, 63, 66, 0.46);
-      font-size: 60px;
-      font-weight: 700;
-      font-family: Open Sans;
-      position: absolute;
-      top: 5%;
-      left: 40%;
-    }
     .container-lg {
       /* border: solid 1px red; */
       margin-top: 20px;
@@ -58,45 +49,37 @@
     }
     .content-box-header {
       /* border: solid 1px purple; */
-      font-size: 34px;
+      font-size: 32px;
       font-family: Quicksand;
       padding-bottom: 15px;
       font-weight: 500;
     }
     .content-p {
       /* border: solid blue 1px; */
-      margin-left: 28px;
+      margin-left: 18px;
+      font-weight: 500;
     }
     .product-img {
       width: 230px;
-      border-radius: 20px;
+      border-radius: 15px;
     }
     .row {
       /* border: solid orange 1px; */
       margin-left: 20px;
+      align-items: top;
     }
     .col {
       /* border: solid fuchsia 1px; */
       margin-left: 2px;
     }
     .item-box {
-      /* border: solid darkgoldenrod 1px; */
-      width: 90%;
+      /* border: solid green 1px; */
+      width: 65%;
     }
     .item-name {
       margin-top: 10px;
       font-weight: 500;
-    }
-    #shop-more-b {
-      font-family: Quicksand;
-      background-color: #82a7a6;
-      color: #f6f5f0;
-      border: none;
-      border-radius: 8px;
-      padding: 6px;
-      margin-left: 28px;
-      padding-right: 15px;
-      padding-left: 15px;
+      font-size: medium;
     }
     #hero-section-title {
       color: #f6f5f0;
@@ -110,7 +93,7 @@
       background-color: #82a7a6;
       color: #f6f5f0;
       border: none;
-      border-radius: 8px;
+      border-radius: 15px;
       padding: 6px;
       padding-right: 15px;
       padding-left: 15px;
@@ -120,27 +103,21 @@
       background-color: darkcyan;
       cursor: pointer;
     }
-    .tag-b {
+    .tag {
       font-family: Quicksand;
       font-size: 14px;
       width: 150px;
-      background-color: #82a7a6;
-      color: #f6f5f0;
-      border: none;
-      border-radius: 5px;
-      padding: 2px;
-      margin-top: 10px;
+      background-color: rgba(113, 111, 111, 0.25);
+      color: #433f42;
+      border-radius: 3px;
+      padding: 6px;
       margin-right: 5px;
-    }
-    .tag-b:hover {
-      background-color: darkcyan;
-      cursor: auto;
     }
     .icon-img {
       width: 150px;
     }
 
-    /* hero section css from: 
+    /* hero section css from:
         getting background img + overlay in place - https://htmlcssfreebies.com/bootstrap-5-hero-section-component/
         getting overall template/arrangment of elements - https://getbootstrap.com/docs/5.3/examples/heroes/
     */
@@ -408,8 +385,7 @@
     }
 
     /* navbar css temp */
-    /* navbar css temp */
-    body {
+    /* body {
       margin: 0px;
       padding: 0px;
       align-items: center;
@@ -441,10 +417,10 @@
     a {
       text-decoration: none;
       color: #f7f6f2;
-    }
+    } */
 
     /* footer css temp */
-    #copyright {
+    /* #copyright {
       margin-left: 10px;
     }
     .footer {
@@ -463,31 +439,9 @@
       margin-left: 10px;
       margin-right: 10px;
       height: 30px;
-    }
+    } */
   </style>
   <body>
-    <nav>
-      <div id="nav">
-        <a href="../ft-home-a/home.html"
-          ><img
-            src="../ft-navbar-N/logo.png"
-            alt="Ethical Threads Logo"
-            id="logo"
-        /></a>
-        <ul class="nav-menu">
-          <li><a href="../ft-discover-N/discover.html">Discover</a></li>
-          <li><a href="../ft-about-pg-b/about-page.html">About</a></li>
-          <li><a href="../ft-login-N/login.html">Login</a></li>
-          <li>
-            <a href=""
-              ><img src="../ft-navbar-N/magnify.png" alt="Search" id="search"
-            /></a>
-          </li>
-        </ul>
-        <!-- .nav-menu -->
-      </div>
-      <!-- #nav -->
-    </nav>
     <section
       class="px-5 py-6 hcf-bp-center hcf-bs-cover hcf-overlay hcf-transform"
       style="background-image: url('brand-pg-imgs/threads.webp'); height: 300px"
@@ -520,21 +474,18 @@
       <div class="container">
         <div class="content-box-header">At a Glance</div>
         <p class="content-p">
-          Overall rating: <span style="color: #82a7a6">♥︎♥♥♥♥</span>
-          <br />
-        </p>
-        <p class="content-p">
           Cost range:
           <span style="color: #82a7a6; font-weight: 600"> $$ - $$$ </span>
           <br />
         </p>
         <p class="content-p">
-          Has products with the following tags:
-          <br />
-          <button class="tag-b">Ethical</button>
-          <button class="tag-b">Handmade</button>
-          <button class="tag-b">Sustainable</button>
+          Has products with the following tags: &nbsp;&nbsp;
         </p>
+        <div style="margin-left: 18px">
+          <span class="tag">Ethical</span>
+          <span class="tag">Handmade</span>
+          <span class="tag">Sustainable</span>
+        </div>
       </div>
       <div class="container">
         <div class="content-box-header">Top Sellers</div>
@@ -572,17 +523,6 @@
               <div class="item-name">Vegan Vintage Floral Strap</div>
             </div>
           </div>
-          <div class="col">
-            <div class="item-box">
-              <img
-                class="product-img"
-                src="brand-pg-imgs/violeta-bag.png"
-                alt="Violeta Woven Sling Bag"
-              />
-              <br />
-              <div class="item-name">Violeta Woven Sling Bag</div>
-            </div>
-          </div>
         </div>
         <!-- <br>
             <button id="shop-more-b">Shop More From This Brand</button> -->
@@ -604,7 +544,8 @@
           the promotion of this traditional art form.
         </p>
       </div>
-      <div class="container">
+      <br />
+      <!-- <div class="container">
         <div class="content-box-header">Brand Values</div>
         <br />
         <div class="row gx-5 gy-4 text-center justify-content-center">
@@ -642,7 +583,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="footer">
       <span id="copyright"> © Ethical Threads </span>

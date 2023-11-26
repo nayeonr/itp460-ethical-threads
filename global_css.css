@@ -1,92 +1,108 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Quicksand&display=swap");
 
 body {
-    margin: 0;
-    padding: 0;
-    color: #433F42;
-    background-color: #F6F5F0;
-    font-family: "Open Sans", "Arial", sans-serif;
-    align-items: center;
+  margin: 0;
+  padding: 0;
+  color: #433f42;
+  background-color: #f6f5f0;
+  font-family: "Open Sans", "Arial", sans-serif;
+  align-items: center;
 }
 
 #nav {
-    display: flex;
-    align-items: center;
-    height: 50px;
-    background-color: #BE8F69;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background-color: #be8f69;
 }
 
 img {
-    border-radius: 15px;
+  border-radius: 15px;
 }
 
 #logo {
-    height: 40px;
-    width: auto;
-    margin-left: 10px;
+  height: 40px;
+  width: auto;
+  margin-left: 10px;
 }
 
 #search {
-    height: 20px;
-    border-radius: 0;
+  height: 20px;
+  border-radius: 0;
 }
 
 .nav-menu {
-    display: flex;
-    margin-left: auto;
-    font-family: "Quicksand", "Arial", sans-serif;
+  display: flex;
+  margin-left: auto;
+  font-family: "Quicksand", "Arial", sans-serif;
 }
 
 .nav-menu li {
-    list-style: none;
-    padding: 25px;
+  list-style: none;
+  padding: 25px;
 }
 
 h1 {
-    font-family: "Quicksand", "Arial", sans-serif;
-    color: #433F42;
-    font-size: 35px;
+  font-family: "Quicksand", "Arial", sans-serif;
+  color: #433f42;
+  font-size: 35px;
 }
 
 h2 {
-    font-family: "Quicksand", "Arial", sans-serif;
-    font-size: 24px;
+  font-family: "Quicksand", "Arial", sans-serif;
+  font-size: 24px;
 }
 
 p {
-    font-family: "Quicksand", "Arial", sans-serif;
-        color: #433F42;
+  font-family: "Quicksand", "Arial", sans-serif;
+  color: #433f42;
 }
 
 a {
-    text-decoration: none;
-    color: #F7F6F2;
+  text-decoration: none;
+  color: #f7f6f2;
 }
 
 button {
-    border-radius: 15px;
-    background: #82A7A6;
-    font-size: 15px;
-    font-family: "Quicksand", "Arial", sans-serif;
-    color: #F7F6F2; 
-    text-align: center;
-    box-shadow: none;
-    border: none;
-    cursor: pointer →
+  border-radius: 15px;
+  background: #82a7a6;
+  font-size: 15px;
+  font-family: "Quicksand", "Arial", sans-serif;
+  color: #f7f6f2;
+  text-align: center;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darkcyan;
 }
 
 .footer {
-    background-color: #BE8F69;
-    display: flex;
-    color: #F7F6F2;
-    font-family: "Quicksand", "Arial", sans-serif;
-    height: 50px;
-    line-height: 50px;
-    justify-content: space-between;
+  background-color: #be8f69;
+  display: flex;
+  color: #f7f6f2;
+  font-family: "Quicksand", "Arial", sans-serif;
+  height: 50px;
+  line-height: 50px;
+  justify-content: space-between;
 }
 
 #copyright {
-    color: #F7F6F2;
-    font-family: "Quicksand", "Arial", sans-serif;
-    margin-left: 10px;
+  color: #f7f6f2;
+  font-family: "Quicksand", "Arial", sans-serif;
+  margin-left: 10px;
+}
+
+/* for tags in brand & product page */
+.tag {
+  font-family: Quicksand;
+  font-size: 14px;
+  width: 150px;
+  background-color: rgba(113, 111, 111, 0.25);
+  color: #433f42;
+  border-radius: 3px;
+  padding: 6px;
+  margin-right: 5px;
 }
