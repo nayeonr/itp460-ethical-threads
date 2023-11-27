@@ -1,5 +1,64 @@
 <?php
+  // Navbar import
 	require '../ft-navbar-N/navbar.php';
+
+  // Establish mySQL connection
+  require '../db_config.php';
+  $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+  // Check for any connection errors
+  if ( $mysqli->connect_errno ) {
+		echo $mysqli->connect_error;
+		exit();
+	}
+
+  // For any strange characters
+  $mysqli->set_charset('utf8');
+
+  // Get brand_id from url
+  $brand_id = $_GET['brand_id'];
+  // echo "<hr>$brand_id</hr>";
+
+  // Retrieve results from the DB
+
+  // Retrieve brand data EXECEPT for items
+  $sql_brand_data = "SELECT brands.brand_name, brands.brand_description, brands.website, brands.instagram, brands.price_range, brands.header_image, GROUP_CONCAT(filter_name separator ', ') AS filters
+  FROM brands
+      LEFT JOIN filtered_brands
+        ON brands.brand_id = filtered_brands.brand_id
+      LEFT JOIN filters
+        ON filtered_brands.filter_id = filters.filter_id
+      WHERE filtered_brands.brand_id = $brand_id;";
+
+  $brand_data_results = $mysqli->query($sql_brand_data);
+
+  if ( !$brand_data_results ) {
+    echo $mysqli->error;
+    $mysqli->close();
+    exit();
+  }
+
+  // No need for a loop, because this SQL statement will return at most 1 record
+  $brand_data_row = $brand_data_results->fetch_assoc();
+      
+  // Retrieve brand data JUST for items from that brand
+  $sql_brand_items = "SELECT items.item_name, items.item_image 
+  FROM items
+    LEFT JOIN brands
+      ON items.brand_id = brands.brand_id
+    WHERE items.brand_id = $brand_id;";
+
+  $brand_items_results = $mysqli->query($sql_brand_items);
+
+  if ( !$brand_items_results ) {
+    echo $mysqli->error;
+    $mysqli->close();
+    exit();
+  }
+
+  // Close MySQL connection
+	$mysqli->close();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
