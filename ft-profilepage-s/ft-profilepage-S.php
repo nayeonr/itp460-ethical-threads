@@ -27,21 +27,7 @@
 
       .profile {
         color: #433f42;
-  /*    padding: 2%; 
-      }
-
-      .bookmarks {
-  /*      background-color: blueviolet;*/
-      }
-
-      .item-saved {
-        margin-right: 20px;
-      }
-
-      .item-saved img {
-      width: 200px;
-      height: 200px;
-      border-radius: 5px;
+        padding: 25px;
       }
 
       #pfp {
@@ -50,7 +36,7 @@
         border-radius: 20px;
       }
 
-      #bio {
+      #profile-bio {
         margin-left: 60px;
         margin-bottom: 0px;
       }
@@ -66,20 +52,39 @@
         border: solid;
         border-color: black;
         display: flex;
-        margin: 2%;
-        padding: 2%;
+        margin: 15px;
+        padding: 15px;
         margin-top: 0;
-        margin-right: 12.5%;
       }
 
-      #section-title {
+      .section-title {
         margin-left: 2%;
+      }
+
+      .item-saved {
+        /*margin-right: 20px;*/
+        margin: 0px auto;
+      }
+
+      img {
+        border-radius: 15px;
+      }
+
+      img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
+        border-radius: 15px;
+      }
+
+      .item-saved img {
+        width: 250px;
+        height: 250px;
+        border-radius: 15px;
       }
 
       #bookmarks-title{
         font-weight: bold;
         padding-left: 2%;
-
       }
 
       #details {
@@ -94,14 +99,18 @@
         font-size: 18px;
       }
 
-      #description {
+      .profile-description {
         font-weight: bolder;
-        padding-top: 2%;
-        margin-top: 2%;
-        width: 200px;
+        margin: 0;
+        padding: 0;
       }
 
-      .logout {
+      .profile-seller {
+        margin: 0;
+        padding: 0;
+      }
+
+      .logout > a {
         color: #433f42;
       }
 
@@ -109,80 +118,83 @@
   </style>
   <body>
     <div class="profile">
-      <h1> <img src="../ft-profilepage-s/img/hello-kitty-pfp.jpeg" id="pfp"> @Ethicalthreadsuser32 </h1>
-      <p id="bio"> I love fun fashion! </p>
+      <h1><img src="../ft-profilepage-s/img/hello-kitty-pfp.jpeg" id="pfp">
+      <?php echo htmlspecialchars($_SESSION['user_name']); ?></h1>
+      <p id="profile-bio">Insert fun biography here!</p>
       <p id="est"> Member since Nov. 2023 </p>
 
       <hr> 
 
+      <!-- hard coding  here -->
       <h2 id="bookmarks-title">Bookmarks</h2>
 
         <div class="bookmarks">
 
-          <h2 id="section-title">my favorite shirts<span id="details"> | 20 items </h2>
+          <h2 class="section-title">my favorite shirts<span id="details"> | 20 items </h2>
           <!-- on title click, see more -->
           <div class="section">
 
             <div class="item-saved">
               <img src="../ft-profilepage-s/img/pretty-ugly-fitted-tee.png">
-              <p id="description"> Pretty Ugly Fitted Tee </p>
-              <p id="seller"> Silly Oaf </p>
+              <p class="profile-description"> Pretty Ugly Fitted Tee </p>
+              <p class="profile-seller"> Silly Oaf </p>
             </div>
 
             <div class="item-saved">
               <img src="../ft-profilepage-s/img/bad-apple-knit-top.png">
-              <p id="description"> Bad Apple Knit Top </p>
-              <p id="seller"> Silly Oaf </p>
+              <p class="profile-description"> Bad Apple Knit Top </p>
+              <p class="profile-seller"> Silly Oaf </p>
             </div>
 
             <div class="item-saved">
               <img src="../ft-profilepage-s/img/chrom-sun-crop-top.png">
-              <p id="description"> Chrom Sun Crop Top </p>
-              <p id="seller"> Abakada </p>
+              <p class="profile-description"> Chrom Sun Crop Top </p>
+              <p class="profile-seller"> Abakada </p>
             </div>
 
             <div class="item-saved">
               <img src="../ft-profilepage-s/img/grapiko-aspin-tee.png">
-              <p id="description"> Grapiko Aspin Tee </p>
-              <p id="seller"> Abakada </p>
+              <p class="profile-description">Grapiko Aspin Tee </p>
+              <p class="profile-seller"> Abakada </p>
             </div>
 
             
             <div class="item-saved">
               <img src="../ft-profilepage-s/img/missing-you-tshirt.png">
-              <p id="description"> Missing You T-Shirt </p>
-              <p id="seller"> Silly Oaf </p>
+              <p class="profile-description"> Missing You T-Shirt </p>
+              <p class="profile-seller"> Silly Oaf </p>
             </div>
 
-          </div>
+          </div> <!-- .section -->
 
-          <h2 id="section-title"> fun patterns <span id="details"> | 3 items </h2>
+          <h2 class="section-title"> fun patterns <span id="details"> | 3 items </h2>
           <div class="section">
 
             <div class="item-saved">
               <img src="../ft-profilepage-s/img/frog-argyle-sweatshirt.png">
-              <p id="description"> Frog Arygle Sweatshirt</p>
-              <p id="seller"> Silly Oaf </p>
+              <p class="profile-description"> Frog Arygle Sweatshirt</p>
+              <p class="profile-seller"> Silly Oaf </p>
             </div>
 
             <div class="item-saved">
               <img src="../ft-profilepage-s/img/thanks-a-bunch-button-up-smock.png">
-              <p id="description"> Thanks a Bunch Smock </p>
-              <p id="seller"> Silly Oaf </p>
+              <p class="profile-description"> Thanks a Bunch Smock </p>
+              <p class="profile-seller"> Silly Oaf </p>
             </div>
 
             <div class="item-saved">
               <img src="../ft-profilepage-s/img/no-regrats-roll-neck-knitted-jumper.png">
-              <p id="description"> No Regrats Roll Neck Knitted Jumper </p>
-              <p id="seller"> Silly Oaf </p>
+              <p class="profile-description"> No Regrats Roll Neck Knitted Jumper </p>
+              <p class="profile-seller"> Silly Oaf </p>
             </div>
-          </div>
 
-        </div>
+          </div> <!-- .section -->
+
+        </div> <!-- .bookmarks -->
 
       <div class="logout"><a href="../ft-login-N/logout.php">Logout</a></div>
 
-    </div>
+    </div> <!-- .profile -->
 
      <div class="footer">
       <span id="copyright"> © Ethical Threads </span>
