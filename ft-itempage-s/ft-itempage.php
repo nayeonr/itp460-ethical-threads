@@ -1,15 +1,14 @@
 <!-- item page -->
 <?php
 	require '../ft-navbar-N/navbar.php';
-	require '../db_config.php';
 
-		// $host = "304.itpwebdev.com";
-		// $user = "ethreads";
-		// $pass = "460uscitp";
-		// $db = "ethreads_brands_db";
+		$host = "304.itpwebdev.com";
+		$user = "ethreads";
+		$pass = "460uscitp";
+		$db = "ethreads_brands_db";
 	
-	// $mysqli = new mysqli($host, $user, $pass, $db);
-	$mysqli = new mysqli(HOST_DB, USER_DB, PASS_DB, NAME_DB);
+	$mysqli = new mysqli($host, $user, $pass, $db);
+
 
 	if ($mysqli->connect_errno) {
 		echo $mysqli->connect_error;
@@ -21,6 +20,7 @@
 	// $brand_id = $_GET['brand_id'];
 	// pass item id variable from cherise's page -> from href tag
 
+	//retrieve item information
 	$sql = "SELECT *
 		FROM items
     LEFT JOIN brands
@@ -29,15 +29,45 @@
     	ON brands.brand_id = filtered_brands.brand_id
     LEFT JOIN filters
     	ON filtered_brands.filter_id = filters.filter_id
-    WHERE items.item_id = 21 ";
+    WHERE items.item_id = 10 ";
+
+    $results = $mysqli->query($sql);
+
+ 
+    $sql_brand_filters = "SELECT *
+  		FROM brands
+    LEFT JOIN filtered_brands
+      ON brands.brand_id = filtered_brands.brand_id
+    LEFT JOIN filters
+      ON filtered_brands.filter_id = filters.filter_id
+    LEFT JOIN items
+    	ON brands.brand_id = items.brand_id 
+    WHERE items.item_id = 10";
+
+    $test2_results = $mysqli->query($sql_brand_filters);
+
+    if (!$test2_results) {
+		echo $mysqli->error;
+		$mysqli->close();
+		exit();
+	}
+
+    //retrieve item images from brand
+    $sql_test = "SELECT *
+		FROM items
+	LEFT JOIN brands
+   		ON items.brand_id = brands.brand_id
+   	LEFT JOIN filtered_brands
+    	ON brands.brand_id = filtered_brands.brand_id
+    LEFT JOIN filters
+    	ON filtered_brands.filter_id = filters.filter_id
+    WHERE items.item_id = 22";
 
  	$sql = $sql . ";";
 
-	echo "<hr>$sql<hr>";
+ 	$test_results = $mysqli->query($sql_test);
 
-	$results = $mysqli->query($sql);
-
-	if (!$results) {
+    if (!$test_results) {
 		echo $mysqli->error;
 		$mysqli->close();
 		exit();
@@ -108,6 +138,10 @@
 		border-radius: 2px;
 	}
 
+	#description p {
+		font-size: 12px;
+	}
+
 	.discover-item{
 
 		padding-right: 2%;
@@ -163,6 +197,7 @@
 		margin-top: 2%;
 	}
 
+
 </style>
 
 </head>
@@ -170,29 +205,31 @@
 
 <div class="block-1">
 	<?php while ($row = $results->fetch_assoc()) : ?>
-		<div class="item-preview">
-			<img src="<?php echo $row['item_image']; ?>" id="clothing-img">
+	<div class="item-preview">
+		<img src="<?php echo $row['item_image']; ?>" id="clothing-img">
+	</div>
+
+	<div class="item-text">	
+		<h1 id="item-name"> <?php echo $row['item_name']; ?></h1>
+		
+		<h2 id="seller-name"> <?php echo $row['brand_name']; ?></h2>
+
+		<p id="price"> <?php echo $row['item_price']; ?> </p>
+
+		<p id="description"> <?php echo $row['item_description']; ?> </p>
+
+	<!-- <?php endwhile; ?>
+	<?php while ($row = $test2_results -> fetch_assoc()) : ?>  -->
+		<div class="tag">
+			<p> <?php echo $row['filter_name']; ?> </p>
 		</div>
-
-		<div class="item-text">	
-				<h1 id="item-name"> <?php echo $row['item_name']; ?></h1>
-				
-				<h2 id="seller-name"> <?php echo $row['brand_name']; ?></h2>
-
-				<p id="price"> <?php echo $row['item_price']; ?> </p>
-
-				<p id="description"> <?php echo $row['item_description']; ?> </p>
-
-				<div class="tag">
-					<p> <?php echo $row['filter_name']; ?> </p>
-				</div>
-
-		</div>
+	<?php endwhile; ?> 
+	</div>
 </div>
 
+<?php while ($row = $test_results->fetch_assoc()) : ?>
 <h1 id="discover-heading"> More by <?php echo $row['brand_name']; ?></h1>
 <div class="block-2">
-	<!-- loop through rows tha -->
 	<div class="discover-item">
 		<img src= "<?php echo $row['item_image']; ?>"/>
 		<p id="discover-item-name"> </p>
@@ -203,17 +240,9 @@
 		<p id="discover-item-name"> </p>
 	</div>
 
-<!-- 	<div class="discover-item">
-		<img src= />
-		<p id="discover-item-name"> </p>
-	</div>
- -->
-<!-- 	<div class="discover-item">
-		<img src= />
-		<p id="discover-item-name"> </p>
-	</div> -->
 </div>
 <?php endwhile; ?>
+
 
 <div class="footer">
       <span id="copyright"> © Ethical Threads </span>
