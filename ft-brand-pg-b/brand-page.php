@@ -51,7 +51,7 @@
       ON brands.brand_id = filtered_brands.brand_id
     LEFT JOIN filters
       ON filtered_brands.filter_id = filters.filter_id
-    WHERE brands.brand_id = 21;";
+    WHERE brands.brand_id = $brand_id;";
 
   $brand_filters_results = $mysqli->query($sql_brand_filters);
 
