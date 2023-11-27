@@ -75,10 +75,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background-color: darkcyan;
-}
-
 .footer {
   background-color: #be8f69;
   display: flex;

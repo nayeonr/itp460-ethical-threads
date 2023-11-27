@@ -69,10 +69,11 @@
     }
     #hero-section-title {
       color: #f6f5f0;
-      font-family: Open Sans;
-      font-weight: 400;
+      font-family: Quicksand;
+      font-weight: 500;
       margin-bottom: 10px;
       font-size: 55px;
+      text-shadow: 2px 2px 8px #000000;
     }
     #hero-section-b {
       font-family: Quicksand;
@@ -82,6 +83,7 @@
       border-radius: 15px;
       padding: 6px;
       padding-right: 15px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
       padding-left: 15px;
     }
     #hero-section-b:hover {
@@ -354,12 +356,12 @@
 
     #sm-icon {
       position: absolute;
-      right: 5px;
+      right: 10px;
       top: 280px;
       cursor: pointer;
     }
     .nav-menu{
-      margin-top: 15px;
+      margin-top: 12px;
     }
   </style>
   <body>
