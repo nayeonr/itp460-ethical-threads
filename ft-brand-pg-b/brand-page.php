@@ -25,7 +25,7 @@
   // Retrieve results from the DB
 
   // Retrieve brand data EXECEPT for items and filters
-  $sql_brand_data = "SELECT brands.brand_name AS brand_name, brands.brand_description AS brand_description, brands.website AS website, brands.instagram AS instagram, brands.price_range AS price, brands.header_image
+  $sql_brand_data = "SELECT brands.brand_name AS brand_name, brands.brand_description AS brand_description, brands.website AS website, brands.instagram AS instagram, brands.price_range AS price, brands.header_image AS header
   FROM brands
       LEFT JOIN filtered_brands
         ON brands.brand_id = filtered_brands.brand_id
@@ -446,7 +446,7 @@
   <body>
     <section
       class="px-5 py-6 hcf-bp-center hcf-bs-cover hcf-overlay hcf-transform"
-      style="background-image: url('brand-pg-imgs/threads.webp'); height: 300px"
+      style="background-image: url('<?php echo $brand_data_row['header']; ?>'); height: 300px"
     >
       <div class="px-4 py-0 my-3 text-center">
         <div id="hero-section-title" class="display-5"><?php echo $brand_data_row['brand_name']; ?></div>
@@ -511,7 +511,7 @@
               </div>
             </div>
             <?php endwhile; ?>
-            
+
         </div>
       </div>
       <div class="container">
