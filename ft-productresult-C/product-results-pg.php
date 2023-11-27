@@ -133,7 +133,7 @@ FROM items
 
 <h3 class="filter-heading">Filter By:</h3>
 <div class="container">   <!--for filters and products -->
-    <div class="filters">
+    <div class="filters expanding-element">
         <!-- <h4 class="minority">Minority Owned</h4> -->
          <div id="list1" class="dropdown-check-list" tabindex="100">
       <span class="anchor">Type of Brand</span>
@@ -160,7 +160,7 @@ FROM items
         <li><input type="checkbox" />$100-$150</li>
       </ul>
     </div>
-    <div class="expanding-element"></div>
+    <!-- <div class="expanding-element"></div> -->
        
     </div>
 
@@ -168,7 +168,7 @@ FROM items
 <figure>
     <img class="products" src="<?php echo $row["image"]; ?>" alt="<?php echo $row ["name"]; ?>" />
 
-    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.php?item_id=<?php echo $row["item_id"] ?>&brand_id=<?php echo $row["brand_id"] ?>"><?php echo $row['name'];?><br><?php echo $row['price'];?></a></figcaption>
+    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.php?item_id=<?php echo $row["item_id"] ?>&brand_id=<?php echo $row["brand_id"] ?>"><?php echo $row['name'];?><br>$<?php echo $row['price'];?></a></figcaption>
 
    
 </figure>
@@ -185,38 +185,38 @@ FROM items
     
 
 
-    <figure>
+    <!-- <figure>
     <img class="products hover-class" src="https://shopjzd.com/cdn/shop/products/LatinaMagicSweatshirt_800x.jpg?v=1622761940" alt="Latina Magic Sweatshirt" />
-    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Latina Magic Sweatshirt<br>$58</a></figcaption>
+    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Latina Magic Sweatshirt<br>$58</a></figcaption> -->
     <!-- https://shopjzd.com/collections/sweatshirts/products/latina-magic-sweatshirt-pre-order -->
-    </figure>
+    <!-- </figure> -->
 
 
-    <figure>
+    <!-- <figure>
     <img class="products hover-class" src="https://www.poplinen.co/cdn/shop/products/NinLinenPant02_1200x.png?v=1661222611" alt="Nin Linen Pant - Ivory" />
-    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Nin Linen Pant - Ivory<br>$88</a></figcaption>
+    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Nin Linen Pant - Ivory<br>$88</a></figcaption> -->
     <!-- https://www.poplinen.co/products/nin-linen-pant -->
-    </figure>
+    <!-- </figure> -->
 
 
-    <figure>
+    <!-- <figure>
     <img class="products hover-class" src="https://hijadetumadre.com/cdn/shop/products/make-jefa-moves-2.jpg?v=1580419832" alt="Make Jefa Moves T-shirt" />
-    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Make Jefa Moves T-shirt<br>$42</a></figcaption>
+    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Make Jefa Moves T-shirt<br>$42</a></figcaption> -->
     <!-- https://hijadetumadre.com/collections/tops-bottomd/products/make-jefa-moves-t-shirt -->
-    </figure>
-   
+    <!-- </figure> -->
+<!--    
    <figure>
     <img class="products hover-class" src="https://www.poplinen.co/cdn/shop/products/KannikaLineShirt06_1c237685-7bad-46f7-a7df-c9ee5572e39c_1200x.png?v=1663065753" alt="Kannika Shirt - Olive" />
-    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Kannika Shirt - Olive<br>$50</a></figcaption>
+    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Kannika Shirt - Olive<br>$50</a></figcaption> -->
     <!-- https://www.poplinen.co/products/kannika-shirt-olive?_pos=1&_sid=c556a6c8d&_ss=r -->
-    </figure>
+    <!-- </figure> -->
 
 
-    <figure>
+    <!-- <figure>
     <img class="products hover-class" src="https://shopjzd.com/cdn/shop/files/KarenLoza_SeptiembreSept-21_800x.heic?v=1697045073" alt="Latina Power Baby Tees" />
-    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Latina Power Baby Tees<br>$38</a></figcaption>
+    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Latina Power Baby Tees<br>$38</a></figcaption> -->
     <!-- https://shopjzd.com/products/pre-order-latina-power-baby-tees?_pos=3&_sid=2f917d6ab&_ss=r -->
-    </figure>
+    <!-- </figure> -->
 
 </div>
 
