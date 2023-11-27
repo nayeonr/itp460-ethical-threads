@@ -364,7 +364,7 @@
       <div class="container">
         <div class="content-box-header">Our Mission</div>
         <p class="content-p">
-          The goal of Ethical threads is to a resource for individuals to find
+          The goal of Ethical Threads is to be a resource for individuals to find
           brands that are places to shop ethical, sustainable, or in general
           have a good impact in our world. This website addresses the issue of
           finding these brands being challenging due to lack of brand awareness,
