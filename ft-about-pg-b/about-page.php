@@ -65,7 +65,7 @@
     }
     #hero-section-title {
       color: #f6f5f0;
-      font-family: Open Sans;
+      font-family: Quicksand;
       font-weight: 500;
       margin-bottom: 10px;
       font-size: 55px;
