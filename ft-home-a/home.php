@@ -1,25 +1,39 @@
 <?php
     require '../ft-navbar-N/navbar.php';
-//post to bria's page (brand information if a user clicks an image) post id to bria's page through on click
-//bria would get information from home page regarding brand to input into about the brand
-    define('DB_HOSTHome', '304.itpwebdev.com');
-    define('DB_USERHome', 'ethreads');
-    define('DB_PASSHome', '460uscitp');
-    define('DB_NAMEHome', 'ethreads_brands_db');
-    $mysqli = new mysqli(DB_HOSTHome, DB_USERHome, DB_PASSHome, DB_NAMEHome);
+    //post to bria's page (brand information if a user clicks an image) post id to bria's page through on click
+    //bria would get information from home page regarding brand to input into about the brand
+    require '../db_config.php';
+
+    $mysqli = new mysqli(HOST_DB, USER_DB, PASS_DB, NAME_DB);
     
     $sql_filter = "SELECT * FROM filters";
-    // filters.filter_name AS filters
-	// FROM brands
-    // LEFT JOIN filtered_brands
-    // 	ON brands.brand_id = filtered_brands.brand_id
-    // LEFT JOIN filters
-    // 	ON filtered_brands.filter_id = filters.filter_id;
 
     $results_filters = $mysqli->query( $sql_filter );
 
     // Check for SQL Errors.
     if ( !$results_filters ) {
+    echo $mysqli->error;
+    $mysqli->close();
+    exit();
+    }
+
+    $sql_brands = "SELECT * FROM brands";
+
+    $results_brands = $mysqli->query( $sql_brands );
+
+    // Check for SQL Errors.
+    if ( !$results_brands ) {
+    echo $mysqli->error;
+    $mysqli->close();
+    exit();
+    }
+
+    $sql_itemtype = "SELECT * FROM item_type";
+
+    $results_itemtype = $mysqli->query( $sql_itemtype );
+
+    // Check for SQL Errors.
+    if ( !$results_itemtype ) {
     echo $mysqli->error;
     $mysqli->close();
     exit();
@@ -51,7 +65,7 @@
         font-family: Quicksand; 
         font-size: 15px;
     }
-    #searchtype{
+    /* #searchtype{
         color: #F7F6F2;
         font-size: 15px;
         font-family: Quicksand;
@@ -60,7 +74,7 @@
         border: none;
         text-align: center;
         box-shadow: none;  
-    }
+    } */
     .banner {
         background-image: url('../ft-home-a/img/mainhero.jpg');
         /* background-repeat: no-repeat; */
@@ -110,7 +124,7 @@
         font-family: Quicksand;
         color: #F7F6F2;
     }
-    .round {
+    /* .round {
         border-radius: 15px;
         font-size: 15px;
         font-family: Quicksand;
@@ -124,8 +138,8 @@
     }
     .searchline{
         margin-top:10px;
-    }
-    #popdown{
+    } */
+    /* #popdown{
         display: none;
         background-color: #DDBA9F; 
         border-radius: 0px 0px 15px 15px;
@@ -135,7 +149,7 @@
     }
     li {
         display: inline;
-        /* font-size: 18px; */
+        /* font-size: 18px; 
         margin-right: 15px;
         color: #433F42;
     }
@@ -145,7 +159,7 @@
     }
     #filters {
         display: inline;
-        /* font-size: 20px; */
+        /* font-size: 20px;
         margin-left: 15px;
         color: #433F42;
     }
@@ -160,7 +174,7 @@
     }
     .filter-div {
         margin-top: 20px;
-    }
+    }*/
     .discoverlocal {
         background-color: #DDBA9F;
         padding: 25px;
@@ -198,6 +212,9 @@
     .popular{
         padding-bottom: 25px;
     }
+    .rowspace{
+        margin-top: 10px;
+    }
 </style>
 </head>
     <body>
@@ -228,31 +245,15 @@
         <div class="search">
             <div class="row">
                 <div class="col">
-                    <label for="searchby">Search By:</label>
-                    <select name="searchtype" id="searchtype" onChange="toggleSearchBar()">
-                        <option value="brand">Brand</option>
-                        <option value="product">Product</option>
-                    </select>
+                    <h4 class="sectionheader">Search For Products</h4>
                 </div>
             </div>
             <div class="row searchline">
                 <div class="col"> 
-                    <form>
-                        <div class="d-flex">
-                        <input class="form-control me-2 round" id="searchPlaceholder" type="search" placeholder="Search Brands You Love" onClick="searchDropdown()">
-                        <button class="btn searchbut" id="shape" type="submit">Search</button>
-                        </div>
-                        <div class="col flex-column" id="popdown">
-                        <div class="row filters">
-                            <div class="col filter-div">
-                                <h6 id="filters">Filters</h6>
-                                <!-- <ul>
-                                    <li>Black Owned</li>
-                                    <li class="selected-filter">Women Owned</li>
-                                    <li> Eco Friendly </li>
-                                    <li class="selected-filter"> Mission Oriented </li>
-                                    <li>Local</li>
-                                </ul> -->
+                    <form action="product-results-pg.php" method="GET">
+                        <div class="form-group row">
+                            <label for="filter-id" class="col-sm-3 col-form-label text-sm-right">Type of Brand:</label>
+                            <div class="col-sm-9">
                                 <select name="filter_id" id="filter-id" class="form-control">
                                     <option value="" selected>-- All --</option>
 
@@ -263,23 +264,29 @@
                                     <?php endwhile; ?>
                                 </select>
                             </div>
-                        </div>
-                        <div class="row">
-                            <h6> Popular Brands </h6>
-                        </div>
-                        <div class="row justify-content-center popular">
-                            <div class="col-4 text-center">
-                                <img src="../ft-home-a/img/brand1.png">
+                        </div> <!-- .form-group -->
+                        
+                        <div class="form-group row rowspace">
+                            <label for="itemtype-id" class="col-sm-3 col-form-label text-sm-right">Item Type:</label>
+                            <div class="col-sm-9">
+                                <select name="item_type_id" id="itemtype-id" class="form-control">
+                                    <option value="" selected>-- All --</option>
+
+                                    <?php while ( $row = $results_itemtype->fetch_assoc() ) : ?>
+                                    <option value="<?php echo $row['item_type_id']; ?>">
+                                        <?php echo $row['item_type']; ?>
+                                    </option>
+                                    <?php endwhile; ?>
+                                </select>
                             </div>
-                            <div class="col-4 text-center">
-                                <img src="../ft-home-a/img/brand2.png">
+                        </div> <!-- .form-group -->
+                        
+                        <div class="form-group row">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-9 mt-2">
+                                <button type="submit" class="btn searchbut">Search</button>
                             </div>
-                            <div class="col-4 text-center">
-                                <img src="../ft-home-a/img/brand3.png">
-                            </div>
-                        </div>
-                    </div>
-                    
+                        </div> <!-- .form-group -->
                     </form>
                 </div>
             </div>
@@ -339,19 +346,27 @@
         <!-- </div>    -->
 
         <div class="discoverlocal">
-            <h4 class="sectionheader">Browse Local Businesses</h4>
+            <h4 class="sectionheader">Browse Ethical Businesses</h4>
             <div class="row justify-content-center">
                 <div class="col-3 text-center">
-                  <img src="../ft-home-a/img/brand1.png">
+                    <a href="../ft-brand-pg-b/brand-page.php?brand_id=46">
+                        <img src="../ft-home-a/img/brand1.png">
+                    </a>
                 </div>
                 <div class="col-3 text-center">
-                  <img src="../ft-home-a/img/brand2.png">
+                    <a href="../ft-brand-pg-b/brand-page.php?brand_id=10">
+                        <img src="../ft-home-a/img/brand2.png">
+                    </a>
                 </div>
                 <div class="col-3 text-center">
-                  <img src="../ft-home-a/img/brand3.png">
+                    <a href="../ft-brand-pg-b/brand-page.php?brand_id=44">
+                        <img src="../ft-home-a/img/brand3.png">
+                    </a>
                 </div>
                 <div class="col-3 text-center">
-                    <img src="../ft-home-a/img/brand4.png">
+                    <a href="../ft-brand-pg-b/brand-page.php?brand_id=23">
+                        <img src="../ft-home-a/img/brand4.png">
+                    </a>
                   </div>
             </div>
         </div>
@@ -362,7 +377,7 @@
                     <div class="card">
                         <img class="card-img" src="../ft-home-a/img/discover1.png" alt="discover">
                         <div class="card-img-overlay">
-                            <h5 class="card-title"><a class="homepic" href="../ft-productresult-C/product-results-pg.html">Shop Sustainable Basics</a></h5>
+                            <h5 class="card-title"><a class="homepic" href="../ft-productresult-C/product-results-pg.php?filter_id=3">Shop Latiné Owned Businesses</a></h5>
                         </div>
                     </div>
                 </div>
@@ -370,7 +385,7 @@
                     <div class="card">
                         <img class="card-img" src="../ft-home-a/img/discover2.png" alt="discover">
                         <div class="card-img-overlay">
-                            <h5 class="card-title"><a class="homepic" href="../ft-productresult-C/product-results-pg.html">Shop Sustainable Fall Basics</a></h5>
+                            <h5 class="card-title"><a class="homepic" href="../ft-productresult-C/product-results-pg.php?filter_id=7&item_type_id=4">Shop Sustainable Winter Outerwear</a></h5>
                         </div>
                     </div>
                 </div>
@@ -382,34 +397,34 @@
         </div>
 
         <script>
-            function toggleSearchBar() {
-                const searchType = document.getElementById('searchtype').value;
-                const placeholderValue = document.getElementById('searchPlaceholder').value;
-                if (searchType === 'brand') {
-                    searchPlaceholder.placeholder = 'Search Brands You Love';
-                } else if (searchType === 'product') {
-                    searchPlaceholder.placeholder = 'Search Products You Love';
-                }
-            }
+            // function toggleSearchBar() {
+            //     const searchType = document.getElementById('searchtype').value;
+            //     const placeholderValue = document.getElementById('searchPlaceholder').value;
+            //     if (searchType === 'brand') {
+            //         searchPlaceholder.placeholder = 'Search Brands You Love';
+            //     } else if (searchType === 'product') {
+            //         searchPlaceholder.placeholder = 'Search Products You Love';
+            //     }
+            // }
 
-            function searchDropdown(){
-                document.getElementById('popdown').style.display = "block";
-                const searchInput = document.getElementById('searchPlaceholder');
-                const buttonShape = document.getElementById('shape');
-                buttonShape.classList.add('clickedsearchbut');
-                searchInput.classList.add('clickedround');
-            }
+            // function searchDropdown(){
+            //     document.getElementById('popdown').style.display = "block";
+            //     const searchInput = document.getElementById('searchPlaceholder');
+            //     const buttonShape = document.getElementById('shape');
+            //     buttonShape.classList.add('clickedsearchbut');
+            //     searchInput.classList.add('clickedround');
+            // }
 
-            window.onclick = function(event) {
-                const dropdown = document.getElementById('popdown');
-                const searchInput = document.getElementById('searchPlaceholder');
-                const buttonShape = document.getElementById('shape');
-                if (!event.target.matches('.searchbut') && !event.target.matches('.round') && !event.target.closest('#popdown')) {
-                    dropdown.style.display = 'none';
-                    buttonShape.classList.remove('clickedsearchbut');
-                    searchInput.classList.remove('clickedround');
-                }
-            };
+            // window.onclick = function(event) {
+            //     const dropdown = document.getElementById('popdown');
+            //     const searchInput = document.getElementById('searchPlaceholder');
+            //     const buttonShape = document.getElementById('shape');
+            //     if (!event.target.matches('.searchbut') && !event.target.matches('.round') && !event.target.closest('#popdown')) {
+            //         dropdown.style.display = 'none';
+            //         buttonShape.classList.remove('clickedsearchbut');
+            //         searchInput.classList.remove('clickedround');
+            //     }
+            // };
 
         </script>
     </body>

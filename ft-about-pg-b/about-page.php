@@ -30,6 +30,9 @@
       padding: 0;
       align-items: center;
     }
+    .container-lg {
+      margin-top: 20px;
+    }
     .container {
       margin-bottom: 40px;
     }
@@ -63,9 +66,10 @@
     #hero-section-title {
       color: #f6f5f0;
       font-family: Open Sans;
-      font-weight: 400;
+      font-weight: 500;
       margin-bottom: 10px;
       font-size: 55px;
+      text-shadow: 2px 2px 8px #000000;
     }
     #hero-section-b {
       font-family: Quicksand;
@@ -315,7 +319,7 @@
         padding-bottom: 10.5rem !important;
       }
     }
-    .hcf-overlay {
+    /* .hcf-overlay {
       --hcf-overlay-opacity: 0.5;
       --hcf-overlay-bg-color: var(--bs-black-rgb);
       position: relative;
@@ -324,15 +328,11 @@
       display: block;
       content: "";
       position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+      inset: 0;
       background-color: rgba(
         var(--hcf-overlay-bg-color),
         var(--hcf-overlay-opacity)
       );
-      z-index: 0;
     }
     .hcf-overlay > * {
       position: relative;
@@ -342,66 +342,10 @@
       transform: scale3d(1, 1, 1);
       transform-style: preserve-3d;
       transition: all 0.5s;
-    }
+    } */
     /* end external hero section css code */
-
-    #sm-icon {
-      position: absolute;
-      right: 0px;
-      top: 140px;
-      cursor: pointer;
-    }
-
-    /* navbar css temp */
-    #nav {
-      display: flex;
-      align-items: center;
-      height: 50px;
-      background-color: #be8f69;
-    }
-    #logo {
-      height: 40px;
-      width: auto;
-      margin-left: 10px;
-    }
-    #search {
-      height: 20px;
-    }
     .nav-menu {
-      display: flex;
-      margin-left: auto;
-      font-family: "Quicksand", "Arial", sans-serif;
-      margin-top: 15px;
-    }
-    .nav-menu li {
-      list-style: none;
-      padding: 25px;
-    }
-    a {
-      text-decoration: none;
-      color: #f7f6f2;
-    }
-
-    /* footer css temp */
-    #copyright {
-      margin-left: 10px;
-    }
-    .footer {
-      background-color: #be8f69;
-      display: flex;
-      color: #f7f6f2;
-      font-family: "Quicksand", "Arial", sans-serif;
-      height: 50px;
-      line-height: 50px;
-      justify-content: space-between;
-    }
-    #newsletter-input {
-      border: none;
-      border-radius: 5px;
-      font-family: sans-serif;
-      margin-left: 10px;
-      margin-right: 10px;
-      height: 30px;
+      margin-top: 12px;
     }
   </style>
   <body>
@@ -425,16 +369,11 @@
           have a good impact in our world. This website addresses the issue of
           finding these brands being challenging due to lack of brand awareness,
           accessibility, and affordability by making it easy to find affordable,
-          ethical alternatives to mainstream brands without compromising style
+          ethical alternatives to mainstream brands without always compromising style
           or budget.
         </p>
         <p class="content-p">
-          To achieve this goal, we allow users to search for these type of
-          brands by generally searching products they are looking for like
-          sweaters or t-shirts or by searching by brands that are similar to the
-          ones they already know. From there, users are able to further filter
-          out what type of products or brands they are looking for via different
-          categories.
+          To achieve this goal, we allow users to search for these types of brands via various filters our website has such as Black-owned and LGBTQ+ owned brands. We also allow users to choose what kind of clothes they are looking for and then show good brands that sell those types of clothing. Additionally, we implemented a Discover page that gets regularly updated with brands users may be curious about based on the different catgories the brands belong to.
         </p>
         <p class="content-p">
           Our website also purposely does not sell products directly. We choose
