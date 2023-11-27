@@ -119,6 +119,18 @@
         margin-top: 150px;
         margin-left: 75px;
     }
+    .learn:hover {
+        /* width: 171px; 
+        height: 54px;  */
+        background: darkcyan; 
+        border-radius: 15px;
+        /* border: 2px solid #82A7A6; */
+        font-size: 15px;
+        font-family: Quicksand;
+        color: #F7F6F2;
+        margin-top: 150px;
+        margin-left: 75px;
+    }
     .search {
         margin: 100px; 
     }
@@ -129,6 +141,13 @@
         font-size: 15px;
         font-family: Quicksand;
         color: #F7F6F2;
+    }
+    .searchbut:hover {
+        background: darkcyan;
+        color: #F7F6F2; 
+        border-radius: 15px;
+        font-size: 15px;
+        font-family: Quicksand;
     }
     /* .round {
         border-radius: 15px;
@@ -353,23 +372,23 @@
 
         <div class="discoverlocal">
             <h4 class="sectionheader">Browse Ethical Businesses</h4>
-            <div class="row justify-content-center">
-                <div class="col-3 text-center">
+            <div class="row justify-content-center gx-2 gy-4">
+                <div class="col text-center">
                     <a href="../ft-brand-pg-b/brand-page.php?brand_id=46">
                         <img src="../ft-home-a/img/brand1.png">
                     </a>
                 </div>
-                <div class="col-3 text-center">
+                <div class="col text-center">
                     <a href="../ft-brand-pg-b/brand-page.php?brand_id=10">
                         <img src="../ft-home-a/img/brand2.png">
                     </a>
                 </div>
-                <div class="col-3 text-center">
+                <div class="col text-center">
                     <a href="../ft-brand-pg-b/brand-page.php?brand_id=44">
                         <img src="../ft-home-a/img/brand3.png">
                     </a>
                 </div>
-                <div class="col-3 text-center">
+                <div class="col text-center">
                     <a href="../ft-brand-pg-b/brand-page.php?brand_id=23">
                         <img src="../ft-home-a/img/brand4.png">
                     </a>

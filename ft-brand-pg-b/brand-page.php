@@ -62,7 +62,7 @@
   }
       
   // Retrieve brand data JUST for ITEMS from that brand
-  $sql_brand_items = "SELECT items.item_name AS item_name, items.item_image AS item_image
+  $sql_brand_items = "SELECT items.item_name AS item_name, items.item_image AS item_image, items.item_id AS item_id
   FROM items
     LEFT JOIN brands
       ON items.brand_id = brands.brand_id
@@ -501,11 +501,13 @@
             <?php while ($brand_items_row = $brand_items_results->fetch_assoc() ) : ?>
               <div class="col">
                 <div class="item-box">
-                  <img
-                    class="product-img"
-                    src="<?php echo $brand_items_row['item_image']; ?>"
-                    alt="<?php echo $brand_items_row['item_name']; ?>"
-                  />
+                  <a href="../ft-itempage-s/ft-itempage.php.php?item_id=<?php echo $brand_items_row['item_id']; ?>">
+                    <img
+                      class="product-img"
+                      src="<?php echo $brand_items_row['item_image']; ?>"
+                      alt="<?php echo $brand_items_row['item_name']; ?>"
+                    />
+                  </a>
                   <br />
                   <div class="item-name"><?php echo $brand_items_row['item_name']; ?></div>
               </div>

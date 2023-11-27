@@ -96,7 +96,7 @@
     
     <link href="../global_css.css" rel="stylesheet"/>
     <link href="../ft-login-N/login.css" rel="stylesheet"/>
-   <!-- <link href="../ft-login-N/signup.css" rel="stylesheet"/> -->
+   	<link href="../ft-login-N/signup.css" rel="stylesheet"/>
 
     <style>
     	#overlay1 {
@@ -126,7 +126,7 @@
 
 		<div id="login">
 			<h2 class="login-headers">Login</h2>
-			<hr class="login-hr1">
+			<!-- <hr class="login-hr1"> -->
 			<p class="login-p">Login to save brands and items to your favorites
 			<br>so that you never lose them!</p>
 			<div class="responses">
@@ -165,7 +165,7 @@
 		</form>
 		
 		<div id="signup">
-			<hr class="login-hr">
+			<!-- <hr class="login-hr"> -->
 			<h2 class="login-headers">Don't have an account?</h2>
 			<p class="login-p">It costs nothing to set up an
 			<br>Ethical Threads account!</p>
