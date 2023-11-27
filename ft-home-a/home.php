@@ -349,22 +349,22 @@
             <h4 class="sectionheader">Browse Ethical Businesses</h4>
             <div class="row justify-content-center">
                 <div class="col-3 text-center">
-                    <a href="brand-page.php?brand_id=46">
+                    <a href="../ft-brand-pg-b/brand-page.php?brand_id=46">
                         <img src="../ft-home-a/img/brand1.png">
                     </a>
                 </div>
                 <div class="col-3 text-center">
-                    <a href="brand-page.php?brand_id=10">
+                    <a href="../ft-brand-pg-b/brand-page.php?brand_id=10">
                         <img src="../ft-home-a/img/brand2.png">
                     </a>
                 </div>
                 <div class="col-3 text-center">
-                    <a href="brand-page.php?brand_id=44">
+                    <a href="../ft-brand-pg-b/brand-page.php?brand_id=44">
                         <img src="../ft-home-a/img/brand3.png">
                     </a>
                 </div>
                 <div class="col-3 text-center">
-                    <a href="brand-page.php?brand_id=23">
+                    <a href="../ft-brand-pg-b/brand-page.php?brand_id=23">
                         <img src="../ft-home-a/img/brand4.png">
                     </a>
                   </div>
@@ -377,7 +377,7 @@
                     <div class="card">
                         <img class="card-img" src="../ft-home-a/img/discover1.png" alt="discover">
                         <div class="card-img-overlay">
-                            <h5 class="card-title"><a class="homepic" href="../ft-productresult-C/product-results-pg.html">Shop Sustainable Basics</a></h5>
+                            <h5 class="card-title"><a class="homepic" href="../ft-productresult-C/product-results-pg.php?filter_id=3">Shop Latiné Owned Businesses</a></h5>
                         </div>
                     </div>
                 </div>
@@ -385,7 +385,7 @@
                     <div class="card">
                         <img class="card-img" src="../ft-home-a/img/discover2.png" alt="discover">
                         <div class="card-img-overlay">
-                            <h5 class="card-title"><a class="homepic" href="../ft-productresult-C/product-results-pg.html">Shop Sustainable Fall Basics</a></h5>
+                            <h5 class="card-title"><a class="homepic" href="../ft-productresult-C/product-results-pg.php?filter_id=7&item_type_id=4">Shop Sustainable Winter Outerwear</a></h5>
                         </div>
                     </div>
                 </div>
