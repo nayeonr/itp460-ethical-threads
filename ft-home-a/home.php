@@ -5,6 +5,12 @@
     require '../db_config.php';
 
     $mysqli = new mysqli(HOST_DB, USER_DB, PASS_DB, NAME_DB);
+
+    if ($mysqli -> connect_errno) {
+		echo $mysqli -> connect_error;
+		// Terminate PHP script
+		exit();
+	}
     
     $sql_filter = "SELECT * FROM filters";
 
@@ -250,7 +256,7 @@
             </div>
             <div class="row searchline">
                 <div class="col"> 
-                    <form action="product-results-pg.php" method="GET">
+                    <form action="../ft-productresult-C/product-results-pg.php" method="GET">
                         <div class="form-group row">
                             <label for="filter-id" class="col-sm-3 col-form-label text-sm-right">Type of Brand:</label>
                             <div class="col-sm-9">
