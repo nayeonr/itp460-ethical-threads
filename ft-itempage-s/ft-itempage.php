@@ -29,7 +29,7 @@
     	ON brands.brand_id = filtered_brands.brand_id
     LEFT JOIN filters
     	ON filtered_brands.filter_id = filters.filter_id
-    WHERE items.item_id = 10 ";
+    WHERE 1 = 1 AND items.item_id = 10 ";
 
     $results = $mysqli->query($sql);
 
@@ -42,7 +42,7 @@
       ON filtered_brands.filter_id = filters.filter_id
     LEFT JOIN items
     	ON brands.brand_id = items.brand_id 
-    WHERE items.item_id = 10";
+    WHERE 1 = 1 AND  items.item_id = 10";
 
     $test2_results = $mysqli->query($sql_brand_filters);
 
@@ -61,7 +61,7 @@
     	ON brands.brand_id = filtered_brands.brand_id
     LEFT JOIN filters
     	ON filtered_brands.filter_id = filters.filter_id
-    WHERE items.item_id = 22";
+    WHERE 1 = 1 AND  items.item_id = 10";
 
  	$sql = $sql . ";";
 
