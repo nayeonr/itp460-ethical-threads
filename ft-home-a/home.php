@@ -256,7 +256,7 @@
             </div>
             <div class="row searchline">
                 <div class="col"> 
-                    <form action="product-results-pg.php" method="GET">
+                    <form action="../ft-productresult-C/product-results-pg.php" method="GET">
                         <div class="form-group row">
                             <label for="filter-id" class="col-sm-3 col-form-label text-sm-right">Type of Brand:</label>
                             <div class="col-sm-9">
