@@ -41,7 +41,7 @@
         margin-bottom: 0px;
       }
 
-      #est{
+      #est {
         margin-left: 60px;
         font-weight: lighter;
         font-style: italic;
@@ -50,7 +50,7 @@
 
       .section {
         border: solid;
-        border-color: black;
+        border-color: #be8f69;
         display: flex;
         margin: 15px;
         padding: 15px;
@@ -100,7 +100,7 @@
       }
 
       .profile-description {
-        font-weight: bolder;
+        font-weight: 500;
         margin: 0;
         padding: 0;
       }
@@ -108,6 +108,11 @@
       .profile-seller {
         margin: 0;
         padding: 0;
+         font-weight: 500;
+      }
+
+      p {
+         font-weight: 500;
       }
 
       .logout > a {
@@ -123,14 +128,16 @@
       <p id="profile-bio">Insert fun biography here!</p>
       <p id="est"> Member since Nov. 2023 </p>
 
+      <div class="logout"><a href="../ft-login-N/logout.php">Logout</a></div>
+
       <hr> 
 
-      <!-- hard coding  here -->
+      <!-- hard coding here -->
       <h2 id="bookmarks-title">Bookmarks</h2>
 
         <div class="bookmarks">
 
-          <h2 class="section-title">my favorite shirts<span id="details"> | 20 items </h2>
+          <h2 class="section-title">my favorite shirts<span id="details"> | 5 items </h2>
           <!-- on title click, see more -->
           <div class="section">
 
@@ -191,8 +198,6 @@
           </div> <!-- .section -->
 
         </div> <!-- .bookmarks -->
-
-      <div class="logout"><a href="../ft-login-N/logout.php">Logout</a></div>
 
     </div> <!-- .profile -->
 
