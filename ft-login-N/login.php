@@ -94,7 +94,7 @@
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Popup</title>
+    <title>Ethical Threads</title>
     
     <link href="../global_css.css" rel="stylesheet"/>
     <link href="../ft-login-N/login.css" rel="stylesheet"/>

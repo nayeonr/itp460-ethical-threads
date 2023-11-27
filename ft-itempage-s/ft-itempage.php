@@ -1,22 +1,25 @@
 <!-- item page -->
 <?php
 	require '../ft-navbar-N/navbar.php';
+	require '../db_config.php';
 
-		echo "<pre>";
-		var_dump($_GET);
-		echo "</pre>";
-
-		$host = "304.itpwebdev.com";
-		$user = "ethreads";
-		$pass = "460uscitp";
-		$db = "ethreads_brands_db";
+		// $host = "304.itpwebdev.com";
+		// $user = "ethreads";
+		// $pass = "460uscitp";
+		// $db = "ethreads_brands_db";
 	
-	$mysqli = new mysqli($host, $user, $pass, $db);
+	// $mysqli = new mysqli($host, $user, $pass, $db);
+	$mysqli = new mysqli(HOST_DB, USER_DB, PASS_DB, NAME_DB);
 
 	if ($mysqli->connect_errno) {
 		echo $mysqli->connect_error;
 		exit();
 	}
+
+	$mysqli->set_charset('utf8');
+
+	// $brand_id = $_GET['brand_id'];
+	// pass item id variable from cherise's page -> from href tag
 
 	$sql = "SELECT *
 		FROM items
@@ -26,7 +29,7 @@
     	ON brands.brand_id = filtered_brands.brand_id
     LEFT JOIN filters
     	ON filtered_brands.filter_id = filters.filter_id
-    WHERE 1 = 1;";
+    WHERE items.item_id = 21 ";
 
  	$sql = $sql . ";";
 
@@ -189,25 +192,26 @@
 
 <h1 id="discover-heading"> More by <?php echo $row['brand_name']; ?></h1>
 <div class="block-2">
+	<!-- loop through rows tha -->
 	<div class="discover-item">
-		<img src= />
+		<img src= "<?php echo $row['item_image']; ?>"/>
 		<p id="discover-item-name"> </p>
 	</div>
 
 	<div class="discover-item">
-		<img src= />
+		<img src= "<?php echo $row['item_image']; ?>" />
 		<p id="discover-item-name"> </p>
 	</div>
 
-	<div class="discover-item">
+<!-- 	<div class="discover-item">
 		<img src= />
 		<p id="discover-item-name"> </p>
 	</div>
-
-	<div class="discover-item">
+ -->
+<!-- 	<div class="discover-item">
 		<img src= />
 		<p id="discover-item-name"> </p>
-	</div>
+	</div> -->
 </div>
 <?php endwhile; ?>
 
