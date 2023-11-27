@@ -5,6 +5,12 @@
     require '../db_config.php';
 
     $mysqli = new mysqli(HOST_DB, USER_DB, PASS_DB, NAME_DB);
+
+    if ($mysqli -> connect_errno) {
+		echo $mysqli -> connect_error;
+		// Terminate PHP script
+		exit();
+	}
     
     $sql_filter = "SELECT * FROM filters";
 
