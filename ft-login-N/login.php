@@ -1,11 +1,18 @@
 <?php
+	if (session_status() == PHP_SESSION_NONE) {
+    		session_start();
+	}
+	require '../ft-login-N/config.php';
+
 	$_SESSION['logged_in'] = false;
+
 	// check if user has already logged in
 	if ( isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true )
 	{
+		$_SESSION['logged_in'] = true;
 		// logged in
 		// redirect to profile page
-		header('Location: ../ft-profilepage-S/ft-profilepage-S.php');
+		//header('Location: ../ft-profilepage-s/ft-profilepage-S.php');
 		exit();
 	} 
 	else
@@ -15,9 +22,9 @@
 		// if there was form submission
 		if ( isset($_POST['Lemail']) && isset($_POST['Lpassword']) )
 		{
-			if (session_status() == PHP_SESSION_NONE) {
+			/*if (session_status() == PHP_SESSION_NONE) {
     			session_start();
-			}	
+			}*/
 	
 			$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -41,9 +48,6 @@
 						";
 
 			$results_Lusers = $mysqli->query($sql_Lusers);
-
-			//$_SESSION['name'] = $results_Lusers['name'];
-			//echo $_SESSION['name'];
 
 			// check for errors
 			if ( !$results_Lusers ) {
@@ -71,7 +75,7 @@
 				$_SESSION['user_name'] = $user['name'];
 
 				// redirect to profile page
-				header('Location: ../ft-profilepage-S/ft-profilepage-S.php');
+				header('Location: ../ft-profilepage-s/ft-profilepage-S.php');
 				exit();
 			}
 			else
