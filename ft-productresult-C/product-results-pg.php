@@ -1,28 +1,99 @@
 <?php
 
   require '../ft-navbar-N/navbar.php';
-// $host = "http://304.itpwebdev.com/cpanel";
-// $user = "ethreads_cclough";
-// $pass = "Coding00!";
-// $user = "ethreads";
-// $pass = "460uscitp";
-// $db = "ethreads_brands_db";
+  // require '../db_config.php';
+  $host = "304.itpwebdev.com";
+	$user = "ethreads";
+	$pass = "460uscitp";
+	$db = "ethreads_brands_db";
+  $mysqli = new mysqli($host, $user, $pass, $db);
 
 
-//  <!-- establish my sql connection -->
- // $mysqli = new mysqli($host, $user, $pass, $db); -->
 
 // <!-- check for connection errors  -->
- // if ($mysqli->connect_erno){
-//   echo $mysqli->connect_error;
-//   exit();
-// } -->
+ if ($mysqli->connect_erno){
+  echo $mysqli->connect_error;
+  exit();
+} 
 
 //  <!-- submit sql statement  -->
+ // Get filter_id from url
+  // $filter_id = $_GET['filter_id'];
+  // echo "<hr>$filter_id</hr>";
 
-// <!-- close db connection -->
-// $mysqli->close(); --> 
+ // Get item_type_id from url
+  // $item_type_id= $_GET['item_type_id'];
+  // echo "<hr>$item_type_id</hr>";
+
+
+
+// var_dump($_GET);
+
+// $itemtypeid = $_GET["item_type_id"];
+// $filter_id= $_GET["filter_id"];
+
+
+	
+
+$sql = "SELECT DISTINCT items.item_name AS name, items.item_price AS price, items.item_image AS image, filters.filter_name AS filters
+FROM items
+    LEFT JOIN brands
+      ON items.brand_id = brands.brand_id
+    LEFT JOIN filtered_brands
+      ON brands.brand_id = filtered_brands.brand_id
+    LEFT JOIN filters
+      ON filtered_brands.filter_id = filters.filter_id       
+    WHERE 1= 1";  
+
+  if ( isset($_GET['filter_id']) && trim($_GET['filter_id']) != '' ) {
+		$filter_id = $_GET['filter_id'];
+    $sql = $sql . " AND filters.filter_id = $filter_id";
+	}
+
+  if ( isset($_GET['item_type_id']) && trim($_GET['item_type_id']) != '' ) {
+		$itemtypeid = $_GET['item_type_id'];
+    $sql = $sql . " AND items.item_type_id = $itemtypeid";
+	}
+
+	$sql = $sql . ";";
+
+
+
+// 	$sql = "SELECT items.item_image AS image, items.item_name AS name, items.item_price AS price, filters.filter_name AS Filters
+//   FROM items 
+//   LEFT JOIN brands ON brands.brand_id = items.brand_id 
+//   LEFT JOIN filtered_brands ON filtered_brands.brand_id = brands.brand_id LEFT JOIN filters ON filters.filter_id = filtered_brands.filter_id;
+// ";
+
+// echo $sql;
+
+
+	// if ( isset($_GET['filter_id']) && trim($_GET['filter_id']) == '' ) {
+	// 	$sql_all_filers = "SELECT * FROM filters ;"
+	// }
+
+  // echo $filter_id;
+
+
+
+	// echo "<hr>$sql<hr>";
+
+	$results = $mysqli->query($sql);
+
+	// Check for SQL errors.
+	if ($results == false) {
+		echo $results->error;
+		$mysqli->close();
+		exit();
+	}
+
+	// 3. Close the DB connection.
+	$mysqli->close();
+
+	// 4. Display the results.
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,13 +112,14 @@
 
         <header>
             <h4 id="search-results"><strong>Search Results For</strong></h4>
-            <h1>Clothing By Latiné Brands</h1>
+            <h1> Clothing By:<?php echo $row["name"]; ?></h1>
+              <!-- Clothing By Latiné Brands -->
         </header>
 
 
        
         <main>
-            <div id="tag-div">
+            <!-- <div id="tag-div">
             <p class="not-center">Related:</p>
             <ul>
                 <li class="related-items">Black Crop Vests</li>
@@ -55,7 +127,9 @@
                 <li class="related-items">Summer Crop Vests</li>
                 <li class="related-items">Metallic Crop Vests</li>
             </ul>
-            </div>
+            </div> -->
+
+            Showing <?php echo $results->num_rows; ?> result(s).
 
 <h3 class="filter-heading">Filter By:</h3>
 <div class="container">   <!--for filters and products -->
@@ -86,19 +160,29 @@
         <li><input type="checkbox" />$100-$150</li>
       </ul>
     </div>
+    <div class="expanding-element"></div>
        
     </div>
 
+    <?php while($row = $results->fetch_assoc()) : ?>
+<figure>
+    <img class="products" src="<?php echo $row["image"]; ?>" alt="<?php echo $row ["name"]; ?>" />
 
-    <figure>
-    <img id="myElement" class="products" src="https://hijadetumadre.com/cdn/shop/products/LATINA-ENOUGH_0001_IMG_3018.jpg?v=1666018017" alt="Latina Enough Hoodie" />
-    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Latina Enough Hoodie<br>$65</a></figcaption>
-    <!-- <div class="content">
-                <h2>Karan Singh</br>
-                <span>Graphic Designer</span></h2>
-            </div> -->
+    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.php?item_id=<?php echo $row["item_id"] ?>&brand_id=<?php echo $row["brand_id"] ?>"><?php echo $row['name'];?><br><?php echo $row['price'];?></a></figcaption>
+
+   
+</figure>
+<?php endwhile; ?>
+    
+
+
+    
+    
+    <!-- <img id="myElement" class="products" src="https://hijadetumadre.com/cdn/shop/products/LATINA-ENOUGH_0001_IMG_3018.jpg?v=1666018017" alt="Latina Enough Hoodie" /> -->
+    <!-- Latina Enough Hoodie<br>$65</a></figcaption> -->
+   
     <!-- https://hijadetumadre.com/collections/tops-bottomd/products/latina-enough-hoodie -->
-    </figure>
+    
 
 
     <figure>

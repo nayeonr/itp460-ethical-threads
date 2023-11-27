@@ -106,8 +106,12 @@ div {
 .filters {
   grid-column: 1 / 2;
   grid-row: 1 / -1;
+  /* grid-row: span 200; */
 }
 
+.expanding-element {
+    grid-row: span 1;
+}
 
 
 
