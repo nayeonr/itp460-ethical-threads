@@ -53,7 +53,7 @@
         border-color: #be8f69;
         border-radius: 15px;
         margin-bottom: 15px;
-        padding: 15px;
+        padding: 10px;
         margin-top: 0;
       }
 
@@ -64,7 +64,7 @@
       .item-saved {
         margin: 0px auto;
         display: inline-block;
-        margin: 20px;
+        margin: 19px;
         margin-top: 0;
         margin-bottom: 0;
       }
