@@ -1,12 +1,11 @@
 <?php
-	
 	$_SESSION['logged_in'] = false;
 	// check if user has already logged in
 	if ( isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true )
 	{
 		// logged in
 		// redirect to profile page
-		//header('Location: ../ft-profilepage-S/ft-profilepage-S.php');
+		header('Location: ../ft-profilepage-S/ft-profilepage-S.php');
 		exit();
 	} 
 	else
@@ -16,7 +15,9 @@
 		// if there was form submission
 		if ( isset($_POST['Lemail']) && isset($_POST['Lpassword']) )
 		{
-			//session_start();
+			if (session_status() == PHP_SESSION_NONE) {
+    			session_start();
+			}	
 	
 			$mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -33,13 +34,16 @@
 					// 	hash(ALG, input)
 			$Lpassword = hash('sha256', $Lpassword);
 
-			$sql_Lusers = "SELECT *
+			$sql_Lusers = "SELECT *, users.name AS name
 						FROM users
 						WHERE email = '$Lemail'
 								AND password = '$Lpassword';
 						";
 
 			$results_Lusers = $mysqli->query($sql_Lusers);
+
+			//$_SESSION['name'] = $results_Lusers['name'];
+			//echo $_SESSION['name'];
 
 			// check for errors
 			if ( !$results_Lusers ) {
@@ -57,13 +61,18 @@
 			}
 			else if ( $results_Lusers->num_rows > 0 )
 			{
+				$user = $results_Lusers->fetch_assoc();
 				// valid credentials
 
 				// set session variables
 				$_SESSION['logged_in'] = true;
 
+				// store user's name
+				$_SESSION['user_name'] = $user['name'];
+
 				// redirect to profile page
 				header('Location: ../ft-profilepage-S/ft-profilepage-S.php');
+				exit();
 			}
 			else
 			{
