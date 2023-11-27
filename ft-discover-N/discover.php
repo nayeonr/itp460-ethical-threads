@@ -143,6 +143,7 @@
 
 		.captions {
 		    display: flex;
+		    margin-top: 10px;
 		}
     </style>
 </head>

@@ -52,8 +52,7 @@
         border: solid;
         border-color: #be8f69;
         border-radius: 15px;
-        display: flex;
-        margin: 15px;
+        margin-bottom: 15px;
         padding: 15px;
         margin-top: 0;
       }
@@ -64,6 +63,10 @@
 
       .item-saved {
         margin: 0px auto;
+        display: inline-block;
+        margin: 20px;
+        margin-top: 0;
+        margin-bottom: 0;
       }
 
       img {
@@ -76,19 +79,14 @@
       }
 
       .item-saved img {
-        width: 250px;
-        height: 250px;
+        width: 300px;
+        height: 300px;
         border-radius: 15px;
       }
 
       #bookmarks-title{
         font-weight: bold;
         padding-left: 15px;
-      }
-
-      #details {
-        font-weight: lighter;
-
       }
 
       /*.pagination {
@@ -101,7 +99,12 @@
       p {
         font-weight: 1000;
         margin: 0;
+        margin-top: 15px;
         padding: 0;
+      }
+
+      .profile-seller {
+        margin: 0;
       }
 
       .logout {
@@ -135,7 +138,7 @@
 
         <div class="bookmarks">
 
-          <h2 class="section-title">my favorite shirts<span id="details"> | 5 items </h2>
+          <h2 class="section-title">my favorite shirts<span class="details"> | 4 items </h2>
           <!-- on title click, see more -->
           <div class="section">
 
@@ -159,35 +162,28 @@
 
             <div class="item-saved" onclick="nuhUh4()">
               <img src="../ft-profilepage-s/img/grapiko-aspin-tee.png">
-              <p class="profile-description">Grapiko Aspin Tee </p>
-              <p class="profile-seller"> Abakada </p>
-            </div>
-
-            
-            <div class="item-saved" onclick="nuhUh5()">
-              <img src="../ft-profilepage-s/img/missing-you-tshirt.png">
-              <p class="profile-description"> Missing You T-Shirt </p>
-              <p class="profile-seller"> Silly Oaf </p>
+              <p class="profile-description"> Aspin Tee </p>
+              <p class="profile-seller"> Grapiko </p>
             </div>
 
           </div> <!-- .section -->
 
-          <h2 class="section-title"> fun patterns <span id="details"> | 3 items </h2>
+          <h2 class="section-title"> fun patterns <span class="details"> | 3 items </h2>
           <div class="section">
 
-            <div class="item-saved" onclick="nuhUh6()">
+            <div class="item-saved" onclick="nuhUh5()">
               <img src="../ft-profilepage-s/img/frog-argyle-sweatshirt.png">
               <p class="profile-description"> Frog Arygle Sweatshirt</p>
               <p class="profile-seller"> Silly Oaf </p>
             </div>
 
-            <div class="item-saved" onclick="nuhUh7()">
+            <div class="item-saved" onclick="nuhUh6()">
               <img src="../ft-profilepage-s/img/thanks-a-bunch-button-up-smock.png">
               <p class="profile-description"> Thanks a Bunch Smock </p>
               <p class="profile-seller"> Silly Oaf </p>
             </div>
 
-            <div class="item-saved" onclick="nuhUh8()">
+            <div class="item-saved" onclick="nuhUh7()">
               <img src="../ft-profilepage-s/img/no-regrats-roll-neck-knitted-jumper.png">
               <p class="profile-description"> No Regrats Roll Neck Knitted Jumper </p>
               <p class="profile-seller"> Silly Oaf </p>
@@ -223,9 +219,6 @@
            alert("This item is hard-coded just for demonstration! Typically, clicking on this item should redirect you to its Item page.");
         }
         function nuhUh7 () {
-           alert("This item is hard-coded just for demonstration! Typically, clicking on this item should redirect you to its Item page.");
-        }
-        function nuhUh8 () {
            alert("This item is hard-coded just for demonstration! Typically, clicking on this item should redirect you to its Item page.");
         }
     </script>
