@@ -1,11 +1,13 @@
 <?php
+
 	//if (session_status() == PHP_SESSION_NONE) {
     	session_start();
 	//}
-
-	require '../ft-login-N/config.php';
+	
 	require '../ft-login-N/login.php';
 	require '../ft-login-N/signup.php';
+
+	// var_dump($_SESSION);
 
 ?>
 
@@ -59,11 +61,11 @@
 				<li><a href="../ft-about-pg-b/about-page.php">About</a></li>
 
 				<!-- if logged in, show Profile button -->
-					<?php if ( !isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == false ) : ?>
+					<?php if ( !isset($_SESSION['logged_in']) ) : ?>
 						<li><a href="../ft-login-N/login.php" class="open-login">Login</a></li>
-					<?php else : ?>
+					<?php elseif ( $_SESSION['logged_in'] == true ) : ?>
 						<li>
-							<a href="../ft-profilepage-S/ft-profilepage-S.php"><?php echo htmlspecialchars($_SESSION['user_name']); ?></a>
+							<a href="../ft-profilepage-s/ft-profilepage-S.php"><?php echo htmlspecialchars($_SESSION['user_name']); ?></a>
 						</li>
 					<?php endif; ?>
 				<!--<li><a href="../ft-login-N/login.php" id="open-login">Login</a></li> -->
@@ -193,7 +195,7 @@
             	/>
             </div> <!-- .responses -->
 
-            <div class="keep-login">
+            <!-- <div class="keep-login">
             	<input
                     type="checkbox"
                     name="Skeep"
@@ -202,7 +204,7 @@
                     value="yes"
                   />
                   <label for="keep-id">Keep me logged in</label>
-            </div> <!-- #keep-login -->
+            </div> #keep-login -->
 
             <div id="Snext-btn" class="next-btn">
             	<button id="next-text2" class="login-buttons" type="submit">Next</button>
