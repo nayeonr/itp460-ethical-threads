@@ -150,7 +150,7 @@
 <body>
 	<!-- DISCOVER -->
 	<div id="discover">
-		<h1 class="discover-headers">Discover more brands to love</h1>
+		<h1 class="discover-headers">Discover More Brands to Love</h1>
 
         <h2 class="discover-headers">Sustainable Threads of the Week</h2>
         <div id="row1" class="rows">
