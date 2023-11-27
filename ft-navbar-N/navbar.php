@@ -7,7 +7,7 @@
 	require '../ft-login-N/login.php';
 	require '../ft-login-N/signup.php';
 
-	// var_dump($_SESSION);
+	//var_dump($_SESSION);
 
 ?>
 

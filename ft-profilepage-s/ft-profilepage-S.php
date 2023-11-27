@@ -51,6 +51,7 @@
       .section {
         border: solid;
         border-color: #be8f69;
+        border-radius: 15px;
         display: flex;
         margin: 15px;
         padding: 15px;
@@ -58,11 +59,10 @@
       }
 
       .section-title {
-        margin-left: 2%;
+        margin-left: 15px;
       }
 
       .item-saved {
-        /*margin-right: 20px;*/
         margin: 0px auto;
       }
 
@@ -73,7 +73,6 @@
       img:hover {
         transform: scale(1.05);
         box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
-        border-radius: 15px;
       }
 
       .item-saved img {
@@ -84,7 +83,7 @@
 
       #bookmarks-title{
         font-weight: bold;
-        padding-left: 2%;
+        padding-left: 15px;
       }
 
       #details {
@@ -92,43 +91,42 @@
 
       }
 
-      .pagination {
+      /*.pagination {
         padding-top: 120px;
         padding-left: 430px;
         position: relative;
         font-size: 18px;
-      }
-
-      .profile-description {
-        font-weight: 500;
-        margin: 0;
-        padding: 0;
-      }
-
-      .profile-seller {
-        margin: 0;
-        padding: 0;
-         font-weight: 500;
-      }
+      } */
 
       p {
-         font-weight: 500;
+        font-weight: 1000;
+        margin: 0;
+        padding: 0;
       }
 
-      .logout > a {
-        color: #433f42;
+      .logout {
+        position: relative;
+        bottom: 5px;
+        padding: 5px;
+      }
+
+      .logout:hover {
+        background-color: darkcyan;
+        cursor: pointer;
       }
 
 
   </style>
   <body>
     <div class="profile">
-      <h1><img src="../ft-profilepage-s/img/hello-kitty-pfp.jpeg" id="pfp">
-      <?php echo htmlspecialchars($_SESSION['user_name']); ?></h1>
+      <h1 id="profile-intro">
+        <img src="../ft-profilepage-s/img/hello-kitty-pfp.jpeg" id="pfp">
+          <?php echo htmlspecialchars($_SESSION['user_name']); ?>
+        <button type="button" class="logout"><a href="../ft-login-N/logout.php">Logout</a></button>
+      </h1>
       <p id="profile-bio">Insert fun biography here!</p>
       <p id="est"> Member since Nov. 2023 </p>
 
-      <div class="logout"><a href="../ft-login-N/logout.php">Logout</a></div>
 
       <hr> 
 
@@ -141,32 +139,32 @@
           <!-- on title click, see more -->
           <div class="section">
 
-            <div class="item-saved">
+            <div class="item-saved" onclick="nuhUh1()">
               <img src="../ft-profilepage-s/img/pretty-ugly-fitted-tee.png">
               <p class="profile-description"> Pretty Ugly Fitted Tee </p>
               <p class="profile-seller"> Silly Oaf </p>
             </div>
 
-            <div class="item-saved">
+            <div class="item-saved" onclick="nuhUh2()">
               <img src="../ft-profilepage-s/img/bad-apple-knit-top.png">
               <p class="profile-description"> Bad Apple Knit Top </p>
               <p class="profile-seller"> Silly Oaf </p>
             </div>
 
-            <div class="item-saved">
+            <div class="item-saved" onclick="nuhUh3()">
               <img src="../ft-profilepage-s/img/chrom-sun-crop-top.png">
               <p class="profile-description"> Chrom Sun Crop Top </p>
               <p class="profile-seller"> Abakada </p>
             </div>
 
-            <div class="item-saved">
+            <div class="item-saved" onclick="nuhUh4()">
               <img src="../ft-profilepage-s/img/grapiko-aspin-tee.png">
               <p class="profile-description">Grapiko Aspin Tee </p>
               <p class="profile-seller"> Abakada </p>
             </div>
 
             
-            <div class="item-saved">
+            <div class="item-saved" onclick="nuhUh5()">
               <img src="../ft-profilepage-s/img/missing-you-tshirt.png">
               <p class="profile-description"> Missing You T-Shirt </p>
               <p class="profile-seller"> Silly Oaf </p>
@@ -177,19 +175,19 @@
           <h2 class="section-title"> fun patterns <span id="details"> | 3 items </h2>
           <div class="section">
 
-            <div class="item-saved">
+            <div class="item-saved" onclick="nuhUh6()">
               <img src="../ft-profilepage-s/img/frog-argyle-sweatshirt.png">
               <p class="profile-description"> Frog Arygle Sweatshirt</p>
               <p class="profile-seller"> Silly Oaf </p>
             </div>
 
-            <div class="item-saved">
+            <div class="item-saved" onclick="nuhUh7()">
               <img src="../ft-profilepage-s/img/thanks-a-bunch-button-up-smock.png">
               <p class="profile-description"> Thanks a Bunch Smock </p>
               <p class="profile-seller"> Silly Oaf </p>
             </div>
 
-            <div class="item-saved">
+            <div class="item-saved" onclick="nuhUh8()">
               <img src="../ft-profilepage-s/img/no-regrats-roll-neck-knitted-jumper.png">
               <p class="profile-description"> No Regrats Roll Neck Knitted Jumper </p>
               <p class="profile-seller"> Silly Oaf </p>
@@ -204,6 +202,33 @@
      <div class="footer">
       <span id="copyright"> © Ethical Threads </span>
     </div>
+
+    <script>
+        function nuhUh1 () {
+          alert("This item is hard-coded just for demonstration! Typically, clicking on this item should redirect you to its Item page.");
+        }
+        function nuhUh2 () {
+           alert("This item is hard-coded just for demonstration! Typically, clicking on this item should redirect you to its Item page.");
+        }
+        function nuhUh3 () {
+           alert("This item is hard-coded just for demonstration! Typically, clicking on this item should redirect you to its Item page.");
+        }
+        function nuhUh4 () {
+           alert("This item is hard-coded just for demonstration! Typically, clicking on this item should redirect you to its Item page.");
+        }
+        function nuhUh5 () {
+           alert("This item is hard-coded just for demonstration! Typically, clicking on this item should redirect you to its Item page.");
+        }
+        function nuhUh6 () {
+           alert("This item is hard-coded just for demonstration! Typically, clicking on this item should redirect you to its Item page.");
+        }
+        function nuhUh7 () {
+           alert("This item is hard-coded just for demonstration! Typically, clicking on this item should redirect you to its Item page.");
+        }
+        function nuhUh8 () {
+           alert("This item is hard-coded just for demonstration! Typically, clicking on this item should redirect you to its Item page.");
+        }
+    </script>
 
   </body>
   </html>

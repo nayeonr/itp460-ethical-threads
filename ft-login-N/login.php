@@ -96,7 +96,7 @@
     
     <link href="../global_css.css" rel="stylesheet"/>
     <link href="../ft-login-N/login.css" rel="stylesheet"/>
-   <!-- <link href="../ft-login-N/signup.css" rel="stylesheet"/> -->
+   	<link href="../ft-login-N/signup.css" rel="stylesheet"/>
 
     <style>
     	#overlay1 {
