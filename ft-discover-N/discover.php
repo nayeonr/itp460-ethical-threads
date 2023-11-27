@@ -112,10 +112,10 @@
 
 		.image-container {
 		    display: inline-block;
-		    margin: 35px;
+		    margin: 20px;
 		    margin-top: 0;
 		    margin-bottom: 0;
-		    padding: 15px;
+		    padding-left: 15px;
 		    padding-bottom: 0;
 		    width: 300px;
 		    overflow: hidden;
@@ -178,7 +178,7 @@
 
 		<h2 class="discover-headers">Latiné-Owned of the Week</h2>
 		<div id="row3" class="rows">
-		    <?php foreach (array_slice($discover_latine, 0, 5) as $brand) { ?>
+		    <?php foreach (array_slice($discover_latine, 0, 4) as $brand) { ?>
 		        <div class="image-container">
 		        	<div class="image-wrapper">
 		            	<a href="../ft-brand-pg-b/brand-page.php?brand_id=<?php echo $brand['brand_id']; ?>"><img src="<?php echo $brand['header_image']; ?>" alt="<?php echo htmlspecialchars($brand['brand_name']); ?>"></a>

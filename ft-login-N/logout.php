@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	session_unset();
+	$_SESSION['logged_in'] = false;
 	session_destroy();
 
 	header("Location: ../ft-home-a/home.php"); // Redirect to the home page

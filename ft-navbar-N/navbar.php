@@ -1,13 +1,13 @@
 <?php
 
-	if (session_status() == PHP_SESSION_NONE) {
-    		session_start();
-	}
+	//if (session_status() == PHP_SESSION_NONE) {
+    	session_start();
+	//}
 	
 	require '../ft-login-N/login.php';
 	require '../ft-login-N/signup.php';
 
-	var_dump($_SESSION);
+	// var_dump($_SESSION);
 
 ?>
 
@@ -61,7 +61,7 @@
 				<li><a href="../ft-about-pg-b/about-page.php">About</a></li>
 
 				<!-- if logged in, show Profile button -->
-					<?php if ( $_SESSION['logged_in'] == false ) : ?>
+					<?php if ( !isset($_SESSION['logged_in']) ) : ?>
 						<li><a href="../ft-login-N/login.php" class="open-login">Login</a></li>
 					<?php elseif ( $_SESSION['logged_in'] == true ) : ?>
 						<li>

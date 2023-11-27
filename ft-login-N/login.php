@@ -4,19 +4,17 @@
 	}
 	require '../ft-login-N/config.php';
 
-	$_SESSION['logged_in'] = false;
-
 	// check if user has already logged in
-	if ( isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true )
+	/*if ( isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true )
 	{
 		$_SESSION['logged_in'] = true;
 		// logged in
 		// redirect to profile page
-		//header('Location: ../ft-profilepage-s/ft-profilepage-S.php');
+		header('Location: ../ft-profilepage-s/ft-profilepage-S.php');
 		exit();
 	} 
 	else
-	{
+	{ */
 		// not logged in
 
 		// if there was form submission
@@ -84,7 +82,7 @@
 				$Lerror = "Invalid credentials.";
 			}
 		} 
-	}
+	//}
 ?>
 
 <!DOCTYPE html>
