@@ -1,9 +1,9 @@
 <?php
-	session_start();
+	//if (session_status() == PHP_SESSION_NONE) {
+    	session_start();
+	//}
 
 	require '../ft-login-N/config.php';
-
-	//$_SESSION['logged_in'] = false;
 	require '../ft-login-N/login.php';
 	require '../ft-login-N/signup.php';
 
@@ -57,15 +57,17 @@
 			<ul class="nav-menu">
 				<li><a href="../ft-discover-N/discover.php">Discover</a></li>
 				<li><a href="../ft-about-pg-b/about-page.php">About</a></li>
+
 				<!-- if logged in, show Profile button -->
-					<?php if ( isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true ) : ?>
-						<li>
-							<a href="../ft-login-N/login.php" id="open-login">Profile<?php echo $row['name']; ?></a>
-						</li>
+					<?php if ( !isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == false ) : ?>
+						<li><a href="../ft-login-N/login.php" class="open-login">Login</a></li>
 					<?php else : ?>
-						<li><a href="../ft-login-N/login.php" id="open-login">Login</a></li>
+						<li>
+							<a href="../ft-profilepage-S/ft-profilepage-S.php"><?php echo htmlspecialchars($_SESSION['user_name']); ?></a>
+						</li>
 					<?php endif; ?>
 				<!--<li><a href="../ft-login-N/login.php" id="open-login">Login</a></li> -->
+
 				<li><a><img src="../ft-navbar-N/magnify.png" alt="Search" id="search"></a></li>
 			</ul> <!-- .nav-menu -->
 		</div> <!-- #nav -->
@@ -102,7 +104,7 @@
             	/>
             </div> <!-- .responses -->
 
-            <div class="keep-login">
+            <!-- <div class="keep-login">
             	<input
                     type="checkbox"
                     name="Lkeep"
@@ -110,7 +112,7 @@
                     class="keep-class"
                   />
                   Keep me logged in
-            </div> <!-- #keep-login -->
+            </div> #keep-login -->
 
             <div id="Lnext-btn" class="next-btn">
             	<button id="next-text1" class="login-buttons" type="submit">Next</button>
@@ -218,7 +220,7 @@
 	<script>
 
 			/* LOGIN POPUP */
-		document.querySelector('#open-login').onclick = function(event) {
+		document.querySelector('.open-login').onclick = function(event) {
 			event.preventDefault();
 			document.querySelector('.overlay').style.display = 'flex';
 		};
