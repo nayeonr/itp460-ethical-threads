@@ -137,12 +137,6 @@
 		border-radius: 15px;
 	}
 
-	img:hover {
-		transform: scale(1.05);
-		box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
-		border-radius: 15px;
-	}
-
 	.item-preview {
 		margin-right: 70px;
 		margin-top: 120px;
@@ -191,6 +185,12 @@
 	.discover-item img {
 		width: 220px;
 		height: 220px;
+		border-radius: 15px;
+	}
+
+	.discover-item img:hover {
+		transform: scale(1.05);
+		box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
 		border-radius: 15px;
 	}
 
