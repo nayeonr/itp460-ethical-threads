@@ -28,7 +28,7 @@
 	
 	// pass item id variable from cherise's page -> from href tag
 	//retrieve item information
-	$sql = "SELECT *
+	$sql = "SELECT DISTINCT *
 		FROM items
     LEFT JOIN brands
    		ON items.brand_id = brands.brand_id
@@ -53,7 +53,7 @@
 	}
 
 	  // retrieve item images from brand
-    $sql_items = "SELECT DISTINCT items.item_image, brands.brand_name, items.item_name
+    $sql_items = "SELECT DISTINCT items.item_image, brands.brand_name, items.item_name, items.item_id, brands.brand_id
 		FROM brands
 		LEFT JOIN items
    		ON items.brand_id = brands.brand_id
@@ -275,8 +275,13 @@
 <div class="block-2">
 	<?php while ($row = $sql_items_results->fetch_assoc()) : ?>
 	<div class="discover-item">
-		<img src= "<?php echo $row['item_image']; ?>"/>
-		<p id="discover-item-name"> <?php echo $row['item_name']; ?></p>
+		<a href="../ft-itempage-s/ft-itempage.php?item_id=<?php echo $row['item_id']; ?>&brand_id=<?php echo $row['brand_id']; ?>"> 
+			<img src= "<?php echo $row['item_image']; ?>" />
+		</a>
+		
+		<p id="discover-item-name"> 
+			<?php echo $row['item_name']; ?>
+		</p>
 	</div>
 	<?php endwhile; ?>
 </div>
