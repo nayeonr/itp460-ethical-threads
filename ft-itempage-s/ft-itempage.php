@@ -57,13 +57,13 @@
 		FROM brands
 		LEFT JOIN items
    		ON items.brand_id = brands.brand_id
-    WHERE items.brand_id = $brand_id AND items.item_id != $item_id";
-
+    	WHERE brands.brand_id = $brand_id";
 
 
  	$sql = $sql . ";";
 
  	$sql_items_results = $mysqli->query($sql_items);
+
 
     if (!$sql_items_results) {
 		echo $mysqli->error;
