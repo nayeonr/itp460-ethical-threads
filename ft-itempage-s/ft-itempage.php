@@ -57,7 +57,7 @@
 		FROM brands
 		LEFT JOIN items
    		ON items.brand_id = brands.brand_id
-    WHERE items.brand_id = $brand_id";
+    WHERE items.brand_id = $brand_id AND items.item_id != $item_id";
 
 
 
