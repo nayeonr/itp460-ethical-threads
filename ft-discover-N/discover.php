@@ -107,12 +107,17 @@
     		margin-top: 5px;
     	}
     	
+
     	.discover-headers {
 			padding-left: 35px;
 			padding-bottom: 0;
 			margin-bottom: 10px;
 			align-items: left;
 		}
+
+		h1 {
+    		font-size: 40px;
+    	}
 
 		.image-container {
 			display: inline-block;
@@ -154,6 +159,7 @@
 		    display: flex;
 		    margin: 10px;
 		    padding-left: 10px;
+		    font-weight: 500;
 		}
     </style>
 </head>
