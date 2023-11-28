@@ -240,18 +240,17 @@
 		
 		<h2 id="seller-name">
 			<a href="../ft-brand-pg-b/brand-page.php?brand_id=<?php echo $row['brand_id']; ?>">
-				<?php echo $row['brand_name']; ?></a></h2>
+				<?php echo $row['brand_name']; ?></a>
+		</h2>
 
-		<p id="price"> <?php echo $row['item_price']; ?> </p>
+		<p id="price"> $<?php echo $row['item_price']; ?> </p>
 
 		<p id="description"> <?php echo $row['item_description']; ?> </p>
 
-	<!-- <?php endwhile; ?>
+	<!-- <?php endwhile; ?> -->
 	<?php while ($row = $brand_filters_results -> fetch_assoc()) : ?> 
--->
-		<div class="tag">
-			<p id="tag"> <?php echo $row['filter_name']; ?> </p>
-		</div>
+ 
+		<span class="tag"> <?php echo $row['filter_name']; ?> </span>
 	<?php endwhile; ?> 
 	</div>
 </div>
