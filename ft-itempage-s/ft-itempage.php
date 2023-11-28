@@ -229,6 +229,7 @@
 </head>
 <body>
 
+<div class="PLSSSSS">
 <div class="block-1">
 	<?php while ($row = $results->fetch_assoc()) : ?>
 	<div class="item-preview">
@@ -267,8 +268,7 @@
 	</div>
 	<?php endwhile; ?>
 </div>
-
-
+</div>
 <div class="footer">
      <span id="copyright"> © Ethical Threads </span>
 </div>
