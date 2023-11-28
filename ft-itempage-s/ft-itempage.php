@@ -53,17 +53,13 @@
 	}
 
 	  // retrieve item images from brand
-    $sql_items = "SELECT DISTINCT items.item_image, brands.brand_name
+    $sql_items = "SELECT DISTINCT items.item_image, brands.brand_name, items.item_name
 		FROM brands
 		LEFT JOIN items
    		ON items.brand_id = brands.brand_id
     WHERE items.brand_id = $brand_id";
 
-		// $sql_items = "SELECT DISTINCT items.item_image, brands.brand_name
-		// FROM brands
-		// LEFT JOIN items
-   	// 	ON items.brand_id = brands.brand_id
-    // WHERE brands.brand_id = 10";
+
 
  	$sql = $sql . ";";
 
@@ -74,6 +70,8 @@
 		$mysqli->close();
 		exit();
 	}
+
+	$sql_items_test = $sql_items_results->fetch_assoc();
 
  
     $sql_brand_filters = "SELECT DISTINCT *
@@ -256,15 +254,18 @@
 	</div>
 </div>
 
-<?php while ($row = $sql_items_results->fetch_assoc()) : ?>
-<h1 id="discover-heading"> More by <?php echo $row['brand_name']; ?></h1>
+
+<h1 id="discover-heading"> More by <?php echo $sql_items_test ['brand_name']; ?></h1>
+
+
 <div class="block-2">
+	<?php while ($row = $sql_items_results->fetch_assoc()) : ?>
 	<div class="discover-item">
 		<img src= "<?php echo $row['item_image']; ?>"/>
-		<p id="discover-item-name"> </p>
+		<p id="discover-item-name"> <?php echo $row['item_name']; ?></p>
 	</div>
+	<?php endwhile; ?>
 </div>
-<?php endwhile; ?>
 
 
 <div class="footer">
