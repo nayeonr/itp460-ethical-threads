@@ -14,14 +14,13 @@
 		echo $mysqli->connect_error;
 		exit();
 	}
-
+	
 	$mysqli->set_charset('utf8');
 
-	// $brand_id = $_GET['brand_id'];
 	// pass item id variable from cherise's page -> from href tag
 
 	//retrieve item information
-	$sql = "SELECT *
+	$sql = "SELECT DISTINCT *
 		FROM items
     LEFT JOIN brands
    		ON items.brand_id = brands.brand_id
@@ -29,49 +28,69 @@
     	ON brands.brand_id = filtered_brands.brand_id
     LEFT JOIN filters
     	ON filtered_brands.filter_id = filters.filter_id
-    WHERE 1 = 1 AND items.item_id = 10 ";
+   	WHERE items.item_id = 10";
+
+    if ( isset($_GET['item_id']) && trim($_GET['item_id']) != '' ) {
+		$item_id = $_GET['item_id'];
+    $sql = $sql . " AND items.item_id = $item_id";
+		}
+
+		if ( isset($_GET['brand_id']) && trim($_GET['brand_id']) != '' ) {
+		$brand_id= $_GET['brand_id'];
+    $sql = $sql . " AND items.brand_id= $brand_id";
+		}
+
+		$sql = $sql . ";";
+
+    echo "<hr>$sql<hr>";
 
     $results = $mysqli->query($sql);
 
+    if (!$results) {
+		echo $mysqli->error;
+		$mysqli->close();
+		exit();
+	}
+
  
-    $sql_brand_filters = "SELECT *
-  		FROM brands
-    LEFT JOIN filtered_brands
-      ON brands.brand_id = filtered_brands.brand_id
-    LEFT JOIN filters
-      ON filtered_brands.filter_id = filters.filter_id
-    LEFT JOIN items
-    	ON brands.brand_id = items.brand_id 
-    WHERE 1 = 1 AND  items.item_id = 10";
+  //   $sql_brand_filters = "SELECT DISTINCT *
+  // 		FROM brands
+  //   LEFT JOIN filtered_brands
+  //     ON brands.brand_id = filtered_brands.brand_id
+  //   LEFT JOIN filters
+  //     ON filtered_brands.filter_id = filters.filter_id
+  //   LEFT JOIN items
+  //   	ON brands.brand_id = items.brand_id 
+  //   WHERE 1 = 1 AND items.item_id = 10;";
 
-    $test2_results = $mysqli->query($sql_brand_filters);
+  //   $test2_results = $mysqli->query($sql_brand_filters);
 
-    if (!$test2_results) {
-		echo $mysqli->error;
-		$mysqli->close();
-		exit();
-	}
+  //   if (!$test2_results) {
+	// 	echo $mysqli->error;
+	// 	$mysqli->close();
+	// 	exit();
+	// }
 
-    //retrieve item images from brand
-    $sql_test = "SELECT *
-		FROM items
-	LEFT JOIN brands
-   		ON items.brand_id = brands.brand_id
-   	LEFT JOIN filtered_brands
-    	ON brands.brand_id = filtered_brands.brand_id
-    LEFT JOIN filters
-    	ON filtered_brands.filter_id = filters.filter_id
-    WHERE 1 = 1 AND  items.item_id = 10";
+  //   //retrieve item images from brand
+  //   $sql_test = "SELECT DISTINCT *
+	// 	FROM items
+	// LEFT JOIN brands
+  //  		ON items.brand_id = brands.brand_id
+  //  	LEFT JOIN filtered_brands
+  //   	ON brands.brand_id = filtered_brands.brand_id
+  //   LEFT JOIN filters
+  //   	ON filtered_brands.filter_id = filters.filter_id
+  //   WHERE 1 = 1 AND  items.item_id = 10;";
 
- 	$sql = $sql . ";";
+ 	// $sql = $sql . ";";
 
- 	$test_results = $mysqli->query($sql_test);
+ 	// $test_results = $mysqli->query($sql_test);
 
-    if (!$test_results) {
-		echo $mysqli->error;
-		$mysqli->close();
-		exit();
-	}
+  //   if (!$test_results) {
+	// 	echo $mysqli->error;
+	// 	$mysqli->close();
+	// 	exit();
+	// }
 
 	$mysqli->close();
 
@@ -218,12 +237,8 @@
 
 		<p id="description"> <?php echo $row['item_description']; ?> </p>
 
-	<!-- <?php endwhile; ?>
-	<?php while ($row = $test2_results -> fetch_assoc()) : ?>  -->
-		<div class="tag">
-			<p> <?php echo $row['filter_name']; ?> </p>
-		</div>
-	<?php endwhile; ?> 
+<?php endwhile; ?>
+
 	</div>
 </div>
 
