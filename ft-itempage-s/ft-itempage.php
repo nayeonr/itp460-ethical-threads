@@ -20,9 +20,6 @@
 	$item_id = $_GET['item_id'];
 	echo "<hr>$item_id</hr>";
 
-	$brand_id = $_GET['brand_id'];
-	echo "<hr>$item_id</hr>";
-
 	$item_id_test = $_GET['item_id'] + 1;
 	echo "<hr>$item_id_test</hr>";
 	// pass item id variable from cherise's page -> from href tag
@@ -55,13 +52,13 @@
 	  //retrieve item images from brand
     $sql_test = "SELECT DISTINCT *
 		FROM items
-	LEFT JOIN brands
+		LEFT JOIN brands
    		ON items.brand_id = brands.brand_id
    	LEFT JOIN filtered_brands
     	ON brands.brand_id = filtered_brands.brand_id
     LEFT JOIN filters
     	ON filtered_brands.filter_id = filters.filter_id
-    WHERE items.brand_id = $brand_id";
+    WHERE items.item_id = $item_id";
 
  	$sql = $sql . ";";
 
@@ -265,10 +262,10 @@
 		<p id="discover-item-name"> </p>
 	</div>
 
-	<div class="discover-item">
+	<!-- <div class="discover-item">
 		<img src= "<?php echo $row['item_image']; ?>" />
 		<p id="discover-item-name"> </p>
-	</div>
+	</div> -->
 
 </div>
 <?php endwhile; ?>
