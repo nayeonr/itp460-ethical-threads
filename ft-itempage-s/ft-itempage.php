@@ -57,7 +57,7 @@
 		FROM brands
 		LEFT JOIN items
    		ON items.brand_id = brands.brand_id
-    WHERE items.item_id = $brand_id";
+    WHERE items.brand_id = $brand_id";
 
 		// $sql_items = "SELECT DISTINCT items.item_image, brands.brand_name
 		// FROM brands
