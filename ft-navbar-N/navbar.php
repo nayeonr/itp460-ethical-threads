@@ -70,7 +70,7 @@
 					<?php endif; ?>
 				<!--<li><a href="../ft-login-N/login.php" id="open-login">Login</a></li> -->
 
-				<li><a><img src="../ft-navbar-N/magnify.png" alt="Search" id="search"></a></li>
+				<!-- <li><a><img src="../ft-navbar-N/magnify.png" alt="Search" id="search"></a></li> -->
 			</ul> <!-- .nav-menu -->
 		</div> <!-- #nav -->
 	</nav>
