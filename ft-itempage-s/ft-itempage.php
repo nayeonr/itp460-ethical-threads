@@ -220,7 +220,7 @@
 		text-decoration: underline;
 	}
 
-	a {
+	#test {
 		color:#433F42;;
 	}
 
@@ -240,7 +240,7 @@
 		<h1 id="item-name"> <?php echo $row['item_name']; ?></h1>
 		
 		<h2 id="seller-name">
-			<a href="../ft-brand-pg-b/brand-page.php?brand_id=<?php echo $row['brand_id']; ?>">
+			<a href="../ft-brand-pg-b/brand-page.php?brand_id=<?php echo $row['brand_id']; ?>" id="test">
 				<?php echo $row['brand_name']; ?></a>
 		</h2>
 
@@ -269,6 +269,7 @@
 	<?php endwhile; ?>
 </div>
 </div>
+
 <div class="footer">
      <span id="copyright"> © Ethical Threads </span>
 </div>
