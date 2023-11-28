@@ -36,6 +36,7 @@ img {
   display: flex;
   margin-left: auto;
   font-family: "Quicksand", "Arial", sans-serif;
+/*  margin-top: 15px;*/
 }
 
 .nav-menu li {
