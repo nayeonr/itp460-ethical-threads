@@ -501,7 +501,7 @@
             <?php while ($brand_items_row = $brand_items_results->fetch_assoc() ) : ?>
               <div class="col">
                 <div class="item-box">
-                  <a href="../ft-itempage-s/ft-itempage.php.php?item_id=<?php echo $brand_items_row['item_id']; ?>">
+                  <a href="../ft-itempage-s/ft-itempage.php?item_id=<?php echo $brand_items_row['item_id']; ?>">
                     <img
                       class="product-img"
                       src="<?php echo $brand_items_row['item_image']; ?>"

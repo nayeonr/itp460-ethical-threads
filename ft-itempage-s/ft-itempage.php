@@ -20,6 +20,11 @@
 	$item_id = $_GET['item_id'];
 	echo "<hr>$item_id</hr>";
 
+	$brand_id = $_GET['brand_id'];
+	echo "<hr>$item_id</hr>";
+
+	$item_id_test = $_GET['item_id'] + 1;
+	echo "<hr>$item_id_test</hr>";
 	// pass item id variable from cherise's page -> from href tag
 
 	//retrieve item information
@@ -32,8 +37,6 @@
     LEFT JOIN filters
     	ON filtered_brands.filter_id = filters.filter_id
     WHERE items.item_id = $item_id";
-
- 
 
    if ( isset($_GET['item_id']) && trim($_GET['item_id']) != '' ) {
 		$item_id = $_GET['item_id'];
@@ -49,6 +52,27 @@
 		exit();
 	}
 
+	  //retrieve item images from brand
+    $sql_test = "SELECT DISTINCT *
+		FROM items
+	LEFT JOIN brands
+   		ON items.brand_id = brands.brand_id
+   	LEFT JOIN filtered_brands
+    	ON brands.brand_id = filtered_brands.brand_id
+    LEFT JOIN filters
+    	ON filtered_brands.filter_id = filters.filter_id
+    WHERE items.brand_id = $brand_id";
+
+ 	$sql = $sql . ";";
+
+ 	$test_results = $mysqli->query($sql_test);
+
+    if (!$test_results) {
+		echo $mysqli->error;
+		$mysqli->close();
+		exit();
+	}
+
  
     $sql_brand_filters = "SELECT DISTINCT *
   		FROM brands
@@ -58,32 +82,11 @@
       ON filtered_brands.filter_id = filters.filter_id
     LEFT JOIN items
     	ON brands.brand_id = items.brand_id 
-    WHERE 1 = 1 AND items.item_id = 10;";
+    WHERE items.item_id = $item_id;";
 
     $test2_results = $mysqli->query($sql_brand_filters);
 
     if (!$test2_results) {
-		echo $mysqli->error;
-		$mysqli->close();
-		exit();
-	}
-
-    //retrieve item images from brand
-    $sql_test = "SELECT DISTINCT *
-		FROM items
-	LEFT JOIN brands
-   		ON items.brand_id = brands.brand_id
-   	LEFT JOIN filtered_brands
-    	ON brands.brand_id = filtered_brands.brand_id
-    LEFT JOIN filters
-    	ON filtered_brands.filter_id = filters.filter_id
-    WHERE 1 = 1 AND  items.item_id = 10;";
-
- 	$sql = $sql . ";";
-
- 	$test_results = $mysqli->query($sql_test);
-
-    if (!$test_results) {
 		echo $mysqli->error;
 		$mysqli->close();
 		exit();
@@ -151,7 +154,7 @@
 		padding: 2%;
 		width: 450px;
 		height: 450px;
-		border-radius: 2px;
+		border-radius: 15px;
 	}
 
 	#description p {
@@ -166,7 +169,7 @@
 		margin-right: 2.2%;
 		width: 220px;
 		height: 220px;
-		border-radius: 5px;
+		border-radius: 15px;
 	}
 
 	#discover-heading {
@@ -213,6 +216,16 @@
 		margin-top: 2%;
 	}
 
+	a {
+		  font-family: "Quicksand", "Arial", sans-serif;
+	    color: #433F42;
+	    font-size: 24px;
+	}
+
+	#seller-name {
+		text-decoration: underline;
+	}
+
 
 </style>
 
@@ -228,14 +241,15 @@
 	<div class="item-text">	
 		<h1 id="item-name"> <?php echo $row['item_name']; ?></h1>
 		
-		<h2 id="seller-name"> <?php echo $row['brand_name']; ?></h2>
+		<h2 id="seller-name"><a href="../ft-brand-pg-b/brand-page.php?brand_id=<?php echo $row['brand_id']; ?>"><?php echo $row['brand_name']; ?></h2>
 
 		<p id="price"> <?php echo $row['item_price']; ?> </p>
 
 		<p id="description"> <?php echo $row['item_description']; ?> </p>
 
 	<!-- <?php endwhile; ?>
-	<?php while ($row = $test2_results -> fetch_assoc()) : ?>  -->
+	<?php while ($row = $test2_results -> fetch_assoc()) : ?> 
+-->
 		<div class="tag">
 			<p> <?php echo $row['filter_name']; ?> </p>
 		</div>
