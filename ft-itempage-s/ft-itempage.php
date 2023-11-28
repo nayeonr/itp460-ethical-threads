@@ -105,8 +105,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="
 		sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="../global_css.css">
-    <link rel="stylesheet" href="../ft-login-N/login.css">
     <link rel="stylesheet" href="../ft-login-N/signup.css">
+    <link rel="stylesheet" href="../ft-login-N/login.css">
   </head>
 
   <style>
@@ -238,7 +238,9 @@
 	<div class="item-text">	
 		<h1 id="item-name"> <?php echo $row['item_name']; ?></h1>
 		
-		<h2 id="seller-name"><a href="../ft-brand-pg-b/brand-page.php?brand_id=<?php echo $row['brand_id']; ?>"><?php echo $row['brand_name']; ?></h2>
+		<h2 id="seller-name">
+			<a href="../ft-brand-pg-b/brand-page.php?brand_id=<?php echo $row['brand_id']; ?>">
+				<?php echo $row['brand_name']; ?></a></h2>
 
 		<p id="price"> <?php echo $row['item_price']; ?> </p>
 
