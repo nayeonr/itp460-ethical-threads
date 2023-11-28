@@ -37,7 +37,7 @@
       margin-bottom: 40px;
     }
     .content-box-header {
-      font-size: 34px;
+      font-size: 40px;
       font-family: Quicksand;
       padding-bottom: 15px;
       font-weight: 500;
@@ -67,6 +67,7 @@
       color: #f6f5f0;
       font-family: Quicksand;
       font-weight: 500;
+      padding-top: 20px;
       margin-bottom: 10px;
       font-size: 55px;
       text-shadow: 2px 2px 8px #000000;
