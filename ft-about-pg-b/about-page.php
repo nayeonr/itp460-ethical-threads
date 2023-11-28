@@ -365,19 +365,16 @@
         <div class="content-box-header">Our Mission</div>
         <p class="content-p">
           The goal of Ethical Threads is to be a resource for individuals to find
-          brands that are places to shop ethical, sustainable, or in general
-          have a good impact in our world. This website addresses the issue of
-          finding these brands being challenging due to lack of brand awareness,
-          accessibility, and affordability by making it easy to find affordable,
+          brands to shop at that are ethical, sustainable, or in general
+          have a good impact in our world. This website addresses the difficulties of finding such brands due to lack of brand awareness, accessibility, and affordability by making it easy to find affordable and
           ethical alternatives to mainstream brands without always compromising style
           or budget.
         </p>
         <p class="content-p">
-          To achieve this goal, we allow users to search for these types of brands via various filters our website has such as Black-owned and LGBTQ+ owned brands. We also allow users to choose what kind of clothes they are looking for and then show good brands that sell those types of clothing. Additionally, we implemented a Discover page that gets regularly updated with brands users may be curious about based on the different catgories the brands belong to.
+          To achieve this goal, we allow users to narrow down the types of brands they can search for via various filters our website has, such as Black-owned and LGBTQ+ owned brands. We also allow users to choose what kind of clothes they are looking for and then show good brands that sell those types of items. Additionally, we implemented a Discover page that gets regularly updated with brands users may be curious about based on the different catgories the brands belong to.
         </p>
         <p class="content-p">
-          Our website also purposely does not sell products directly. We choose
-          to simply be a resource of information for brands and products in
+          Ethical Threads does not sell products directly. This is an intentional choice as we serve to simply be a resource of information for brands and items in
           order to shine the spotlight on the brand owners and their businesses.
         </p>
       </div>
