@@ -131,6 +131,11 @@
       width: 230px;
       border-radius: 15px;
     }
+    .product-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
+      border-radius: 15px;
+    }
     .row {
       margin-left: 20px;
       align-items: top;

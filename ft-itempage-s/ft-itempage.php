@@ -191,7 +191,7 @@
 	.discover-item img {
 		width: 220px;
 		height: 220px;
-		border-radius: 5px;
+		border-radius: 15px;
 	}
 
 	#brand-logo {
@@ -230,10 +230,11 @@
 
 	#seller-name {
 		text-decoration: underline;
+		color:#433F42;
 	}
 
-	#test {
-		color:#433F42;;
+	#seller-name:hover {
+		color: #82A7A6;
 	}
 
 </style>
@@ -251,8 +252,8 @@
 	<div class="item-text">	
 		<h1 id="item-name"> <?php echo $row['item_name']; ?></h1>
 		
-		<h2 id="seller-name">
-			<a href="../ft-brand-pg-b/brand-page.php?brand_id=<?php echo $row['brand_id']; ?>" id="test">
+		<h2>
+			<a href="../ft-brand-pg-b/brand-page.php?brand_id=<?php echo $row['brand_id']; ?>" id="seller-name">
 				<?php echo $row['brand_name']; ?></a>
 		</h2>
 
