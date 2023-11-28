@@ -112,7 +112,9 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pixelify+Sans:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-  
+  .nav-menu {
+  	margin-top: 15px;
+  }
 
 	h2 {
 	    font-family: "Quicksand", "Arial", sans-serif;
@@ -131,6 +133,16 @@
 		margin-bottom: 5%;
 	}
 
+	img {
+		border-radius: 15px;
+	}
+
+	img:hover {
+		transform: scale(1.05);
+		box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
+		border-radius: 15px;
+	}
+
 	.item-preview {
 		margin-right: 70px;
 		margin-top: 120px;
@@ -138,13 +150,13 @@
 		margin-bottom: 50px;
 		width: 500px;
 		height: 500px;
-		border-radius: 2px;
+		border-radius: 15px;
 	}
 
 	.item-preview img {
 		width: 500px;
 		height: 500px;
-		border-radius: 2px;
+		border-radius: 15px;
 	}
 
 	.item-text{
