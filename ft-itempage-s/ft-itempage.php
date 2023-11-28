@@ -18,12 +18,15 @@
 	$mysqli->set_charset('utf8');
 
 	$item_id = $_GET['item_id'];
-	echo "<hr>$item_id</hr>";
+	// echo "<hr>$item_id</hr>";
 
-	$item_id_test = $_GET['item_id'] + 1;
-	echo "<hr>$item_id_test</hr>";
+	$brand_id = $_GET['brand_id'];
+
+	// $item_id_test = $_GET['item_id'] + 1;
+	// echo "<hr>$item_id_test</hr>";
+
+	
 	// pass item id variable from cherise's page -> from href tag
-
 	//retrieve item information
 	$sql = "SELECT *
 		FROM items
@@ -49,22 +52,24 @@
 		exit();
 	}
 
-	  //retrieve item images from brand
-    $sql_test = "SELECT DISTINCT *
-		FROM items
-		LEFT JOIN brands
+	  // retrieve item images from brand
+    $sql_items = "SELECT DISTINCT items.item_image, brands.brand_name
+		FROM brands
+		LEFT JOIN items
    		ON items.brand_id = brands.brand_id
-   	LEFT JOIN filtered_brands
-    	ON brands.brand_id = filtered_brands.brand_id
-    LEFT JOIN filters
-    	ON filtered_brands.filter_id = filters.filter_id
-    WHERE items.item_id = $item_id";
+    WHERE items.item_id = $brand_id";
+
+		// $sql_items = "SELECT DISTINCT items.item_image, brands.brand_name
+		// FROM brands
+		// LEFT JOIN items
+   	// 	ON items.brand_id = brands.brand_id
+    // WHERE brands.brand_id = 10";
 
  	$sql = $sql . ";";
 
- 	$test_results = $mysqli->query($sql_test);
+ 	$sql_items_results = $mysqli->query($sql_items);
 
-    if (!$test_results) {
+    if (!$sql_items_results) {
 		echo $mysqli->error;
 		$mysqli->close();
 		exit();
@@ -81,9 +86,9 @@
     	ON brands.brand_id = items.brand_id 
     WHERE items.item_id = $item_id;";
 
-    $test2_results = $mysqli->query($sql_brand_filters);
+    $brand_filters_results = $mysqli->query($sql_brand_filters);
 
-    if (!$test2_results) {
+    if (!$brand_filters_results) {
 		echo $mysqli->error;
 		$mysqli->close();
 		exit();
@@ -213,16 +218,13 @@
 		margin-top: 2%;
 	}
 
-	a {
-		  font-family: "Quicksand", "Arial", sans-serif;
-	    color: #433F42;
-	    font-size: 24px;
-	}
-
 	#seller-name {
 		text-decoration: underline;
 	}
 
+	a {
+		color:#433F42;;
+	}
 
 </style>
 
@@ -245,34 +247,28 @@
 		<p id="description"> <?php echo $row['item_description']; ?> </p>
 
 	<!-- <?php endwhile; ?>
-	<?php while ($row = $test2_results -> fetch_assoc()) : ?> 
+	<?php while ($row = $brand_filters_results -> fetch_assoc()) : ?> 
 -->
 		<div class="tag">
-			<p> <?php echo $row['filter_name']; ?> </p>
+			<p id="tag"> <?php echo $row['filter_name']; ?> </p>
 		</div>
 	<?php endwhile; ?> 
 	</div>
 </div>
 
-<?php while ($row = $test_results->fetch_assoc()) : ?>
+<?php while ($row = $sql_items_results->fetch_assoc()) : ?>
 <h1 id="discover-heading"> More by <?php echo $row['brand_name']; ?></h1>
 <div class="block-2">
 	<div class="discover-item">
 		<img src= "<?php echo $row['item_image']; ?>"/>
 		<p id="discover-item-name"> </p>
 	</div>
-
-	<!-- <div class="discover-item">
-		<img src= "<?php echo $row['item_image']; ?>" />
-		<p id="discover-item-name"> </p>
-	</div> -->
-
 </div>
 <?php endwhile; ?>
 
 
 <div class="footer">
-      <span id="copyright"> © Ethical Threads </span>
+     <span id="copyright"> © Ethical Threads </span>
 </div>
 
 </body>
