@@ -108,6 +108,19 @@ FROM items
     <link href="../ft-login-N/login.php" rel="stylesheet" />
     <link href="../ft-productresult-C/style-product-result.css" rel="stylesheet" />
 
+    <style>
+        #logo {
+            margin-top: 5px;
+        }
+        
+        .products:hover
+        {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
+            border-radius: 15px;
+        }
+    </style>
+
     <body>
 
         <header>

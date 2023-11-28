@@ -143,13 +143,13 @@
 		margin-left: 100px;
 		margin-bottom: 50px;
 		width: 500px;
-		height: 500px;
+		height: auto
 		border-radius: 15px;
 	}
 
 	.item-preview img {
 		width: 500px;
-		height: 500px;
+		height: auto;
 		border-radius: 15px;
 	}
 
@@ -173,8 +173,8 @@
 		margin-top: 2%;
 		margin-bottom: 2%;
 		margin-right: 2.2%;
-		width: 220px;
-		height: 220px;
+		width: 230px;
+		height: auto;
 		border-radius: 15px;
 	}
 
@@ -183,8 +183,8 @@
 	}
 
 	.discover-item img {
-		width: 220px;
-		height: 220px;
+		width: 230px;
+		height: auto;
 		border-radius: 15px;
 	}
 

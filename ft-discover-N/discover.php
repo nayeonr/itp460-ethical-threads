@@ -106,7 +106,7 @@
     	#logo {
     		margin-top: 5px;
     	}
-
+    	
     	.discover-headers {
 			padding-left: 35px;
 			padding-bottom: 0;
