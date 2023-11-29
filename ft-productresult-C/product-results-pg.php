@@ -17,6 +17,36 @@
 } 
 
 //  <!-- submit sql statement  -->
+ $sql_filter = "SELECT * FROM filters";
+
+ $results_filters = $mysqli->query( $sql_filter );
+
+  // Check for SQL Errors.
+    if ( !$results_filters ) {
+    echo $mysqli->error;
+    $mysqli->close();
+    exit();
+    }
+
+
+  $filters_row = $results_filters->fetch_assoc();
+
+
+   $sql_itemtype = "SELECT * FROM item_type";
+
+    $results_itemtype = $mysqli->query( $sql_itemtype );
+
+    // Check for SQL Errors.
+    if ( !$results_itemtype ) {
+    echo $mysqli->error;
+    $mysqli->close();
+    exit();
+    }
+
+
+ 
+    
+
  // Get filter_id from url
   // $filter_id = $_GET['filter_id'];
   // echo "<hr>$filter_id</hr>";
@@ -35,7 +65,7 @@
 
 	
 
-$sql = "SELECT DISTINCT items.item_name AS name, items.item_price AS price, items.item_image AS image, filters.filter_name AS filters
+$sql = "SELECT DISTINCT items.item_name AS name, items.item_price AS price, items.item_image AS image, filters.filter_name AS filters, item_type_id
 FROM items
     LEFT JOIN brands
       ON items.brand_id = brands.brand_id
@@ -119,13 +149,23 @@ FROM items
             box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
             border-radius: 15px;
         }
+
+
+        .filters {
+          grid-row: span 1;
+        }
+
     </style>
 
     <body>
 
+      
+<?php echo $brand_data_row['brand_name']; ?>
         <header>
             <h4 id="search-results"><strong>Search Results For</strong></h4>
-            <h1> Clothing By:<?php echo $row["name"]; ?></h1>
+            <h1> Clothing By:<?php echo $filters_row['filters']; ?>      
+            </h1>
+
               <!-- Clothing By Latiné Brands -->
         </header>
 
@@ -149,8 +189,66 @@ FROM items
     <div class="filters expanding-element">
         <!-- <h4 class="minority">Minority Owned</h4> -->
          <div id="list1" class="dropdown-check-list" tabindex="100">
-      <span class="anchor">Type of Brand</span>
-      <ul class="items filter-pad">
+      <!-- <span class="anchor">Type of Brand</span> -->
+      <form action="product-results-pg.php" method="GET">
+        <div>
+          <label for="filter-id" class="col-sm-3 col-form-label text-sm-right">Type of Brand:</label>
+            <div class="col-sm-9">
+                <select name="filter_id" id="filter-id" class="form-control">
+                  <option value="" selected>-- All --</option>
+                <!-- PHP TO POPULATE RESULT OPTIONS  -->
+                <?php while ( $row = $results_filters->fetch_assoc() ) : ?>
+                      <option value="<?php echo $row['filter_id']; ?>">
+                          <?php echo $row['filter_name']; ?>
+                      </option>
+                      <?php endwhile; ?>
+                </select>
+              </div>
+        </div>    <!-- brand types/ filters -->
+        
+              <!--  ITEM TYPE -->
+        <div class="form-group row rowspace">
+          <label for="itemtype-id" class="col-sm-3 col-form-label text-sm-right">Item Type:</label>
+            <div class="col-sm-9">
+            <select name="item_type_id" id="itemtype-id" class="form-control">
+              <option value="" selected>-- All --</option>
+              <?php while ( $row = $results_itemtype->fetch_assoc() ) : ?>
+                      <option value="<?php echo $row['item_type_id']; ?>">
+                          <?php echo $row['item_type']; ?>
+                        </option>
+                      <?php endwhile; ?>
+                  </select>
+              </div>
+          </div> <!-- .form-group -->
+
+          
+          <div class="form-group row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-9 mt-2">
+                  <button type="submit" class="btn searchbut">Search</button>
+              </div>
+          </div> <!-- .form-group -->
+        </form>
+           <!-- JavaScript to dynamically adjust the filters -->
+        <div class="expanded"></div>
+
+          
+    <script>
+        // Assuming you want to use the number of rows in $results
+        let numRows = <?php echo $results->num_rows; ?>;
+
+        // Get the .filters element
+        let filtersElement = document.querySelector('.filters');
+
+        // Add or remove the 'expanded' class based on the calculated number of rows
+        if (numRows > 2) {
+            filtersElement.classList.add('expanded');
+        } else {
+            filtersElement.classList.remove('expanded');
+        }
+    </script>
+      
+      <!-- <ul class="items filter-pad">
         <li><input type="checkbox" />Black-owned</li>
         <li><input type="checkbox" />Latiné-owned</li>
         <li><input type="checkbox" />Sustainable</li>
@@ -158,13 +256,14 @@ FROM items
         <li><input class="coming-soon1" type="checkbox" id="lgbtq" onclick="keepCheckboxUn()" />LGBTQ+-owned</li>
         <li><input class="coming-soon2" type="checkbox" id="indi" onclick="keepCheckbox()"/>Indigenous-owned</li>
         <li><input class="coming-soon3" type="checkbox" id="wom" onclick="keepCheck()" />Women-owned</li>
-      </ul>
+      </ul> -->
+      
     </div>
 
 
  
         <!-- <h4 class="minority">Price</h4> -->
-        <div id="list2" class="dropdown-check-list" tabindex="100">
+        <!-- <div id="list2" class="dropdown-check-list" tabindex="100">
       <span id="price-span" class="anchor">Price</span>
       <ul class="items price-pad">
         <li><input type="checkbox" />$0-$25</li>
@@ -172,7 +271,7 @@ FROM items
         <li><input type="checkbox" />$50-$100</li>
         <li><input type="checkbox" />$100-$150</li>
       </ul>
-    </div>
+    </div> -->
     <!-- <div class="expanding-element"></div> -->
        
     </div>
@@ -187,42 +286,6 @@ FROM items
 </figure>
 <?php endwhile; ?>
     
-
-
-    
-    
-    <!-- <img id="myElement" class="products" src="https://hijadetumadre.com/cdn/shop/products/LATINA-ENOUGH_0001_IMG_3018.jpg?v=1666018017" alt="Latina Enough Hoodie" /> -->
-    <!-- Latina Enough Hoodie<br>$65</a></figcaption> -->
-   
-    <!-- https://hijadetumadre.com/collections/tops-bottomd/products/latina-enough-hoodie -->
-    
-
-
-    <!-- <figure>
-    <img class="products hover-class" src="https://shopjzd.com/cdn/shop/products/LatinaMagicSweatshirt_800x.jpg?v=1622761940" alt="Latina Magic Sweatshirt" />
-    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Latina Magic Sweatshirt<br>$58</a></figcaption> -->
-    <!-- https://shopjzd.com/collections/sweatshirts/products/latina-magic-sweatshirt-pre-order -->
-    <!-- </figure> -->
-
-
-    <!-- <figure>
-    <img class="products hover-class" src="https://www.poplinen.co/cdn/shop/products/NinLinenPant02_1200x.png?v=1661222611" alt="Nin Linen Pant - Ivory" />
-    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Nin Linen Pant - Ivory<br>$88</a></figcaption> -->
-    <!-- https://www.poplinen.co/products/nin-linen-pant -->
-    <!-- </figure> -->
-
-
-    <!-- <figure>
-    <img class="products hover-class" src="https://hijadetumadre.com/cdn/shop/products/make-jefa-moves-2.jpg?v=1580419832" alt="Make Jefa Moves T-shirt" />
-    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Make Jefa Moves T-shirt<br>$42</a></figcaption> -->
-    <!-- https://hijadetumadre.com/collections/tops-bottomd/products/make-jefa-moves-t-shirt -->
-    <!-- </figure> -->
-<!--    
-   <figure>
-    <img class="products hover-class" src="https://www.poplinen.co/cdn/shop/products/KannikaLineShirt06_1c237685-7bad-46f7-a7df-c9ee5572e39c_1200x.png?v=1663065753" alt="Kannika Shirt - Olive" />
-    <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.html">Kannika Shirt - Olive<br>$50</a></figcaption> -->
-    <!-- https://www.poplinen.co/products/kannika-shirt-olive?_pos=1&_sid=c556a6c8d&_ss=r -->
-    <!-- </figure> -->
 
 
     <!-- <figure>
@@ -249,7 +312,88 @@ FROM items
 
 
     <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
       <script>
+        // women owned
+           $(document).ready(function () {
+        // Add change event listener to the select element
+        $('#filter-id').on('change', function () {
+            // Check if the selected value is '1' (women-owned)
+            if ($(this).val() == '1') {
+                // Display an alert
+                alert("This feature will be coming soon! Thanks for the wait :)");
+            }
+        });
+    });
+      // aaapi owned
+      $(document).ready(function () {
+        // Add change event listener to the select element
+        $('#filter-id').on('change', function () {
+            // Check if the selected value is '1' (women-owned)
+            if ($(this).val() == '4') {
+                // Display an alert
+                alert("This feature will be coming soon! Thanks for the wait :)");
+            }
+        });
+    });
+
+       // aaapi owned
+      $(document).ready(function () {
+        // Add change event listener to the select element
+        $('#filter-id').on('change', function () {
+            // Check if the selected value is '1' (women-owned)
+            if ($(this).val() == '5') {
+                // Display an alert
+                alert("This feature will be coming soon! Thanks for the wait :)");
+            }
+        });
+    });
+
+     // lgbtq owned
+      $(document).ready(function () {
+        // Add change event listener to the select element
+        $('#filter-id').on('change', function () {
+            // Check if the selected value is '1' (women-owned)
+            if ($(this).val() == '5') {
+                // Display an alert
+                alert("This feature will be coming soon! Thanks for the wait :)");
+            }
+        });
+    });
+
+    // indigenous owned
+      $(document).ready(function () {
+        // Add change event listener to the select element
+        $('#filter-id').on('change', function () {
+            // Check if the selected value is '1' (women-owned)
+            if ($(this).val() == '6') {
+                // Display an alert
+                alert("This feature will be coming soon! Thanks for the wait :)");
+            }
+        });
+    });
+
+
+
+
+
+
+//       // Assume numRows is the dynamically calculated number of rows
+// let numRows = $results.length;
+
+// // Get the .filters element
+// let filtersElement = document.querySelector('.filters');
+
+// // Add or remove the 'expanded' class based on the calculated number of rows
+// if (numRows > 2) {
+//   filtersElement.classList.add('expanded');
+// } else {
+//   filtersElement.classList.remove('expanded');
+// }
+
+
+
+
         // drop down option for minority
       var checkList = document.getElementById("list1");
       checkList.getElementsByClassName("anchor")[0].onclick = function (evt) {
@@ -344,29 +488,6 @@ FROM items
         });
 
 
-
-
-    // Function to change the CSS of the image
-        // document.querySelector(".products").onmouseenter = function changeImageStyle() {
-        //     // Access the image element
-        //     var image = document.getElementById('myImage');
-
-    
-        //     image.style.width = '500px';  // Set a new width
-        //     image.style.border = '2px solid red';  // Change the border color
-           
-        //    //this workeddd 
-        // }
-
-
-
-
-    // document.querySelector(".products").onmouseenter = function(){
-    //     // alert("testing");
-    //     var image = ocument.getElementById('myImage');
-    //      image.style.width = '500px';
-
-    // };
 
     </script>
 
