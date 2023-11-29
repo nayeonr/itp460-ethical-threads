@@ -233,10 +233,6 @@
 		color:#433F42;
 	}
 
-	#seller-name:hover {
-		color: #82A7A6;
-	}
-
 </style>
 
 </head>
