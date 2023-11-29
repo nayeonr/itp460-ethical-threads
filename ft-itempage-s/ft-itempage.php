@@ -235,8 +235,8 @@
 
 	#bookmark {
 		position: absolute;
-		height: 32px;
-		width: 32px;
+		height: 48px;
+		width: 36px;
 		margin-left: 450px ;
 		margin-top: 10px;
 
@@ -251,7 +251,7 @@
 <div class="block-1">
 	<?php while ($row = $results->fetch_assoc()) : ?>
 	<div class="item-preview">
-		<img src="img/bookmark.png" id="bookmark">
+		<img src="img/bookmark.jpeg" id="bookmark" onclick="nuhUh1()">
 		<img src="<?php echo $row['item_image']; ?>" id="clothing-img">
 
 	</div>
@@ -298,6 +298,12 @@
 <div class="footer">
      <span id="copyright"> © Ethical Threads </span>
 </div>
+
+<script>
+ function nuhUh1 () {
+          alert("This item is hard-coded just for demonstration! Typically, clicking on this item should redirect you to its Item page.");
+        }
+</script>
 
 </body>
 </html>
