@@ -159,7 +159,7 @@
 		    display: flex;
 		    margin: 10px;
 		    padding-left: 10px;
-		    font-weight: 500;
+		    font-weight: 1000;
 		}
     </style>
 </head>
