@@ -37,7 +37,7 @@
       margin-bottom: 40px;
     }
     .content-box-header {
-      font-size: 40px;
+      font-size: 34px;
       font-family: Quicksand;
       padding-bottom: 15px;
       font-weight: 500;
