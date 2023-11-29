@@ -1,5 +1,4 @@
 <?php
-
   require '../ft-navbar-N/navbar.php';
   // require '../db_config.php';
   $host = "304.itpwebdev.com";
@@ -7,7 +6,7 @@
 	$pass = "460uscitp";
 	$db = "ethreads_brands_db";
   $mysqli = new mysqli($host, $user, $pass, $db);
-
+  //  $mysqli = new mysqli(HOST_DB, USER_DB, PASS_DB, NAME_DB);
 
 
 // <!-- check for connection errors  -->
@@ -16,9 +15,9 @@
   exit();
 } 
 
-  $mysqli->set_charset('utf8');
+$mysqli->set_charset('utf8');
 //  <!-- submit sql statement  -->
- $sql_filter = "SELECT * FROM filters";
+ $sql_filter = "SELECT * FROM filters;";
 
  $results_filters = $mysqli->query( $sql_filter );
 
@@ -33,7 +32,7 @@
   $filters_row = $results_filters->fetch_assoc();
 
 
-   $sql_itemtype = "SELECT * FROM item_type";
+   $sql_itemtype = "SELECT * FROM item_type;";
 
     $results_itemtype = $mysqli->query( $sql_itemtype );
 
@@ -45,28 +44,7 @@
     }
 
 
- 
-    
-
- // Get filter_id from url
-  // $filter_id = $_GET['filter_id'];
-  // echo "<hr>$filter_id</hr>";
-
- // Get item_type_id from url
-  // $item_type_id= $_GET['item_type_id'];
-  // echo "<hr>$item_type_id</hr>";
-
-
-
-// var_dump($_GET);
-
-// $itemtypeid = $_GET["item_type_id"];
-// $filter_id= $_GET["filter_id"];
-
-
-	
-
-$sql = "SELECT DISTINCT items.item_name AS name, items.item_price AS price, items.item_image AS image, filters.filter_name AS filters, item_type_id
+$sql = "SELECT DISTINCT items.item_name AS name, items.item_price AS price, items.item_image AS image, filters.filter_name AS filters, items.item_type_id, item_id, brands.brand_id
 FROM items
     LEFT JOIN brands
       ON items.brand_id = brands.brand_id
@@ -279,7 +257,9 @@ FROM items
        
     <?php while($row = $results->fetch_assoc()) : ?>
 <figure>
+  <a class="link" href="../ft-itempage-s/ft-itempage.php?item_id=<?php echo $row["item_id"] ?>&brand_id=<?php echo $row["brand_id"] ?>">
     <img class="products" src="<?php echo $row["image"]; ?>" alt="<?php echo $row ["name"]; ?>" />
+    </a>
 
     <figcaption><a class="link" href="../ft-itempage-s/ft-itempage.php?item_id=<?php echo $row["item_id"] ?>&brand_id=<?php echo $row["brand_id"] ?>"><?php echo $row['name'];?><br>$<?php echo $row['price'];?></a></figcaption>
 
