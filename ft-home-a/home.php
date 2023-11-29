@@ -410,20 +410,24 @@
         <div class="discoverlocal1">
             <div class="row justify-content-center">
                 <div class="col-6 text-center">
+                    <a class="homepic" href="../ft-productresult-C/product-results-pg.php?filter_id=3">
                     <div class="card">
                         <img class="card-img" src="../ft-home-a/img/discover1.png" alt="discover">
                         <div class="card-img-overlay">
-                            <h5 class="card-title"><a class="homepic" href="../ft-productresult-C/product-results-pg.php?filter_id=3">Shop Latiné Owned Businesses</a></h5>
+                            <h5 class="card-title">Shop Latiné Owned Businesses</h5>
                         </div>
                     </div>
+                    </a>
                 </div>
                 <div class="col-6 text-center">
+                    <a class="homepic" href="../ft-productresult-C/product-results-pg.php?filter_id=7&item_type_id=4">
                     <div class="card">
                         <img class="card-img" src="../ft-home-a/img/discover2.png" alt="discover">
                         <div class="card-img-overlay">
-                            <h5 class="card-title"><a class="homepic" href="../ft-productresult-C/product-results-pg.php?filter_id=7&item_type_id=4">Shop Sustainable Winter Outerwear</a></h5>
+                            <h5 class="card-title">Shop Sustainable Winter Outerwear</h5>
                         </div>
                     </div>
+                    </a>
                 </div>
             </div>
         </div>
