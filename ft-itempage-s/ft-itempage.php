@@ -233,6 +233,15 @@
 		color:#433F42;
 	}
 
+	#bookmark {
+		position: absolute;
+		height: 32px;
+		width: 32px;
+		margin-left: 450px ;
+		margin-top: 10px;
+
+	}
+
 </style>
 
 </head>
@@ -242,7 +251,9 @@
 <div class="block-1">
 	<?php while ($row = $results->fetch_assoc()) : ?>
 	<div class="item-preview">
+		<img src="img/bookmark.png" id="bookmark">
 		<img src="<?php echo $row['item_image']; ?>" id="clothing-img">
+
 	</div>
 
 	<div class="item-text">	
