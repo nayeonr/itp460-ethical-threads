@@ -150,13 +150,11 @@ FROM items
             border-radius: 15px;
         }
 
+
         .filters {
           grid-row: span 1;
         }
 
-        /* .expanded {
-          visibility: hidden;
-} */
     </style>
 
     <body>

@@ -118,6 +118,7 @@
         color: #F7F6F2;
         margin-top: 150px;
         margin-left: 75px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
     .learn:hover {
         /* width: 171px; 
@@ -148,6 +149,16 @@
         border-radius: 15px;
         font-size: 15px;
         font-family: Quicksand;
+    }
+    .home-browse-imgs:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
+        border-radius: 15px;
+    }
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
+        border-radius: 15px;
     }
     /* .round {
         border-radius: 15px;
@@ -375,22 +386,22 @@
             <div class="row justify-content-center gx-2 gy-4">
                 <div class="col text-center">
                     <a href="../ft-brand-pg-b/brand-page.php?brand_id=46">
-                        <img src="../ft-home-a/img/brand1.png">
+                        <img src="../ft-home-a/img/brand1.png" class="home-browse-imgs">
                     </a>
                 </div>
                 <div class="col text-center">
                     <a href="../ft-brand-pg-b/brand-page.php?brand_id=10">
-                        <img src="../ft-home-a/img/brand2.png">
+                        <img src="../ft-home-a/img/brand2.png" class="home-browse-imgs">
                     </a>
                 </div>
                 <div class="col text-center">
                     <a href="../ft-brand-pg-b/brand-page.php?brand_id=44">
-                        <img src="../ft-home-a/img/brand3.png">
+                        <img src="../ft-home-a/img/brand3.png" class="home-browse-imgs">
                     </a>
                 </div>
                 <div class="col text-center">
                     <a href="../ft-brand-pg-b/brand-page.php?brand_id=23">
-                        <img src="../ft-home-a/img/brand4.png">
+                        <img src="../ft-home-a/img/brand4.png" class="home-browse-imgs">
                     </a>
                   </div>
             </div>
@@ -399,20 +410,24 @@
         <div class="discoverlocal1">
             <div class="row justify-content-center">
                 <div class="col-6 text-center">
+                    <a class="homepic" href="../ft-productresult-C/product-results-pg.php?filter_id=3">
                     <div class="card">
                         <img class="card-img" src="../ft-home-a/img/discover1.png" alt="discover">
                         <div class="card-img-overlay">
-                            <h5 class="card-title"><a class="homepic" href="../ft-productresult-C/product-results-pg.php?filter_id=3">Shop Latiné Owned Businesses</a></h5>
+                            <h5 class="card-title">Shop Latiné Owned Businesses</h5>
                         </div>
                     </div>
+                    </a>
                 </div>
                 <div class="col-6 text-center">
+                    <a class="homepic" href="../ft-productresult-C/product-results-pg.php?filter_id=7&item_type_id=4">
                     <div class="card">
                         <img class="card-img" src="../ft-home-a/img/discover2.png" alt="discover">
                         <div class="card-img-overlay">
-                            <h5 class="card-title"><a class="homepic" href="../ft-productresult-C/product-results-pg.php?filter_id=7&item_type_id=4">Shop Sustainable Winter Outerwear</a></h5>
+                            <h5 class="card-title">Shop Sustainable Winter Outerwear</h5>
                         </div>
                     </div>
+                    </a>
                 </div>
             </div>
         </div>

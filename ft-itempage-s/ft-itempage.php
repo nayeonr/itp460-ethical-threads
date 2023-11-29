@@ -17,11 +17,18 @@
 
 	$mysqli->set_charset('utf8');
 
-	// $brand_id = $_GET['brand_id'];
-	// pass item id variable from cherise's page -> from href tag
+	$item_id = $_GET['item_id'];
+	// echo "<hr>$item_id</hr>";
 
+	$brand_id = $_GET['brand_id'];
+
+	// $item_id_test = $_GET['item_id'] + 1;
+	// echo "<hr>$item_id_test</hr>";
+
+	
+	// pass item id variable from cherise's page -> from href tag
 	//retrieve item information
-	$sql = "SELECT *
+	$sql = "SELECT DISTINCT *
 		FROM items
     LEFT JOIN brands
    		ON items.brand_id = brands.brand_id
@@ -29,12 +36,45 @@
     	ON brands.brand_id = filtered_brands.brand_id
     LEFT JOIN filters
     	ON filtered_brands.filter_id = filters.filter_id
-    WHERE items.item_id = 10 ";
+    WHERE items.item_id = $item_id";
 
-    $results = $mysqli->query($sql);
+   if ( isset($_GET['item_id']) && trim($_GET['item_id']) != '' ) {
+		$item_id = $_GET['item_id'];
+    $sql = $sql . " AND items.item_id = $item_id";
+		}
+
+
+		$results = $mysqli->query($sql);
+
+    if (!$results) {
+		echo $mysqli->error;
+		$mysqli->close();
+		exit();
+	}
+
+	  // retrieve item images from brand
+    $sql_items = "SELECT DISTINCT items.item_image, brands.brand_name, items.item_name, items.item_id, brands.brand_id
+		FROM brands
+		LEFT JOIN items
+   		ON items.brand_id = brands.brand_id
+    	WHERE brands.brand_id = $brand_id";
+
+
+ 	$sql = $sql . ";";
+
+ 	$sql_items_results = $mysqli->query($sql_items);
+
+
+    if (!$sql_items_results) {
+		echo $mysqli->error;
+		$mysqli->close();
+		exit();
+	}
+
+	$sql_items_test = $sql_items_results->fetch_assoc();
 
  
-    $sql_brand_filters = "SELECT *
+    $sql_brand_filters = "SELECT DISTINCT *
   		FROM brands
     LEFT JOIN filtered_brands
       ON brands.brand_id = filtered_brands.brand_id
@@ -42,32 +82,11 @@
       ON filtered_brands.filter_id = filters.filter_id
     LEFT JOIN items
     	ON brands.brand_id = items.brand_id 
-    WHERE items.item_id = 10";
+    WHERE items.item_id = $item_id;";
 
-    $test2_results = $mysqli->query($sql_brand_filters);
+    $brand_filters_results = $mysqli->query($sql_brand_filters);
 
-    if (!$test2_results) {
-		echo $mysqli->error;
-		$mysqli->close();
-		exit();
-	}
-
-    //retrieve item images from brand
-    $sql_test = "SELECT *
-		FROM items
-	LEFT JOIN brands
-   		ON items.brand_id = brands.brand_id
-   	LEFT JOIN filtered_brands
-    	ON brands.brand_id = filtered_brands.brand_id
-    LEFT JOIN filters
-    	ON filtered_brands.filter_id = filters.filter_id
-    WHERE items.item_id = 22";
-
- 	$sql = $sql . ";";
-
- 	$test_results = $mysqli->query($sql_test);
-
-    if (!$test_results) {
+    if (!$brand_filters_results) {
 		echo $mysqli->error;
 		$mysqli->close();
 		exit();
@@ -86,14 +105,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="
 		sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="../global_css.css">
-    <link rel="stylesheet" href="../ft-login-N/login.css">
     <link rel="stylesheet" href="../ft-login-N/signup.css">
+    <link rel="stylesheet" href="../ft-login-N/login.css">
   </head>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pixelify+Sans:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-  
+  .nav-menu {
+  	margin-top: 15px;
+  }
 
 	h2 {
 	    font-family: "Quicksand", "Arial", sans-serif;
@@ -112,20 +133,24 @@
 		margin-bottom: 5%;
 	}
 
+	img {
+		border-radius: 15px;
+	}
+
 	.item-preview {
 		margin-right: 70px;
 		margin-top: 120px;
 		margin-left: 100px;
 		margin-bottom: 50px;
 		width: 500px;
-		height: 500px;
-		border-radius: 2px;
+		height: auto
+		border-radius: 15px;
 	}
 
 	.item-preview img {
 		width: 500px;
-		height: 500px;
-		border-radius: 2px;
+		height: auto;
+		border-radius: 15px;
 	}
 
 	.item-text{
@@ -135,7 +160,7 @@
 		padding: 2%;
 		width: 450px;
 		height: 450px;
-		border-radius: 2px;
+		border-radius: 15px;
 	}
 
 	#description p {
@@ -148,9 +173,9 @@
 		margin-top: 2%;
 		margin-bottom: 2%;
 		margin-right: 2.2%;
-		width: 220px;
-		height: 220px;
-		border-radius: 5px;
+		width: 230px;
+		height: auto;
+		border-radius: 15px;
 	}
 
 	#discover-heading {
@@ -158,9 +183,15 @@
 	}
 
 	.discover-item img {
-		width: 220px;
-		height: 220px;
-		border-radius: 5px;
+		width: 230px;
+		height: auto;
+		border-radius: 15px;
+	}
+
+	.discover-item img:hover {
+		transform: scale(1.05);
+		box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
+		border-radius: 15px;
 	}
 
 	#brand-logo {
@@ -197,12 +228,17 @@
 		margin-top: 2%;
 	}
 
+	#seller-name {
+		text-decoration: underline;
+		color:#433F42;
+	}
 
 </style>
 
 </head>
 <body>
 
+<div class="PLSSSSS">
 <div class="block-1">
 	<?php while ($row = $results->fetch_assoc()) : ?>
 	<div class="item-preview">
@@ -212,40 +248,44 @@
 	<div class="item-text">	
 		<h1 id="item-name"> <?php echo $row['item_name']; ?></h1>
 		
-		<h2 id="seller-name"> <?php echo $row['brand_name']; ?></h2>
+		<h2>
+			<a href="../ft-brand-pg-b/brand-page.php?brand_id=<?php echo $row['brand_id']; ?>" id="seller-name">
+				<?php echo $row['brand_name']; ?></a>
+		</h2>
 
-		<p id="price"> <?php echo $row['item_price']; ?> </p>
+		<p id="price"> $<?php echo $row['item_price']; ?> </p>
 
 		<p id="description"> <?php echo $row['item_description']; ?> </p>
 
-	<!-- <?php endwhile; ?>
-	<?php while ($row = $test2_results -> fetch_assoc()) : ?>  -->
-		<div class="tag">
-			<p> <?php echo $row['filter_name']; ?> </p>
-		</div>
+	<!-- <?php endwhile; ?> -->
+	<?php while ($row = $brand_filters_results -> fetch_assoc()) : ?> 
+ 
+		<span class="tag"> <?php echo $row['filter_name']; ?> </span>
 	<?php endwhile; ?> 
 	</div>
 </div>
 
-<?php while ($row = $test_results->fetch_assoc()) : ?>
-<h1 id="discover-heading"> More by <?php echo $row['brand_name']; ?></h1>
+
+<h1 id="discover-heading"> More by <?php echo $sql_items_test ['brand_name']; ?></h1>
+
+
 <div class="block-2">
+	<?php while ($row = $sql_items_results->fetch_assoc()) : ?>
 	<div class="discover-item">
-		<img src= "<?php echo $row['item_image']; ?>"/>
-		<p id="discover-item-name"> </p>
+		<a href="../ft-itempage-s/ft-itempage.php?item_id=<?php echo $row['item_id']; ?>&brand_id=<?php echo $row['brand_id']; ?>"> 
+			<img src= "<?php echo $row['item_image']; ?>" />
+		</a>
+		
+		<p id="discover-item-name"> 
+			<?php echo $row['item_name']; ?>
+		</p>
 	</div>
-
-	<div class="discover-item">
-		<img src= "<?php echo $row['item_image']; ?>" />
-		<p id="discover-item-name"> </p>
-	</div>
-
+	<?php endwhile; ?>
 </div>
-<?php endwhile; ?>
-
+</div>
 
 <div class="footer">
-      <span id="copyright"> © Ethical Threads </span>
+     <span id="copyright"> © Ethical Threads </span>
 </div>
 
 </body>

@@ -103,28 +103,40 @@
     <link rel="stylesheet" href="../ft-login-N/login.css">
 
     <style>
+    	#logo {
+    		margin-top: 5px;
+    	}
+
     	.discover-headers {
 			padding-left: 35px;
 			padding-bottom: 0;
-			margin-bottom: 0;
-			align-items: left;
+			margin-bottom: 10px;
 		}
 
+		h1 {
+    		font-size: 40px;
+    	}
+
 		.image-container {
-		    display: inline-block;
-		    margin: 20px;
-		    margin-top: 0;
-		    margin-bottom: 0;
-		    padding-left: 15px;
-		    padding-bottom: 0;
-		    width: 300px;
-		    overflow: hidden;
-		    border-radius: 15px;
+			display: inline-block;
+			padding-left: 15px;
 		}
 
 		.image-wrapper {
-			height: 300px;
+		    margin: 20px;
+		    margin-top: 0;
+		    margin-bottom: 0;
+		    width: 300px;
+		    height: 300px;
+		    overflow: hidden;
 		}
+
+		/*.image-wrapper {
+			height: 300px;
+			margin: 0;
+			padding: 0;
+		    border-radius: 15px;
+		}*/
 
 		.image-wrapper:hover
 		{
@@ -143,7 +155,9 @@
 
 		.captions {
 		    display: flex;
-		    margin-top: 10px;
+		    margin: 10px;
+		    padding-left: 10px;
+		    font-weight: 1000;
 		}
     </style>
 </head>
