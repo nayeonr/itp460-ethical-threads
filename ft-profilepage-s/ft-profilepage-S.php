@@ -127,7 +127,7 @@
           <?php echo htmlspecialchars($_SESSION['user_name']); ?>
         <button type="button" class="logout"><a href="../ft-login-N/logout.php">Logout</a></button>
       </h1>
-      <p id="profile-bio">Insert fun biography here!</p>
+      <p id="profile-bio">having a funky and fresh time shopping ethically and affordably :p</p>
       <p id="est"> Member since Nov. 2023 </p>
 
 
