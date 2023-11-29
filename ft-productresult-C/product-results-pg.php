@@ -11,11 +11,12 @@
 
 
 // <!-- check for connection errors  -->
- if ($mysqli->connect_erno){
+ if ($mysqli->connect_errno){
   echo $mysqli->connect_error;
   exit();
 } 
 
+  $mysqli->set_charset('utf8');
 //  <!-- submit sql statement  -->
  $sql_filter = "SELECT * FROM filters";
 
@@ -150,27 +151,55 @@ FROM items
             border-radius: 15px;
         }
 
-
-        .filters {
-          grid-row: span 1;
+        #number-results {
+          text-align: right;
+          padding-right: 10%;
         }
 
+        .container {
+          grid-template-columns: 1fr 1fr 1fr 1fr; 
+          grid-template-rows: 1fr;
+          margin-left: 2%;
+          margin-right: 5%;
+        }
+
+        /* .filter-heading {
+          display: inline;
+        } */
+        /* .flexbox {
+           display: flex; 
+          flex-wrap: wrap;
+          justify-content: space-between;
+        } */
+
+        /* .expanding-element {
+          flex: 1 0 48%;
+        }
+     */
+        .form-control {
+          font-size: 1rem;
+          border-radius: 5px;
+          width: 10%;
+        }
+
+        form {
+          text-align: left;
+          margin-left: 5%;
+        }
+
+        .item-search {
+          margin-top: 10px;
+        }
+      
     </style>
 
     <body>
-
-      
-<?php echo $brand_data_row['brand_name']; ?>
         <header>
             <h4 id="search-results"><strong>Search Results For</strong></h4>
-            <h1> Clothing By:<?php echo $filters_row['filters']; ?>      
-            </h1>
+            <h1> Clothing Results</h1>
 
               <!-- Clothing By Latiné Brands -->
         </header>
-
-
-       
         <main>
             <!-- <div id="tag-div">
             <p class="not-center">Related:</p>
@@ -182,16 +211,15 @@ FROM items
             </ul>
             </div> -->
 
-            Showing <?php echo $results->num_rows; ?> result(s).
-
+           <div id="number-results"> Showing <?php echo $results->num_rows; ?> result(s)</div>
+<div class="flexbox">
+  <div class="filters expanding-element">
 <h3 class="filter-heading">Filter By:</h3>
-<div class="container">   <!--for filters and products -->
-    <div class="filters expanding-element">
-        <!-- <h4 class="minority">Minority Owned</h4> -->
-         <div id="list1" class="dropdown-check-list" tabindex="100">
+</div>
+  <!-- <div id="list1" class="dropdown-check-list" tabindex="100"> -->
       <!-- <span class="anchor">Type of Brand</span> -->
       <form action="product-results-pg.php" method="GET">
-        <div>
+        <div class="form-group row">
           <label for="filter-id" class="col-sm-3 col-form-label text-sm-right">Type of Brand:</label>
             <div class="col-sm-9">
                 <select name="filter_id" id="filter-id" class="form-control">
@@ -207,7 +235,7 @@ FROM items
         </div>    <!-- brand types/ filters -->
         
               <!--  ITEM TYPE -->
-        <div class="form-group row rowspace">
+        <div class="form-group row rowspace item-form">
           <label for="itemtype-id" class="col-sm-3 col-form-label text-sm-right">Item Type:</label>
             <div class="col-sm-9">
             <select name="item_type_id" id="itemtype-id" class="form-control">
@@ -225,42 +253,17 @@ FROM items
           <div class="form-group row">
               <div class="col-sm-3"></div>
               <div class="col-sm-9 mt-2">
-                  <button type="submit" class="btn searchbut">Search</button>
+                  <button type="submit" class="btn searchbut item-search">Search</button>
               </div>
           </div> <!-- .form-group -->
         </form>
-           <!-- JavaScript to dynamically adjust the filters -->
-        <div class="expanded"></div>
+        </div>
+        </div>
+        </div>
+  
 
-          
-    <script>
-        // Assuming you want to use the number of rows in $results
-        let numRows = <?php echo $results->num_rows; ?>;
-
-        // Get the .filters element
-        let filtersElement = document.querySelector('.filters');
-
-        // Add or remove the 'expanded' class based on the calculated number of rows
-        if (numRows > 2) {
-            filtersElement.classList.add('expanded');
-        } else {
-            filtersElement.classList.remove('expanded');
-        }
+<div class="container">   <!--for filters and products -->  
     </script>
-      
-      <!-- <ul class="items filter-pad">
-        <li><input type="checkbox" />Black-owned</li>
-        <li><input type="checkbox" />Latiné-owned</li>
-        <li><input type="checkbox" />Sustainable</li>
-        <li><input class="coming-soon mycheckbox" type="checkbox" id="myCheckbox" onclick="keepCheckboxUnchecked()"/>AAPI-owned</li>
-        <li><input class="coming-soon1" type="checkbox" id="lgbtq" onclick="keepCheckboxUn()" />LGBTQ+-owned</li>
-        <li><input class="coming-soon2" type="checkbox" id="indi" onclick="keepCheckbox()"/>Indigenous-owned</li>
-        <li><input class="coming-soon3" type="checkbox" id="wom" onclick="keepCheck()" />Women-owned</li>
-      </ul> -->
-      
-    </div>
-
-
  
         <!-- <h4 class="minority">Price</h4> -->
         <!-- <div id="list2" class="dropdown-check-list" tabindex="100">
@@ -274,8 +277,6 @@ FROM items
     </div> -->
     <!-- <div class="expanding-element"></div> -->
        
-    </div>
-
     <?php while($row = $results->fetch_assoc()) : ?>
 <figure>
     <img class="products" src="<?php echo $row["image"]; ?>" alt="<?php echo $row ["name"]; ?>" />
@@ -300,13 +301,7 @@ FROM items
         <div class="footer">
       <span id="copyright"> © Ethical Threads </span>
     </div>
-
-
-       
         <!-- <footer>Ethical Threads. Sign up for our Newsletter</footer> -->
-
-
-
 
     </main>
 

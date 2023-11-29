@@ -95,8 +95,8 @@ div {
 
 .container {
     display:grid;
-    grid-template-columns: 20% 22% 22% 22%;
-    grid-template-rows: 1fr 1fr;
+    /* grid-template-columns: 20% 22% 22% 22%; */
+    /* grid-template-rows: 1fr 1fr; */
     grid-gap: 20px;
 }
 
