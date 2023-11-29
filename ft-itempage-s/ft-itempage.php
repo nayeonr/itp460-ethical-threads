@@ -57,7 +57,7 @@
 		FROM brands
 		LEFT JOIN items
    		ON items.brand_id = brands.brand_id
-    	WHERE brands.brand_id = $brand_id";
+    	WHERE brands.brand_id = $brand_id AND items.item_id != $item_id";
 
 
  	$sql = $sql . ";";
@@ -239,6 +239,7 @@
 		width: 36px;
 		margin-left: 450px ;
 		margin-top: 10px;
+		opacity: 70%;
 
 	}
 
@@ -251,7 +252,7 @@
 <div class="block-1">
 	<?php while ($row = $results->fetch_assoc()) : ?>
 	<div class="item-preview">
-		<img src="img/bookmark.jpeg" id="bookmark" onclick="nuhUh1()">
+		<img src="img/bookmark.png" id="bookmark" onclick="nuhUh()">
 		<img src="<?php echo $row['item_image']; ?>" id="clothing-img">
 
 	</div>
@@ -300,8 +301,8 @@
 </div>
 
 <script>
- function nuhUh1 () {
-          alert("This item is hard-coded just for demonstration! Typically, clicking on this item should redirect you to its Item page.");
+ function nuhUh () {
+          alert("This item is hard-coded just for demonstration! Typically, clicking on this bookmark should allow you to save this item to a folder in your profile page.");
         }
 </script>
 
