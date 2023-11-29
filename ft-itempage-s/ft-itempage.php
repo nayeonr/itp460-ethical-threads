@@ -302,7 +302,7 @@
 
 <script>
  function nuhUh () {
-          alert("This item is hard-coded just for demonstration! Typically, clicking on this bookmark should allow you to save this item to a folder in your profile page.");
+          alert("This item is hard-coded just for demonstration! Typically, clicking on this bookmark should allow you to save this item to a folder in your profile page when you are logged in.");
         }
 </script>
 
