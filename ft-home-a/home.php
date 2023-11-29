@@ -420,11 +420,11 @@
                     </a>
                 </div>
                 <div class="col-6 text-center">
-                    <a class="homepic" href="../ft-productresult-C/product-results-pg.php?filter_id=7&item_type_id=4">
+                    <a class="homepic" href="../ft-productresult-C/product-results-pg.php?item_type_id=2">
                     <div class="card">
                         <img class="card-img" src="../ft-home-a/img/discover2.png" alt="discover">
                         <div class="card-img-overlay">
-                            <h5 class="card-title">Shop Sustainable Winter Outerwear</h5>
+                            <h5 class="card-title">Shop Bottoms</h5>
                         </div>
                     </div>
                     </a>
