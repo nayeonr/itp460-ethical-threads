@@ -11,7 +11,7 @@
 
 
 // <!-- check for connection errors  -->
- if ($mysqli->connect_erno){
+ if ($mysqli->connect_errno){
   echo $mysqli->connect_error;
   exit();
 } 
