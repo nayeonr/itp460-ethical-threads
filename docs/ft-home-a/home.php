@@ -1,8 +1,8 @@
 <?php
-    require '../ft-navbar-N/navbar.php';
+    require '../../ft-navbar-N/navbar.php';
     //post to bria's page (brand information if a user clicks an image) post id to bria's page through on click
     //bria would get information from home page regarding brand to input into about the brand
-    require '../db_config.php';
+    require '../../db_config.php';
 
     $mysqli = new mysqli(HOST_DB, USER_DB, PASS_DB, NAME_DB);
 
@@ -57,9 +57,9 @@
     <title>Ethical Threads</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../global_css.css">
-    <link rel="stylesheet" href="../ft-login-N/signup.css">
-    <link rel="stylesheet" href="../ft-login-N/login.css"> 
+    <link rel="stylesheet" href="../../global_css.css">
+    <link rel="stylesheet" href="../../ft-login-N/signup.css">
+    <link rel="stylesheet" href="../../ft-login-N/login.css"> 
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pixelify+Sans:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
@@ -273,7 +273,7 @@
                     <h4 class="bannerdesc">Empowering communities, one conscious choice at a time</h5>
                 </div>
                 <div class="col-2">
-                    <button type="button" class="btn learn"><a href="../ft-about-pg-b/about-page.php">Learn More</a></button>
+                    <button type="button" class="btn learn"><a href="../../ft-about-pg-b/about-page.php">Learn More</a></button>
                 </div>
             </div>   
         </div>
@@ -286,7 +286,7 @@
             </div>
             <div class="row searchline">
                 <div class="col"> 
-                    <form action="../ft-productresult-C/product-results-pg.php" method="GET">
+                    <form action="../../ft-productresult-C/product-results-pg.php" method="GET">
                         <div class="form-group row">
                             <label for="filter-id" class="col-sm-3 col-form-label text-sm-right">Type of Brand:</label>
                             <div class="col-sm-9">
@@ -385,22 +385,22 @@
             <h4 class="sectionheader">Browse Ethical Businesses</h4>
             <div class="row justify-content-center gx-2 gy-4">
                 <div class="col text-center">
-                    <a href="../ft-brand-pg-b/brand-page.php?brand_id=46">
+                    <a href="../../ft-brand-pg-b/brand-page.php?brand_id=46">
                         <img src="../ft-home-a/img/brand1.png" class="home-browse-imgs">
                     </a>
                 </div>
                 <div class="col text-center">
-                    <a href="../ft-brand-pg-b/brand-page.php?brand_id=10">
+                    <a href="../../ft-brand-pg-b/brand-page.php?brand_id=10">
                         <img src="../ft-home-a/img/brand2.png" class="home-browse-imgs">
                     </a>
                 </div>
                 <div class="col text-center">
-                    <a href="../ft-brand-pg-b/brand-page.php?brand_id=44">
+                    <a href="../../ft-brand-pg-b/brand-page.php?brand_id=44">
                         <img src="../ft-home-a/img/brand3.png" class="home-browse-imgs">
                     </a>
                 </div>
                 <div class="col text-center">
-                    <a href="../ft-brand-pg-b/brand-page.php?brand_id=23">
+                    <a href="../../ft-brand-pg-b/brand-page.php?brand_id=23">
                         <img src="../ft-home-a/img/brand4.png" class="home-browse-imgs">
                     </a>
                   </div>
@@ -420,7 +420,7 @@
                     </a>
                 </div>
                 <div class="col-6 text-center">
-                    <a class="homepic" href="../ft-productresult-C/product-results-pg.php?item_type_id=2">
+                    <a class="homepic" href="../../ft-productresult-C/product-results-pg.php?item_type_id=2">
                     <div class="card">
                         <img class="card-img" src="../ft-home-a/img/discover2.png" alt="discover">
                         <div class="card-img-overlay">
