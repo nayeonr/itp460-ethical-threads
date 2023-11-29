@@ -180,13 +180,6 @@ FROM items
         .item-search {
           margin-top: 10px;
         }
-
-        .footer {
-          position: fixed;
-          bottom: 0; 
-          left: 0; 
-          width: 100%;
-        }
       
     </style>
 
