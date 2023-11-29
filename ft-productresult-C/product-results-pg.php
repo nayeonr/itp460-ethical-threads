@@ -17,6 +17,18 @@
 
 $mysqli->set_charset('utf8');
 //  <!-- submit sql statement  -->
+
+// $sql_title = "SELECT filter_name FROM filters WHERE filter_id = $filter_id";
+// $results_title = $mysqli->query( $sql_title );
+
+   // Check for SQL Errors.
+    // if ( !$results_title ) {
+    // echo $mysqli->error;
+    // $mysqli->close();
+    // exit();
+    // }
+
+
  $sql_filter = "SELECT * FROM filters;";
 
  $results_filters = $mysqli->query( $sql_filter );
@@ -168,14 +180,21 @@ FROM items
         .item-search {
           margin-top: 10px;
         }
+
+        .footer {
+          position: fixed;
+          bottom: 0; 
+          left: 0; 
+          width: 100%;
+        }
       
     </style>
 
     <body>
         <header>
             <h4 id="search-results"><strong>Search Results For</strong></h4>
-            <h1> Clothing Results</h1>
-
+            <h1> Clothing</h1>
+          
               <!-- Clothing By Latiné Brands -->
         </header>
         <main>
@@ -190,6 +209,7 @@ FROM items
             </div> -->
 
            <div id="number-results"> Showing <?php echo $results->num_rows; ?> result(s)</div>
+<div>
 <div class="flexbox">
   <div class="filters expanding-element">
 <h3 class="filter-heading">Filter By:</h3>
@@ -276,7 +296,7 @@ FROM items
     <!-- </figure> -->
 
 </div>
-
+</div>
 <!-- footer -->
         <div class="footer">
       <span id="copyright"> © Ethical Threads </span>
