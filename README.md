@@ -6,4 +6,6 @@ Nayeon Ryu nayeonry@usc.edu
 
 Ankita Reddy ankitare@usc.edu
 
-Sophia Pelaez spelaez@usc.edu# itp460-ethical-threads
+Sophia Pelaez spelaez@usc.edu
+
+# itp460-ethical-threads
