@@ -69,11 +69,11 @@
         margin-bottom: 0;
       }
 
-      img {
+      .profile-page-item-images {
         border-radius: 15px;
       }
 
-      img:hover {
+      .profile-page-item-images:hover {
         transform: scale(1.05);
         box-shadow: 0 0 10px rgba(67, 63, 66, 0.5);
       }
@@ -143,25 +143,25 @@
           <div class="section">
 
             <div class="item-saved" onclick="nuhUh1()">
-              <img src="../ft-profilepage-s/img/pretty-ugly-fitted-tee.png">
+              <img src="../ft-profilepage-s/img/pretty-ugly-fitted-tee.png" class="profile-page-item-images">
               <p class="profile-description"> Pretty Ugly Fitted Tee </p>
               <p class="profile-seller"> Silly Oaf </p>
             </div>
 
             <div class="item-saved" onclick="nuhUh2()">
-              <img src="../ft-profilepage-s/img/bad-apple-knit-top.png">
+              <img src="../ft-profilepage-s/img/bad-apple-knit-top.png" class="profile-page-item-images">
               <p class="profile-description"> Bad Apple Knit Top </p>
               <p class="profile-seller"> Silly Oaf </p>
             </div>
 
             <div class="item-saved" onclick="nuhUh3()">
-              <img src="../ft-profilepage-s/img/chrom-sun-crop-top.png">
+              <img src="../ft-profilepage-s/img/chrom-sun-crop-top.png" class="profile-page-item-images">
               <p class="profile-description"> Chrom Sun Crop Top </p>
               <p class="profile-seller"> Abakada </p>
             </div>
 
             <div class="item-saved" onclick="nuhUh4()">
-              <img src="../ft-profilepage-s/img/grapiko-aspin-tee.png">
+              <img src="../ft-profilepage-s/img/grapiko-aspin-tee.png" class="profile-page-item-images">
               <p class="profile-description"> Aspin Tee </p>
               <p class="profile-seller"> Grapiko </p>
             </div>
@@ -172,19 +172,19 @@
           <div class="section">
 
             <div class="item-saved" onclick="nuhUh5()">
-              <img src="../ft-profilepage-s/img/frog-argyle-sweatshirt.png">
+              <img src="../ft-profilepage-s/img/frog-argyle-sweatshirt.png" class="profile-page-item-images">
               <p class="profile-description"> Frog Arygle Sweatshirt</p>
               <p class="profile-seller"> Silly Oaf </p>
             </div>
 
             <div class="item-saved" onclick="nuhUh6()">
-              <img src="../ft-profilepage-s/img/thanks-a-bunch-button-up-smock.png">
+              <img src="../ft-profilepage-s/img/thanks-a-bunch-button-up-smock.png" class="profile-page-item-images">
               <p class="profile-description"> Thanks a Bunch Smock </p>
               <p class="profile-seller"> Silly Oaf </p>
             </div>
 
             <div class="item-saved" onclick="nuhUh7()">
-              <img src="../ft-profilepage-s/img/no-regrats-roll-neck-knitted-jumper.png">
+              <img src="../ft-profilepage-s/img/no-regrats-roll-neck-knitted-jumper.png" class="profile-page-item-images">
               <p class="profile-description"> No Regrats Roll Neck Knitted Jumper </p>
               <p class="profile-seller"> Silly Oaf </p>
             </div>
