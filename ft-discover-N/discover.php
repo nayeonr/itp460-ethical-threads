@@ -106,13 +106,11 @@
     	#logo {
     		margin-top: 5px;
     	}
-    	
 
     	.discover-headers {
 			padding-left: 35px;
 			padding-bottom: 0;
 			margin-bottom: 10px;
-			align-items: left;
 		}
 
 		h1 {
